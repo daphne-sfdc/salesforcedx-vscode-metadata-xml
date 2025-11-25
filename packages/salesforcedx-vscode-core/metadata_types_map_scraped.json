@@ -1853,7 +1853,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Required. The workspace asset typeValues are: AnalyticsDashboard (Tableau Next Dashboard) AnalyticsVisualization (Tableau Next Visualization) MktCalculatedInsightObject (Data Cloud Calculated Insight Object) MktDataConnection (Data Cloud Connection) MktDataLakeObject (Data Cloud Data Lake Object) MktDataModelObject (Data Cloud Data Model Object) SemanticModel (Semantic Model)",
+        "Description": "Required. The workspace asset typeValues are: AnalyticsDashboard (Tableau Next Dashboard) AnalyticsVisualization (Tableau Next Visualization) MktCalculatedInsightObject (Data 360 Calculated Insight Object) MktDataConnection (Data 360 Connection) MktDataLakeObject (Data 360 Data Lake Object) MktDataModelObject (Data 360 Data Model Object) SemanticModel (Semantic Model)",
         "Field Name": "assetType",
         "Field Type": "AnalyticsWorkspaceAssetType (enumeration of type string)"
       },
@@ -1861,6 +1861,11 @@
         "Description": "Required. The workspace asset usage type.Values are: Created Referenced",
         "Field Name": "assetUsageType",
         "Field Type": "AnalyticsWorkspaceAssetUsageType (enumeration of type string)"
+      },
+      {
+        "Description": "The workspace asset metadata source type.Values are: Promoted Reused",
+        "Field Name": "metadataSourceType",
+        "Field Type": "AnalyticsWorkspaceAssetMetadataSourceType (enumeration of type string)"
       },
       {
         "Description": "Required. The workspace the asset belongs to.",
@@ -3561,6 +3566,66 @@
   "BillingSettings": {
     "fields": [
       {
+        "Description": "General ledger account to record the credit amount for unrealized or realized losses and the debit amount for unrealized or realized gains in transaction journals. Available in API version 64.0 and later.",
+        "Field Name": "acctRecGlAccount",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the context definition that the Create Billing Schedules for Orders API uses to understand your order data. Available in API version 64.0 and later.",
+        "Field Name": "billingContextDefinition",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the context mapping that links Order fields to billing transaction context nodes. Available in API version 64.0 and later.",
+        "Field Name": "billingContextSourceMapping",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the custom context mapping that maps your custom or standard Order fields to billing transaction context nodes. Available in API version 64.0 and later.",
+        "Field Name": "billingIntraCtxtSrcMapping",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Org-wide default value to specify the Data Processing Engine (DPE) definition to close legal entity accounting periods. Available in API version 64.0 and later.",
+        "Field Name": "defaultAPClosureDPEDefnName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Default flow that’s used to apply the credit memo to invoices. Available in API version 64.0 and later.",
+        "Field Name": "defaultApplyCreditMemoFlow",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Org-wide default value to specify the name of the billing treatment. Available in API version 64.0 and later.",
+        "Field Name": "defaultBillingTreatment",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Default email template to send the generated invoice PDFs. Available in API version 64.0 and later.",
+        "Field Name": "defaultEmailTemplate",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Default template to generate PDFs of invoice previews. Available in API version 64.0 and later.",
+        "Field Name": "defaultInvPreviewTemplate",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Default template to generate PDFs of invoices. Available in API version 64.0 and later.",
+        "Field Name": "defaultInvoiceDocTemplate",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Org-wide default value to specify the name of the legal entity. Available in API version 64.0 and later.",
+        "Field Name": "defaultLegalEntity",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Org-wide default value to specify the name of the tax treatment. Available in API version 64.0 and later.",
+        "Field Name": "defaultTaxTreatment",
+        "Field Type": "string"
+      },
+      {
         "Description": "Indicates whether to enable Billing setting (true) or not (false). The default value is false.",
         "Field Name": "enableBillingSetup",
         "Field Type": "boolean"
@@ -3586,6 +3651,11 @@
         "Field Type": "boolean"
       },
       {
+        "Description": "Indicates whether to mandate the application of sequence policy for posted invoices (true) or not (false). The default value is false. If enabled, each posted invoice is assigned an invoice number. Available in API version 65.0 and later with Revenue Cloud Billing.",
+        "Field Name": "enableInvoiceSequenceService",
+        "Field Type": "boolean"
+      },
+      {
         "Description": "Indicates whether to enable Convert Negative Invoice Lines to Credit Memo Lines setting (true) or not (false). The default value is false.",
         "Field Name": "enableNegInvoiceLnConversionToCrMemoLn",
         "Field Type": "boolean"
@@ -3596,8 +3666,8 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Indicates whether to mandate the application of sequence policy for posted invoices (true) or not (false). The default value is false. If enabled, each posted invoice is assigned an invoice number. Available in API version 65.0 and later with Revenue Cloud Billing.",
-        "Field Name": "enableInvoiceSequenceService",
+        "Description": "Indicates whether to create Transaction Journal records based on the defined general ledger account assignment rules for the billing entities when billing transaction records are created or updated (true) or not (false). The default value is false. Available in API version 63.0 and later with Revenue Cloud Billing. Billing transaction records include these transaction types. Invoice Invoice Line Invoice Line Tax Credit Memo Credit Memo Line Credit Memo Line Tax Payment Refund Payment Line Invoice Payment Line Invoice Line Credit Memo Inv Application Credit Memo Line Invoice Line",
+        "Field Name": "enableTransactionJournalCreation",
         "Field Type": "boolean"
       },
       {
@@ -3606,14 +3676,29 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Indicates whether to create Transaction Journal records based on the defined general ledger account assignment rules for the billing entities when billing transaction records are created or updated (true) or not (false). The default value is false. Available in API version 63.0 and later with Revenue Cloud Billing. Billing transaction records include these transaction types. Invoice Invoice Line Invoice Line Tax Credit Memo Credit Memo Line Credit Memo Line Tax Payment Refund Payment Line Invoice Payment Line Invoice Line Credit Memo Inv Application Credit Memo Line Invoice Line",
-        "Field Name": "enableTransactionJournalCreation",
-        "Field Type": "boolean"
-      },
-      {
         "Description": "Indicates whether to allow conversion of amounts of the Invoice, Invoice Line, Credit Memo, and Credit Memo Line records to your corporate currency (true) or not (false). The default value is false. Available in API version 63.0 and later. Store the converted amounts in corporate currency-specific amount fields.",
         "Field Name": "enableTrxnAmountsStorageInCorpCurrency",
         "Field Type": "boolean"
+      },
+      {
+        "Description": "Name of the general ledger account to record realized gains in transaction journals. Available in API version 64.0 and later.",
+        "Field Name": "realisedGainGlAccount",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the general ledger account to record realized losses in transaction journals. Available in API version 64.0 and later.",
+        "Field Name": "realisedLossGlAccount",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the general ledger account to record unrealized gains in transaction journals. Available in API version 64.0 and later.",
+        "Field Name": "unrealisedGainGlAccount",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the general ledger account to record unrealized losses in transaction journals. Available in API version 64.0 and later.",
+        "Field Name": "unrealisedLossGlAccount",
+        "Field Type": "string"
       }
     ],
     "short_description": "Represents the settings for Salesforce Billing.",
@@ -16372,7 +16457,7 @@
       }
     ],
     "short_description": "Represents the metadata associated with a Lightning page. A Lightning page represents a customizable screen made up of regions containing Lightning components.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageEvent": {
     "fields": [
@@ -16398,7 +16483,7 @@
       }
     ],
     "short_description": "An event associated with the Lightning page. Available in API version 53.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageEventSourceProperty": {
     "fields": [
@@ -16414,7 +16499,7 @@
       }
     ],
     "short_description": "A property associated with an event. Available in API version 53.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageEventTarget": {
     "fields": [
@@ -16445,7 +16530,7 @@
       }
     ],
     "short_description": "A target associated with an event source on the Lightning page. Available in API version 53.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageEventPropertyMapping": {
     "fields": [
@@ -16461,7 +16546,7 @@
       }
     ],
     "short_description": "A key-value pair for an event’s source-to-target bindings. Available in API version 53.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageEventTargetProperty": {
     "fields": [
@@ -16477,7 +16562,7 @@
       }
     ],
     "short_description": "A property on the event source’s target represented as a key-value pair. Available in API version 53.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageRegion": {
     "fields": [
@@ -16523,7 +16608,7 @@
       }
     ],
     "short_description": "FlexiPage Region represents the properties of a region of a page. A region can contain a record list component or a recent items component that can be scoped to a set of entities.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "ItemInstance": {
     "fields": [
@@ -16534,7 +16619,7 @@
       }
     ],
     "short_description": "Instance of a component or field on a Lightning page. Available in API version 49.0 or later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "ComponentInstance": {
     "fields": [
@@ -16560,7 +16645,7 @@
       }
     ],
     "short_description": "Instance of a component in a page, such as a filter list.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "ComponentInstanceProperty": {
     "fields": [
@@ -16586,7 +16671,7 @@
       }
     ],
     "short_description": "Value of a single property in a component instance. ComponentInstanceProperty has a maximum limit of 10,000 characters.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "ComponentInstancePropertyList": {
     "fields": [
@@ -16597,7 +16682,7 @@
       }
     ],
     "short_description": "Value of an element in an array in a component instance.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "ComponentInstancePropertyListItem": {
     "fields": [
@@ -16608,7 +16693,7 @@
       }
     ],
     "short_description": "Name of an element in an array in a component instance.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "UiFormulaRule": {
     "fields": [
@@ -16618,13 +16703,13 @@
         "Field Type": "string"
       },
       {
-        "Description": "List of one or more filters that, when evaluated, determine component visibility.",
+        "Description": "List of one or more filters that, when evaluated, determine conditional field formatting visibility.",
         "Field Name": "criteria",
         "Field Type": "UiFormulaCriterion[]"
       }
     ],
-    "short_description": "A set of one or more filters that define the conditions under which a component displays on a Lightning page. For example, you could construct a filter that causes a rich text component on an opportunity page to display only when the Amount is greater than $1,000,000. Available in API version 41.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "short_description": "A set of one or more filters that define the conditions under which conditional field formatting displays on a Dynamic Forms-enabled Lightning page field instance. For example, you could construct a filter that causes conditional formatting to display only when the Amount field is greater than $1,000,000.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_uiformatspecificationset.htm"
   },
   "UiFormulaCriterion": {
     "fields": [
@@ -16639,13 +16724,13 @@
         "Field Type": "string"
       },
       {
-        "Description": "The value by which you want to evaluate the component’s visibility. For example, 1000000.",
+        "Description": "The value by which you want to evaluate the formatting visibility. For example, 1000000.",
         "Field Name": "rightValue",
         "Field Type": "string"
       }
     ],
-    "short_description": "A single filter that when evaluated, helps define component visibility on a Lightning page. Available in API version 41.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "short_description": "A single filter that when evaluated, helps define conditional formatting visibility on a Dynamic Forms-enabled Lightning page field instance.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_uiformatspecificationset.htm"
   },
   "FieldInstance": {
     "fields": [
@@ -16661,7 +16746,7 @@
       }
     ],
     "short_description": "Represents a single field component that resides on a Lightning page. Available in API version 49.0 and later. This subtype is available only on Lightning Pages that have enabled Dynamic Forms.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FieldInstanceProperty": {
     "fields": [
@@ -16677,7 +16762,7 @@
       }
     ],
     "short_description": "Represents a single property of a field instance. Available in API version 49.0 and later. This subtype is available only on Lightning pages that have enabled Dynamic Forms.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "FlexiPageTemplateInstance": {
     "fields": [
@@ -16693,7 +16778,7 @@
       }
     ],
     "short_description": "FlexiPageTemplateInstance represents an instance of a Lightning page template.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flexipage.htm"
   },
   "PlatformActionList": {
     "fields": [
@@ -16713,23 +16798,23 @@
         "Field Type": "string"
       }
     ],
-    "short_description": "PlatformActionList represents the list of actions, and their order, that display on a Lightning app page. Available in API version 34.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "short_description": "PlatformActionList represents the list of actions and their order that appear in the Salesforce mobile app action bar for the layout. Available in API version 34.0 and later.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm"
   },
   "PlatformActionListItem": {
     "fields": [
       {
-        "Description": "Required. The API name for the action in the list.",
+        "Description": "The API name for the action in the list.",
         "Field Name": "actionName",
         "Field Type": "string"
       },
       {
-        "Description": "Required. The type of action. Valid values are: ActionLink—An indicator on a feed element that targets an API, a web page, or a file, represented by a button in the Salesforce Chatter feed UI. CustomButton—When clicked, opens a URL or a Visualforce page in a window or executes JavaScript. InvocableAction ProductivityAction—Productivity actions are predefined and attached to a limited set of objects. Productivity actions include Send Email, Call, Map, View Website, and Read News. Except for the Call action, you can’t edit productivity actions. QuickAction—A global or object-specific action. StandardButton—A predefined Salesforce button such as New, Edit, and Delete.",
+        "Description": "The type of action. Valid values are: ActionLink—An indicator on a feed element that targets an API, a web page, or a file, represented by a button in the Salesforce Chatter feed UI. CustomButton—When clicked, opens a URL or a Visualforce page in a window or executes JavaScript. InvocableAction ProductivityAction—Productivity actions are predefined and attached to a limited set of objects. Productivity actions include Send Email, Call, Map, View Website, and Read News. Except for the Call action, you can’t edit productivity actions. QuickAction—A global or object-specific action. StandardButton—A predefined Salesforce button such as New, Edit, and Delete.",
         "Field Name": "actionType",
         "Field Type": "PlatformActionType (enumeration of type string)"
       },
       {
-        "Description": "Required. The placement of the action in the list.",
+        "Description": "The placement of the action in the list.",
         "Field Name": "sortOrder",
         "Field Type": "int"
       },
@@ -16740,7 +16825,7 @@
       }
     ],
     "short_description": "PlatformActionListItem represents an action in the PlatformActionList. Available in API version 34.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.258.0.api_meta.meta/api_meta/meta_flexipage.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm"
   },
   "Flow": {
     "fields": [
@@ -22909,6 +22994,11 @@
         "Field Type": "LightningDesignSystemVersion (enumeration of type string)"
       },
       {
+        "Description": "Indicates whether individual users can enable dark mode (true) or not (false) for this LightningExperienceTheme. The default value is false. Available only for custom SLDS 2 themes in Salesforce Starter Suite orgs. Available in API version 65.0 and later.Dark mode is a pilot or beta service that is subject to the Beta Services Terms at Agreements - Salesforce.com or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the Product Terms Directory. Use of this pilot or beta service is at the Customer's sole discretion.",
+        "Field Name": "isDarkModeEnabled (beta)",
+        "Field Type": "boolean"
+      },
+      {
         "Description": "Required. The label for this LightningExperienceTheme, which displays in Setup. Limited to 70 characters.",
         "Field Name": "masterLabel",
         "Field Type": "string"
@@ -26900,755 +26990,6 @@
     "short_description": "",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_ocrtemplate.htm"
   },
-  "OmniExtTrackingDef": {
-    "fields": [
-      {
-        "Description": "A description of the OmniExtTrackingDef.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique name of the OmniExtTrackingDef in the API. This name can contain only underscores and alphanumeric characters and must be unique in your organization. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. Limit: 80 characters.When creating large sets of data, always specify a unique DeveloperName for each record. If no DeveloperName is specified, performance may slow while Salesforce generates one for each record. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies whether the OmniExtTrackingDef is active.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The unique master label of the OmniExtTrackingDef. This internal label doesn’t get translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A UUID generated internally by Salesforce to uniquely identify an OmniExtTrackingDef record across all orgs.",
-        "Field Name": "omniExtTrackingDefKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The OmniExtTrackingEventDef objects related to this OmniExtTrackingDef.",
-        "Field Name": "omniExtTrackingEventDefs",
-        "Field Type": "OmniExtTrackingEventDef[]"
-      },
-      {
-        "Description": "Required. JSON data containing information about an external service, such as the API call and input parameter names.",
-        "Field Name": "trackingFrameworkInformation",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The third-party Analytics system to which user interaction data is sent. Values are: Google Mixpanel",
-        "Field Name": "trackingServiceProvider",
-        "Field Type": "ExternalTrackingVendor (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents a connection between an OmniTrackingGroup in OmniAnalytics and a third-party Analytics system such as Google Analytics.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniexttrackingdef.htm"
-  },
-  "OmniExtTrackingEventDef": {
-    "fields": [
-      {
-        "Description": "Required. The type of component for which user interactions are tracked. Values are: Flexcard Omniscript",
-        "Field Name": "componentType",
-        "Field Type": "OmniAnalyticsComponentType (enumeration of type string)"
-      },
-      {
-        "Description": "A description of the OmniExtTrackingEventDef.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique name of the OmniExtTrackingEventDef in the API. This name can contain only underscores and alphanumeric characters and must be unique in your organization. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. Limit: 80 characters.When creating large sets of data, always specify a unique DeveloperName for each record. If no DeveloperName is specified, performance may slow while Salesforce generates one for each record. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A true-or-false condition that determines whether an event is sent to the third-party Analytics system.",
-        "Field Name": "inclusionRule",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique master label of the OmniExtTrackingEventDef. This internal label doesn’t get translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The ID of the related OmniExtTrackingDef object.",
-        "Field Name": "omniExtTrackingDef",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A UUID generated internally by Salesforce to uniquely identify an OmniExtTrackingEventDef record across all orgs.",
-        "Field Name": "omniExtTrackingEventDefKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The payload template structure with placeholders for runtime data. This is used at runtime to generate the actual payload to be sent to the external Analytics service.",
-        "Field Name": "payloadTemplate",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a format for FlexCard or OmniScript user interaction data that a third-party Analytics system such as Google Analytics can accept.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniexttrackingdef.htm"
-  },
-  "OmniInteractionAccessConfig": {
-    "fields": [
-      {
-        "Description": "Not used.",
-        "Field Name": "configName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. If set to true, enables asynchronous FlexCard caching. The default is false.",
-        "Field Name": "isAsyncCardCachingEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables remote Apex method calls for FlexCards. The default is false.",
-        "Field Name": "isCardApexRemoteDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables FlexCard caching. The default is false.",
-        "Field Name": "isCardCacheDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables Data Mapper data sources for FlexCards. The default is false.",
-        "Field Name": "isCardDataTfrmDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables Integration Procedure data sources for FlexCards. The default is false.",
-        "Field Name": "isCardIntegrationProcDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables REST calls for FlexCards. The default is false.",
-        "Field Name": "isCardRestApiDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables SOQL queries for FlexCards. The default is false.",
-        "Field Name": "isCardSoqlDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables SOSL queries for FlexCards. The default is false.",
-        "Field Name": "isCardSoslDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If set to true, disables Streaming API calls for FlexCards. The default is false.",
-        "Field Name": "isCardStreamingApiDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The name of the setting. The value is Profile_ProfileId, User_UserId, or Org_Wide.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The ID of the profile, user, or org to which the settings apply.",
-        "Field Name": "setupOwner",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents configuration settings for access to Omnistudio FlexCard caching and data sources.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniinteractionaccessconfig.htm"
-  },
-  "OmniInteractionConfig": {
-    "fields": [
-      {
-        "Description": "Required. The name of the setting.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the setting.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents configuration settings for Omnistudio.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniinteractionconfig.htm"
-  },
-  "OmniScript": {
-    "fields": [
-      {
-        "Description": "Metadata associated with an assessment definition. Available in API version 64.0 and later.",
-        "Field Name": "assessmentDefinitionMetadata",
-        "Field Type": "AssessmentDefinitionMetadata[]"
-      },
-      {
-        "Description": "The angular OmniScript template definitions.",
-        "Field Name": "customHtmlTemplates",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The custom JavaScript used for an OmniScript.",
-        "Field Name": "customJavaScript",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The Omnistudio designer customization type.",
-        "Field Name": "designerCustomizationType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Overrides all elements of one type with a custom Lightning web component by mapping the element type to the Custom LWC.",
-        "Field Name": "elementTypeComponentMapping",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the OmniScript is active (true) or not (false). The default value is false.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether OmniScript is an Integration Procedure (true) or OmniScript metadata (false). The default value is false.",
-        "Field Name": "isIntegrationProcedure",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether Omniscript is managed using standard designer (true) or not (false). Available in API version 64.0 and later.",
-        "Field Name": "isManagedUsingStdDesigner",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether metadata cache for the integration procedure is disabled (true) or not (false). The default value is false.",
-        "Field Name": "isMetadataCacheDisabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the OmniScript can be embedded in other OmniScripts (true) or not (false). The default value is false",
-        "Field Name": "isOmniScriptEmbeddable",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether OmniScript is a test procedure setting (true) or not (false). The default value is false",
-        "Field Name": "isTestProcedure",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether web component OmniScript (not Angular) is enabled (true) or not (false). The default value is false",
-        "Field Name": "isWebCompEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The language of the OmniScript.",
-        "Field Name": "language",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The last page previewed in the OmniScript designer.",
-        "Field Name": "lastPreviewPage",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the OmniScript.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The namespace associated with this OmniScript record.",
-        "Field Name": "namespace",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The omniAssessmentTasks associated with the OmniScript. Available in API version 63.0 and later. This field is available only if the Dynamic Assessment Access license is enabled.",
-        "Field Name": "omniAssessmentTasks",
-        "Field Type": "OmniAssessmentTaskMetadata[]"
-      },
-      {
-        "Description": "The OmniProcessElements associated with the OmniScript.",
-        "Field Name": "omniProcessElements",
-        "Field Type": "OmniProcessElement[]"
-      },
-      {
-        "Description": "The integration procedure Type_SubType value.",
-        "Field Name": "omniProcessKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Integration Procedure or OmniScript. Possible value is: OmniScript",
-        "Field Name": "omniProcessType",
-        "Field Type": "OmniProcessType (enumeration of type string)"
-      },
-      {
-        "Description": "Reserved for future use.",
-        "Field Name": "overrideKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The configuration information associated with the OmniScript.",
-        "Field Name": "propertySetConfig",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The developer name of the assessment question in the OmniScript. This field is relevant only for Omniscripts with designerCustomizationType as discoveryframework.",
-        "Field Name": "uniqueIndex",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The required permissions to execute the integration procedure.",
-        "Field Name": "requiredPermission",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Response cache used for the integration procedure (session or Org).",
-        "Field Name": "responseCacheType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The OmniScript sub type value.",
-        "Field Name": "subType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The OmniScript type value.",
-        "Field Name": "type",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique name for the OmniScript as Type_SubType_Language_VersionNumber.",
-        "Field Name": "uniqueName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The OmniScript version number.",
-        "Field Name": "versionNumber",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Internal unique key for the generated Lightning Web Components (LWC).",
-        "Field Name": "webComponentKey",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents an OmniScript for the Discovery Framework, which guides users through sales, service, and other business processes. For Discovery Framework, the customization type is discoveryframework.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniscript.htm"
-  },
-  "AssessmentDefinitionMetadata": {
-    "fields": [
-      {
-        "Description": "The date and time when this version of the assessment definition was approved.",
-        "Field Name": "approvalDateTime",
-        "Field Type": "dateTime"
-      },
-      {
-        "Description": "The way this assessment is displayed in a user interface.",
-        "Field Name": "displayType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The date and time from which the assessment definition becomes active and can be used.",
-        "Field Name": "effectiveFromDate",
-        "Field Type": "dateTime"
-      },
-      {
-        "Description": "The date and time until when this assessment definition is effective.",
-        "Field Name": "effectiveToDate",
-        "Field Type": "dateTime"
-      },
-      {
-        "Description": "The date and time when this assessment definition was last modified.",
-        "Field Name": "lastRevisedDateTime",
-        "Field Type": "dateTime"
-      },
-      {
-        "Description": "The type of user, role, or system qualified or intended to complete the assessment.",
-        "Field Name": "performerType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reason for the assessment.",
-        "Field Name": "purpose",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniscript.htm"
-  },
-  "OmniAssessmentTaskMetadata": {
-    "fields": [
-      {
-        "Description": "Required.The name of the omni assessment task.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The status of the omni assessment task. Possible values are: Completed InProgress—In Progress IsDefined—Is Defined NotStarted—Not Started The default value is IsDefined.",
-        "Field Name": "status",
-        "Field Type": "picklist"
-      },
-      {
-        "Description": "A unique name for the omni assessment task.",
-        "Field Name": "uniqueName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the omni assessment tasks associated with the OmniScript.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniscript.htm"
-  },
-  "OmniProcessElement": {
-    "fields": [
-      {
-        "Description": "The child elements associated with the OmniProcessElement.",
-        "Field Name": "childElements",
-        "Field Type": "OmniProcessElement[]"
-      },
-      {
-        "Description": "The description of the OmniProcessElement.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The Omnistudio designer customization type. To create assessment questions using the Discovery Framework feature, use the customization type as discoveryframework.",
-        "Field Name": "designerCustomizationType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The usage type for industries that use the Discovery Framework. For example, the value for Health Cloud is HcUsageType. The value for no specific industry is Default.",
-        "Field Name": "discoveryFrameworkUsageType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The ID of the embedded OmniScript",
-        "Field Name": "embeddedOmniScriptKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the status of the OmniProcessElement is active (true) or not (false).",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the OmniScript with the OmniProcessElement can be embedded in other OmniScripts (true) or not (false).",
-        "Field Name": "isOmniScriptEmbeddable",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The vertical level in which the OmniProcessElement occurs on the OmniScript.",
-        "Field Name": "level",
-        "Field Type": "double"
-      },
-      {
-        "Description": "Required. The name of the OmniProcessElement.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The related OmniProcess version.",
-        "Field Name": "omniProcessVersionNumber",
-        "Field Type": "double"
-      },
-      {
-        "Description": "The name of the parent OmniProcessElement.",
-        "Field Name": "parentElementName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The type of the parent OmniProcessElement.",
-        "Field Name": "parentElementType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The property set of the OmniProcessElement.",
-        "Field Name": "propertySetConfig",
-        "Field Type": "textarea"
-      },
-      {
-        "Description": "The horizontal level in which the OmniProcessElement occurs on the OmniScript.",
-        "Field Name": "sequenceNumber",
-        "Field Type": "double"
-      },
-      {
-        "Description": "The OmniProcessElement type. For example, Text and TextArea.",
-        "Field Name": "type",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The developer name of the assessment question in the OmniScript. This field is relevant only for Omniscripts with designerCustomizationType as discoveryframework.",
-        "Field Name": "uniqueIndex",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the OmniScript element associated with the OmniScript.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omniscript.htm"
-  },
-  "OmniSupervisorConfig": {
-    "fields": [
-      {
-        "Description": "Required. If set to true, hides the agent timeline from the supervisors assigned to this supervisor configuration. The default value is false.",
-        "Field Name": "isTimelineHidden",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. A unique label for the supervisor configuration. The name must begin with a letter and can contain alphanumeric characters and underscores. It can’t contain spaces, two consecutive underscores, or end with an underscore. The name appears as Omni Supervisor Configuration Name in the UI.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Represents AI agent bots that are visible to supervisors in this configuration. This field is available in API version 64.0 and later.",
-        "Field Name": "omniSpvsrConfigAIAgent",
-        "Field Type": "OmniSpvsrConfigAIAgent[]"
-      },
-      {
-        "Description": "Represents the actions available to the supervisors of this Omni-Channel supervisor configuration.",
-        "Field Name": "omniSupervisorConfigAction",
-        "Field Type": "OmniSupervisorConfigAction[]"
-      },
-      {
-        "Description": "Represents the group of agents who are visible to the supervisors of an Omni-Channel supervisor configuration. The group, if visible, appears in the Agents tab of Omni Supervisor.",
-        "Field Name": "omniSupervisorConfigGroup",
-        "Field Type": "OmniSupervisorConfigGroup[]"
-      },
-      {
-        "Description": "Represents the supervisor profiles to which an Omni-Channel supervisor configuration applies. User-level configurations override profile-level configurations.",
-        "Field Name": "omniSupervisorConfigProfile",
-        "Field Type": "OmniSupervisorConfigProfile[]"
-      },
-      {
-        "Description": "Represents the queues that are visible to the supervisors of an Omni-Channel supervisor configuration. The queue, if visible, appears in the Queues Backlog and Assigned Work tabs of Omni Supervisor.",
-        "Field Name": "omniSupervisorConfigQueue",
-        "Field Type": "OmniSupervisorConfigQueue[]"
-      },
-      {
-        "Description": "Represents the skills that are visible to the supervisors of an Omni-Channel supervisor configuration. These skills, if visible, appear in the Skills Backlog tab of Omni Supervisor.",
-        "Field Name": "omniSupervisorConfigSkill",
-        "Field Type": "OmniSupervisorConfigSkill[]"
-      },
-      {
-        "Description": "Represents the visible tabs specified in an Omni Supervisor configuration. This object is available in API version 60.0 and later.",
-        "Field Name": "omniSupervisorConfigTab",
-        "Field Type": "OmniSupervisorConfigTab[]"
-      },
-      {
-        "Description": "Represents the supervisor to which the Omni-Channel supervisor configuration applies. User-level configurations override profile-level configurations. This object is available in API version 64.0 and later.",
-        "Field Name": "omniSupervisorConfigUser",
-        "Field Type": "OmniSupervisorConfigUser[]"
-      },
-      {
-        "Description": "Determines which work items based on skills are visible to the supervisors assigned to this supervisor configuration. Values are: AllSkills AnySkill",
-        "Field Name": "skillVisibility",
-        "Field Type": "OmniSuperSkillVisibilityType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents the Omni-Channel supervisor configuration for an assigned group of supervisors.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSpvsrConfigAIAgent": {
-    "fields": [
-      {
-        "Description": "Required. The name of the bot definition that is visible to supervisors in this configuration.",
-        "Field Name": "botDefinition",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents AI agent bot definitions that are visible to supervisors in this configuration. This object is available in API version 64.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigAction": {
-    "fields": [
-      {
-        "Description": "Required. An action that a supervisor can perform. Values are: AWSDashboard AssignLearning ChangeGroups ChangeQueues ChangeSkills CustomAction ManageQueues",
-        "Field Name": "actionName",
-        "Field Type": "OmniSupervisorActionName (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The tab where the action appears. Values are: AgentDetails AllAgents AssignedWork AssignedWorkDetails QueueDetails QueuesBacklog SkillDetails SkillsBacklog",
-        "Field Name": "actionTab",
-        "Field Type": "OmniSupervisorActionTab (enumeration of type string)"
-      },
-      {
-        "Description": "A flow that performs a custom action.",
-        "Field Name": "customActionFlow",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The order in which the action is displayed.",
-        "Field Name": "displayOrder",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents an action and associated tab, custom flow, and display order for supervisor actions in this configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigGroup": {
-    "fields": [
-      {
-        "Description": "Required. The name of the group of agents.",
-        "Field Name": "group",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the group of agents for the supervisors in this configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigProfile": {
-    "fields": [
-      {
-        "Description": "Required. The profile name.",
-        "Field Name": "profile",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a profile for the supervisors in this configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigQueue": {
-    "fields": [
-      {
-        "Description": "Required. The queue name.",
-        "Field Name": "queue",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a queue that’s visible to the supervisors in this configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigSkill": {
-    "fields": [
-      {
-        "Description": "Required. The skill name.",
-        "Field Name": "skill",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a skill that’s visible to supervisors in this configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigTab": {
-    "fields": [
-      {
-        "Description": "The order in which tabs are displayed in Omni Supervisor.",
-        "Field Name": "displayOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The name of the FlexiPage added as a customized tab. Required when tabTypeis set to FlexipageType.",
-        "Field Name": "flexipage",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Tabs shown on the Omni Supervisor page. Possible values are: Agents — the Agents tab AssignedWork — the Assigned Work tab FlexipageType — A custom tab created using Lightning App Builder, with the omniSupervisorPageType value of the FlexiPage Type field QueuesBacklog — the Queues Backlog tab SkillsBacklog — the Skills Backlog tab Wallboard — the Wallboard tab",
-        "Field Name": "tabType",
-        "Field Type": "OmniSupervisorTabType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents the visible tabs specified in an Omni Supervisor configuration. This object is available in API version 60.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniSupervisorConfigUser": {
-    "fields": [
-      {
-        "Description": "Required. Represents the supervisor to which the Omni-Channel supervisor configuration applies.",
-        "Field Name": "user",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the supervisor to which the Omni-Channel supervisor configuration applies. User-level configurations override profile-level configurations. This object is available in API version 64.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnisupervisorconfig.htm"
-  },
-  "OmniTrackingGroup": {
-    "fields": [
-      {
-        "Description": "A description of the OmniTrackingGroup.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique name of the OmniTrackingGroup in the API. This name can contain only underscores and alphanumeric characters and must be unique in your organization. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. Limit: 80 characters.When creating large sets of data, always specify a unique DeveloperName for each record. If no DeveloperName is specified, performance may slow while Salesforce generates one for each record. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The date when the OmniTrackingGroup became inactive.",
-        "Field Name": "endDate",
-        "Field Type": "date"
-      },
-      {
-        "Description": "Required. Specifies whether this OmniTrackingGroup sends tracking data to a third-party Analytics system such as Google Analytics. Values are: External—A third-party Analytics system is used. Internal—No third-party Analytics system is used.",
-        "Field Name": "groupType",
-        "Field Type": "OmniTrackingGroupType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. Specifies whether the OmniTrackingGroup is active.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The unique master label of the OmniTrackingGroup. This internal label doesn’t get translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The maximum number of days the group and its analytics data is active beyond which the data is deleted.",
-        "Field Name": "maxAgeInDays",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The ID of the related OmniExtTrackingDef object. Required if GroupType is set to External.",
-        "Field Name": "omniExtTrackingDef",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The OmniTrackingComponentDef objects related to this OmniTrackingGroup.",
-        "Field Name": "omniTrackingComponentDefs",
-        "Field Type": "OmniTrackingComponentDef[]"
-      },
-      {
-        "Description": "A UUID generated internally by Salesforce to uniquely identify an OmniTrackingGroup record across all orgs.",
-        "Field Name": "omniTrackingGroupKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The date when the OmniTrackingGroup became active.",
-        "Field Name": "startDate",
-        "Field Type": "date"
-      }
-    ],
-    "short_description": "Represents a group of FlexCard and OmniScript components that have their user interactions tracked together in OmniAnalytics.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnitrackinggroup.htm"
-  },
-  "OmniTrackingComponentDef": {
-    "fields": [
-      {
-        "Description": "Required. The type of component for which user interactions are tracked. Values are: Flexcard Omniscript",
-        "Field Name": "componentType",
-        "Field Type": "OmniAnalyticsComponentType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The version of the FlexCard or OmniScript.",
-        "Field Name": "componentVersion",
-        "Field Type": "double"
-      },
-      {
-        "Description": "Required. The unique name of the OmniTrackingComponentDef in the API. This name can contain only underscores and alphanumeric characters and must be unique in your organization. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. Limit: 80 characters.When creating large sets of data, always specify a unique DeveloperName for each record. If no DeveloperName is specified, performance may slow while Salesforce generates one for each record. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique master label of the OmniTrackingComponentDef. This internal label doesn’t get translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A UUID generated internally by Salesforce to uniquely identify an OmniTrackingComponentDef record across all orgs.",
-        "Field Name": "omniTrackingComponentDefKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The ID of the related OmniTrackingGroup object.",
-        "Field Name": "omniTrackingGroup",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a FlexCard or OmniScript that is a member of an OmniTrackingGroup, which tracks user interactions in OmniAnalytics.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_omnitrackinggroup.htm"
-  },
   "OutboundNetworkConnection": {
     "fields": [
       {
@@ -29685,7 +29026,7 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Required. Specifies how many minutes of inactivity elapse before a user’s authenticated session times out. At the end of the session, the user must log in again. This session timeout value applies to users of the profile and overrides the org-wide timeout value. Changes to the org-wide timeout value don’t apply to users of this profile. Valid values: 15, 30, 60, 120, 240, 480, 720, 1440.",
+        "Description": "Required. Specifies how many minutes of inactivity elapse before a user’s authenticated session times out. At the end of the session, the user must log in again. This session timeout value applies to users of the profile and overrides the org-wide timeout value. Changes to the org-wide timeout value don’t apply to users of this profile. Valid values: 15 30 60 90 120 240 480 720 1440",
         "Field Name": "sessionTimeout",
         "Field Type": "int"
       }
@@ -30550,7 +29891,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to answer questions and provide links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data Cloud identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalConnector—Executes a process or method exposed via a connector to an external system. This value is available in API version 63.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. goToCadenceStep—Jumps to the specified step in the Sales cadence. This value is available in API version 57.0 and later. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 49.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Data Cloud. If no version is specified, the value is available in API version 64.0 and later. dataKitGetComponentAction Gets the deployment status of data kit deployment jobs. dataKitDeployComponentAction Deploys data kit components in a target org. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. For values used in Financial Services Cloud, see Flow for Financial Services Cloud. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data Cloud market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. Available in API version 52.0 and later. addWorkSteps—Creates work step objects from the work plan library. available in API version 52.0 and later. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. Available in API version 52.0 and later. generateWorkPlans—Generates work plans based off rules defined in the work plan library. Available in API version 52.0 and later. assignApptForServiceResourceForFieldService—Assigns the service appointment selected by the dispatcher to a service resource, in the gap identified in the service resource’s schedule on a specific date. Available in API version 63.0 and later. assignApptForServiceResourceForFieldService—Assigns the service appointment selected by the dispatcher to a service resource, in the gap identified in the service resource’s schedule on a specific date. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getContentNote— Gets the content note data for a specified record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
+        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to answer questions and provide links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data Cloud identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalConnector—Executes a process or method exposed via a connector to an external system. This value is available in API version 63.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. goToCadenceStep—Jumps to the specified step in the Sales cadence. This value is available in API version 57.0 and later. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 49.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Data Cloud. If no version is specified, the value is available in API version 64.0 and later. dataKitGetComponentAction Gets the deployment status of data kit deployment jobs. dataKitDeployComponentAction Deploys data kit components in a target org. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. For values used in Financial Services Cloud, see Flow for Financial Services Cloud. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. For values used in Automotive Cloud, see Flow for Automotive Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data Cloud market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. Available in API version 52.0 and later. addWorkSteps—Creates work step objects from the work plan library. available in API version 52.0 and later. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. Available in API version 52.0 and later. generateWorkPlans—Generates work plans based off rules defined in the work plan library. Available in API version 52.0 and later. assignApptForServiceResourceForFieldService—Assigns the service appointment selected by the dispatcher to a service resource, in the gap identified in the service resource’s schedule on a specific date. Available in API version 63.0 and later. assignApptForServiceResourceForFieldService—Assigns the service appointment selected by the dispatcher to a service resource, in the gap identified in the service resource’s schedule on a specific date. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getContentNote— Gets the content note data for a specified record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. This value is available in API version 64.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sale during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
         "Field Name": "type",
         "Field Type": "InvocableActionType (enumeration of type string)"
       }
@@ -30646,7 +29987,7 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data Cloud identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data Cloud market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
+        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data Cloud identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data Cloud market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sales record during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
         "Field Name": "type",
         "Field Type": "InvocableActionType (enumeration of type string)"
       }
@@ -40093,6 +39434,11 @@
         "Field Type": "boolean"
       },
       {
+        "Description": "Indicates whether the out-of-the-box (OOTB) flow templates for Einstein Conversation Insights are enabled (true) or not (false). The default value is false. Available in API version 65.0 and later. These flow templates provide examples of how to use ECI-generated transcripts and insights for common actions, such as drafting follow-up emails or creating next steps.",
+        "Field Name": "enableECIOOTBFlows",
+        "Field Type": "boolean"
+      },
+      {
         "Description": "Indicates whether Generative Conversation Insights is enabled (true) or not (false). The default value is false. Available in API version 61.0 and later.",
         "Field Name": "enableGenerativeConvInsights",
         "Field Type": "boolean"
@@ -40179,7 +39525,7 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Reserved for future use.",
+        "Description": "Indicates whether the partner supports progress indicators for AI agents (true) or whether the partner doesn’t support them and the functionality is hidden from the Salesforce admin in the Messaging settings (false). The default value is false. This field is available in API version 65.0 and later.",
         "Field Name": "isProgressIndicatorOptExposed",
         "Field Type": "boolean"
       },
@@ -46468,7 +45814,12 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Indicates whether an area displays on a tab home page ( corresponds to the Show Quick Create setting), allowing users to create a record quickly with minimal information (true) or not (false). The Quick Create area displays by default on the tab home pages for leads, accounts, contacts, and opportunities. You can control whether the Quick Create area is displayed on all relevant tab home pages.",
+        "Description": "Indicates whether individual users can enable dark mode (true) or not (false) for the Salesforce Cosmos theme. The default value is false. Available only in Salesforce Starter Suite orgs. Available in API version 65.0 and later.Dark mode is a pilot or beta service that is subject to the Beta Services Terms at Agreements - Salesforce.com or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the Product Terms Directory. Use of this pilot or beta service is at the Customer's sole discretion.",
+        "Field Name": "enableSldsV2DarkModeInCosmos (beta)",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Indicates whether an area displays on a tab home page (corresponds to the Show Quick Create setting), allowing users to create a record quickly with minimal information (true) or not (false). The Quick Create area displays by default on the tab home pages for leads, accounts, contacts, and opportunities. You can control whether the Quick Create area is displayed on all relevant tab home pages.",
         "Field Name": "enableQuickCreate",
         "Field Type": "boolean"
       }
@@ -46809,7 +46160,7 @@
         "Field Type": "ActivationPlatformFileOutputGrouping (enumeration of type string)"
       },
       {
-        "Description": "Reserved for internal use.",
+        "Description": "The frequency (in days) for periodic full refreshes when using incremental refresh mode.Valid values are: REFRESH_30 REFRESH_60",
         "Field Name": "periodicRefreshFrequecy",
         "Field Type": "ActivationPlatformPeriodicFullRefresh (enumeration of type string)"
       },
