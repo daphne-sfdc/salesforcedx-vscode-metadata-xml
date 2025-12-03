@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-02T15:31:59.424Z
-Total metadata types: 1405
+Generated on: 2025-12-03T16:37:47.349Z
+Total metadata types: 1402
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -2088,38 +2088,6 @@ Total metadata types: 1405
       <xsd:annotation>
        <xsd:documentation>In the My Tasks section of the Home tab and on the calendar day view: When a user hovers over the subject of a task, a hover link displays an overlay with selected task details. When a user clicks the subject of a task, displays the task detail page. Admins use a mini page layout to configure the fields shown in the overlay. Admins control this field on the User Interface settings page.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActvPfrmDataConnectorS3">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Amazon S3 bucket name and export directory.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actvpfrmdataconnectors3.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="bucketName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The Amazon S3 bucket name.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="exportDirectory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>This is an optional field that is reserved for internal use.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The display name of ActvPfrmDataConnectorS3.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -40847,52 +40815,6 @@ Total metadata types: 1405
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="Index">
-  <xsd:annotation>
-   <xsd:documentation>Represents an index defined within a custom big object. Use this metadata type to define the composite primary key (index) for a custom big object.This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. This name is used to refer to the big object in the user interface. Available in API version 41.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="IndexField">
-  <xsd:annotation>
-   <xsd:documentation>Defines which fields make up the index, their order, and sort direction. The order in which the fields are defined determines the order fields are listed in the index.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name for the field that’s part of the index. This value must match the fullName value for the corresponding field in the fields section and be marked as required. When querying a big object record via SOQL and passing the results as arguments to the delete API, if any index field name has a leading or trailing white space, you can&apos;t delete the big object record.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sortDirection" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The sort direction of the field in the index. Valid values are ASC for ascending order and DESC for descending order.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="IndustriesEinsteinFeatureSettings">
   <xsd:annotation>
    <xsd:documentation>Represents the settings for enabling the Industries Einstein feature.</xsd:documentation>
@@ -46724,7 +46646,7 @@ Total metadata types: 1405
  </xsd:complexType>
  <xsd:complexType name="MktDataModelAttributes">
   <xsd:annotation>
-   <xsd:documentation>This type is a Data Cloud subtype of CustomObject.</xsd:documentation>
+   <xsd:documentation>This type is a Data 360 subtype of CustomObject.</xsd:documentation>
    <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customobject.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
@@ -46738,7 +46660,7 @@ Total metadata types: 1405
      </xsd:element>
      <xsd:element name="dataModelTaxonomy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>When the model is a Standard Data Cloud model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
+       <xsd:documentation>When the model is a Standard Data 360 model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -69133,7 +69055,6 @@ Total metadata types: 1405
  <xsd:element name="ActivationPlatform" type="ActivationPlatform"/>
  <xsd:element name="ActivationPlatformField" type="ActivationPlatformField"/>
  <xsd:element name="ActivitiesSettings" type="ActivitiesSettings"/>
- <xsd:element name="ActvPfrmDataConnectorS3" type="ActvPfrmDataConnectorS3"/>
  <xsd:element name="ActvPlatformAdncIdentifier" type="ActvPlatformAdncIdentifier"/>
  <xsd:element name="ActvPlatformFieldValue" type="ActvPlatformFieldValue"/>
  <xsd:element name="AdjustmentsSettings" type="AdjustmentsSettings"/>
@@ -69893,8 +69814,6 @@ Total metadata types: 1405
  <xsd:element name="InboundNetworkConnProperty" type="InboundNetworkConnProperty"/>
  <xsd:element name="InboundNetworkConnection" type="InboundNetworkConnection"/>
  <xsd:element name="IncidentMgmtSettings" type="IncidentMgmtSettings"/>
- <xsd:element name="Index" type="Index"/>
- <xsd:element name="IndexField" type="IndexField"/>
  <xsd:element name="IndustriesEinsteinFeatureSettings" type="IndustriesEinsteinFeatureSettings"/>
  <xsd:element name="IndustriesLoyaltySettings" type="IndustriesLoyaltySettings"/>
  <xsd:element name="IndustriesPricingSettings" type="IndustriesPricingSettings"/>

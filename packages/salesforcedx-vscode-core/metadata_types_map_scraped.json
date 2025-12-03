@@ -116,27 +116,6 @@
     "short_description": "Represents the information about the fields used in ActivationPlatform.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_activationplatformfield.htm"
   },
-  "ActvPfrmDataConnectorS3": {
-    "fields": [
-      {
-        "Description": "Required. The Amazon S3 bucket name.",
-        "Field Name": "bucketName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "This is an optional field that is reserved for internal use.",
-        "Field Name": "exportDirectory",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The display name of ActvPfrmDataConnectorS3.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Amazon S3 bucket name and export directory.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actvpfrmdataconnectors3.htm"
-  },
   "ActvPlatformAdncIdentifier": {
     "fields": [
       {
@@ -11224,7 +11203,7 @@
         "Field Type": "DefinitionCreationType enumeration"
       },
       {
-        "Description": "When the model is a Standard Data Cloud model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.",
+        "Description": "When the model is a Standard Data 360 model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.",
         "Field Name": "dataModelTaxonomy",
         "Field Type": "string"
       },
@@ -11269,7 +11248,7 @@
         "Field Type": "string"
       }
     ],
-    "short_description": "This type is a Data Cloud subtype of CustomObject.",
+    "short_description": "This type is a Data 360 subtype of CustomObject.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customobject.htm"
   },
   "ActionOverride": {
@@ -11827,33 +11806,6 @@
     ],
     "short_description": "Represents the policy for archiving field history data. When you set a policy, you specify the number of months that you want to keep field history in Salesforce before archiving it. By default, when Field Audit Trail is enabled, all field history is retained.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_historyretentionpolicy.htm"
-  },
-  "Index": {
-    "fields": [
-      {
-        "Description": "Required. This name is used to refer to the big object in the user interface. Available in API version 41.0 and later.",
-        "Field Name": "label",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents an index defined within a custom big object. Use this metadata type to define the composite primary key (index) for a custom big object.This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm"
-  },
-  "IndexField": {
-    "fields": [
-      {
-        "Description": "Required. The API name for the field that’s part of the index. This value must match the fullName value for the corresponding field in the fields section and be marked as required. When querying a big object record via SOQL and passing the results as arguments to the delete API, if any index field name has a leading or trailing white space, you can't delete the big object record.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The sort direction of the field in the index. Valid values are ASC for ascending order and DESC for descending order.",
-        "Field Name": "sortDirection",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Defines which fields make up the index, their order, and sort direction. The order in which the fields are defined determines the order fields are listed in the index.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm"
   },
   "ListView": {
     "fields": [
