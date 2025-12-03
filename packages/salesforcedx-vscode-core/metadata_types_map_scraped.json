@@ -11224,7 +11224,7 @@
         "Field Type": "DefinitionCreationType enumeration"
       },
       {
-        "Description": "When the model is a Standard Data Cloud model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.",
+        "Description": "When the model is a Standard Data 360 model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.",
         "Field Name": "dataModelTaxonomy",
         "Field Type": "string"
       },
@@ -11269,7 +11269,7 @@
         "Field Type": "string"
       }
     ],
-    "short_description": "This type is a Data Cloud subtype of CustomObject.",
+    "short_description": "This type is a Data 360 subtype of CustomObject.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customobject.htm"
   },
   "ActionOverride": {
@@ -11774,86 +11774,6 @@
     ],
     "short_description": "Represents one entry in a set of filter criteria.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customfield.htm"
-  },
-  "FieldSet": {
-    "fields": [
-      {
-        "Description": "Required. A description provided by the developer that describes the field set. This is required.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label used to reference the field set.",
-        "Field Name": "label",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a field set. A field set is a grouping of fields. For example, you could have a field set that contains fields describing a user's first name, middle name, last name, and business title.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldset.htm"
-  },
-  "FieldSetItem": {
-    "fields": [
-      {
-        "Description": "Read-only. Indicates whether the field is universally required (true) or not (false).",
-        "Field Name": "isRequired",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "FieldSetItem represents an individual field in a field set.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldset.htm"
-  },
-  "HistoryRetentionPolicy": {
-    "fields": [
-      {
-        "Description": "Required. The number of months that you want to keep field history data in Salesforce before archiving. You can set a minimum of 1 month and a maximum of 18 months. If you don't set a number, the default is 18 months. (That is, Salesforce maintains data for 18 months before archiving.)",
-        "Field Name": "archiveAfterMonths",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The number of years until you manually delete data from the archive. Use this field as a reminder for manually deleting data. By default, field history data isn’t automatically deleted when Field Audit Trail is enabled.",
-        "Field Name": "archiveRetentionYears",
-        "Field Type": "int"
-      },
-      {
-        "Description": "A text description for the history retention.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The number of days of extra time after the archiveAfterMonths period before the data is archived. The gracePeriodDays interval applies only to the first time that the data is archived; because all the data is copied the first time, the operation can take longer than subsequent times when only the data that changed since the last archival operation is copied. The gracePeriodDays provides extra time for the administrator to prepare the organization before the initial archive operation. You can set a minimum of zero days and a maximum of 10 days. If no number is set, the default is 1 day.",
-        "Field Name": "gracePeriodDays",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents the policy for archiving field history data. When you set a policy, you specify the number of months that you want to keep field history in Salesforce before archiving it. By default, when Field Audit Trail is enabled, all field history is retained.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_historyretentionpolicy.htm"
-  },
-  "Index": {
-    "fields": [
-      {
-        "Description": "Required. This name is used to refer to the big object in the user interface. Available in API version 41.0 and later.",
-        "Field Name": "label",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents an index defined within a custom big object. Use this metadata type to define the composite primary key (index) for a custom big object.This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm"
-  },
-  "IndexField": {
-    "fields": [
-      {
-        "Description": "Required. The API name for the field that’s part of the index. This value must match the fullName value for the corresponding field in the fields section and be marked as required. When querying a big object record via SOQL and passing the results as arguments to the delete API, if any index field name has a leading or trailing white space, you can't delete the big object record.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The sort direction of the field in the index. Valid values are ASC for ascending order and DESC for descending order.",
-        "Field Name": "sortDirection",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Defines which fields make up the index, their order, and sort direction. The order in which the fields are defined determines the order fields are listed in the index.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm"
   },
   "ListView": {
     "fields": [
@@ -23663,7 +23583,7 @@
       }
     ],
     "short_description": "Represents an attribute mapping, which enables you to map the output of one action attribute to the input of another attribute. This mapping enables you to propagate sensitive data safely without relying on untrusted user input.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiPlannerFunctionDef": {
     "fields": [
@@ -23684,7 +23604,7 @@
       }
     ],
     "short_description": "Represents an agent topic or action definition.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiLocalPlugin": {
     "fields": [
@@ -23694,12 +23614,7 @@
         "Field Type": "AiPluginUtteranceDef[]"
       },
       {
-        "Description": "Determines whether this topic is applicable for escalation to a rep.",
-        "Field Name": "canEscalate",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The description of the topic.",
+        "Description": "The description of the topic.",
         "Field Name": "description",
         "Field Type": "string"
       },
@@ -23729,7 +23644,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Required. Values are: Topic APICustomTopic",
+        "Description": "Required. Values are: Topic",
         "Field Name": "pluginType",
         "Field Type": "PluginType (enumeration of type string)"
       },
@@ -23740,7 +23655,7 @@
       }
     ],
     "short_description": "Represents a custom agent topic.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiPlannerRuleExprAsgn": {
     "fields": [
@@ -23761,7 +23676,7 @@
       }
     ],
     "short_description": "Represents a rule-expression assignment to either a topic or an action.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiPlannerRuleExprDef": {
     "fields": [
@@ -23792,7 +23707,7 @@
       }
     ],
     "short_description": "Represents a rule expression, which conditionally locks or unlocks topics and actions based on defined security criteria.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiPlannerRuleExprCondition": {
     "fields": [
@@ -23818,63 +23733,7 @@
       }
     ],
     "short_description": "Represents a condition for a rule expression.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
-  },
-  "GenAiPlannerBundle": {
-    "fields": [
-      {
-        "Description": "A list of action attribute mappings.",
-        "Field Name": "attributeMappings",
-        "Field Type": "GenAiPlannerAttrMapping[]"
-      },
-      {
-        "Description": "If this planner is used by an agent template instead of an agent, this field is the template associated with the planner.",
-        "Field Name": "botTemplate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A set of tags associated with the agent.",
-        "Field Name": "capabilities",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A description explaining the general purpose and domain of the agent.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A list of agent action definitions, such as a knowledge action, that are not contained in a topic.",
-        "Field Name": "genAiFunctions",
-        "Field Type": "GenAiPlannerFunctionDef[]"
-      },
-      {
-        "Description": "A list of agent topic definitions.",
-        "Field Name": "genAiPlugins",
-        "Field Type": "GenAiPlannerFunctionDef[]"
-      },
-      {
-        "Description": "Required. The master label for the planner.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A particular approach to problem solving that is given as prompt instructions to a large language model (LLM). The supported values are: AiCopilot__AgileAppDev—Uses an iterative development strategy to assist with building applications using the LLM. This strategy prompts the LLM to generate modular, testable components based on evolving user input and context. Unlike linear workflows, it supports continuous refinement and feedback loops throughout the development process. AiCopilot__ReAct—Uses a reactive reasoning strategy to solve problems with the LLM. This strategy consists of prompting the LLM to generate the next step in response to an event and the current context. It differs from a sequential reasoning engine in that it doesn’t plan more than one step ahead of time.",
-        "Field Name": "plannerType",
-        "Field Type": "PlannerType (enumeration of type string)"
-      },
-      {
-        "Description": "A list of rule expression assignments.",
-        "Field Name": "ruleExpressionAssignments",
-        "Field Type": "GenAiPlannerRuleExprAsgn[]"
-      },
-      {
-        "Description": "A list of rule expressions.",
-        "Field Name": "ruleExpressions",
-        "Field Type": "GenAiPlannerRuleExprDef[]"
-      }
-    ],
-    "short_description": "Represents a planner for an agent or agent template. It’s a container for all the topics and actions used to interact with a large language model (LLM).",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm"
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm"
   },
   "GenAiPlugin": {
     "fields": [
@@ -24190,140 +24049,6 @@
     ],
     "short_description": "Represents the activation status of a Salesforce-provided prompt template.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiprompttemplateactv.htm"
-  },
-  "GlobalPicklist": {
-    "fields": [
-      {
-        "Description": "It’s useful to state the global picklist’s purpose, and which objects it’s intended for. Limit: 255 characters.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Requires at least one value. The list of values, or “picklist value set,” that’s defined for a global picklist. The picklist value set is inherited by any custom picklist field that’s based on that global picklist. Each value is of type GlobalPicklistValue. A global picklist can have up to 1,000 total values, including inactive values.",
-        "Field Name": "globalPicklistValues",
-        "Field Type": "GlobalPicklistValue[]"
-      },
-      {
-        "Description": "Required. A global picklist’s name, which is defined when the global picklist is created. Appears as Label in the user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether a global picklist’s value set is sorted in alphabetical order. By default this value is false.",
-        "Field Name": "sorted",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a global picklist, or the set of shared picklist values that custom picklist fields can use. In contrast, the custom picklist fields that are based on a global picklist are of type CustomValue. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklist.htm"
-  },
-  "GlobalPicklistValue": {
-    "fields": [
-      {
-        "Description": "The color assigned to the picklist value when it’s used in charts on reports and dashboards. The color is in hexadecimal format; for example, #FF6600. If a color is not specified, it’s assigned dynamically upon chart generation.",
-        "Field Name": "color",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates whether this value is the default selection for the global picklist and the custom picklists that share its picklist value set. This field is set to true by default.",
-        "Field Name": "default",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The global picklist value’s description. It’s useful to include a description for a global picklist value so the reason for creating it can be tracked. Limit: 255 characters.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether this value is currently active or inactive. The default value is true. Users can select only active values from a picklist. An API retrieve operation for global picklist values returns all active and inactive values in the picklist. (Meanwhile, retrieving the values of a non-global, unrestricted picklist returns only the active values.)",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents the definition of a value used in a global picklist. Custom picklist fields can inherit the picklist value set from a global picklist.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklistvalue.htm"
-  },
-  "PicklistValue": {
-    "fields": [
-      {
-        "Description": "Indicates whether this value lets users email a quote PDF (true), or not (false). This field is only relevant for the Status field in quotes. This field is available in API version 18.0 and later.",
-        "Field Name": "allowEmail",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is associated with a closed status (true), or not (false). This field is only relevant for the standard Status field in cases and tasks. This field is available in API version 16.0 and up to version 36.0. In version 37.0, this field is in GlobalPicklistValue.",
-        "Field Name": "closed",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is associated with a converted status (true), or not (false). This field is relevant for only the standard Lead Status field in leads. Your organization can set its own guidelines for determining when a lead is qualified, but typically, you want to convert a lead as soon as it becomes a real opportunity that you want to forecast. For more information, see “Convert Qualified Leads” in the Salesforce online help. This field is available in API version 16.0 and later.",
-        "Field Name": "converted",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is available in your Self-Service Portal (true), or not (false). This field is only relevant for the standard Case Reason field in cases.Self-Service provides an online support channel for your customers - allowing them to resolve their inquiries without contacting a customer service representative. For more information about Self-Service, see “Setting Up Your Self-Service Portal” in the Salesforce online help. Starting with Spring ’12, the Self-Service portal isn’t available for new Salesforce orgs. Existing orgs continue to have access to the Self-Service portal. This field is available in API version 16.0 and later.",
-        "Field Name": "cssExposed",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is associated with a forecast category (true), or not (false). This field is only relevant for the standard Stage field in opportunities. Omitted Pipeline BestCase Forecast Closed This field is available in API version 16.0 and later.",
-        "Field Name": "forecastCategory",
-        "Field Type": "ForecastCategories (enumeration of type string)"
-      },
-      {
-        "Description": "Indicates whether this value is a high priority item (true), or not (false). This field is only relevant for the standard Priority field in tasks. For more information about tasks, see “Start Using Tasks” in the Salesforce online help. This field is available in API version 16.0 and later.",
-        "Field Name": "highPriority",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is a probability percentage (true), or not (false). This field is only relevant for the standard Stage field in opportunities. This field is available in API version 16.0 and later.",
-        "Field Name": "probability",
-        "Field Type": "int"
-      },
-      {
-        "Description": "A picklist value corresponding to a reverse role name for a partner. If the role is “subcontractor”, then the reverse role might be “general contractor”. Assigning a partner role to an account in Salesforce creates a reverse partner relationship so that both accounts list the other as a partner. This field is only relevant for partner roles.For more information, see “Partner Fields” in the Salesforce online help. This field is available in API version 18.0 and later.",
-        "Field Name": "reverseRole",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether this value is associated with a reviewed status (true), or not (false). This field is only relevant for the standard Status field in solutions. For more information about opportunities, see “Creating Solutions” in the Salesforce online help. This field is available in API version 16.0 and later.",
-        "Field Name": "reviewed",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether this value is associated with a closed or won status (true), or not (false). This field is only relevant for the standard Stage field in opportunities. This field is available in API version 16.0 and later.",
-        "Field Name": "won",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "This metadata type defines a value in the picklist and specifies whether this value is the default value. This type extends the GlobalPicklistValue metadata type and inherits all its fields. In API version 36.0 and earlier, PicklistValue extends the Metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklistvalue.htm"
-  },
-  "GlobalValueSet": {
-    "fields": [
-      {
-        "Description": "Requires at least one value. The list of values, or “global value set,” that’s defined for a global picklist. The global value set is inherited by any custom picklist field that uses that value set. Each value is of type customValue. A global value set can have up to 1,000 total values, including inactive values.",
-        "Field Name": "customValue",
-        "Field Type": "CustomValue[]"
-      },
-      {
-        "Description": "It’s useful to state the global value set’s purpose and which objects it’s intended for. Limit: 255 characters.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A global value set’s name, which is defined when the global value set is created. Appears as Label in the user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates whether a global value set is sorted in alphabetical order. By default this value is false.",
-        "Field Name": "sorted",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents the metadata for a global picklist value set, which is the set of shared values that custom picklist fields can use. A global value set isn’t a field itself. In contrast, the custom picklist fields that are based on a global picklist are of type ValueSet. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalvalueset.htm"
   },
   "GlobalValueSetTranslation": {
     "fields": [
@@ -35071,100 +34796,6 @@
     "short_description": "Represents a SAML Single Sign-On configuration. This type extends the Metadata metadata type and inherits its fullName field. Single sign-on (SSO) is an authentication method that enables users to access multiple applications with one login and one set of credentials. For example, after users log in to your org, they can automatically access all apps from the App Launcher. You can set up your Salesforce org to trust a third-party identity provider to authenticate users. Or you can configure a third-party app to rely on your org for authentication.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_samlssoconfig.htm"
   },
-  "SchedulingObjective": {
-    "fields": [
-      {
-        "Description": "Indicates whether the component is protected (true) or not (false). The default value is false.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The name of the objective.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. What the scheduling logic applies the objective to. The valid values are: A—Service Appointment B—Shift",
-        "Field Name": "schedulingCategory",
-        "Field Type": "SchedulingCategory (enumeration of type string)"
-      },
-      {
-        "Description": "Parameters associated with a scheduling objective, such as the number of days before and after a shift that the logic considers when balancing assignments.",
-        "Field Name": "schedulingObjectiveParameters",
-        "Field Type": "SchedulingObjectiveParameter[]"
-      },
-      {
-        "Description": "Required. Specifies the type of objective. Possible values are: AgentPreference—In the UI, this value appears as Maximized Preferences. BalanceNonStandardShifts BalanceShifts",
-        "Field Name": "schedulingObjectiveType",
-        "Field Type": "SchedulingObjectiveType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents a scheduling objective in Workforce Engagement. Scheduling objectives define business goals that the scheduling tools consider when identifying agents for shifts.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingobjective.htm"
-  },
-  "SchedulingObjectiveParameter": {
-    "fields": [
-      {
-        "Description": "Required. The scheduling objective parameter key. Possible values are: DaysAhead DaysBack",
-        "Field Name": "parameterKey",
-        "Field Type": "ObjectiveParameterKey (enumeration of type string)"
-      },
-      {
-        "Description": "The scheduling objective parameter value.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a parameter that’s associated with a scheduling objective.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingobjective.htm"
-  },
-  "SchedulingRule": {
-    "fields": [
-      {
-        "Description": "Indicates whether the component is protected (true) or not (false). The default value is false.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The name of the rule.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. What the scheduling logic applies the rule to. The valid values are: A—Service Appointment B—Shift",
-        "Field Name": "schedulingCategory",
-        "Field Type": "SchedulingCategory (enumeration of type string)"
-      },
-      {
-        "Description": "Parameters associated with a scheduling rule, such as work limits.",
-        "Field Name": "schedulingRuleParameters",
-        "Field Type": "SchedulingRuleParameter[]"
-      },
-      {
-        "Description": "Required. Specifies the type of rule. The valid values are: A—Active Resources B—Match Skills C—Availability M—Match Territory Q—Match Queue RestTimeMinutes—Rest Time in Minutes. Available in API version 56.0 and later. W—Work Limit LimitNonstandardShifts—Specifies a rule type that limits how many non-standard shifts can be assigned to each agent. Available in API version 54.0 and later.",
-        "Field Name": "schedulingRuleType",
-        "Field Type": "SchedulingRuleType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents a scheduling rule in Workforce Engagement Management. Scheduling rules determine when agents are assigned to shifts.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingrule.htm"
-  },
-  "SchedulingRuleParameter": {
-    "fields": [
-      {
-        "Description": "Required. The scheduling rule parameter key. C—Constraint Field Name L—Limit Type R—Resolution T—Time Resolution W—Work Unit ConsiderAbsence—Consider resource absences when evaluating availability. Available in API version 56.0 and later. ConsiderSTM—Consider service territory membership, which defines working hours, when evaluating availability. Available in API version 56.0 and later.",
-        "Field Name": "schedulingParameterKey",
-        "Field Type": "SchedulingParameterKey (enumeration of type string)"
-      },
-      {
-        "Description": "The scheduling rule parameter value.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a scheduling rule parameter, such as a work limit, that’s associated with a scheduling rule.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingrule.htm"
-  },
   "Scontrol": {
     "fields": [
       {
@@ -42477,78 +42108,6 @@
     ],
     "short_description": "Represents an organization’s party data model settings, including options around the Individual object and consent enablement. This type extends the Metadata metadata type and inherits its fullName field.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_partydatamodelsettings.htm"
-  },
-  "PardotSettings": {
-    "fields": [
-      {
-        "Description": "The status of the enablement in Data 360 for the account engagement business unit.",
-        "Field Name": "cdpEnablementStatus",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Enable the Account Engagement Data 360 Connector for creating Account Engagement Data Streams.",
-        "Field Name": "enableAeDataConnector",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Enable Einstein Send Time Optimization for sending Account Engagement emails.",
-        "Field Name": "enableAIOptimizedSendTime",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Deprecated.",
-        "Field Name": "enableB2bmaAppEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Enable the Engagement History Dashboard and allow related Account Engagement data to be shared to campaign records in Salesforce by setting this value to true. The default value is false. If enableEnagementHistoryDashboards is disabled after being enabled, the Engagement History Dashboard is removed, but engagement data continues to be retained and updated.",
-        "Field Name": "enableEngagementHistoryDashboards",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Enable the Account Engagement Lightning App by setting this property to true. The default value is false.",
-        "Field Name": "enablePardotAppV1Enabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Deprecated.",
-        "Field Name": "enablePardotEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Deprecated.",
-        "Field Name": "enablePardotObjectSync",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Enable the Prospect and Activity Dataset for B2B Marketing Automation apps by setting this property to true. When enableProspectActivityDataset is true, the datasets take some time to populate. Depending on how much data and the type of licenses you have, enabling this preference can impact the account’s row limit for Analytics.If enableProspectActivityDataset is disabled after being enabled: The data that makes up the datasets is deleted. The Prospect and Activity Dataset in existing B2B Marketing Automation apps stops getting updates. The dataset isn’t available to add to new apps. When apps are reconfigured, the dataset is deleted. Requires that enableEnagementHistoryDashboards is set to true.",
-        "Field Name": "enableProspectActivityDataset",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Enable Einstein Engagement Frequency for sending Account Engagement emails.",
-        "Field Name": "PardotEngageFreqSetting",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents Marketing Cloud Account Engagement settings in your Salesforce org. Account Engagement, formerly known as Pardot, is a B2B marketing automation solution that helps you create meaningful connections, generate more pipeline, and close more deals. Use these settings to configure how Account Engagement collects and displays data.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_pardotsettings.htm"
-  },
-  "PardotEinsteinSettings": {
-    "fields": [
-      {
-        "Description": "Indicates whether Einstein Campaign Insights is enabled (true) or not (false). Einstein Campaign Insights helps you understand what factors drive campaign performance.The default value is false.",
-        "Field Name": "enableCampaignInsight",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether Einstein Behavior Scoring is enabled (true) or not (false). Einstein Behavior Scoring identifies prospects whose behavior suggests that they are ready to buy, and scores them based on Einstein’s engagement model.The default value is false.",
-        "Field Name": "enableEngagementScore",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents PardotEinsteinSettings. Use these settings to learn what factors drive your campaign performance, and get the best possible engagement score for your prospects. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_pardoteinsteinsettings.htm"
   },
   "PathAssistantSettings": {
     "fields": [

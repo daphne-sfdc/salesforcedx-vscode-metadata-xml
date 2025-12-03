@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-02T15:31:59.424Z
-Total metadata types: 1405
+Generated on: 2025-12-03T16:50:58.440Z
+Total metadata types: 1389
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -30730,52 +30730,6 @@ Total metadata types: 1405
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="FieldSet">
-  <xsd:annotation>
-   <xsd:documentation>Represents a field set. A field set is a grouping of fields. For example, you could have a field set that contains fields describing a user&apos;s first name, middle name, last name, and business title.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldset.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. A description provided by the developer that describes the field set. This is required.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label used to reference the field set.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="FieldSetItem">
-  <xsd:annotation>
-   <xsd:documentation>FieldSetItem represents an individual field in a field set.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldset.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="isRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Read-only. Indicates whether the field is universally required (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="FieldSetTranslation">
   <xsd:annotation>
    <xsd:documentation>FieldSetTranslation contains details for a field set translation. For more details, see FieldSet. Available in API 41.0 and later.</xsd:documentation>
@@ -38641,7 +38595,7 @@ Total metadata types: 1405
  <xsd:complexType name="GenAiLocalPlugin">
   <xsd:annotation>
    <xsd:documentation>Represents a custom agent topic.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -38652,15 +38606,9 @@ Total metadata types: 1405
        <xsd:appinfo>Type: AiPluginUtteranceDef[]</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
-     <xsd:element name="canEscalate" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Determines whether this topic is applicable for escalation to a rep.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
      <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>Required. The description of the topic.</xsd:documentation>
+       <xsd:documentation>The description of the topic.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -38696,7 +38644,7 @@ Total metadata types: 1405
      </xsd:element>
      <xsd:element name="pluginType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>Required. Values are: Topic APICustomTopic</xsd:documentation>
+       <xsd:documentation>Required. Values are: Topic</xsd:documentation>
        <xsd:appinfo>Type: PluginType (enumeration of type string)</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -38832,7 +38780,7 @@ Total metadata types: 1405
  <xsd:complexType name="GenAiPlannerAttrMapping">
   <xsd:annotation>
    <xsd:documentation>Represents an attribute mapping, which enables you to map the output of one action attribute to the input of another attribute. This mapping enables you to propagate sensitive data safely without relying on untrusted user input.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -38873,84 +38821,10 @@ Total metadata types: 1405
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="GenAiPlannerBundle">
-  <xsd:annotation>
-   <xsd:documentation>Represents a planner for an agent or agent template. It’s a container for all the topics and actions used to interact with a large language model (LLM).</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="attributeMappings" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>A list of action attribute mappings.</xsd:documentation>
-       <xsd:appinfo>Type: GenAiPlannerAttrMapping[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="botTemplate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If this planner is used by an agent template instead of an agent, this field is the template associated with the planner.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="capabilities" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A set of tags associated with the agent.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description explaining the general purpose and domain of the agent.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="genAiFunctions" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>A list of agent action definitions, such as a knowledge action, that are not contained in a topic.</xsd:documentation>
-       <xsd:appinfo>Type: GenAiPlannerFunctionDef[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="genAiPlugins" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>A list of agent topic definitions.</xsd:documentation>
-       <xsd:appinfo>Type: GenAiPlannerFunctionDef[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The master label for the planner.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="plannerType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. A particular approach to problem solving that is given as prompt instructions to a large language model (LLM). The supported values are: AiCopilot__AgileAppDev—Uses an iterative development strategy to assist with building applications using the LLM. This strategy prompts the LLM to generate modular, testable components based on evolving user input and context. Unlike linear workflows, it supports continuous refinement and feedback loops throughout the development process. AiCopilot__ReAct—Uses a reactive reasoning strategy to solve problems with the LLM. This strategy consists of prompting the LLM to generate the next step in response to an event and the current context. It differs from a sequential reasoning engine in that it doesn’t plan more than one step ahead of time.</xsd:documentation>
-       <xsd:appinfo>Type: PlannerType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="ruleExpressionAssignments" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>A list of rule expression assignments.</xsd:documentation>
-       <xsd:appinfo>Type: GenAiPlannerRuleExprAsgn[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="ruleExpressions" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>A list of rule expressions.</xsd:documentation>
-       <xsd:appinfo>Type: GenAiPlannerRuleExprDef[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="GenAiPlannerFunctionDef">
   <xsd:annotation>
    <xsd:documentation>Represents an agent topic or action definition.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -38982,7 +38856,7 @@ Total metadata types: 1405
  <xsd:complexType name="GenAiPlannerRuleExprAsgn">
   <xsd:annotation>
    <xsd:documentation>Represents a rule-expression assignment to either a topic or an action.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -39014,7 +38888,7 @@ Total metadata types: 1405
  <xsd:complexType name="GenAiPlannerRuleExprCondition">
   <xsd:annotation>
    <xsd:documentation>Represents a condition for a rule expression.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -39052,7 +38926,7 @@ Total metadata types: 1405
  <xsd:complexType name="GenAiPlannerRuleExprDef">
   <xsd:annotation>
    <xsd:documentation>Represents a rule expression, which conditionally locks or unlocks topics and actions based on defined security criteria.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplannerbundle.htm</xsd:appinfo>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_genaiplanner.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
@@ -39539,44 +39413,6 @@ Total metadata types: 1405
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="GlobalPicklist">
-  <xsd:annotation>
-   <xsd:documentation>Represents a global picklist, or the set of shared picklist values that custom picklist fields can use. In contrast, the custom picklist fields that are based on a global picklist are of type CustomValue. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklist.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>It’s useful to state the global picklist’s purpose, and which objects it’s intended for. Limit: 255 characters.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="globalPicklistValues" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>Requires at least one value. The list of values, or “picklist value set,” that’s defined for a global picklist. The picklist value set is inherited by any custom picklist field that’s based on that global picklist. Each value is of type GlobalPicklistValue. A global picklist can have up to 1,000 total values, including inactive values.</xsd:documentation>
-       <xsd:appinfo>Type: GlobalPicklistValue[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. A global picklist’s name, which is defined when the global picklist is created. Appears as Label in the user interface.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sorted" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether a global picklist’s value set is sorted in alphabetical order. By default this value is false.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="GlobalPicklistTranslation">
   <xsd:annotation>
    <xsd:documentation>GlobalPicklistTranslation contains details for a global picklist translation.</xsd:documentation>
@@ -39595,44 +39431,6 @@ Total metadata types: 1405
       <xsd:annotation>
        <xsd:documentation>A list of picklist values from global picklists to be translated.</xsd:documentation>
        <xsd:appinfo>Type: PicklistValueTranslation[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="GlobalPicklistValue">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of a value used in a global picklist. Custom picklist fields can inherit the picklist value set from a global picklist.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklistvalue.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="color" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The color assigned to the picklist value when it’s used in charts on reports and dashboards. The color is in hexadecimal format; for example, #FF6600. If a color is not specified, it’s assigned dynamically upon chart generation.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="default" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this value is the default selection for the global picklist and the custom picklists that share its picklist value set. This field is set to true by default.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The global picklist value’s description. It’s useful to include a description for a global picklist value so the reason for creating it can be tracked. Limit: 255 characters.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isActive" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is currently active or inactive. The default value is true. Users can select only active values from a picklist. An API retrieve operation for global picklist values returns all active and inactive values in the picklist. (Meanwhile, retrieving the values of a non-global, unrestricted picklist returns only the active values.)</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -39665,44 +39463,6 @@ Total metadata types: 1405
       <xsd:annotation>
        <xsd:documentation>Required. The quick action name.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="GlobalValueSet">
-  <xsd:annotation>
-   <xsd:documentation>Represents the metadata for a global picklist value set, which is the set of shared values that custom picklist fields can use. A global value set isn’t a field itself. In contrast, the custom picklist fields that are based on a global picklist are of type ValueSet. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalvalueset.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="customValue" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>Requires at least one value. The list of values, or “global value set,” that’s defined for a global picklist. The global value set is inherited by any custom picklist field that uses that value set. Each value is of type customValue. A global value set can have up to 1,000 total values, including inactive values.</xsd:documentation>
-       <xsd:appinfo>Type: CustomValue[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>It’s useful to state the global value set’s purpose and which objects it’s intended for. Limit: 255 characters.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. A global value set’s name, which is defined when the global value set is created. Appears as Label in the user interface.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sorted" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether a global value set is sorted in alphabetical order. By default this value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -39877,44 +39637,6 @@ Total metadata types: 1405
       <xsd:annotation>
        <xsd:documentation>Indicates whether users can log tasks after manual completion of a cadence step (true) or not (false).Available in API version 56.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="HistoryRetentionPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents the policy for archiving field history data. When you set a policy, you specify the number of months that you want to keep field history in Salesforce before archiving it. By default, when Field Audit Trail is enabled, all field history is retained.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_historyretentionpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="archiveAfterMonths" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The number of months that you want to keep field history data in Salesforce before archiving. You can set a minimum of 1 month and a maximum of 18 months. If you don&apos;t set a number, the default is 18 months. (That is, Salesforce maintains data for 18 months before archiving.)</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="archiveRetentionYears" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The number of years until you manually delete data from the archive. Use this field as a reminder for manually deleting data. By default, field history data isn’t automatically deleted when Field Audit Trail is enabled.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A text description for the history retention.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="gracePeriodDays" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The number of days of extra time after the archiveAfterMonths period before the data is archived. The gracePeriodDays interval applies only to the first time that the data is archived; because all the data is copied the first time, the operation can take longer than subsequent times when only the data that changed since the last archival operation is copied. The gracePeriodDays provides extra time for the administrator to prepare the organization before the initial archive operation. You can set a minimum of zero days and a maximum of 10 days. If no number is set, the default is 1 day.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -40839,52 +40561,6 @@ Total metadata types: 1405
       <xsd:annotation>
        <xsd:documentation>Indicates whether broadcast communication Slack messages are enabled (true) or disabled (false) for your org. Lets incident managers send broadcasts to Slack when an incident occurs. The default value is false. Available in API version 57.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="Index">
-  <xsd:annotation>
-   <xsd:documentation>Represents an index defined within a custom big object. Use this metadata type to define the composite primary key (index) for a custom big object.This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. This name is used to refer to the big object in the user interface. Available in API version 41.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="IndexField">
-  <xsd:annotation>
-   <xsd:documentation>Defines which fields make up the index, their order, and sort direction. The order in which the fields are defined determines the order fields are listed in the index.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_index.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name for the field that’s part of the index. This value must match the fullName value for the corresponding field in the fields section and be marked as required. When querying a big object record via SOQL and passing the results as arguments to the delete API, if any index field name has a leading or trailing white space, you can&apos;t delete the big object record.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sortDirection" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The sort direction of the field in the index. Valid values are ASC for ascending order and DESC for descending order.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -46724,7 +46400,7 @@ Total metadata types: 1405
  </xsd:complexType>
  <xsd:complexType name="MktDataModelAttributes">
   <xsd:annotation>
-   <xsd:documentation>This type is a Data Cloud subtype of CustomObject.</xsd:documentation>
+   <xsd:documentation>This type is a Data 360 subtype of CustomObject.</xsd:documentation>
    <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customobject.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
@@ -46738,7 +46414,7 @@ Total metadata types: 1405
      </xsd:element>
      <xsd:element name="dataModelTaxonomy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>When the model is a Standard Data Cloud model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
+       <xsd:documentation>When the model is a Standard Data 360 model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -50853,106 +50529,6 @@ Total metadata types: 1405
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="PardotEinsteinSettings">
-  <xsd:annotation>
-   <xsd:documentation>Represents PardotEinsteinSettings. Use these settings to learn what factors drive your campaign performance, and get the best possible engagement score for your prospects. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_pardoteinsteinsettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="enableCampaignInsight" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Einstein Campaign Insights is enabled (true) or not (false). Einstein Campaign Insights helps you understand what factors drive campaign performance.The default value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableEngagementScore" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Einstein Behavior Scoring is enabled (true) or not (false). Einstein Behavior Scoring identifies prospects whose behavior suggests that they are ready to buy, and scores them based on Einstein’s engagement model.The default value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="PardotSettings">
-  <xsd:annotation>
-   <xsd:documentation>Represents Marketing Cloud Account Engagement settings in your Salesforce org. Account Engagement, formerly known as Pardot, is a B2B marketing automation solution that helps you create meaningful connections, generate more pipeline, and close more deals. Use these settings to configure how Account Engagement collects and displays data.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_pardotsettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="cdpEnablementStatus" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The status of the enablement in Data 360 for the account engagement business unit.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableAeDataConnector" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable the Account Engagement Data 360 Connector for creating Account Engagement Data Streams.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableAIOptimizedSendTime" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable Einstein Send Time Optimization for sending Account Engagement emails.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableB2bmaAppEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Deprecated.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableEngagementHistoryDashboards" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable the Engagement History Dashboard and allow related Account Engagement data to be shared to campaign records in Salesforce by setting this value to true. The default value is false. If enableEnagementHistoryDashboards is disabled after being enabled, the Engagement History Dashboard is removed, but engagement data continues to be retained and updated.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enablePardotAppV1Enabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable the Account Engagement Lightning App by setting this property to true. The default value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enablePardotEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Deprecated.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enablePardotObjectSync" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Deprecated.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableProspectActivityDataset" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable the Prospect and Activity Dataset for B2B Marketing Automation apps by setting this property to true. When enableProspectActivityDataset is true, the datasets take some time to populate. Depending on how much data and the type of licenses you have, enabling this preference can impact the account’s row limit for Analytics.If enableProspectActivityDataset is disabled after being enabled: The data that makes up the datasets is deleted. The Prospect and Activity Dataset in existing B2B Marketing Automation apps stops getting updates. The dataset isn’t available to add to new apps. When apps are reconfigured, the dataset is deleted. Requires that enableEnagementHistoryDashboards is set to true.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="PardotEngageFreqSetting" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enable Einstein Engagement Frequency for sending Account Engagement emails.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="ParticipantRole">
   <xsd:annotation>
    <xsd:documentation>Represents details, such as the name and associated default access level, for a role that a participant can have in the context of a parent record.</xsd:documentation>
@@ -52046,80 +51622,6 @@ Total metadata types: 1405
      <xsd:element name="isPicklistApiNameEditDisabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>While true, users, including admins with Customize Application permission, can’t change the API name of a picklist field. Formulas reference a picklist’s API name so that the formula continues to work even if the displayed name value changes. Prevent changes to the API name to protect the references to fields in formulas or during integrations, such as during a data import. The default is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="PicklistValue">
-  <xsd:annotation>
-   <xsd:documentation>This metadata type defines a value in the picklist and specifies whether this value is the default value. This type extends the GlobalPicklistValue metadata type and inherits all its fields. In API version 36.0 and earlier, PicklistValue extends the Metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_globalpicklistvalue.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="allowEmail" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value lets users email a quote PDF (true), or not (false). This field is only relevant for the Status field in quotes. This field is available in API version 18.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="closed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is associated with a closed status (true), or not (false). This field is only relevant for the standard Status field in cases and tasks. This field is available in API version 16.0 and up to version 36.0. In version 37.0, this field is in GlobalPicklistValue.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="converted" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is associated with a converted status (true), or not (false). This field is relevant for only the standard Lead Status field in leads. Your organization can set its own guidelines for determining when a lead is qualified, but typically, you want to convert a lead as soon as it becomes a real opportunity that you want to forecast. For more information, see “Convert Qualified Leads” in the Salesforce online help. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="cssExposed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is available in your Self-Service Portal (true), or not (false). This field is only relevant for the standard Case Reason field in cases.Self-Service provides an online support channel for your customers - allowing them to resolve their inquiries without contacting a customer service representative. For more information about Self-Service, see “Setting Up Your Self-Service Portal” in the Salesforce online help. Starting with Spring ’12, the Self-Service portal isn’t available for new Salesforce orgs. Existing orgs continue to have access to the Self-Service portal. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="forecastCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is associated with a forecast category (true), or not (false). This field is only relevant for the standard Stage field in opportunities. Omitted Pipeline BestCase Forecast Closed This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ForecastCategories (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="highPriority" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is a high priority item (true), or not (false). This field is only relevant for the standard Priority field in tasks. For more information about tasks, see “Start Using Tasks” in the Salesforce online help. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="probability" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is a probability percentage (true), or not (false). This field is only relevant for the standard Stage field in opportunities. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="reverseRole" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A picklist value corresponding to a reverse role name for a partner. If the role is “subcontractor”, then the reverse role might be “general contractor”. Assigning a partner role to an account in Salesforce creates a reverse partner relationship so that both accounts list the other as a partner. This field is only relevant for partner roles.For more information, see “Partner Fields” in the Salesforce online help. This field is available in API version 18.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="reviewed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is associated with a reviewed status (true), or not (false). This field is only relevant for the standard Status field in solutions. For more information about opportunities, see “Creating Solutions” in the Salesforce online help. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="won" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this value is associated with a closed or won status (true), or not (false). This field is only relevant for the standard Stage field in opportunities. This field is available in API version 16.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -59151,146 +58653,6 @@ Total metadata types: 1405
      <xsd:element name="recommendationAudience" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>The name of the audience for this scheduled recommendation.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="SchedulingObjective">
-  <xsd:annotation>
-   <xsd:documentation>Represents a scheduling objective in Workforce Engagement. Scheduling objectives define business goals that the scheduling tools consider when identifying agents for shifts.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingobjective.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the component is protected (true) or not (false). The default value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the objective.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. What the scheduling logic applies the objective to. The valid values are: A—Service Appointment B—Shift</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingCategory (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingObjectiveParameters" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>Parameters associated with a scheduling objective, such as the number of days before and after a shift that the logic considers when balancing assignments.</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingObjectiveParameter[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingObjectiveType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the type of objective. Possible values are: AgentPreference—In the UI, this value appears as Maximized Preferences. BalanceNonStandardShifts BalanceShifts</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingObjectiveType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="SchedulingObjectiveParameter">
-  <xsd:annotation>
-   <xsd:documentation>Represents a parameter that’s associated with a scheduling objective.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingobjective.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="parameterKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The scheduling objective parameter key. Possible values are: DaysAhead DaysBack</xsd:documentation>
-       <xsd:appinfo>Type: ObjectiveParameterKey (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="value" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The scheduling objective parameter value.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="SchedulingRule">
-  <xsd:annotation>
-   <xsd:documentation>Represents a scheduling rule in Workforce Engagement Management. Scheduling rules determine when agents are assigned to shifts.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingrule.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the component is protected (true) or not (false). The default value is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the rule.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. What the scheduling logic applies the rule to. The valid values are: A—Service Appointment B—Shift</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingCategory (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingRuleParameters" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>Parameters associated with a scheduling rule, such as work limits.</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingRuleParameter[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="schedulingRuleType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the type of rule. The valid values are: A—Active Resources B—Match Skills C—Availability M—Match Territory Q—Match Queue RestTimeMinutes—Rest Time in Minutes. Available in API version 56.0 and later. W—Work Limit LimitNonstandardShifts—Specifies a rule type that limits how many non-standard shifts can be assigned to each agent. Available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingRuleType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="SchedulingRuleParameter">
-  <xsd:annotation>
-   <xsd:documentation>Represents a scheduling rule parameter, such as a work limit, that’s associated with a scheduling rule.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_schedulingrule.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="schedulingParameterKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The scheduling rule parameter key. C—Constraint Field Name L—Limit Type R—Resolution T—Time Resolution W—Work Unit ConsiderAbsence—Consider resource absences when evaluating availability. Available in API version 56.0 and later. ConsiderSTM—Consider service territory membership, which defines working hours, when evaluating availability. Available in API version 56.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: SchedulingParameterKey (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="value" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The scheduling rule parameter value.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -69681,8 +69043,6 @@ Total metadata types: 1405
  <xsd:element name="FieldOverride" type="FieldOverride"/>
  <xsd:element name="FieldRestrictionRule" type="FieldRestrictionRule"/>
  <xsd:element name="FieldServiceSettings" type="FieldServiceSettings"/>
- <xsd:element name="FieldSet" type="FieldSet"/>
- <xsd:element name="FieldSetItem" type="FieldSetItem"/>
  <xsd:element name="FieldSetTranslation" type="FieldSetTranslation"/>
  <xsd:element name="FieldSourceTargetMap" type="FieldSourceTargetMap"/>
  <xsd:element name="FieldSrcTrgtRelationship" type="FieldSrcTrgtRelationship"/>
@@ -69851,7 +69211,6 @@ Total metadata types: 1405
  <xsd:element name="GenAiPlanner" type="GenAiPlanner"/>
  <xsd:element name="GenAiPlannerAttr" type="GenAiPlannerAttr"/>
  <xsd:element name="GenAiPlannerAttrMapping" type="GenAiPlannerAttrMapping"/>
- <xsd:element name="GenAiPlannerBundle" type="GenAiPlannerBundle"/>
  <xsd:element name="GenAiPlannerFunctionDef" type="GenAiPlannerFunctionDef"/>
  <xsd:element name="GenAiPlannerRuleExprAsgn" type="GenAiPlannerRuleExprAsgn"/>
  <xsd:element name="GenAiPlannerRuleExprCondition" type="GenAiPlannerRuleExprCondition"/>
@@ -69866,15 +69225,11 @@ Total metadata types: 1405
  <xsd:element name="GenAiPromptTemplateGenerationConfig" type="GenAiPromptTemplateGenerationConfig"/>
  <xsd:element name="GenAiPromptTemplateInput" type="GenAiPromptTemplateInput"/>
  <xsd:element name="GenAiPromptTemplateVersion" type="GenAiPromptTemplateVersion"/>
- <xsd:element name="GlobalPicklist" type="GlobalPicklist"/>
  <xsd:element name="GlobalPicklistTranslation" type="GlobalPicklistTranslation"/>
- <xsd:element name="GlobalPicklistValue" type="GlobalPicklistValue"/>
  <xsd:element name="GlobalQuickActionTranslation" type="GlobalQuickActionTranslation"/>
- <xsd:element name="GlobalValueSet" type="GlobalValueSet"/>
  <xsd:element name="GlobalValueSetTranslation" type="GlobalValueSetTranslation"/>
  <xsd:element name="Group" type="Group"/>
  <xsd:element name="HighVelocitySalesSettings" type="HighVelocitySalesSettings"/>
- <xsd:element name="HistoryRetentionPolicy" type="HistoryRetentionPolicy"/>
  <xsd:element name="Holidays" type="Holidays"/>
  <xsd:element name="HomePageComponent" type="HomePageComponent"/>
  <xsd:element name="HomePageLayout" type="HomePageLayout"/>
@@ -69893,8 +69248,6 @@ Total metadata types: 1405
  <xsd:element name="InboundNetworkConnProperty" type="InboundNetworkConnProperty"/>
  <xsd:element name="InboundNetworkConnection" type="InboundNetworkConnection"/>
  <xsd:element name="IncidentMgmtSettings" type="IncidentMgmtSettings"/>
- <xsd:element name="Index" type="Index"/>
- <xsd:element name="IndexField" type="IndexField"/>
  <xsd:element name="IndustriesEinsteinFeatureSettings" type="IndustriesEinsteinFeatureSettings"/>
  <xsd:element name="IndustriesLoyaltySettings" type="IndustriesLoyaltySettings"/>
  <xsd:element name="IndustriesPricingSettings" type="IndustriesPricingSettings"/>
@@ -70093,8 +69446,6 @@ Total metadata types: 1405
  <xsd:element name="Package" type="Package"/>
  <xsd:element name="PackageTypeMembers" type="PackageTypeMembers"/>
  <xsd:element name="PackageVersion" type="PackageVersion"/>
- <xsd:element name="PardotEinsteinSettings" type="PardotEinsteinSettings"/>
- <xsd:element name="PardotSettings" type="PardotSettings"/>
  <xsd:element name="ParticipantRole" type="ParticipantRole"/>
  <xsd:element name="PartyDataModelSettings" type="PartyDataModelSettings"/>
  <xsd:element name="PathAssistant" type="PathAssistant"/>
@@ -70128,7 +69479,6 @@ Total metadata types: 1405
  <xsd:element name="PersonalizationTargetInfos" type="PersonalizationTargetInfos"/>
  <xsd:element name="Picklist_Including_Dependent_Picklist" type="Picklist_Including_Dependent_Picklist"/>
  <xsd:element name="PicklistSettings" type="PicklistSettings"/>
- <xsd:element name="PicklistValue" type="PicklistValue"/>
  <xsd:element name="PicklistValueTranslation" type="PicklistValueTranslation"/>
  <xsd:element name="PipelineInspMetricConfig" type="PipelineInspMetricConfig"/>
  <xsd:element name="PlatformActionList" type="PlatformActionList"/>
@@ -70292,10 +69642,6 @@ Total metadata types: 1405
  <xsd:element name="SandboxSettings" type="SandboxSettings"/>
  <xsd:element name="ScheduledRecommendation" type="ScheduledRecommendation"/>
  <xsd:element name="ScheduledRecommendationDetail" type="ScheduledRecommendationDetail"/>
- <xsd:element name="SchedulingObjective" type="SchedulingObjective"/>
- <xsd:element name="SchedulingObjectiveParameter" type="SchedulingObjectiveParameter"/>
- <xsd:element name="SchedulingRule" type="SchedulingRule"/>
- <xsd:element name="SchedulingRuleParameter" type="SchedulingRuleParameter"/>
  <xsd:element name="SchemaSettings" type="SchemaSettings"/>
  <xsd:element name="Scontrol" type="Scontrol"/>
  <xsd:element name="ScontrolTranslation" type="ScontrolTranslation"/>
