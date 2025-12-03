@@ -3,7 +3,7 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-02T15:31:59.424Z
+Generated on: 2025-12-03T17:45:56.788Z
 Total metadata types: 1405
 -->
 <xsd:schema
@@ -46724,7 +46724,7 @@ Total metadata types: 1405
  </xsd:complexType>
  <xsd:complexType name="MktDataModelAttributes">
   <xsd:annotation>
-   <xsd:documentation>This type is a Data Cloud subtype of CustomObject.</xsd:documentation>
+   <xsd:documentation>This type is a Data 360 subtype of CustomObject.</xsd:documentation>
    <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/customobject.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
@@ -46738,7 +46738,7 @@ Total metadata types: 1405
      </xsd:element>
      <xsd:element name="dataModelTaxonomy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>When the model is a Standard Data Cloud model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
+       <xsd:documentation>When the model is a Standard Data 360 model, a Reference to the Data Model from which this Object was started. Currently only supports the following strings: if the creationType is Standard, it must be Reference, if creationType is Custom, it must be View.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
