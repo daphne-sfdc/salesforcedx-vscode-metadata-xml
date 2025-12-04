@@ -35339,7 +35339,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Limits report results to records with specific data. For example, you can limit report results to opportunities for which the amount is greater than $1,000:",
+        "Description": "Limits report results to records with specific data. For example, you can limit report results to opportunities for which the amount is greater than $1,000:<filter> <criteriaItems> <column>AMOUNT</column> <operator>greaterThan</operator> <value>1000</value> </criteriaItems> </filter>",
         "Field Name": "filter",
         "Field Type": "ReportFilter"
       },
@@ -35801,7 +35801,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "The criteria by which you want to filter report data, either by comparing historical values or by applying a date range.",
+        "Description": "The criteria by which you want to filter report data, either by comparing historical values or by applying a date range.<criteriaItems> criteriaItems ReportFilterItem <column>Opportunity.Opportunity__hd$Amount__hst</column> <columnToColumn>false</columnToColumn> <operator>equals</operator> <snapshot>N_DAYS_AGO:90</snapshot> <value>100</value> </criteriaItems>",
         "Field Name": "criteriaItems",
         "Field Type": "ReportFilterItem"
       },
@@ -35879,7 +35879,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Delineates a range to which a background color applies. If you don’t specify an upper bound for a particular range, the bound is assumed to be plus infinity. The following example sets the background color for the Sales column to #B50E03 for aggregate sales less than or equal to 100, sets no background for sales from 100 to 1000, and sets the background color to #006714 for sales greater than 1000.",
+        "Description": "Delineates a range to which a background color applies. If you don’t specify an upper bound for a particular range, the bound is assumed to be plus infinity. The following example sets the background color for the Sales column to #B50E03 for aggregate sales less than or equal to 100, sets no background for sales from 100 to 1000, and sets the background color to #006714 for sales greater than 1000. <formattingRules> <aggregate>Sum</aggregate> <columnName>Sales</columnName> <values> <backgroundColor>#B50E03</backgroundColor> <rangeUpperBound>100.0</rangeUpperBound> </values> <values> <rangeUpperBound>1000.0</rangeUpperBound> </values> <values> <backgroundColor>#006714</backgroundColor> </values> </formattingRules>",
         "Field Name": "rangeUpperBound",
         "Field Type": "double"
       }

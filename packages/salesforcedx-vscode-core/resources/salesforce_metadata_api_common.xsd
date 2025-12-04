@@ -3,7 +3,7 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-04T19:52:58.409Z
+Generated on: 2025-12-04T20:43:51.531Z
 Total metadata types: 1422
 -->
 <xsd:schema
@@ -58945,7 +58945,7 @@ Total metadata types: 1422
      </xsd:element>
      <xsd:element name="filter" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
       <xsd:annotation>
-       <xsd:documentation>Limits report results to records with specific data. For example, you can limit report results to opportunities for which the amount is greater than $1,000:</xsd:documentation>
+       <xsd:documentation>Limits report results to records with specific data. For example, you can limit report results to opportunities for which the amount is greater than $1,000:&lt;filter&gt; &lt;criteriaItems&gt; &lt;column&gt;AMOUNT&lt;/column&gt; &lt;operator&gt;greaterThan&lt;/operator&gt; &lt;value&gt;1000&lt;/value&gt; &lt;/criteriaItems&gt; &lt;/filter&gt;</xsd:documentation>
        <xsd:appinfo>Type: ReportFilter</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -59737,7 +59737,7 @@ Total metadata types: 1422
      </xsd:element>
      <xsd:element name="criteriaItems" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
       <xsd:annotation>
-       <xsd:documentation>The criteria by which you want to filter report data, either by comparing historical values or by applying a date range.</xsd:documentation>
+       <xsd:documentation>The criteria by which you want to filter report data, either by comparing historical values or by applying a date range.&lt;criteriaItems&gt; criteriaItems ReportFilterItem &lt;column&gt;Opportunity.Opportunity__hd$Amount__hst&lt;/column&gt; &lt;columnToColumn&gt;false&lt;/columnToColumn&gt; &lt;operator&gt;equals&lt;/operator&gt; &lt;snapshot&gt;N_DAYS_AGO:90&lt;/snapshot&gt; &lt;value&gt;100&lt;/value&gt; &lt;/criteriaItems&gt;</xsd:documentation>
        <xsd:appinfo>Type: ReportFilterItem</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -59851,7 +59851,7 @@ Total metadata types: 1422
      </xsd:element>
      <xsd:element name="rangeUpperBound" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
       <xsd:annotation>
-       <xsd:documentation>Delineates a range to which a background color applies. If you don’t specify an upper bound for a particular range, the bound is assumed to be plus infinity. The following example sets the background color for the Sales column to #B50E03 for aggregate sales less than or equal to 100, sets no background for sales from 100 to 1000, and sets the background color to #006714 for sales greater than 1000.</xsd:documentation>
+       <xsd:documentation>Delineates a range to which a background color applies. If you don’t specify an upper bound for a particular range, the bound is assumed to be plus infinity. The following example sets the background color for the Sales column to #B50E03 for aggregate sales less than or equal to 100, sets no background for sales from 100 to 1000, and sets the background color to #006714 for sales greater than 1000. &lt;formattingRules&gt; &lt;aggregate&gt;Sum&lt;/aggregate&gt; &lt;columnName&gt;Sales&lt;/columnName&gt; &lt;values&gt; &lt;backgroundColor&gt;#B50E03&lt;/backgroundColor&gt; &lt;rangeUpperBound&gt;100.0&lt;/rangeUpperBound&gt; &lt;/values&gt; &lt;values&gt; &lt;rangeUpperBound&gt;1000.0&lt;/rangeUpperBound&gt; &lt;/values&gt; &lt;values&gt; &lt;backgroundColor&gt;#006714&lt;/backgroundColor&gt; &lt;/values&gt; &lt;/formattingRules&gt;</xsd:documentation>
        <xsd:appinfo>Type: double</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
