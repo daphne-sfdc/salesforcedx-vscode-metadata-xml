@@ -1071,42 +1071,6 @@
     "short_description": "Represents the data stream that a user adds to a data kit.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datastreamtemplate.htm"
   },
-  "ExternalDataConnector": {
-    "fields": [
-      {
-        "Description": "Indicates whether you’re connected to a data source. Valid values are: Connected Disconnected Failed",
-        "Field Name": "dataConnectionStatus",
-        "Field Type": "DataConnectionStatus (enumeration of type string)"
-      },
-      {
-        "Description": "Reference to the Data Connector Configuration that is used to retrieve or receive data such as DataConnectorS3.",
-        "Field Name": "dataConnectorConfiguration",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Type of connection such as AmazonS3. Valid values are: ACCOUNTENGAGEMENT AmazonS3 CuratedEntity DataCloud ExternalPlatform GoogleCloudStorage IngestApi SalesforceCommerceCloud SalesforceDotCom SalesforceInteractionStudio SalesforceMarketingCloud SFTP StreamingApp UPLOAD",
-        "Field Name": "dataConnectorType",
-        "Field Type": "DataConnectorType (enumeration of type string)"
-      },
-      {
-        "Description": "Reference to the Data Platform that provides or uses this data, such as Amazon_S3.",
-        "Field Name": "dataPlatform",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Stores the schema objects related to the data connector. Available in API version 56.0 and later.",
-        "Field Name": "externalDataTranObjects",
-        "Field Type": "ExternalDataTranObject"
-      },
-      {
-        "Description": "Required. The UI name for the ExternalDataConnector.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Used to represent the object where the data was sourced.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldataconnector.htm"
-  },
   "ExternalDataSource": {
     "fields": [
       {
@@ -2221,129 +2185,6 @@
     "short_description": "Represents the value associated with an action plan template item.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionplantemplate.htm"
   },
-  "ActionableListDefinition": {
-    "fields": [
-      {
-        "Description": "The object that stores columns in a dataset associated with an actionable list.",
-        "Field Name": "actionableListDatasetColumns",
-        "Field Type": "ActionableListDatasetColumn[]"
-      },
-      {
-        "Description": "The object that stores the status and the corresponding status icon details of an individual actionable list member.",
-        "Field Name": "actionableListMemberStatuses",
-        "Field Type": "ActionableListMemberStatus[]"
-      },
-      {
-        "Description": "The batch calculation job definition that's associated with the creation of an actionable list. This field is a relationship field.",
-        "Field Name": "batchCalcJobDefinition",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the dataset that is associated with the actionable list.",
-        "Field Name": "datasetName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The edgemart dataset that's associated with the actionable list. Available in API version 58.0 and later.",
-        "Field Name": "edgeMart",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the actionable list definition is active (true) or not (false). The default value is false.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The master label of the actionable list definition.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The object for which the actionable list is created.Possible values are organized by the API version in which they were introduced. Values are available in all versions after introduction unless noted otherwise. Possible values are: API version 60.0 and later: PersonLifeEventAPI version 60.0 and later with Insurance Managed Package: Claim InsurancePolicy Quote API version 59.0 and later with Health Cloud: CareFacilityBed CareRequest CareRequestItem CareServiceVisit CareServiceVisitPlan ClinicalServiceRequest API version 59.0 and later with Loyalty Cloud: LoyaltyProgramMember API version 59.0 and later: Case API version 58.0 and later with Automotive Cloud: Vehicle API version 58.0 and later: Asset Lead Opportunity API version 57.0 and later: Account Contact",
-        "Field Name": "objectName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the data source definition details associated with an actionable list.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm"
-  },
-  "Table 1. Fields": {
-    "fields": [
-      {
-        "Description": "The data domain that is mapped to the data type of the dataset column. Possible values are: Dates Dimensions Measures",
-        "Field Name": "dataDomain",
-        "Field Type": "DatasetColumnDataType (enumeration of type string)"
-      },
-      {
-        "Description": "The data type of the dataset column in the actionable list. Available in API version 58.0 and later. Possible values are: Boolean Currency Date DateTime Email Location Number Percent Phone Text Url",
-        "Field Name": "dataType",
-        "Field Type": "DatatableDataType (enumeration of type string)"
-      },
-      {
-        "Description": "The order in which the actionable list dataset columns are displayed. Available in API version 58.0 and later.",
-        "Field Name": "displayOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Indicates whether the dataset column is added to the actionable list by default (true) or not (false). The default value is false.",
-        "Field Name": "isDefault",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the dataset column is grouped by the object defined in the actionable list definition (true) or not (false). Available in API version 59.0 and later.",
-        "Field Name": "isGroupedByListDefObj",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the type-ahead search for filters is enabled (true) or not (false). Available in API version 60.0 and later.",
-        "Field Name": "IsTypeAheadSearchEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The name of the object that's associated with the dataset column. Possible values are: API version 60.0 and later: PersonLifeEventAPI version 60.0 and later with Insurance Managed Package: Claim InsurancePolicy Quote API version 59.0 and later with Health Cloud: CareFacilityBed CareRequest CareRequestItem CareServiceVisit CareServiceVisitPlan ClinicalServiceRequest API version 59.0 and later with Loyalty Cloud: LoyaltyProgramMember API version 59.0 and later: Case API version 58.0 and later with Automotive Cloud: Vehicle API version 58.0 and later: Asset Lead Opportunity API version 57.0 and later: Account Contact",
-        "Field Name": "objectName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The API name of the column in the source dataset.",
-        "Field Name": "sourceColumnApiName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the field in the object for which the actionable list dataset is created.",
-        "Field Name": "sourceFieldName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm"
-  },
-  "Table 2. Fields": {
-    "fields": [
-      {
-        "Description": "The name of the icon that's mapped to the status.",
-        "Field Name": "iconName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The status of the actionable list member.",
-        "Field Name": "status",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm"
-  },
-  "ActionableListDatasetColumn": {
-    "fields": [],
-    "short_description": "Represents the information about the columns in a dataset associated with an actionable list.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm"
-  },
-  "ActionableListMemberStatus": {
-    "fields": [],
-    "short_description": "Represents the status and the corresponding status icon details of an individual actionable list member.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm"
-  },
   "AdvAccountForecastSet": {
     "fields": [
       {
@@ -2758,79 +2599,6 @@
     ],
     "short_description": "Additional prediction information related to an AI application. This type extends the Metadata metadata type and inherits its fullName field.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiapplicationconfig.htm"
-  },
-  "AIScoringModelDefinition": {
-    "fields": [
-      {
-        "Description": "Required. ID of an AI model configuration related to the AI scoring model record.",
-        "Field Name": "aiModelConfig",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Represents information of various versions of a model.",
-        "Field Name": "aiScoringModelDefVersions",
-        "Field Type": "AIScoringModelDefVersion[]"
-      },
-      {
-        "Description": "Description for an AIScoringModelDefinition record.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A user-friendly name for the AIScoringModelDefinition metadata component, which is defined when the AIScoringModelDefinition metadata component is created.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents information about a machine learning model that’s used by the Scoring Framework for Industries Cloud Einstein. The machine learning model is used for scoring, including its configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiscoringmodeldefinition.htm"
-  },
-  "AIScoringModelDefVersion": {
-    "fields": [
-      {
-        "Description": "Required. Parent AIScoringModelDefinition record that’s related to an AIScoringModelDefVersion record.",
-        "Field Name": "aiScoringModelDefinition",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Represents information about a step associated with an AI scoring model version.",
-        "Field Name": "aiScoringSteps",
-        "Field Type": "AIScoringStep[]"
-      },
-      {
-        "Description": "Required. The unique name of the object in the API. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. In managed packages, this field prevents naming conflicts on package installations. With this field, a developer can change the object’s name in a managed package and the changes are reflected in a subscriber’s organization. Label is Record Type Name.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A user-friendly name for the AIScoringModelDefVersion component name, which is defined when the AIScoringModelDefVersion component name is created.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Mode of an AI scoring model.Values are: DEPLOY TRAIN TRAIN_AND_DEPLOY",
-        "Field Name": "modelMode",
-        "Field Type": "AIScoringModelDefVersionMode (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents information about a version of an AI scoring model.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiscoringmodeldefinition.htm"
-  },
-  "AIScoringStep": {
-    "fields": [
-      {
-        "Description": "Required. ID of the AI model config step that’s related to the AIScoringStep record.",
-        "Field Name": "aiModelConfigStep",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Scoring step details in JSON format.",
-        "Field Name": "stepDetail",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents information about a step associated with an AI scoring model version. For example, an AI scoring step can include steps, such as propensity to purchase products or prediction scores for accounts.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiscoringmodeldefinition.htm"
   },
   "AIUsecaseDefinition": {
     "fields": [
@@ -7302,193 +7070,6 @@
     ],
     "short_description": "Specifies filter criteria for a BriefcaseRule.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm"
-  },
-  "BusinessProcessGroup": {
-    "fields": [
-      {
-        "Description": "A list that defines stages in a customer lifecycle map.",
-        "Field Name": "businessProcessDefinitions",
-        "Field Type": "BusinessProcessDefinition[]"
-      },
-      {
-        "Description": "Required. Types of questions that can be associated with stages in a customer lifecycle map. Valid values are: Attachment Boolean CSAT Currency Date DateTime FreeText Image NPS Matrix MultiChoice MultiSelectPicklist NPS Number Picklist Rating ShortText Slider StackRank Toggle",
-        "Field Name": "customerSatisfactionMetric",
-        "Field Type": "SurveyQuestionType(enumeration of type string)"
-      },
-      {
-        "Description": "A description of the customer lifecycle map.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the customer lifecycle map.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the surveys used to track customers’ experiences across different stages in their lifecycle. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm"
-  },
-  "BusinessProcessDefinition": {
-    "fields": [
-      {
-        "Description": "A list of stages in a customer lifecycle map.",
-        "Field Name": "businessProcessFeedbacks",
-        "Field Type": "BusinessProcessFeedback[]"
-      },
-      {
-        "Description": "A description of a stage in the customer lifecycle map.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The API name of a stage in the customer lifecycle map. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of a stage in the customer lifecycle map.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The position of a stage in the customer lifecycle map.",
-        "Field Name": "sequenceNumber",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm"
-  },
-  "BusinessProcessFeedback": {
-    "fields": [
-      {
-        "Description": "Required. The name of the survey used to collect feedback",
-        "Field Name": "actionName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the survey question used to collect feedback.",
-        "Field Name": "actionParam",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The mode of feedback collection. Valid values are: PHONE_CALL SURVEY",
-        "Field Name": "actionType",
-        "Field Type": "ExpFeedbackCollType(enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm"
-  },
-  "CallCenter": {
-    "fields": [
-      {
-        "Description": "Optional field. A URL that points to an adapter.",
-        "Field Name": "adapterUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.",
-        "Field Name": "contactCenterChannels",
-        "Field Type": "ContactCenterChannel[]"
-      },
-      {
-        "Description": "Required. The display name of this call center.",
-        "Field Name": "displayName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the displayName field in Call Center setup page.",
-        "Field Name": "displayNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the internalName field in Call Center setup page.",
-        "Field Name": "internalNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Custom setup items defined for this call center.",
-        "Field Name": "sections",
-        "Field Type": "CallCenterSection[]"
-      },
-      {
-        "Description": "The version of this call center.",
-        "Field Name": "version",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm"
-  },
-  "CallCenterSection": {
-    "fields": [
-      {
-        "Description": "Contains the label, name, and value that describe the sections.",
-        "Field Name": "items",
-        "Field Type": "CallCenterItem[]"
-      },
-      {
-        "Description": "Required. The label of the section.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the section.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm"
-  },
-  "CallCenterItem": {
-    "fields": [
-      {
-        "Description": "Required. The label of the custom setup item.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom setup item.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the custom setup item.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm"
-  },
-  "ContactCenterChannel": {
-    "fields": [
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.",
-        "Field Name": "channel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.",
-        "Field Name": "contactCenter",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailFallbackQueue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailHandler",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm"
   },
   "CallCenterRoutingMap": {
     "fields": [
@@ -31470,6 +31051,108 @@
     "short_description": "Represents the details of a sample document or a document type that's used as a reference while extracting and mapping information from a customer form. This type extends the Metadata metadata type and inherits its fullName field.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_ocrsampledocument.htm"
   },
+  "Table 1. Fields": {
+    "fields": [
+      {
+        "Description": "The column number in the item with the cell storing this field’s value. Available in API version 56.0 and later.",
+        "Field Name": "cellColumnNumber",
+        "Field Type": "int"
+      },
+      {
+        "Description": "The number of columns that span the cell storing this field’s value. Available in API version 56.0 and later.",
+        "Field Name": "cellColumnSpanValue",
+        "Field Type": "int"
+      },
+      {
+        "Description": "The row number in the item with the cell storing this field’s value. Available in API version 56.0 and later.",
+        "Field Name": "cellRowNumber",
+        "Field Type": "int"
+      },
+      {
+        "Description": "The number of rows that span the cell storing this field’s value. Available in API version 56.0 and later.",
+        "Field Name": "cellRowSpanValue",
+        "Field Type": "int"
+      },
+      {
+        "Description": "A normalized coordinate representing the right edge of the bounding box of the key.",
+        "Field Name": "fieldLabelMaxX",
+        "Field Type": "double"
+      },
+      {
+        "Description": "A normalized coordinate representing the bottom edge of the bounding box of the key.",
+        "Field Name": "fieldLabelMaxY",
+        "Field Type": "double"
+      },
+      {
+        "Description": "A normalized coordinate representing the left edge of the bounding box of the key.",
+        "Field Name": "fieldLabelMinX",
+        "Field Type": "double"
+      },
+      {
+        "Description": "A normalized coordinate representing the top edge of the bounding box of the key.",
+        "Field Name": "fieldLabelMinY",
+        "Field Type": "double"
+      },
+      {
+        "Description": "Name of the referred field value. Available in API version 56.0 and later.",
+        "Field Name": "fieldValueName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Indicates whether the key is automatically extracted (true) or not (false). Available in API version 57.0 and later. This field helps to distinguish auto-extracted keys from manual ones.",
+        "Field Name": "isAutoExtractedValue",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "The content in a particular area of the form, representing the field that is extracted by OCR.",
+        "Field Name": "keyContent",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Required. The associated OCR sample document used as a reference while extracting and mapping information from a customer form.",
+        "Field Name": "ocrSampleDocument",
+        "Field Type": "string"
+      },
+      {
+        "Description": "A reference to a page of the OCR sample document that contains the key. This field is null if the OcrSampleDocument is an abstract document representing the DocumentType.",
+        "Field Name": "ocrSampleDocumentPage",
+        "Field Type": "string"
+      },
+      {
+        "Description": "A reference to the item on the sample document page containing this field's value. Available in API version 56.0 and later.",
+        "Field Name": "ocrSampleDocumentPageItem",
+        "Field Type": "OcrTemplate"
+      }
+    ],
+    "short_description": "",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_ocrsampledocument.htm"
+  },
+  "Table 2. Fields": {
+    "fields": [
+      {
+        "Description": "Required. The associated OCR sample document used as a reference while extracting and mapping information from a customer form.",
+        "Field Name": "ocrSampleDocument",
+        "Field Type": "string"
+      },
+      {
+        "Description": "The collection of page items with the associated OCR sample document page. Available in API version 56.0 and later.",
+        "Field Name": "ocr​Sample​Document​Page​Items",
+        "Field Type": "OcrSampleDocument"
+      },
+      {
+        "Description": "The normalized height of the OCR sample document page.",
+        "Field Name": "pageHeight",
+        "Field Type": "double"
+      },
+      {
+        "Description": "Required. The page number of the page in the associated OCR sample document.",
+        "Field Name": "pageNumber",
+        "Field Type": "integer"
+      }
+    ],
+    "short_description": "",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_ocrsampledocument.htm"
+  },
   "Table 3. Fields": {
     "fields": [
       {
@@ -46352,87 +46035,6 @@
     ],
     "short_description": "Represents the metadata associated with various feature settings around Lightning Experience transition and adoption, user engagement and adoption assistance, and adoption apps.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_userengagementsettings.htm"
-  },
-  "UserInterfaceSettings": {
-    "fields": [
-      {
-        "Description": "Indicates whether users can create custom actions for their Recently Viewed lists (true) or not (false). The default is true. Available in API version 52.0 and later. Applies to Lightning Experience only.",
-        "Field Name": "dynamicMruActionsOff",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether related lists are loaded asynchronously (true) or not (false). The default is false. Available in API version 47.0 and later. Salesforce Classic only.",
-        "Field Name": "enableAsyncRelatedLists",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether a Visualforce page that hides the standard header has clickjack protections (true) or not (false). The default is true. This setting applies to all of your Visualforce pages.",
-        "Field Name": "enableClickjackUserPageHeaderless",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users are allowed to collapse or expand sections in record details by using the arrow icon next to the section heading. The default is true.",
-        "Field Name": "enableCollapsibleSections",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users are allowed to show or hide the sidebar on every page that normally includes it (true) or not (false). The default is false. Applies to Salesforce Classic only.",
-        "Field Name": "enableCollapsibleSidebar",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users with Customize Application permission can truncate custom objects (true) or not (false). When you truncate an object, you delete the object’s associated records permanently, while preserving the empty object and its metadata. The default is false. Available in API version 47.0 and later.",
-        "Field Name": "enableCustomObjectTruncate",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether custom sidebar components are available on all pages for all org users (true) or not (false). The default is false. Applies to Salesforce Classic only.",
-        "Field Name": "enableCustomSidebarOnAllPages",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users can delete field history and field history archive records (true) or not (false). The default is false. Available in API version 47.0 and later.",
-        "Field Name": "enableDeleteFieldHistory",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether related lists of external objects are loaded asynchronously ( true) or not (false). The default is true. Available in API version 48.0 and later. Salesforce Classic only.",
-        "Field Name": "enableExternalObjectAsyncRelatedLists",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether an interactive overlay containing record details is displayed (true) or not (false). The default is true.To view hover details for a record, users need the appropriate sharing access and field-level security access for the fields in the mini page layout.",
-        "Field Name": "enableHoverDetails",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users are allowed to edit field values on a record’s detail page (true) or not (false). The default is true.",
-        "Field Name": "enableInlineEdit",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether users can install and use personal canvas apps (true) or not (false). The default is true. This setting applies to all of your Visualforce pages.",
-        "Field Name": "enablePersonalCanvas",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether related list hover links display at the top of record detail pages and custom object detail pages in Setup (true) or not (false). Users can hover over a related list link to display the list and its number of records in an interactive overlay. Users quickly view and manage the related list items from the overlay. Users can also click a related list hover link to jump to the related list without having to scroll down the page. The default is true. Available in API version 50.0 and later.",
-        "Field Name": "enableRelatedListHovers",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether individual users can enable dark mode (true) or not (false) for the Salesforce Cosmos theme. The default value is false. Available only in Salesforce Starter Suite orgs. Available in API version 65.0 and later.Dark mode is a pilot or beta service that is subject to the Beta Services Terms at Agreements - Salesforce.com or a written Unified Pilot Agreement if executed by Customer, and applicable terms in the Product Terms Directory. Use of this pilot or beta service is at the Customer's sole discretion.",
-        "Field Name": "enableSldsV2DarkModeInCosmos (beta)",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether an area displays on a tab home page (corresponds to the Show Quick Create setting), allowing users to create a record quickly with minimal information (true) or not (false). The Quick Create area displays by default on the tab home pages for leads, accounts, contacts, and opportunities. You can control whether the Quick Create area is displayed on all relevant tab home pages.",
-        "Field Name": "enableQuickCreate",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents the settings that modify the behavior of the org’s user interface.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_userinterfacesettings.htm"
   },
   "UserManagementSettings": {
     "fields": [
