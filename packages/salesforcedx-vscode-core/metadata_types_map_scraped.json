@@ -18538,68 +18538,6 @@
     "short_description": "Parameters to deliver in addition to the published event’s data.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_eventdelivery.htm"
   },
-  "EventRelayConfig": {
-    "fields": [
-      {
-        "Description": "Required. The developer name of the named credential, which stores the AWS account information. The destinationResourceName value contains the callout: prefix. For example: callout:MyRelayNamedCredential",
-        "Field Name": "destinationResourceName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The full name of the event channel used in the event relay. For example: MyRelayChannel__chn",
-        "Field Name": "eventChannel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The label for the event relay. The label is displayed in the user interface. Make sure you use a meaningful label that describes your event relay and try to make it unique.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A JSON-encoded string that contains an option for resuming an event relay after the system recovers from an error. This option is used if the event relay can't resume after the last relayed event. The options available are: {\\\"ReplayRecovery\\\":\\\"LATEST\\\"}—(Default) Start relaying events from new events received in the event bus. Use this option if you aren’t interested in missed events while the relay was down. {\\\"ReplayRecovery\\\":\\\"EARLIEST\\\"}—Resend all events stored in the event bus and relay new events thereafter. The event bus stores events for up to three days. Use this option if you want to reprocess all stored events and catch up on missed events.",
-        "Field Name": "relayOption",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The execution state of the event relay. Possible values are: RUN—The event relay is running and actively relaying event messages from Salesforce to Amazon EventBridge. PAUSE—An administrator paused the event relay. No events are relayed to Amazon EventBridge during this status. All current state information is saved. STOP—(Default) The event relay is stopped and no events are relayed to Amazon EventBridge. All current state information is deleted. The event relay is created with a default state of STOP if you don't specify this field. If you specify this field when creating an event relay, the only valid value you can set is STOP. DELETE—Reserved for future use.",
-        "Field Name": "state",
-        "Field Type": "EventRelayAdminState (enumeration of type string)"
-      },
-      {
-        "Description": "Reserved for future use.",
-        "Field Name": "usageType",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the configuration of an event relay, which relays platform events and change data capture events from Salesforce to Amazon EventBridge.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_eventrelayconfig.htm"
-  },
-  "EventSubscription": {
-    "fields": [
-      {
-        "Description": "If the subscription isn’t active, it never receives any events.",
-        "Field Name": "active",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "An array of parameters that must be true for published events.",
-        "Field Name": "eventParameters",
-        "Field Type": "EventParameterMap[]"
-      },
-      {
-        "Description": "Required. The name of the platform event.",
-        "Field Name": "eventType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. If the subscriber is a flow of type CustomEvent, referenceData is flowName_versionNumber. For example, Printer_Management_2.",
-        "Field Name": "referenceData",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a subscription to an event type. Removed in API version 46.0. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_eventsubscription.htm"
-  },
   "ExperienceBundle": {
     "fields": [
       {
@@ -19434,67 +19372,6 @@
     ],
     "short_description": "Represents the parameters that configure an external auth identity provider.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externalauthidentityprovider.htm"
-  },
-  "ExternalClientApplication": {
-    "fields": [
-      {
-        "Description": "The email address that Salesforce uses to contact the external client app admin for the subscriber org.",
-        "Field Name": "contactEmail",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The phone number that Salesforce uses to contact the external client app admin for the subscriber org.",
-        "Field Name": "contactPhone",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A description for the app.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The distribution state of an external client app. Values are: AutoInstalled. For internal use only. Local. Managed. For internal use only. Packaged.",
-        "Field Name": "distributionState",
-        "Field Type": "ExtlClntAppDistState (enumeration of type string)"
-      },
-      {
-        "Description": "The URL for the icon image.",
-        "Field Name": "iconUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reserved for future use.",
-        "Field Name": "infoUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A package construct that developers use to control the visibility of components in subscriber orgs. Default is false.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The label for the external client app.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The URL for the logo image.",
-        "Field Name": "logoUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "For internal use only.",
-        "Field Name": "managedType",
-        "Field Type": "ExtlClntAppManagedType (enumeration of type string)"
-      },
-      {
-        "Description": "A unique ID consisting of the org ID and the name of this external client app. Either defined by the developer or auto-generated during the first deployment. The expected value uses this format: [Organization_ID]:[External Client App Name].",
-        "Field Name": "orgScopedExternalApp",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the header file for an external client application configuration.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externalclientapplication.htm"
   },
   "ExternalCredential": {
     "fields": [
