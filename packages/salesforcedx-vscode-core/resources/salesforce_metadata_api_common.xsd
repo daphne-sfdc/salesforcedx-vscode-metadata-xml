@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-10T22:59:01.277Z
-Total metadata types: 1480
+Generated on: 2025-12-12T22:46:01.958Z
+Total metadata types: 1462
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -1960,142 +1960,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>Indicates whether Skip Reversal Logic is enabled (true) or not (false).</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActionLinkGroupTemplate">
-  <xsd:annotation>
-   <xsd:documentation>Represents the action link group template. Action link templates let you reuse action link definitions and package and distribute action links. An action link is a button on a feed element. Clicking on an action link can take a user to another Web page, initiate a file download, or invoke an API call to an external server or Salesforce. Use action links to integrate Salesforce and third-party services into the feed. Every action link belongs to an action link group and action links within the group are mutually exclusive. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionlinkgrouptemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actionLinkTemplates" minOccurs="0" maxOccurs="unbounded" type="ActionLinkTemplate">
-      <xsd:annotation>
-       <xsd:documentation>Action link templates that are associated with the action link group template.</xsd:documentation>
-       <xsd:appinfo>Type: ActionLinkTemplate[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="category" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The location of the action link group within the feed element. Values are: Primary—The action link group is displayed in the body of the feed element. Overflow—The action link group is displayed in the overflow menu of the feed element.</xsd:documentation>
-       <xsd:appinfo>Type: PlatformAction​GroupCategory (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="executionsAllowed" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The number of times an action link can be executed. Values are: Once—An action link can be executed only once across all users. OncePerUser—An action link can be executed only once for each user. Unlimited—An action link can be executed an unlimited number of times by each user. If the action link’s actionType is Api or ApiAsync, you can’t use this value.</xsd:documentation>
-       <xsd:appinfo>Type: ActionLink​ExecutionsAllowed (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="hoursUntilExpiration" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The number of hours from when the action link group is created until it&apos;s removed from associated feed elements and can no longer be executed. The maximum value is 8,760.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isPublished" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. If true, the action link group template is published. Action link group templates shouldn’t be published until at least one action link template is associated with it.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the action link group template to use in code.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActionLinkTemplate">
-  <xsd:annotation>
-   <xsd:documentation>ActionLinkTemplate components are used to create multiple action links that share properties.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionlinkgrouptemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actionUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The action link URL. For example, a Ui action link URL is a Web page. A Download action link URL is a link to the file to download. Ui and Download action link URLs are provided to clients. An Api or ApiAsync action link URL is a REST resource. Api and ApiAsync action link URLs aren’t provided to clients. Links to Salesforce can be relative. All other links must be absolute and start with https://.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="headers" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Template for the HTTP headers sent when corresponding action links are invoked. This field can be used only for Api and ApiAsync action links. This field can contain context variables and binding variables in the form {!Bindings.key}.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isConfirmationRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. If true, a confirmation dialog appears before the action is executed.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isGroupDefault" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. If true, action links derived from this template are the default or primary action in their action groups. There can be only one default action per action group.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A custom label to display on the action link button. If none of the LabelKey values make sense for an action link, use a custom label. Set the LabelKey field to None and enter a label name in the Label field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="labelKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Key for the set of labels to display for these action link states: new, pending, success, failed. For example, the Approve set contains these labels: Approve, Pending, Approved, Failed. For a complete list of keys and labels, see Action Link Labels in the Connect REST API Developer Guide.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="linkType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The type of action link. One of these values: Api—The action link calls a synchronous API at the action URL. Salesforce sets the status to SuccessfulStatus or FailedStatus based on the HTTP status code returned by your server. ApiAsync—The action link calls an asynchronous API at the action URL. The action remains in a PendingStatus state until a third party makes a request to /connect/action-links/actionLinkId to set the status to SuccessfulStatus or FailedStatus when the asynchronous operation is complete. Download—The action link downloads a file from the action URL. Ui—The action link takes the user to a web page at the action URL.</xsd:documentation>
-       <xsd:appinfo>Type: ActionLinkType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="method" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. HTTP method for the action URL. One of these values: HttpDelete—Returns HTTP 204 on success. Response body or output class is empty. HttpGet—Returns HTTP 200 on success. HttpHead—Returns HTTP 200 on success. Response body or output class is empty. HttpPatch—Returns HTTP 200 on success or HTTP 204 if the response body or output class is empty. HttpPost—Returns HTTP 201 on success or HTTP 204 if the response body or output class is empty. Exceptions are the batch posting resources and methods, which return HTTP 200 on success. HttpPut—Return HTTP 200 on success or HTTP 204 if the response body or output class is empty. Ui and Download action links must use HttpGet.</xsd:documentation>
-       <xsd:appinfo>Type: ActionLink​HttpMethod (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="position" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. An integer specifying the position of the action link template relative to other action links in the group. 0 is the first position.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="requestBody" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Template for the HTTP request body sent when corresponding action links are invoked. This field can be used only for Api and ApiAsync action links. This field can contain context variables and binding variables in the form {!Bindings.key}.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="userAlias" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If you selected CustomUser or CustomExcludedUser for UserVisibility, this field is the alias for the custom user. Use the alias in a template binding to specify the custom user when an action link group is created using the template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="userVisibility" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Who can see the action link. This value is set per action link, not per action link group. Values are: Creator—Only the creator of the action link can see the action link. Everyone—Everyone can see the action link. EveryoneButCreator—Everyone but the creator of the action link can see the action link. Manager—Only the manager of the creator of the action link can see the action link. CustomUser—Only the custom user can see the action link. CustomExcludedUser—Everyone but the custom user can see the action link.</xsd:documentation>
-       <xsd:appinfo>Type: ActionLink​UserVisibility (enumeration of type string)</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -5867,50 +5731,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>A list of Apex test classes, specified by name, to include in this test suite.</xsd:documentation>
        <xsd:appinfo>Type: string[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ApexTrigger">
-  <xsd:annotation>
-   <xsd:documentation>Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_triggers.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="MetadataWithContent">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="apiVersion" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API version for this trigger. Every trigger has an API version specified at creation.</xsd:documentation>
-       <xsd:appinfo>Type: double</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="content" minOccurs="0" maxOccurs="unbounded" type="xsd:base64Binary">
-      <xsd:annotation>
-       <xsd:documentation>The Apex trigger definition. This field is inherited from the MetadataWithContent component.</xsd:documentation>
-       <xsd:appinfo>Type: base64</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fullName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The Apex trigger name. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and can’t end with an underscore or contain two consecutive underscore characters. This field is inherited from the Metadata component.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="packageVersions" minOccurs="0" maxOccurs="unbounded" type="PackageVersion">
-      <xsd:annotation>
-       <xsd:documentation>The list of installed managed package versions that are referenced by this Apex trigger.For more information about managed packages, see the Second-Generation Managed Packaging Developer Guide. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: PackageVersion[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="status" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of the Apex trigger. The following string values are valid: Active - The trigger is active. Inactive - The trigger is inactive, but not deleted. Deleted - The trigger is marked for deletion. Useful for managed packages, because it allows a trigger to be deleted when a managed package is updated.</xsd:documentation>
-       <xsd:appinfo>Type: ApexCodeUnitStatus (enumeration of type string)</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -10088,70 +9908,6 @@ Total metadata types: 1480
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="BrandingSet">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of a set of branding properties for an Experience Builder site or for your org&apos;s Lightning Experience theme.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="brandingSetProperty" minOccurs="0" maxOccurs="unbounded" type="BrandingSetProperty">
-      <xsd:annotation>
-       <xsd:documentation>An array containing the name and value of each branding property, such as TextColor:#333.</xsd:documentation>
-       <xsd:appinfo>Type: BrandingSetProperty[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description of the set of branding properties.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The user interface name of the set of branding properties.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The assigned branding set definition for this BrandingSet.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="BrandingSetProperty">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of a branding property in the Theme panel in Experience Builder or in the Edit Theme page in Setup.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="propertyName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the branding property, such as TextColor.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="propertyValue" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The value of the branding property, such as #333.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="BriefcaseDefinition">
   <xsd:annotation>
    <xsd:documentation>Represents a briefcase definition. A briefcase makes selected records available for specific users and groups to view when they’re offline in the Salesforce Field Service mobile app for iOS and Android. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
@@ -10945,93 +10701,6 @@ Total metadata types: 1480
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="CallCenter">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="adapterUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Optional field. A URL that points to an adapter.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="contactCenterChannels" minOccurs="0" maxOccurs="unbounded" type="ContactCenterChannel">
-      <xsd:annotation>
-       <xsd:documentation>Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.</xsd:documentation>
-       <xsd:appinfo>Type: ContactCenterChannel[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The display name of this call center.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayNameLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the displayName field in Call Center setup page.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="internalNameLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the internalName field in Call Center setup page.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sections" minOccurs="0" maxOccurs="unbounded" type="CallCenterSection">
-      <xsd:annotation>
-       <xsd:documentation>Custom setup items defined for this call center.</xsd:documentation>
-       <xsd:appinfo>Type: CallCenterSection[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="version" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The version of this call center.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CallCenterItem">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="value" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The value of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="CallCenterRoutingMap">
   <xsd:annotation>
    <xsd:documentation>Represents the mapping between a user or queue in a Salesforce org to a user or queue in an external system’s call center.</xsd:documentation>
@@ -11073,37 +10742,6 @@ Total metadata types: 1480
      <xsd:element name="referenceRecord" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>Required. Lookup field to a Salesforce user or queue.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CallCenterSection">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="items" minOccurs="0" maxOccurs="unbounded" type="CallCenterItem">
-      <xsd:annotation>
-       <xsd:documentation>Contains the label, name, and value that describe the sections.</xsd:documentation>
-       <xsd:appinfo>Type: CallCenterItem[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the section.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the section.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -11489,56 +11127,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>Metric to be used for calculating and displaying the benefit limit, such as number of visits, amount spent, or percentage of allowed expenditure.Valid values are: Amount Money Percentage Text</xsd:documentation>
        <xsd:appinfo>Type: CareLimitTypeMetricType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CareProviderSearchConfig">
-  <xsd:annotation>
-   <xsd:documentation>Represents the information about the fields that appear in care provider search results.This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_careprovidersearchconfig.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="isActive" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether this configuration is active (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>An auto-generated value that doesn’t currently impact the behavior of the metadata type.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="mappedObject" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates mapped objects.Possible values are; HealthCarePractitionerFacility HealthCareProvider</xsd:documentation>
-       <xsd:appinfo>Type: ProviderSearch​ObjectMapping (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Name of the care provider.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>API name of the field that is copied to the target object.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>API name of the field to copy the data to.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -12818,44 +12406,6 @@ Total metadata types: 1480
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ClaimFinancialSettings">
-  <xsd:annotation>
-   <xsd:documentation>Represents the configuration settings for Insurance Claim Financial Services.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_claimfinancialsettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="claimCovPendingAuthStatus" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of pending financial authority for claim coverage.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="claimPendingAuthorityStatus" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of pending financial authority for claim.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="clmCovPymtDtlPendAuthSts" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of pending financial authority for claim coverage payment detail.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The unique label that identifies the claim financial settings throughout the Salesforce user interface.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="ClauseCatgConfiguration">
   <xsd:annotation>
    <xsd:documentation>Represents the configuration about the clause category that can be used to categorize your disclosure and compliance reports from standardized disclosure templates in a response document.</xsd:documentation>
@@ -13394,31 +12944,6 @@ Total metadata types: 1480
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="CommunityCustomThemeLayoutType">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The description of the custom theme layout type.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the custom theme layout type. The values Inner, Home, and Login are reserved.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="CommunityRoles">
   <xsd:annotation>
    <xsd:documentation>The labels used to identify users with Customer, Partner, or Employee roles in an Experience Cloud site. Available in API version 41.0 and later.</xsd:documentation>
@@ -13592,186 +13117,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>Required. The name of the FlexiPage for the theme layout.This field is available in API version 39.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTheme_Setting">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="customThemeLayoutType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required when themeLayoutType isn’t specified. The custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeLayout" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The configuration and layout for this theme.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeLayoutType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required when customThemeLayoutType isn’t specified. The default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTheme​LayoutType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityThemeBundleInfo">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of its CommunityThemeBundleInfo.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="image" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required only when the type is PreviewImage, otherwise this field is optional. A preview image for this CommunityThemeDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="order" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. An integer specifying the position of this CommunityThemeBundleInfo relative to others of the same type within its CommunityThemeDefinition. 1 is the first position, 3 is the maximum position for PreviewImage type, and 4 is the maximum position for the Highlight type.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="title" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The title of this CommunityThemeBundleInfo to use in code.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Stores descriptive information about the theme that is included in the export. Valid values are: Highlight—This CommunityThemeBundleInfo is used as a highlighted feature. Up to 4 are supported. PreviewImage—This CommunityThemeBundleInfo is used as a preview image. Up to 3 are supported.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplate​BundleInfoType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityThemeDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of a theme for an Experience Builder site. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="bundlesInfo" minOccurs="0" maxOccurs="unbounded" type="CommunityThemeBundleInfo">
-      <xsd:annotation>
-       <xsd:documentation>If specified, at least one preview image and one highlight are required. Up to 3 preview images and 4 highlights are supported. Available in API version 44.0 and later</xsd:documentation>
-       <xsd:appinfo>Type: CommunityThemeBundleInfo[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="customThemeLayoutType" minOccurs="0" maxOccurs="unbounded" type="CommunityCustomThemeLayoutType">
-      <xsd:annotation>
-       <xsd:documentation>The list of custom theme layout types available to the theme layout.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityCustomThemeLayoutType[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="defaultBrandingSet" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The set of branding properties associated with this CommunityThemeDefinition, as defined in the Theme panel in Experience Builder. Available in API version 44.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of this CommunityThemeDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableExtendedCleanUp_OnDelete" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>False by default. Determines if deleting this CommunityThemeDefinition attempts to delete other directly or indirectly referenced objects automatically, for example, FlexiPage. Values are true or false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for this CommunityThemeDefinition, which displays in Setup.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="publisher" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Defines the name of the publisher as seen in the wizard for creating Experience Builder sites. If no name is provided, the name of the org from which the package was originally exported is used.This field is available in API version 45.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeRouteOverride" minOccurs="0" maxOccurs="unbounded" type="CommunityThemeRouteOverride">
-      <xsd:annotation>
-       <xsd:documentation>List of theme layout type overrides for flexipages (currently only for home). Available in API version 44.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityThemeRouteOverride[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeSetting" minOccurs="0" maxOccurs="unbounded" type="CommunityTheme Setting ">
-      <xsd:annotation>
-       <xsd:documentation>Required. The list of settings for this CommunityThemeDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTheme Setting []</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityThemeRouteOverride">
-  <xsd:annotation>
-   <xsd:documentation>Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="customThemeLayoutType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required when themeLayoutType isn’t specified. Provides the custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="pageAttributes" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the attributes of the site page for which the default theme layout type is overridden. The only valid value is {&quot;PageName&quot;:&quot;Home&quot;}.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="pageType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeLayoutType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required if customThemeLayoutType isn’t specified. Provides the default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTheme​LayoutType (enumeration of type string)</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -14605,44 +13950,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>Required for components with a location of left or right. The width of the custom console component. The value must be specified in pixels and be greater than 0 but less than 999.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ContactCenterChannel">
-  <xsd:annotation>
-   <xsd:documentation>Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="channel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="contactCenter" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="voiceMailFallbackQueue" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don&apos;t change the value in this field. Instead, configure voicemail routing in Lightning Experience.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="voiceMailHandler" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don&apos;t change the value in this field. Instead, configure voicemail routing in Lightning Experience.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -30585,154 +29892,6 @@ Total metadata types: 1480
       <xsd:annotation>
        <xsd:documentation>Required. The type of the descriptor.Valid value: Schema</xsd:documentation>
        <xsd:appinfo>Type: ExternalDataSrcDescType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ExternalDataTranField">
-  <xsd:annotation>
-   <xsd:documentation>Stores the fields related to ExternalDataTranObject schema.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="creationType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated</xsd:documentation>
-       <xsd:appinfo>Type: DefinitionCreationType (enumeration of type string).</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="datatype" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Phone, currency, number, or other assigned type.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="dateFormat" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Optional. The Date format of date, time, date/time fields in this Transport field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="extDataTranFieldTemplate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Reserved for internal use and read-only. Reference to the associated ExtDataTranFieldTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="externalName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Optional. Name of the object in the external system (different from Developer Name).</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isCurrencyIsoCode" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Optional. If true, this field is a currency ISO code.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isDataRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Optional. If true, data is required for this field.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="length" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Optional. Length of a string column.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="mktDataTranField" minOccurs="0" maxOccurs="unbounded" type="mktDataTranFieldType">
-      <xsd:annotation>
-       <xsd:documentation>Optional.</xsd:documentation>
-       <xsd:appinfo>Type: mktDataTranFieldType</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="precision" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Optional. Used for currency and numeric accuracy.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="primaryIndexOrder" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it&apos;s a compound primary key. Missing value means this field isn’t part of the primary key.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="scale" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Optional. Used for currency and numbers.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sequence" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Optional. The sequence of this source schema.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ExternalDataTranObject">
-  <xsd:annotation>
-   <xsd:documentation>Represents a definition of a Data 360 schema object. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="availabilityStatus" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Represents the availability of the object. Valid values are: Available In_Use</xsd:documentation>
-       <xsd:appinfo>Type: AvailabilityStatus (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="creationType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Activation_Audience (Reserved for internal use only) Custom Standard System Derived Bridge Curated Standard Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding</xsd:documentation>
-       <xsd:appinfo>Type: DefinitionCreationType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="extDataTranObjectTemplate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Reserved for internal use and read-only. Reference to the associated ExtDataTranObjectTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="externalDataTranFields" minOccurs="0" maxOccurs="unbounded" type="ExternalDataTranField">
-      <xsd:annotation>
-       <xsd:documentation>Optional. Stores the fields related to that schema object.</xsd:documentation>
-       <xsd:appinfo>Type: ExternalDataTranField</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The UI name for the object.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="mktDataTranObject" minOccurs="0" maxOccurs="unbounded" type="MktDataTranObject">
-      <xsd:annotation>
-       <xsd:documentation>Optional. An entity that is used to transport information from the source to a target.</xsd:documentation>
-       <xsd:appinfo>Type: MktDataTranObject</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the Object Category. For Transport, they&apos;re Profile, Engagement, or Other.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -49322,16 +48481,16 @@ Total metadata types: 1480
  </xsd:complexType>
  <xsd:complexType name="MktDataTranField">
   <xsd:annotation>
-   <xsd:documentation>Stores fields related to MktDataTranObject.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm</xsd:appinfo>
+   <xsd:documentation>This is a sub-type to MktDataTranObject.</xsd:documentation>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mktdatatranobject.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
     <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="creationType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+     <xsd:element name="creationType" minOccurs="0" maxOccurs="unbounded" type="DefinitionCreationType">
       <xsd:annotation>
-       <xsd:documentation>Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding</xsd:documentation>
-       <xsd:appinfo>Type: DefinitionCreationType (enumeration of type string).</xsd:appinfo>
+       <xsd:documentation>Optional: Was this object added as a result of the Customer, part of a Standard Taxonomy. Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding</xsd:documentation>
+       <xsd:appinfo>Type: DefinitionCreationType</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="datatype" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
@@ -49342,7 +48501,7 @@ Total metadata types: 1480
      </xsd:element>
      <xsd:element name="dateFormat" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>Optional. The Date format of date, time, date/time fields in this Transport field.</xsd:documentation>
+       <xsd:documentation>Optional: The Date format of date, time, date/time fields in this Transport field.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -49360,8 +48519,14 @@ Total metadata types: 1480
      </xsd:element>
      <xsd:element name="length" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
       <xsd:annotation>
-       <xsd:documentation>Optional. Length of a string column.</xsd:documentation>
+       <xsd:documentation>Optional. Length of a string column</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>Optional? Field label.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="precision" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
@@ -49372,13 +48537,13 @@ Total metadata types: 1480
      </xsd:element>
      <xsd:element name="primaryIndexOrder" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
       <xsd:annotation>
-       <xsd:documentation>Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it&apos;s a compound primary key. Missing value means this field isn’t part of the primary key.</xsd:documentation>
+       <xsd:documentation>Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if this happens to be a compound primary key. Missing value means this field is not part of the primary key.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="scale" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
       <xsd:annotation>
-       <xsd:documentation>Optional. Used for currency and numbers.</xsd:documentation>
+       <xsd:documentation>Optional. Used for currency and numeric accuracy.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -72572,8 +71737,6 @@ Total metadata types: 1480
  <xsd:element name="AccountingFieldMapping" type="AccountingFieldMapping"/>
  <xsd:element name="AccountingModelConfig" type="AccountingModelConfig"/>
  <xsd:element name="AccountingSettings" type="AccountingSettings"/>
- <xsd:element name="ActionLinkGroupTemplate" type="ActionLinkGroupTemplate"/>
- <xsd:element name="ActionLinkTemplate" type="ActionLinkTemplate"/>
  <xsd:element name="ActionOverride" type="ActionOverride"/>
  <xsd:element name="ActionOverrideType" type="ActionOverrideType"/>
  <xsd:element name="ActionPlanTemplate" type="ActionPlanTemplate"/>
@@ -72640,7 +71803,6 @@ Total metadata types: 1480
  <xsd:element name="ApexPage" type="ApexPage"/>
  <xsd:element name="ApexSettings" type="ApexSettings"/>
  <xsd:element name="ApexTestSuite" type="ApexTestSuite"/>
- <xsd:element name="ApexTrigger" type="ApexTrigger"/>
  <xsd:element name="AppActionOverride" type="AppActionOverride"/>
  <xsd:element name="AppAnalyticsSettings" type="AppAnalyticsSettings"/>
  <xsd:element name="AppBrand" type="AppBrand"/>
@@ -72726,8 +71888,6 @@ Total metadata types: 1480
  <xsd:element name="BotVersionTranslation" type="BotVersionTranslation"/>
  <xsd:element name="BranchManagementSettings" type="BranchManagementSettings"/>
  <xsd:element name="Branding" type="Branding"/>
- <xsd:element name="BrandingSet" type="BrandingSet"/>
- <xsd:element name="BrandingSetProperty" type="BrandingSetProperty"/>
  <xsd:element name="BriefcaseDefinition" type="BriefcaseDefinition"/>
  <xsd:element name="BriefcaseRule" type="BriefcaseRule"/>
  <xsd:element name="BriefcaseRuleFilter" type="BriefcaseRuleFilter"/>
@@ -72744,10 +71904,7 @@ Total metadata types: 1480
  <xsd:element name="CMSConnectResourceDefinition" type="CMSConnectResourceDefinition"/>
  <xsd:element name="CMSConnectResourceType" type="CMSConnectResourceType"/>
  <xsd:element name="CMSConnectSource" type="CMSConnectSource"/>
- <xsd:element name="CallCenter" type="CallCenter"/>
- <xsd:element name="CallCenterItem" type="CallCenterItem"/>
  <xsd:element name="CallCenterRoutingMap" type="CallCenterRoutingMap"/>
- <xsd:element name="CallCenterSection" type="CallCenterSection"/>
  <xsd:element name="CallCoachingMediaProvider" type="CallCoachingMediaProvider"/>
  <xsd:element name="CampaignCriteriaBasedSharingRule" type="CampaignCriteriaBasedSharingRule"/>
  <xsd:element name="CampaignInfluenceModel" type="CampaignInfluenceModel"/>
@@ -72757,7 +71914,6 @@ Total metadata types: 1480
  <xsd:element name="Capabilities" type="Capabilities"/>
  <xsd:element name="CareBenefitVerifySettings" type="CareBenefitVerifySettings"/>
  <xsd:element name="CareLimitType" type="CareLimitType"/>
- <xsd:element name="CareProviderSearchConfig" type="CareProviderSearchConfig"/>
  <xsd:element name="CareRequestConfiguration" type="CareRequestConfiguration"/>
  <xsd:element name="CareRequestRecords" type="CareRequestRecords"/>
  <xsd:element name="CareSystemFieldMapping" type="CareSystemFieldMapping"/>
@@ -72782,7 +71938,6 @@ Total metadata types: 1480
  <xsd:element name="ChatterSettings" type="ChatterSettings"/>
  <xsd:element name="ChoiceList" type="ChoiceList"/>
  <xsd:element name="ChoiceListValue" type="ChoiceListValue"/>
- <xsd:element name="ClaimFinancialSettings" type="ClaimFinancialSettings"/>
  <xsd:element name="ClauseCatgConfiguration" type="ClauseCatgConfiguration"/>
  <xsd:element name="CleanDataService" type="CleanDataService"/>
  <xsd:element name="CleanRule" type="CleanRule"/>
@@ -72791,15 +71946,10 @@ Total metadata types: 1480
  <xsd:element name="CommerceSettings" type="CommerceSettings"/>
  <xsd:element name="CommunitiesSettings" type="CommunitiesSettings"/>
  <xsd:element name="Community_Zone" type="Community_Zone"/>
- <xsd:element name="CommunityCustomThemeLayoutType" type="CommunityCustomThemeLayoutType"/>
  <xsd:element name="CommunityRoles" type="CommunityRoles"/>
  <xsd:element name="CommunityTemplateBundleInfo" type="CommunityTemplateBundleInfo"/>
  <xsd:element name="CommunityTemplateDefinition" type="CommunityTemplateDefinition"/>
  <xsd:element name="CommunityTemplatePageSetting" type="CommunityTemplatePageSetting"/>
- <xsd:element name="CommunityTheme_Setting" type="CommunityTheme_Setting"/>
- <xsd:element name="CommunityThemeBundleInfo" type="CommunityThemeBundleInfo"/>
- <xsd:element name="CommunityThemeDefinition" type="CommunityThemeDefinition"/>
- <xsd:element name="CommunityThemeRouteOverride" type="CommunityThemeRouteOverride"/>
  <xsd:element name="CompactLayout" type="CompactLayout"/>
  <xsd:element name="CompanySettings" type="CompanySettings"/>
  <xsd:element name="ComponentInstance" type="ComponentInstance"/>
@@ -72818,7 +71968,6 @@ Total metadata types: 1480
  <xsd:element name="ConnectedAppSessionPolicy" type="ConnectedAppSessionPolicy"/>
  <xsd:element name="ConnectedAppSettings" type="ConnectedAppSettings"/>
  <xsd:element name="ConsoleComponent" type="ConsoleComponent"/>
- <xsd:element name="ContactCenterChannel" type="ContactCenterChannel"/>
  <xsd:element name="ContactCriteriaBasedSharingRule" type="ContactCriteriaBasedSharingRule"/>
  <xsd:element name="ContactOwnerSharingRule" type="ContactOwnerSharingRule"/>
  <xsd:element name="ContactSharingRules" type="ContactSharingRules"/>
@@ -73118,8 +72267,6 @@ Total metadata types: 1480
  <xsd:element name="ExternalDataConnector" type="ExternalDataConnector"/>
  <xsd:element name="ExternalDataSource" type="ExternalDataSource"/>
  <xsd:element name="ExternalDataSrcDescriptors" type="ExternalDataSrcDescriptors"/>
- <xsd:element name="ExternalDataTranField" type="ExternalDataTranField"/>
- <xsd:element name="ExternalDataTranObject" type="ExternalDataTranObject"/>
  <xsd:element name="ExternalServiceOperation" type="ExternalServiceOperation"/>
  <xsd:element name="ExternalServiceRegistration" type="ExternalServiceRegistration"/>
  <xsd:element name="ExternalServicesSettings" type="ExternalServicesSettings"/>

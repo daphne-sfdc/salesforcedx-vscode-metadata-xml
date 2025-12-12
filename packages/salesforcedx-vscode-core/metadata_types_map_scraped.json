@@ -1306,177 +1306,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatasource.htm",
     "parent": "Metadata"
   },
-  "ExternalDataTranObject": {
-    "fields": [
-      {
-        "Description": "Required. Represents the availability of the object. Valid values are: Available In_Use",
-        "Field Name": "availabilityStatus",
-        "Field Type": "AvailabilityStatus (enumeration of type string)"
-      },
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Activation_Audience (Reserved for internal use only) Custom Standard System Derived Bridge Curated Standard Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)"
-      },
-      {
-        "Description": "Reserved for internal use and read-only. Reference to the associated ExtDataTranObjectTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.",
-        "Field Name": "extDataTranObjectTemplate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Stores the fields related to that schema object.",
-        "Field Name": "externalDataTranFields",
-        "Field Type": "ExternalDataTranField"
-      },
-      {
-        "Description": "Required. The UI name for the object.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. An entity that is used to transport information from the source to a target.",
-        "Field Name": "mktDataTranObject",
-        "Field Type": "MktDataTranObject"
-      },
-      {
-        "Description": "Required. Reference to the Object Category. For Transport, they're Profile, Engagement, or Other.",
-        "Field Name": "objectCategory",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a definition of a Data 360 schema object. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
-  "ExternalDataTranField": {
-    "fields": [
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)."
-      },
-      {
-        "Description": "Required. Phone, currency, number, or other assigned type.",
-        "Field Name": "datatype",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. The Date format of date, time, date/time fields in this Transport field.",
-        "Field Name": "dateFormat",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reserved for internal use and read-only. Reference to the associated ExtDataTranFieldTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.",
-        "Field Name": "extDataTranFieldTemplate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
-        "Field Name": "externalName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. If true, this field is a currency ISO code.",
-        "Field Name": "isCurrencyIsoCode",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. If true, data is required for this field.",
-        "Field Name": "isDataRequired",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. Length of a string column.",
-        "Field Name": "length",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional.",
-        "Field Name": "mktDataTranField",
-        "Field Type": "mktDataTranFieldType"
-      },
-      {
-        "Description": "Optional. Used for currency and numeric accuracy.",
-        "Field Name": "precision",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it's a compound primary key. Missing value means this field isn’t part of the primary key.",
-        "Field Name": "primaryIndexOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numbers.",
-        "Field Name": "scale",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. The sequence of this source schema.",
-        "Field Name": "sequence",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Stores the fields related to ExternalDataTranObject schema.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
-  "MktDataTranField": {
-    "fields": [
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)."
-      },
-      {
-        "Description": "Required. Phone, currency, number, or other assigned type.",
-        "Field Name": "datatype",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. The Date format of date, time, date/time fields in this Transport field.",
-        "Field Name": "dateFormat",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
-        "Field Name": "externalName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. If true, data is required for this field.",
-        "Field Name": "isDataRequired",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. Length of a string column.",
-        "Field Name": "length",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numeric accuracy.",
-        "Field Name": "precision",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it's a compound primary key. Missing value means this field isn’t part of the primary key.",
-        "Field Name": "primaryIndexOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numbers.",
-        "Field Name": "scale",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. The sequence of this source schema.",
-        "Field Name": "sequence",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Stores fields related to MktDataTranObject.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
   "FieldSrcTrgtRelationship": {
     "fields": [
       {
@@ -1632,6 +1461,68 @@
       }
     ],
     "short_description": "An entity that is used to deliver (aka transport) information from the source to a target (target will be called a landing entity).This can be the schema of a file, API, Event, or other means of transporting data, such as SubscriberFile1.csv, or SubscriberCDCEvent.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mktdatatranobject.htm",
+    "parent": "Metadata"
+  },
+  "MktDataTranField": {
+    "fields": [
+      {
+        "Description": "Optional: Was this object added as a result of the Customer, part of a Standard Taxonomy. Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
+        "Field Name": "creationType",
+        "Field Type": "DefinitionCreationType"
+      },
+      {
+        "Description": "Required. Phone, currency, number, or other assigned type.",
+        "Field Name": "datatype",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional: The Date format of date, time, date/time fields in this Transport field.",
+        "Field Name": "dateFormat",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
+        "Field Name": "externalName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. If true, data is required for this field.",
+        "Field Name": "isDataRequired",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Optional. Length of a string column",
+        "Field Name": "length",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional? Field label.",
+        "Field Name": "masterLabel",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. Used for currency and numeric accuracy.",
+        "Field Name": "precision",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if this happens to be a compound primary key. Missing value means this field is not part of the primary key.",
+        "Field Name": "primaryIndexOrder",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. Used for currency and numeric accuracy.",
+        "Field Name": "scale",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. The sequence of this source schema.",
+        "Field Name": "sequence",
+        "Field Type": "int"
+      }
+    ],
+    "short_description": "This is a sub-type to MktDataTranObject.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mktdatatranobject.htm",
     "parent": "Metadata"
   },
@@ -1994,110 +1885,6 @@
     ],
     "short_description": "Represents the mapping of the financial data model to a logical data model and configuration for the generation of Transaction Journal records.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_accountingmodelconfig.htm",
-    "parent": "Metadata"
-  },
-  "ActionLinkGroupTemplate": {
-    "fields": [
-      {
-        "Description": "Action link templates that are associated with the action link group template.",
-        "Field Name": "actionLinkTemplates",
-        "Field Type": "ActionLinkTemplate[]"
-      },
-      {
-        "Description": "Required. The location of the action link group within the feed element. Values are: Primary—The action link group is displayed in the body of the feed element. Overflow—The action link group is displayed in the overflow menu of the feed element.",
-        "Field Name": "category",
-        "Field Type": "PlatformAction​GroupCategory (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The number of times an action link can be executed. Values are: Once—An action link can be executed only once across all users. OncePerUser—An action link can be executed only once for each user. Unlimited—An action link can be executed an unlimited number of times by each user. If the action link’s actionType is Api or ApiAsync, you can’t use this value.",
-        "Field Name": "executionsAllowed",
-        "Field Type": "ActionLink​ExecutionsAllowed (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The number of hours from when the action link group is created until it's removed from associated feed elements and can no longer be executed. The maximum value is 8,760.",
-        "Field Name": "hoursUntilExpiration",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. If true, the action link group template is published. Action link group templates shouldn’t be published until at least one action link template is associated with it.",
-        "Field Name": "isPublished",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The name of the action link group template to use in code.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the action link group template. Action link templates let you reuse action link definitions and package and distribute action links. An action link is a button on a feed element. Clicking on an action link can take a user to another Web page, initiate a file download, or invoke an API call to an external server or Salesforce. Use action links to integrate Salesforce and third-party services into the feed. Every action link belongs to an action link group and action links within the group are mutually exclusive. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionlinkgrouptemplate.htm",
-    "parent": "Metadata"
-  },
-  "ActionLinkTemplate": {
-    "fields": [
-      {
-        "Description": "Required. The action link URL. For example, a Ui action link URL is a Web page. A Download action link URL is a link to the file to download. Ui and Download action link URLs are provided to clients. An Api or ApiAsync action link URL is a REST resource. Api and ApiAsync action link URLs aren’t provided to clients. Links to Salesforce can be relative. All other links must be absolute and start with https://.",
-        "Field Name": "actionUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Template for the HTTP headers sent when corresponding action links are invoked. This field can be used only for Api and ApiAsync action links. This field can contain context variables and binding variables in the form {!Bindings.key}.",
-        "Field Name": "headers",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. If true, a confirmation dialog appears before the action is executed.",
-        "Field Name": "isConfirmationRequired",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If true, action links derived from this template are the default or primary action in their action groups. There can be only one default action per action group.",
-        "Field Name": "isGroupDefault",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "A custom label to display on the action link button. If none of the LabelKey values make sense for an action link, use a custom label. Set the LabelKey field to None and enter a label name in the Label field.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Key for the set of labels to display for these action link states: new, pending, success, failed. For example, the Approve set contains these labels: Approve, Pending, Approved, Failed. For a complete list of keys and labels, see Action Link Labels in the Connect REST API Developer Guide.",
-        "Field Name": "labelKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The type of action link. One of these values: Api—The action link calls a synchronous API at the action URL. Salesforce sets the status to SuccessfulStatus or FailedStatus based on the HTTP status code returned by your server. ApiAsync—The action link calls an asynchronous API at the action URL. The action remains in a PendingStatus state until a third party makes a request to /connect/action-links/actionLinkId to set the status to SuccessfulStatus or FailedStatus when the asynchronous operation is complete. Download—The action link downloads a file from the action URL. Ui—The action link takes the user to a web page at the action URL.",
-        "Field Name": "linkType",
-        "Field Type": "ActionLinkType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. HTTP method for the action URL. One of these values: HttpDelete—Returns HTTP 204 on success. Response body or output class is empty. HttpGet—Returns HTTP 200 on success. HttpHead—Returns HTTP 200 on success. Response body or output class is empty. HttpPatch—Returns HTTP 200 on success or HTTP 204 if the response body or output class is empty. HttpPost—Returns HTTP 201 on success or HTTP 204 if the response body or output class is empty. Exceptions are the batch posting resources and methods, which return HTTP 200 on success. HttpPut—Return HTTP 200 on success or HTTP 204 if the response body or output class is empty. Ui and Download action links must use HttpGet.",
-        "Field Name": "method",
-        "Field Type": "ActionLink​HttpMethod (enumeration of type string)"
-      },
-      {
-        "Description": "Required. An integer specifying the position of the action link template relative to other action links in the group. 0 is the first position.",
-        "Field Name": "position",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Template for the HTTP request body sent when corresponding action links are invoked. This field can be used only for Api and ApiAsync action links. This field can contain context variables and binding variables in the form {!Bindings.key}.",
-        "Field Name": "requestBody",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If you selected CustomUser or CustomExcludedUser for UserVisibility, this field is the alias for the custom user. Use the alias in a template binding to specify the custom user when an action link group is created using the template.",
-        "Field Name": "userAlias",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Who can see the action link. This value is set per action link, not per action link group. Values are: Creator—Only the creator of the action link can see the action link. Everyone—Everyone can see the action link. EveryoneButCreator—Everyone but the creator of the action link can see the action link. Manager—Only the manager of the creator of the action link can see the action link. CustomUser—Only the custom user can see the action link. CustomExcludedUser—Everyone but the custom user can see the action link.",
-        "Field Name": "userVisibility",
-        "Field Type": "ActionLink​UserVisibility (enumeration of type string)"
-      }
-    ],
-    "short_description": "ActionLinkTemplate components are used to create multiple action links that share properties.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionlinkgrouptemplate.htm",
     "parent": "Metadata"
   },
   "ActionPlanTemplate": {
@@ -4456,38 +4243,6 @@
     "short_description": "Represents a suite of Apex test classes to include in a test run.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apextestsuite.htm",
     "parent": "Metadata"
-  },
-  "ApexTrigger": {
-    "fields": [
-      {
-        "Description": "Required. The API version for this trigger. Every trigger has an API version specified at creation.",
-        "Field Name": "apiVersion",
-        "Field Type": "double"
-      },
-      {
-        "Description": "The Apex trigger definition. This field is inherited from the MetadataWithContent component.",
-        "Field Name": "content",
-        "Field Type": "base64"
-      },
-      {
-        "Description": "The Apex trigger name. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and can’t end with an underscore or contain two consecutive underscore characters. This field is inherited from the Metadata component.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The list of installed managed package versions that are referenced by this Apex trigger.For more information about managed packages, see the Second-Generation Managed Packaging Developer Guide. This field is available in API version 16.0 and later.",
-        "Field Name": "packageVersions",
-        "Field Type": "PackageVersion[]"
-      },
-      {
-        "Description": "Required. The status of the Apex trigger. The following string values are valid: Active - The trigger is active. Inactive - The trigger is inactive, but not deleted. Deleted - The trigger is marked for deletion. Useful for managed packages, because it allows a trigger to be deleted when a managed package is updated.",
-        "Field Name": "status",
-        "Field Type": "ApexCodeUnitStatus (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_triggers.htm",
-    "parent": "MetadataWithContent"
   },
   "AppointmentAssignmentPolicy": {
     "fields": [
@@ -7345,50 +7100,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_botversion.htm",
     "parent": "Metadata"
   },
-  "BrandingSet": {
-    "fields": [
-      {
-        "Description": "An array containing the name and value of each branding property, such as TextColor:#333.",
-        "Field Name": "brandingSetProperty",
-        "Field Type": "BrandingSetProperty[]"
-      },
-      {
-        "Description": "A description of the set of branding properties.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The user interface name of the set of branding properties.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The assigned branding set definition for this BrandingSet.",
-        "Field Name": "type",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the definition of a set of branding properties for an Experience Builder site or for your org's Lightning Experience theme.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
-    "parent": "Metadata"
-  },
-  "BrandingSetProperty": {
-    "fields": [
-      {
-        "Description": "Required. The name of the branding property, such as TextColor.",
-        "Field Name": "propertyName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The value of the branding property, such as #333.",
-        "Field Name": "propertyValue",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the definition of a branding property in the Theme panel in Experience Builder or in the Edit Theme page in Setup.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
-    "parent": "Metadata"
-  },
   "BriefcaseDefinition": {
     "fields": [
       {
@@ -7589,119 +7300,6 @@
     ],
     "short_description": "",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm",
-    "parent": "Metadata"
-  },
-  "CallCenter": {
-    "fields": [
-      {
-        "Description": "Optional field. A URL that points to an adapter.",
-        "Field Name": "adapterUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.",
-        "Field Name": "contactCenterChannels",
-        "Field Type": "ContactCenterChannel[]"
-      },
-      {
-        "Description": "Required. The display name of this call center.",
-        "Field Name": "displayName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the displayName field in Call Center setup page.",
-        "Field Name": "displayNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the internalName field in Call Center setup page.",
-        "Field Name": "internalNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Custom setup items defined for this call center.",
-        "Field Name": "sections",
-        "Field Type": "CallCenterSection[]"
-      },
-      {
-        "Description": "The version of this call center.",
-        "Field Name": "version",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterSection": {
-    "fields": [
-      {
-        "Description": "Contains the label, name, and value that describe the sections.",
-        "Field Name": "items",
-        "Field Type": "CallCenterItem[]"
-      },
-      {
-        "Description": "Required. The label of the section.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the section.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterItem": {
-    "fields": [
-      {
-        "Description": "Required. The label of the custom setup item.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom setup item.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the custom setup item.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "ContactCenterChannel": {
-    "fields": [
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.",
-        "Field Name": "channel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.",
-        "Field Name": "contactCenter",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailFallbackQueue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailHandler",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
     "parent": "Metadata"
   },
   "CallCenterRoutingMap": {
@@ -7948,43 +7546,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_caresystemfieldmapping.htm",
     "parent": "Metadata"
   },
-  "CareProviderSearchConfig": {
-    "fields": [
-      {
-        "Description": "Indicates whether this configuration is active (true) or not (false).",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "An auto-generated value that doesn’t currently impact the behavior of the metadata type.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates mapped objects.Possible values are; HealthCarePractitionerFacility HealthCareProvider",
-        "Field Name": "mappedObject",
-        "Field Type": "ProviderSearch​ObjectMapping (enumeration of type string)"
-      },
-      {
-        "Description": "Required. Name of the care provider.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of the field that is copied to the target object.",
-        "Field Name": "sourceField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of the field to copy the data to.",
-        "Field Name": "targetField",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the information about the fields that appear in care provider search results.This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_careprovidersearchconfig.htm",
-    "parent": "Metadata"
-  },
   "CareRequestConfiguration": {
     "fields": [
       {
@@ -8165,33 +7726,6 @@
     ],
     "short_description": "Represents a choice list value in the pre-chat dropdown. ChoiceListValue is available in API version 62 or later.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm",
-    "parent": "Metadata"
-  },
-  "ClaimFinancialSettings": {
-    "fields": [
-      {
-        "Description": "Required. The status of pending financial authority for claim coverage.",
-        "Field Name": "claimCovPendingAuthStatus",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The status of pending financial authority for claim.",
-        "Field Name": "claimPendingAuthorityStatus",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The status of pending financial authority for claim coverage payment detail.",
-        "Field Name": "clmCovPymtDtlPendAuthSts",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique label that identifies the claim financial settings throughout the Salesforce user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the configuration settings for Insurance Claim Financial Services.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_claimfinancialsettings.htm",
     "parent": "Metadata"
   },
   "ClauseCatgConfiguration": {
@@ -8917,156 +8451,6 @@
     ],
     "short_description": "This field is available in API version 39.0 and later.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeDefinition": {
-    "fields": [
-      {
-        "Description": "If specified, at least one preview image and one highlight are required. Up to 3 preview images and 4 highlights are supported. Available in API version 44.0 and later",
-        "Field Name": "bundlesInfo",
-        "Field Type": "CommunityThemeBundleInfo[]"
-      },
-      {
-        "Description": "The list of custom theme layout types available to the theme layout.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "CommunityCustomThemeLayoutType[]"
-      },
-      {
-        "Description": "The set of branding properties associated with this CommunityThemeDefinition, as defined in the Theme panel in Experience Builder. Available in API version 44.0 and later.",
-        "Field Name": "defaultBrandingSet",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The optional description text of this CommunityThemeDefinition.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "False by default. Determines if deleting this CommunityThemeDefinition attempts to delete other directly or indirectly referenced objects automatically, for example, FlexiPage. Values are true or false.",
-        "Field Name": "enableExtendedCleanUp​OnDelete",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The label for this CommunityThemeDefinition, which displays in Setup.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Defines the name of the publisher as seen in the wizard for creating Experience Builder sites. If no name is provided, the name of the org from which the package was originally exported is used.This field is available in API version 45.0 and later.",
-        "Field Name": "publisher",
-        "Field Type": "string"
-      },
-      {
-        "Description": "List of theme layout type overrides for flexipages (currently only for home). Available in API version 44.0 and later.",
-        "Field Name": "themeRouteOverride",
-        "Field Type": "CommunityThemeRouteOverride[]"
-      },
-      {
-        "Description": "Required. The list of settings for this CommunityThemeDefinition.",
-        "Field Name": "themeSetting",
-        "Field Type": "CommunityTheme Setting []"
-      }
-    ],
-    "short_description": "Represents the definition of a theme for an Experience Builder site. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeBundleInfo": {
-    "fields": [
-      {
-        "Description": "The optional description text of its CommunityThemeBundleInfo.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required only when the type is PreviewImage, otherwise this field is optional. A preview image for this CommunityThemeDefinition.",
-        "Field Name": "image",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. An integer specifying the position of this CommunityThemeBundleInfo relative to others of the same type within its CommunityThemeDefinition. 1 is the first position, 3 is the maximum position for PreviewImage type, and 4 is the maximum position for the Highlight type.",
-        "Field Name": "order",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. The title of this CommunityThemeBundleInfo to use in code.",
-        "Field Name": "title",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Stores descriptive information about the theme that is included in the export. Valid values are: Highlight—This CommunityThemeBundleInfo is used as a highlighted feature. Up to 4 are supported. PreviewImage—This CommunityThemeBundleInfo is used as a preview image. Up to 3 are supported.",
-        "Field Name": "type",
-        "Field Type": "CommunityTemplate​BundleInfoType (enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityCustomThemeLayoutType": {
-    "fields": [
-      {
-        "Description": "The description of the custom theme layout type.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom theme layout type. The values Inner, Home, and Login are reserved.",
-        "Field Name": "label",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeRouteOverride": {
-    "fields": [
-      {
-        "Description": "Required when themeLayoutType isn’t specified. Provides the custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the attributes of the site page for which the default theme layout type is overridden. The only valid value is {\"PageName\":\"Home\"}.",
-        "Field Name": "pageAttributes",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.",
-        "Field Name": "pageType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required if customThemeLayoutType isn’t specified. Provides the default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "themeLayoutType",
-        "Field Type": "CommunityTheme​LayoutType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityTheme Setting": {
-    "fields": [
-      {
-        "Description": "Required when themeLayoutType isn’t specified. The custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The configuration and layout for this theme.",
-        "Field Name": "themeLayout",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required when customThemeLayoutType isn’t specified. The default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "themeLayoutType",
-        "Field Type": "CommunityTheme​LayoutType (enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
     "parent": "Metadata"
   },
   "ConnectedApp": {
