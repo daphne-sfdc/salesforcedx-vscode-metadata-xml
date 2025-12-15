@@ -1306,177 +1306,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatasource.htm",
     "parent": "Metadata"
   },
-  "ExternalDataTranObject": {
-    "fields": [
-      {
-        "Description": "Required. Represents the availability of the object. Valid values are: Available In_Use",
-        "Field Name": "availabilityStatus",
-        "Field Type": "AvailabilityStatus (enumeration of type string)"
-      },
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Activation_Audience (Reserved for internal use only) Custom Standard System Derived Bridge Curated Standard Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)"
-      },
-      {
-        "Description": "Reserved for internal use and read-only. Reference to the associated ExtDataTranObjectTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.",
-        "Field Name": "extDataTranObjectTemplate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Stores the fields related to that schema object.",
-        "Field Name": "externalDataTranFields",
-        "Field Type": "ExternalDataTranField"
-      },
-      {
-        "Description": "Required. The UI name for the object.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. An entity that is used to transport information from the source to a target.",
-        "Field Name": "mktDataTranObject",
-        "Field Type": "MktDataTranObject"
-      },
-      {
-        "Description": "Required. Reference to the Object Category. For Transport, they're Profile, Engagement, or Other.",
-        "Field Name": "objectCategory",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a definition of a Data 360 schema object. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
-  "ExternalDataTranField": {
-    "fields": [
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)."
-      },
-      {
-        "Description": "Required. Phone, currency, number, or other assigned type.",
-        "Field Name": "datatype",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. The Date format of date, time, date/time fields in this Transport field.",
-        "Field Name": "dateFormat",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reserved for internal use and read-only. Reference to the associated ExtDataTranFieldTemplate data kit object. The system populates this field when a data kit that contains a data stream is deployed.",
-        "Field Name": "extDataTranFieldTemplate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
-        "Field Name": "externalName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. If true, this field is a currency ISO code.",
-        "Field Name": "isCurrencyIsoCode",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. If true, data is required for this field.",
-        "Field Name": "isDataRequired",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. Length of a string column.",
-        "Field Name": "length",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional.",
-        "Field Name": "mktDataTranField",
-        "Field Type": "mktDataTranFieldType"
-      },
-      {
-        "Description": "Optional. Used for currency and numeric accuracy.",
-        "Field Name": "precision",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it's a compound primary key. Missing value means this field isn’t part of the primary key.",
-        "Field Name": "primaryIndexOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numbers.",
-        "Field Name": "scale",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. The sequence of this source schema.",
-        "Field Name": "sequence",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Stores the fields related to ExternalDataTranObject schema.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
-  "MktDataTranField": {
-    "fields": [
-      {
-        "Description": "Required. Describes whether this object was added by the Customer or as part of a Standard Taxonomy or by the System. Valid values are: Segment_Membership Custom Standard System Derived Bridge Curated Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
-        "Field Name": "creationType",
-        "Field Type": "DefinitionCreationType (enumeration of type string)."
-      },
-      {
-        "Description": "Required. Phone, currency, number, or other assigned type.",
-        "Field Name": "datatype",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. The Date format of date, time, date/time fields in this Transport field.",
-        "Field Name": "dateFormat",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
-        "Field Name": "externalName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Optional. If true, data is required for this field.",
-        "Field Name": "isDataRequired",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Optional. Length of a string column.",
-        "Field Name": "length",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numeric accuracy.",
-        "Field Name": "precision",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if it's a compound primary key. Missing value means this field isn’t part of the primary key.",
-        "Field Name": "primaryIndexOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. Used for currency and numbers.",
-        "Field Name": "scale",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Optional. The sequence of this source schema.",
-        "Field Name": "sequence",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Stores fields related to MktDataTranObject.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldatatranobject.htm",
-    "parent": "Metadata"
-  },
   "FieldSrcTrgtRelationship": {
     "fields": [
       {
@@ -1632,6 +1461,68 @@
       }
     ],
     "short_description": "An entity that is used to deliver (aka transport) information from the source to a target (target will be called a landing entity).This can be the schema of a file, API, Event, or other means of transporting data, such as SubscriberFile1.csv, or SubscriberCDCEvent.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mktdatatranobject.htm",
+    "parent": "Metadata"
+  },
+  "MktDataTranField": {
+    "fields": [
+      {
+        "Description": "Optional: Was this object added as a result of the Customer, part of a Standard Taxonomy. Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
+        "Field Name": "creationType",
+        "Field Type": "DefinitionCreationType"
+      },
+      {
+        "Description": "Required. Phone, currency, number, or other assigned type.",
+        "Field Name": "datatype",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional: The Date format of date, time, date/time fields in this Transport field.",
+        "Field Name": "dateFormat",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. Name of the object in the external system (different from Developer Name).",
+        "Field Name": "externalName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. If true, data is required for this field.",
+        "Field Name": "isDataRequired",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Optional. Length of a string column",
+        "Field Name": "length",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional? Field label.",
+        "Field Name": "masterLabel",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Optional. Used for currency and numeric accuracy.",
+        "Field Name": "precision",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. If supplied, indicates this field is part of the primary key where the number value (starting at 1) indicates the order of attributes if this happens to be a compound primary key. Missing value means this field is not part of the primary key.",
+        "Field Name": "primaryIndexOrder",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. Used for currency and numeric accuracy.",
+        "Field Name": "scale",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Optional. The sequence of this source schema.",
+        "Field Name": "sequence",
+        "Field Type": "int"
+      }
+    ],
+    "short_description": "This is a sub-type to MktDataTranObject.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mktdatatranobject.htm",
     "parent": "Metadata"
   },
@@ -3675,6 +3566,11 @@
         "Field Type": "string"
       },
       {
+        "Description": "The description for the visualization.",
+        "Field Name": "description",
+        "Field Type": "string"
+      },
+      {
         "Description": "A list of data fields for the visualization. A visualization has 0 or more fields.",
         "Field Name": "fields",
         "Field Type": "AnalyticsVizField[]"
@@ -4177,93 +4073,6 @@
     ],
     "short_description": "",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_channellayout.htm",
-    "parent": "Metadata"
-  },
-  "ArticleType CustomField": {
-    "fields": [
-      {
-        "Description": "If specified, represents the default value of the field. This field was deprecated in API version 48.0.",
-        "Field Name": "defaultValue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Provides deletion options for lookup relationships. Valid values are: Cascade—Deletes the lookup record as well as associated lookup fields. Restrict—Prevents the record from being deleted if it's in a lookup relationship. SetNull—This is the default. If the lookup record is deleted, the lookup field is cleared. For more information on lookup relationships, see \"Object Relationships\" in Salesforce Help.",
-        "Field Name": "deleteConstraint",
-        "Field Type": "Metadata Field Types (enumeration of type string)"
-      },
-      {
-        "Description": "Description of the field.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If specified, represents a formula on the field.",
-        "Field Name": "formula",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates how to treat blanks in a formula. Valid values are: BlankAsBlank and BlankAsZero.",
-        "Field Name": "formulaTreatBlankAs",
-        "Field Type": "Metadata Field Types (enumeration of type string)"
-      },
-      {
-        "Description": "Inherited from Metadata, this field is defined in the WSDL for this metadata type. It must be specified when creating, updating, or deleting. See createMetadata() to see an example of this field specified for a call.This value cannot be null.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Represents the content of field-level help. For more information, see \"Define Field-Level Help\" in Salesforce Help.",
-        "Field Name": "inlineHelpText",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Label for the field. You cannot update the label for standard fields in Article Type such as Title, UrlName, Summary, etc.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Length of the field.",
-        "Field Name": "length",
-        "Field Type": "int"
-      },
-      {
-        "Description": "(Deprecated. Use this field in API version 37.0 and earlier only. In later versions, use valueSet instead.) If specified, the field is a picklist, and this field enumerates the picklist values and labels.",
-        "Field Name": "picklist",
-        "Field Type": "Picklist (Including Dependent Picklist)"
-      },
-      {
-        "Description": "If specified, indicates a reference this field has to another object.",
-        "Field Name": "referenceTo",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Label for the relationship.",
-        "Field Name": "relationshipLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If specified, indicates the value for one-to-many relationships. For example, in the object MyObject that had a relationship to YourObject, the relationship name might be YourObjects.",
-        "Field Name": "relationshipName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the field requires a value on creation (true) or not (false).",
-        "Field Name": "required",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates the field type for the field. Valid values are: Checkbox available in version 30.0 and later Currency ArticleCurrency Date DateTime Email File Formula Html Lookup Number Percent Phone Picklist DependentPicklist MultiselectPicklist Text TextArea LongTextArea URL",
-        "Field Name": "type",
-        "Field Type": "FieldType"
-      },
-      {
-        "Description": "Indicates the number of lines displayed for the field.",
-        "Field Name": "visibleLines",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents the metadata associated with an article type custom field. Use this metadata type to create, update, or delete article type custom field definitions. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_customfield.htm",
     "parent": "Metadata"
   },
   "ApexClass": {
@@ -5911,73 +5720,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_batchcalcjobdefinition.htm",
     "parent": "Metadata"
   },
-  "BatchProcessJobDefinition": {
-    "fields": [
-      {
-        "Description": "Required. Number of records that each Batch Management job can process. Flow type Batch Management jobs can process up to 2000 records and Loyalty Program Process type Batch Management jobs can process up to 250 records.",
-        "Field Name": "batchSize",
-        "Field Type": "integer"
-      },
-      {
-        "Description": "Required. Source of information whose records must be processed by the Batch Management job.",
-        "Field Name": "dataSource",
-        "Field Type": "BatchDataSource[]"
-      },
-      {
-        "Description": "Description of the Batch Management job, up to 255 characters.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of process that must be executed by the Batch Management job. This field is available in API version 55.0 and later. If the batch job’s type is Flow, enter the API name of an active flow that the batch job must execute. If the batch job’s type is Loyalty Program Process, enter: Transaction_Journals if you want the batch job to process Transaction Journal records by applying the applicable active loyalty program process of the type TransactionJournal. API name of an active loyalty process of the type TierProcessing if you want the batch job to run the loyalty program process to assess the tier of eligible members. The API name consists of the name of the process, the process type, and the name of the loyalty program separated by two consecutive underscores. For example, the process API name is Update Member Tier__TierProcessing__Inner Circle if the process name is Update Member Tier, the process type is TierProcessing, and the loyalty program name is Inner Circle. You can use database-based APEX classes that let you use flex queues in the Batch Management job, allowing to place more than 5 jobs in a queue. This functionality is applicable to all Industry Clouds that use managed packages. See Apex Flex Queue.",
-        "Field Name": "executionProcessApiName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of an active flow process that must be executed by the Batch Management job.You can either specify the flow API name in the executionProcessApiName field or in the flowApiName field.",
-        "Field Name": "flowApiName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Input variable of associated flow that is used by the batch job to uniquely identify records.",
-        "Field Name": "flowInputVariable",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Name of the Batch Management job, up to 80 characters.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Name of the group for which the Batch Management job processes records.",
-        "Field Name": "processGroup",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Number of times this Batch Management job must be rerun in case it fails. The maximum retry count is 3. Valid values are 1–3.",
-        "Field Name": "retryCount",
-        "Field Type": "integer"
-      },
-      {
-        "Description": "Required. Number of milliseconds after which the Batch Management job must be rerun in case it fails. Valid values are 1,000–10,000.",
-        "Field Name": "retryInterval",
-        "Field Type": "integer"
-      },
-      {
-        "Description": "Indicates the status of the Batch Management job. Valid values are Active and Inactive.",
-        "Field Name": "status",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The type of process that the Batch Management job must execute. This field is available in API version 55.0 and later. Valid values are: Flow Loyalty Program Process",
-        "Field Name": "type",
-        "Field Type": "string (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents the details of a Batch Management job definition. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_batchprocessjobdefinition.htm",
-    "parent": "Metadata"
-  },
   "BillingSettings": {
     "fields": [
       {
@@ -7377,127 +7119,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
     "parent": "Metadata"
   },
-  "BriefcaseDefinition": {
-    "fields": [
-      {
-        "Description": "A list of rules that specify which records are included in the briefcase.",
-        "Field Name": "briefcaseRules",
-        "Field Type": "BriefcaseRule[]"
-      },
-      {
-        "Description": "Description of the briefcase.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates whether the briefcase is active by default (true) or inactive (false). Activate a briefcase to make the selected records available to assignees.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Label for the briefcase name that appears in the Salesforce user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Applies if multiple briefcase types are available in your org. Enum values include: Standard: Standard briefcase that can be used with priming APIs. HighVolume: Increased capacity briefcase that’s used with performance priming in the Salesforce Field Service mobile app. MobileAppSync: Automatically generated briefcase that’s used for performance priming in the Salesforce Field Service mobile app.",
-        "Field Name": "type",
-        "Field Type": "BriefcaseType"
-      }
-    ],
-    "short_description": "Represents a briefcase definition. A briefcase makes selected records available for specific users and groups to view when they’re offline in the Salesforce Field Service mobile app for iOS and Android. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
-  "BriefcaseRule": {
-    "fields": [
-      {
-        "Description": "A list of filters on a rule.",
-        "Field Name": "briefcaseRuleFilters",
-        "Field Type": "BriefcaseRuleFilter[]"
-      },
-      {
-        "Description": "The filter logic for record selection, for example, 1 AND 2 where 1 and 2 correspond to filter 1 and filter 2. Filter logic operators include AND and OR.",
-        "Field Name": "filterLogic",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the records should be sorted in ascending order (true) or descending order (false).",
-        "Field Name": "isAscendingOrder",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the briefcase rule is part of a hierarchical set of rules that configure the offline priming of file attachments. Available only for the Offline App (Salesforce Mobile App Plus).To configure the offline priming of file attachments, create a set of four hierarchical briefcase rules: A rule with targetEntity set to the object with the file attachments at the first level A rule with targetEntity set to ContentDocumentLink at the second level A rule with targetEntity set to ContentDocument at the third level A rule with targetEntity set to ContentVersion at the fourth level See the Declarative Metadata Sample Definition section for an example briefcase definition that configures the offline priming of file attachments. The ContentDocumentLink, ContentDocument, and ContentVersion rules must all have isRelatedFilesRule set to true. To delete a briefcase configuration for file attachments, you must delete the ContentDocumentLink rule and all of its nested rules. You can’t delete a single rule within the hierarchy of ContentDocumentLink, ContentDocument, and ContentVersion rules. When isRelatedFilesRule is set to true, you must use the recordLimit field to limit the number of file attachments returned by a briefcase rule. Apply the same recordLimit value across the ContentDocumentLink, ContentDocument, and ContentVersion rules. You can optionally filter file attachments by file size and file type through Briefcase Builder in Setup. After you set a value for isRelatedFilesRule, you can no longer modify the field. The value that you set persists for the life of the rule.",
-        "Field Name": "isRelatedFilesRule",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The field to order the records by, which determines how the records can be sorted. For example, Account Name or Created By.",
-        "Field Name": "orderBy",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A group of records to restrict the scope of this rule. Valid values include: Everything AssignedToMe Mine The AssignedToMe scope is supported for the ServiceAppointment object only.",
-        "Field Name": "queryScope",
-        "Field Type": "FilterScope (enumeration of type string)"
-      },
-      {
-        "Description": "The maximum number of records for an object on the briefcase rule. The maximum is 50,000 records that meet the criteria. However, the records returned by one briefcase rule must fit within the maximum limit of 50,000 records across active briefcases. If there are more records that match the criteria than the record limit allows, the orderBy field determines which records are returned.",
-        "Field Name": "recordLimit",
-        "Field Type": "int"
-      },
-      {
-        "Description": "A list of rules that are related to the current rule.",
-        "Field Name": "relatedRules",
-        "Field Type": "BriefcaseRule[]"
-      },
-      {
-        "Description": "Required for relatedRules. Defines the Salesforce object field that relates the relatedRules field to another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it's nested in. For example, an Account object rule can be related to a Contact object rule using the Account ID object field. In this example, the value for the related rule's relationshipField is AccountID.",
-        "Field Name": "relationshipField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required for relatedRules. Defines the relationship between the relatedRules field and another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it's nested in. Valid values include: ParentToChild ChildToParent",
-        "Field Name": "relationshipType",
-        "Field Type": "BriefcaseRuleRelationshipType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The API name of the standard object, custom object, or custom metadata type that the briefcase rule selects records from.If the targetEntity is a custom metadata type, the briefcase rule can’t include any other fields. You can add only one briefcase rule for the same custom metadata type in a briefcase. Custom metadata types are supported as the targetEntity for top-level rules only–you can’t create a related rule with targetEntity as a custom metadata type.",
-        "Field Name": "targetEntity",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a rule that specifies records to be included in the BriefcaseDefinition.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
-  "BriefcaseRuleFilter": {
-    "fields": [
-      {
-        "Description": "Required. The comparison operator for this rule filter. Capitalization matters with date filter operators. Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. Valid values include: d—Ends with e—Equals g—Greater than h—Greater than or equal l—Less than m—Less than or equal n—Not equals. This value is applicable only when filterValue is empty. s—Starts with",
-        "Field Name": "filterOperator",
-        "Field Type": "BriefcaseFilterOperator (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The filter number. When you apply multiple filters, the filters are numbered sequentially, 1, 2, 3, and so on.",
-        "Field Name": "filterSeqNumber",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The value that the field and criteria evaluate. For example, true or false for a boolean field whose criteria or filter operator is Equals.Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. For targetEntityField values that accept a user ID, such as OwnerId or CreatedById, enter $User.Id to pass the ID of the user making the request. To evaluate targetEntityField by whether the field is empty or not empty, leave filterValue blank and set filterOperator to e (equals) or n (not equals).",
-        "Field Name": "filterValue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The API name of the field to filter by. This field is from the targetEntity on BriefcaseRule. Compound fields aren't supported. Fields encrypted with deterministic encryption can be used in filters with equals and not equals operators.",
-        "Field Name": "targetEntityField",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Specifies filter criteria for a BriefcaseRule.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
   "BusinessProcessGroup": {
     "fields": [
       {
@@ -7934,43 +7555,6 @@
     ],
     "short_description": "Represents a mapping from source system fields to Salesforce objects and fields. This type extends the Metadata metadata type and inherits its fullName field.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_caresystemfieldmapping.htm",
-    "parent": "Metadata"
-  },
-  "CareProviderSearchConfig": {
-    "fields": [
-      {
-        "Description": "Indicates whether this configuration is active (true) or not (false).",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "An auto-generated value that doesn’t currently impact the behavior of the metadata type.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates mapped objects.Possible values are; HealthCarePractitionerFacility HealthCareProvider",
-        "Field Name": "mappedObject",
-        "Field Type": "ProviderSearch​ObjectMapping (enumeration of type string)"
-      },
-      {
-        "Description": "Required. Name of the care provider.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of the field that is copied to the target object.",
-        "Field Name": "sourceField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of the field to copy the data to.",
-        "Field Name": "targetField",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the information about the fields that appear in care provider search results.This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_careprovidersearchconfig.htm",
     "parent": "Metadata"
   },
   "CareRequestConfiguration": {
@@ -30065,35 +29649,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_messagingchannel.htm",
     "parent": "Metadata"
   },
-  "Metadata": {
-    "fields": [
-      {
-        "Description": "Required. The name of the component. For components with parent objects, such as fields and list views, the name must specify the name of the parent, for example Account.FirstName. The __c suffix must be appended to custom object names and custom field names when you’re setting the fullName. For example, a custom field in a custom object could have a fullName of MyCustomObject__c.MyCustomField__c.To reference a component in a package, prepend the package’s namespace prefix to the component name in the fullName field. Use the following syntax: namespacePrefix__ComponentName. For example, for the custom field component MyCustomObject__c.MyCustomField__c and the namespace MyNS, the full name is MyNS__MyCustomObject__c.MyCustomField__c. A namespace prefix is a 1-character to 15-character alphanumeric identifier that distinguishes your package and its contents from other publishers’ packages. For more information, see Create and Register Your Namespace for Second-Generation Managed Packages.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "The base class for all metadata types. You can’t edit this object. A component is an instance of a metadata type. Metadata is analogous to sObject, which represents all standard objects. Metadata represents all components and fields in the Metadata API. Instead of identifying each component with an ID, each custom object or custom field has a unique fullName, which must be distinct from standard object names, as it must be when you create custom objects or custom fields in the Salesforce user interface.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/metadata.htm",
-    "parent": "Metadata"
-  },
-  "MetadataWithContent": {
-    "fields": [
-      {
-        "Description": "Base 64-encoded binary data. Before making an API call, client applications must encode the binary attachment data as base64. Upon receiving a response, client applications must decode the base64 data to binary. This conversion is handled for you by a SOAP client.",
-        "Field Name": "content",
-        "Field Type": "base64Binary"
-      },
-      {
-        "Description": "Required. The name of the component. The fullName can contain only underscores and alphanumeric characters. It must be unique, begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.Inherited from the Metadata component, this field isn’t defined in the WSDL for this component. It must be specified when creating, updating, or deleting. See create() to see an example of this field specified for a call.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "MetadataWithContent is the base type for all metadata types that contain content, such as documents or email templates. It extends Metadata. You can’t edit this object.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadatawithcontent.htm",
-    "parent": "Metadata"
-  },
   "MfgProgramTemplate": {
     "fields": [
       {
@@ -30661,63 +30216,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mobilesecurityassignment.htm",
     "parent": "Metadata"
   },
-  "MobileSecurityPolicy": {
-    "fields": [
-      {
-        "Description": "The date that a mobile security policy is enforced.",
-        "Field Name": "effectiveDate",
-        "Field Type": "dateTime"
-      },
-      {
-        "Description": "Required. Indicates whether the mobile security policy is enabled. The default value is false, which means that the policy is disabled.",
-        "Field Name": "isEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "An auto-generated value that doesn’t impact the behavior of the metadata type. The default value is false.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. ​​A user-friendly name for MobileSecurityPolicy, which is defined when the MobileSecurityPolicy component is created.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The mobile operating system of the mobile security policy. Values are: Android iOS",
-        "Field Name": "mobilePlatform",
-        "Field Type": "MobileSecurityMobilePlatform (enumeration of type string)"
-      },
-      {
-        "Description": "The name of the mobile security assignment associated with the mobile security policy. See MobileSecurityAssignment.",
-        "Field Name": "mobileSecurityAssignment",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the mobile security policy rule.",
-        "Field Name": "ruleValue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The type of mobile security policy rule. Values are: Boolean Text TextList",
-        "Field Name": "ruleValueType",
-        "Field Type": "MobileSecurityPolicyRuleValueType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The severity level of a mobile security policy. Values are: Critical— Wipes app data and logs user out Error—Blocks access to the app until the issue is resolved, but doesn’t log user out Info— Blocks prohibited action or logs user action and informs user Warn—Notifies the user of the violation and recommends how to resolve, but user is able to continue using the app",
-        "Field Name": "severityLevel",
-        "Field Type": "MobileSecurityPolicySeverityLevel (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The type of mobile security policy. Values are: AllowedDeviceList Block3dTouch BlockCalendar BlockCamera BlockContacts BlockCustomKeyboard BlockFileBackup BlockMicrophone BlockOsSharing BlockedDeviceList BrowserUriScheme CheckBiometric DevicePasscode DisableUrlCaching JailbrokenDevice LogCertPin LogEmail LogPhonecall LogPolicyResult LogScreenshot LogTextmessage LogoutAfterRestart LogoutOnBiometricChange MalwareDetection ManInMiddle MaxOffline MaximumAppVersion MaximumOsVersion MinimumAppVersion MinimumOsVersion MinimumSecurityPatchVersion MininumAppVersion PhonecallUriScheme Screenshot",
-        "Field Name": "type",
-        "Field Type": "MobileSecurityPolicyType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents a mobile app security policy on the Salesforce mobile app with Enhanced Mobile App Security enabled. For a full description of each policy, see Enable and Configure Mobile App Security Policies.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mobilesecuritypolicy.htm",
-    "parent": "Metadata"
-  },
   "MobSecurityCertPinConfig": {
     "fields": [
       {
@@ -30884,247 +30382,6 @@
     "short_description": "Represents a set of disabled permissions and is used in conjunction with PermissionSetGroup. This type extends the PermissionSet metadata type.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mutingpermissionset.htm",
     "parent": "PermissionSet"
-  },
-  "MyDomainDiscoverableLogin": {
-    "fields": [
-      {
-        "Description": "Required. The Apex handler class that contains the Discovery authentication logic.",
-        "Field Name": "apexHandler",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The user who is executing the handler. Requires the Manage User permission.",
-        "Field Name": "executeApexHandlerAs",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The login prompt when the My Domain login page type is Discovery. This label supports localization with custom labels.",
-        "Field Name": "usernameLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the configuration settings when the My Domain login page type is Discovery. Login Discovery provides an identity-first login experience, where the login page contains the identifier field only. Based on the identifier entered, a handler determines how to authenticate the user. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_mydomaindiscoverablelogin.htm",
-    "parent": "Metadata"
-  },
-  "NamedCredential": {
-    "fields": [
-      {
-        "Description": "Specifies whether Apex code can use merge fields to populate the HTTP request body with org data when a callout is made. Corresponds to Allow Merge Fields in HTTP Body in the user interface. Defaults to false.This field is available in API version 41.0 and later.",
-        "Field Name": "allowMergeFieldsInBody",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Specifies whether Apex code can use merge fields to populate the HTTP header with org data when a callout is made. Corresponds to Allow Merge Fields in HTTP Header in the user interface. Defaults to false.This field is available in API version 41.0 and later.",
-        "Field Name": "allowMergeFieldsInHeader",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The authentication provider that the AuthProvider component represents.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "authProvider",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The URL where JWTs are exchanged for access tokens. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "authTokenEndpointUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "First part of the access key used to sign programmatic requests to AWS. Use when AWS Signature Version 4 is your authentication protocol. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "awsAccessKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The second part of the access key used to sign programmatic requests to AWS. Use when AWS Signature Version 4 is your authentication protocol. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "awsAccessSecret",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies which AWS Region the named credential accesses. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "awsRegion",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies which AWS resource the named credential accesses. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "awsService",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies whether the named credential is enabled for callouts. Valid values are: Disabled: The named credential is disabled for callouts. Enabled: The named credential is enabled for callouts. This field is available in API version 59.0 and later.",
-        "Field Name": "calloutStatus",
-        "Field Type": "calloutStatus (enumeration of type string)"
-      },
-      {
-        "Description": "If you specify a certificate, your Salesforce org supplies it when establishing each two-way SSL connection with the external system. The certificate is used for digital signatures, which verify that requests are coming from your Salesforce org.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "certificate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The URL or root URL of the callout endpoint. Corresponds to URL in the user interface.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "endpoint",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies whether Salesforce generates an authorization header and applies it to each callout that references the named credential. Corresponds to Generate Authorization Header in the user interface. Defaults to true.This field is available in API version 41.0 and later.",
-        "Field Name": "generateAuthorizationHeader",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "External service or other allowed recipients for the JWT. Written as JSON, with a quoted string for a single audience and an array of quoted strings for multiple audiences. Single audience example: “aud1” Multiple audiences example: [“aud1”, “aud2”, “aud3”].This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "jwtAudience",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Formula string calculating the Subject of the JWT. API names and constant strings, in single quotes, can be included. Allows a dynamic Subject unique per user requesting the token. For example, 'User='+$User.Id. Use this field when principalType is set to PerUser. Corresponds to Per User Subject in the user interface. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "jwtFormulaSubject",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specify who issued the JWT using a case-sensitive string. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "jwtIssuer",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Certificate verifying the JWT’s authenticity to external sites. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "jwtSigningCertificate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Static text, without quotes, that specifies the JWT Subject. Use this field when principalType is set to NamedUser. Corresponds to Named Principal Subject in the user interface. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "jwtTextSubject",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specify the number of seconds that the token is valid. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 46.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "jwtValidityPeriodSeconds",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. A user-friendly name for the named credential that appears in the Salesforce user interface, such as in list views.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reference to the (one or more) NamedCredentialParameter used to configure a named credential. This field is available in API version 56.0 and later.",
-        "Field Name": "namedCredentialParameters",
-        "Field Type": "NamedCredentialParameter[]"
-      },
-      {
-        "Description": "Specifies the type or behavior of this named credential. Valid values are: Legacy: The named credential is a legacy type, which means that it doesn’t use the schema introduced in the Winter ‘23 release. Used for backward compatibility. PrivateEndpoint: The named credential sends traffic through a private connection, bypassing the public internet. If the credential type is PrivateEndpoint, you must specify the value of OutboundNetworkConnection. SecuredEndpoint: The named credential is extensible and uses external credentials to control authentication and permissions. Standard: Reserved for internal use. This field is available in API version 56.0 and later.",
-        "Field Name": "namedCredentialType",
-        "Field Type": "NamedCredentialType (enumeration of type string)"
-      },
-      {
-        "Description": "The OAuth refresh token. Used to obtain a new access token for an end user when a token expires.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "oauthRefreshToken",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies the scope of permissions to request for the access token. Corresponds to Scope in the user interface.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "oauthScope",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The access token that’s issued by your authorization server.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "oauthToken",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies the outbound network connection that uses the named credential to send callouts to AWS. This field is valid only when NamedCredentialType is set to Legacy. First available in API version 49.0, this field is deprecated in API version 56.0 and later.",
-        "Field Name": "outboundNetworkConnection",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The password to be used by your org to access the external system. Ensure that the credentials have adequate privileges to access the external system. Depending on how you set up access, you might need to provide the administrator password.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "password",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Determines whether you're using one set or multiple sets of credentials to access the external system. Corresponds to Identity Type in the user interface. Values are: Anonymous NamedUser PerUser This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "principalType",
-        "Field Type": "ExternalPrincipalType (enumeration of type string)"
-      },
-      {
-        "Description": "The authentication protocol that’s required to access the external system. Valid values are: AwsSv4 Jwt JwtExchange NoAuthentication Oauth Password For connections to Amazon Web Services using Signature Version 4, use AwsSv4. For connections using a direct token system, select Jwt. If using an intermediary authorization provider to process JWTs and return access tokens, use JwtExchange. For Simple URL data sources, select NoAuthentication. For cloud-based Files Connect external systems, select Oauth. For on-premises systems, select Password. This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "protocol",
-        "Field Type": "AuthenticationProtocol (enumeration of type string)"
-      },
-      {
-        "Description": "The username to be used by your org to access the external system. Ensure that the credentials have adequate privileges for performing callouts to the external system. Depending on how you set up access, you might need to provide the administrator username.This field is valid only when NamedCredentialType is set to Legacy. This field is deprecated in API version 56.0.",
-        "Field Name": "username",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a named credential, which specifies the URL of a callout endpoint and its required authentication parameters in one definition. A named credential can be specified as an endpoint to simplify the setup of authenticated callouts.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_namedcredential.htm",
-    "parent": "Metadata"
-  },
-  "NamedCredentialParameter": {
-    "fields": [
-      {
-        "Description": "If the value of the parameterType field is ClientCertificate then this field references the certificate.",
-        "Field Name": "certificate",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A human-readable description of this named credential parameter.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If the value of the parameterType field is Authentication, then this field references an external credential that in turn references a set of authenticated user credentials.",
-        "Field Name": "externalCredential",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reserved for internal use.",
-        "Field Name": "globalNamedPrincipalCredential",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Reserved for internal use.",
-        "Field Name": "managedFeatureEnabledCallout",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The lookup field for the OutboundNetworkConnection parameter type. Used when namedCredentialType is PrivateEndpoint.",
-        "Field Name": "outboundNetworkConnection",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the named credential parameter.",
-        "Field Name": "parameterName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The type of the named credential parameter. Valid values are: AllowedManagedPackageNamespaces: Allows managed packages identified by specified namespaces to use the named credential and make callouts through it. Authentication: Specifies that this parameter configures authentication using the credentials specified in the external credential, referenced by the externalCredential field. ClientCertificate: Specifies that this parameter configures a client certificate, referenced by the certificate field. ConnectionStatus: Reserved for internal use. CreatedByNamespace: Reserved for internal use. CustomParameter: Reserved for internal use. HttpHeader: Allows the user to specify custom headers to be added to the callout at run time. When using HttpHeader, the parameterName field must be the header name as a string, and parameterValue must be a formula of a header value that is evaluated at run time. ManagedByComponent: Reserved for internal use. ManagedByFeature: Reserved for internal use. OutboundNetworkConnection: Specifies a lookup to an outbound network connection. When using this parameter type, the outboundNetworkConnection field is a string representing the lookup. Used when namedCredentialType is PrivateEndpoint. StandardNamedCredentialType: Reserved for internal use. Url: Specifies that this parameter configures the URL of the endpoint. Store the actual URL in the parameterValue field.",
-        "Field Name": "parameterType",
-        "Field Type": "NamedCredentialParamType (enumeration of type string)"
-      },
-      {
-        "Description": "If the parameterType field describes a literal value, such as Url, then the literal value is stored in this field, such as https://iam.amazonaws.com/.",
-        "Field Name": "parameterValue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reserved for internal use.",
-        "Field Name": "readOnlyNamedCredential",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Used to order HttpHeader parameters.",
-        "Field Name": "sequenceNumber",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Reserved for internal use.",
-        "Field Name": "systemUserNamedCredential",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents the parameters that configure a named credential. Named credential parameters are used to configure Named Credential callouts through a combination of the type, name, and value/lookup fields. Available in API version 56.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_namedcredential.htm",
-    "parent": "Metadata"
   },
   "NavigationMenu": {
     "fields": [
@@ -35910,7 +35167,7 @@
         "Field Type": "boolean"
       },
       {
-        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data 360 identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data 360 market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sales record during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
+        "Description": "Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data 360 identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer's email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. calcPriceProtectPayoutAmt—Calculates the payout after a price protection adjustment or execution is made. This value is available in API version 63.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data 360 market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sales record during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses",
         "Field Name": "type",
         "Field Type": "InvocableActionType (enumeration of type string)"
       }
