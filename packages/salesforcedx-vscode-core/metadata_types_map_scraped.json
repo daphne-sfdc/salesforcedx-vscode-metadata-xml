@@ -4438,147 +4438,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apextestsuite.htm",
     "parent": "Metadata"
   },
-  "ApexTrigger": {
-    "fields": [
-      {
-        "Description": "Required. The API version for this trigger. Every trigger has an API version specified at creation.",
-        "Field Name": "apiVersion",
-        "Field Type": "double"
-      },
-      {
-        "Description": "The Apex trigger definition. This field is inherited from the MetadataWithContent component.",
-        "Field Name": "content",
-        "Field Type": "base64"
-      },
-      {
-        "Description": "The Apex trigger name. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and can’t end with an underscore or contain two consecutive underscore characters. This field is inherited from the Metadata component.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The list of installed managed package versions that are referenced by this Apex trigger.For more information about managed packages, see the Second-Generation Managed Packaging Developer Guide. This field is available in API version 16.0 and later.",
-        "Field Name": "packageVersions",
-        "Field Type": "PackageVersion[]"
-      },
-      {
-        "Description": "Required. The status of the Apex trigger. The following string values are valid: Active - The trigger is active. Inactive - The trigger is inactive, but not deleted. Deleted - The trigger is marked for deletion. Useful for managed packages, because it allows a trigger to be deleted when a managed package is updated.",
-        "Field Name": "status",
-        "Field Type": "ApexCodeUnitStatus (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_triggers.htm",
-    "parent": "MetadataWithContent"
-  },
-  "AppointmentAssignmentPolicy": {
-    "fields": [
-      {
-        "Description": "Required. The label for the appointment assignment policy.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The frequency at which the utilization of service resources is calculated. Valid values are: Monthly ParameterBased Weekly",
-        "Field Name": "policyApplicableDuration",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The type of appointment assignment policy. Valid value is: loadBalancing",
-        "Field Name": "policyType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the count type for the resource utilization. Valid values are: NumberOfAppointments TotalAppointmentDuration",
-        "Field Name": "utilizationFactor",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the information about a resource assignment rule. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentassignmentpolicy.htm",
-    "parent": "Metadata"
-  },
-  "AppointmentSchedulingPolicy": {
-    "fields": [
-      {
-        "Description": "The name of the appointment assignment policy. This field is available in API version 53.0 and later.",
-        "Field Name": "appointmentAssignmentPolicy",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The proposed time interval in minutes between appointment start times. For example, if you set the interval to 15, appointments can then begin at the top of the hour and at 15-minute intervals thereafter (10:00 AM, 10:15 AM, 10:30 AM, and so on). Valid values are: 5 10 15 20 30 45 60 90 120 150 180 240 300 360 420 480",
-        "Field Name": "appointmentStartTimeInterval",
-        "Field Type": "picklist"
-      },
-      {
-        "Description": "Required. The API name of the custom Apex class that checks service resources’ external calendar events and returns the time slots where service resources are already booked. Available in API version 50.0 and later.",
-        "Field Name": "extCalEventHandler",
-        "Field Type": "lookup"
-      },
-      {
-        "Description": "Required. Indicates whether to consider shifts of service territory members when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.",
-        "Field Name": "isSvcTerritoryMemberShiftUsed",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether to consider the intersection of shifts and service territory operating hours when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.",
-        "Field Name": "isSvcTerrOpHoursWithShiftsUsed",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The label for the appointment scheduling policy.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates whether to check the external calendar for resource availability (true) or not (false). This field is available in API version 53.0 and later.",
-        "Field Name": "shouldCheckExternalCalendar",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether to consider events on the Salesforce calendar to determine the availability of service resources to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldConsiderCalendarEvents",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy prevents excluded service resources from being assigned to appointments (true) or not (false).",
-        "Field Name": "shouldEnforceExcludedResource",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy allows only required service resources to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldEnforceRequiredResource",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldMatchSkill",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills and skill levels to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldMatchSkillLevel",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy prevents users from scheduling appointments outside of an account’s visiting hours (true) or not (false).",
-        "Field Name": "shouldRespectVisitingHours",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy allows only service resources who are primary members of a service territory to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldUsePrimaryMembers",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Indicates whether this appointment scheduling policy allows service resources who are secondary members of a service territory to be assigned to appointments (true) or not (false).",
-        "Field Name": "shouldUseSecondaryMembers",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents a set of rules for scheduling appointments using Lightning Scheduler. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentschedulingpolicy.htm",
-    "parent": "Metadata"
-  },
   "ApprovalProcess": {
     "fields": [
       {
@@ -6591,7 +6450,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Required. This unique name prevents conflicts with other dialog groups associated with the same bot version. This name can contain only underscores and alphanumeric characters. The name must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
+        "Description": "Required. This unique name prevents conflicts with other dialog groups associated with the same bot version. This name can contain only underscores and alphanumeric characters. The name must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.Note",
         "Field Name": "developerName",
         "Field Type": "string"
       },
@@ -6623,7 +6482,7 @@
         "Field Type": "string"
       },
       {
-        "Description": "Required. This unique name prevents conflicts with other dialogs associated with the same bot version. This name can contain only underscores and alphanumeric characters. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
+        "Description": "Required. This unique name prevents conflicts with other dialogs associated with the same bot version. This name can contain only underscores and alphanumeric characters. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.Note",
         "Field Name": "developerName",
         "Field Type": "string"
       },
@@ -7324,50 +7183,6 @@
     ],
     "short_description": "Defines the natural language service that is used for the language assigned to a bot version. Available in API version 49.0 and later.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_botversion.htm",
-    "parent": "Metadata"
-  },
-  "BrandingSet": {
-    "fields": [
-      {
-        "Description": "An array containing the name and value of each branding property, such as TextColor:#333.",
-        "Field Name": "brandingSetProperty",
-        "Field Type": "BrandingSetProperty[]"
-      },
-      {
-        "Description": "A description of the set of branding properties.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The user interface name of the set of branding properties.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The assigned branding set definition for this BrandingSet.",
-        "Field Name": "type",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the definition of a set of branding properties for an Experience Builder site or for your org's Lightning Experience theme.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
-    "parent": "Metadata"
-  },
-  "BrandingSetProperty": {
-    "fields": [
-      {
-        "Description": "Required. The name of the branding property, such as TextColor.",
-        "Field Name": "propertyName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The value of the branding property, such as #333.",
-        "Field Name": "propertyValue",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the definition of a branding property in the Theme panel in Experience Builder or in the Edit Theme page in Setup.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
     "parent": "Metadata"
   },
   "BriefcaseDefinition": {
