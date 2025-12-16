@@ -13325,55 +13325,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apexsharingreason.htm",
     "parent": "Metadata"
   },
-  "SharingRecalculation": {
-    "fields": [
-      {
-        "Description": "Required. The Apex class that recalculates the Apex sharing for a custom object. This class must implement the Database.Batchable interface.",
-        "Field Name": "className",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents Apex classes that recalculate the Apex managed sharing for a specific custom object.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apexsharingrecalculation.htm",
-    "parent": "Metadata"
-  },
-  "ValidationRule": {
-    "fields": [
-      {
-        "Description": "Required. Indicates whether this validation rule is active, (true), or not active (false).",
-        "Field Name": "active",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "A description of the validation rule.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The formula defined in the validation rule. If the formula returns a value of true, an error message is displayed.",
-        "Field Name": "errorConditionFormula",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The fully specified name of a field in the application. If a value is supplied, the error message appears next to the specified field. If you do not specify a value or the field isn’t visible on the page layout, the value changes automatically to Top of Page.",
-        "Field Name": "errorDisplayField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The message that appears if the validation rule fails. The message must be 255 characters or less.",
-        "Field Name": "errorMessage",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The internal name of the object. White spaces and special characters are escaped for validity. The name must: Contain characters, letters, or the underscore (_) character Must start with a letter Can’t end with an underscore Can't contain two consecutive underscore characters. Inherited from the Metadata component, this field isn’t defined in the WSDL for this component. It must be specified when creating, updating, or deleting. See create() to see an example of this field specified for a call.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a validation rule, which is used to verify that the data a user enters in a record is valid and can be saved. A validation rule contains a formula or expression that evaluates the data in one or more fields and returns a value of true or false. Validation rules also include an error message that your client application can display to the user when the rule returns a value of true due to invalid data. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_validationformulas.htm",
-    "parent": "Metadata"
-  },
   "WebLink": {
     "fields": [
       {
