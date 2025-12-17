@@ -4463,18 +4463,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_pages.htm",
     "parent": "MetadataWithContent"
   },
-  "ApexTestSuite": {
-    "fields": [
-      {
-        "Description": "A list of Apex test classes, specified by name, to include in this test suite.",
-        "Field Name": "testClassName",
-        "Field Type": "string[]"
-      }
-    ],
-    "short_description": "Represents a suite of Apex test classes to include in a test run.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apextestsuite.htm",
-    "parent": "Metadata"
-  },
   "ApexTrigger": {
     "fields": [
       {
@@ -8144,55 +8132,6 @@
     ],
     "short_description": "Represents the metadata used to describe a Rich Publisher App that’s integrated with the Chatter publisher.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_chatterextensions.htm",
-    "parent": "Metadata"
-  },
-  "ChoiceList": {
-    "fields": [
-      {
-        "Description": "A list of choices to display in the choice list.",
-        "Field Name": "choiceListValue",
-        "Field Type": "ChoiceListValue[]"
-      },
-      {
-        "Description": "A description of the choice list.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label for the choice list.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Choicelist dropdown field that’s used for pre-chat.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm",
-    "parent": "Metadata"
-  },
-  "ChoiceListValue": {
-    "fields": [
-      {
-        "Description": "Custom labels for the choicelist value.",
-        "Field Name": "embeddedServiceCustomLabels",
-        "Field Type": "EmbeddedServiceCustomLabel[]"
-      },
-      {
-        "Description": "Required. Indicates whether the choicelist value should be selected by default.",
-        "Field Name": "isDefaultValue",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The order of the choicelist value in the choicelist dropdown field.",
-        "Field Name": "order",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. The value of the choicelist.",
-        "Field Name": "valueName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a choice list value in the pre-chat dropdown. ChoiceListValue is available in API version 62 or later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm",
     "parent": "Metadata"
   },
   "ClaimFinancialSettings": {
@@ -15311,77 +15250,6 @@
     "fields": [],
     "short_description": "DashboardComponentFilter is an enumeration of type string that lists the sort values for dashboard components. The valid values are:",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_dashboard.htm",
-    "parent": "Metadata"
-  },
-  "DataCategoryGroup": {
-    "fields": [
-      {
-        "Description": "Required. The status of the category group. Indicates whether this category group is active, (true), or not active (false).",
-        "Field Name": "active",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The top-level category within the data category group.",
-        "Field Name": "dataCategory",
-        "Field Type": "DataCategory"
-      },
-      {
-        "Description": "The description of the data category group.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The unique name of the data category group. When creating a data category group, the fullName field and the file name (without its suffix) must match.The fullName can contain only underscores and alphanumeric characters. It must be unique, begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. This field is inherited from the Metadata component.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Label that represents the object in Salesforce.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The objects that are associated with the data category group.",
-        "Field Name": "objectUsage",
-        "Field Type": "ObjectUsage"
-      }
-    ],
-    "short_description": "Represents a data category group.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm",
-    "parent": "Metadata"
-  },
-  "DataCategory": {
-    "fields": [
-      {
-        "Description": "A recursive list of sub data categories. For example, a list of countries within a continent. You can create up to 100 categories in a data category group and have up to 5 levels in a data category group hierarchy.",
-        "Field Name": "dataCategory",
-        "Field Type": "DataCategory[]"
-      },
-      {
-        "Description": "Required. Label for the data category throughout the Salesforce user interface.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The developer name of the data category used as a unique identifier for API access. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and cannot end with an underscore or contain two consecutive underscore characters.The value for this field is defined once and cannot be changed later. If you deploy a category group that already exists in an organization, any category that is not defined in the XML file is permanently removed from your organization. For more information see Usage.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents an item (or data category) in the data category group. A data category can recursively contain a list of other data categories.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm",
-    "parent": "Metadata"
-  },
-  "ObjectUsage": {
-    "fields": [
-      {
-        "Description": "A list of the object names that can be associated with the data category group. Valid values are: KnowledgeArticleVersion—to associate articles. See \"Modify Default Category Group Assignments for Articles\" in the Salesforce online help for more information on data category groups association to articles. Question—to associate questions. You can associate the Question object with at most one category group. If you deploy a category group that already exists in an organization, any object association that is not defined in the XML file is permanently removed from your organization. Ensure that your XML file specifies all the records associated with your category group in the organization. For more information see Usage.",
-        "Field Name": "object",
-        "Field Type": "string[]"
-      }
-    ],
-    "short_description": "Represents the objects that can be associated with the data category group. This association allows the object to be classified and filtered using the data categories.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm",
     "parent": "Metadata"
   },
   "DataObjectSearchIndexConf": {

@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-15T21:16:55.990Z
-Total metadata types: 1482
+Generated on: 2025-12-17T14:06:34.280Z
+Total metadata types: 1478
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -3024,6 +3024,20 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
+ <xsd:complexType name="AddressSettings">
+  <xsd:annotation>
+   <xsd:documentation>This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_addresssettings.htm</xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexContent>
+   <xsd:extension base="Metadata">
+    <xsd:choice>
+     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="fqn" type="xsd:string"/>
+   </xsd:extension>
+  </xsd:complexContent>
+ </xsd:complexType>
  <xsd:complexType name="AdjustmentsSettings">
   <xsd:annotation>
    <xsd:documentation>The adjustment options for forecasts.</xsd:documentation>
@@ -3518,7 +3532,7 @@ Total metadata types: 1482
      </xsd:element>
      <xsd:element name="targetObjectApiName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>API name of the target object where the calculated</xsd:documentation>
+       <xsd:documentation>API name of the target object where the calculated scores are added.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -3681,10 +3695,24 @@ Total metadata types: 1482
   <xsd:complexContent>
    <xsd:extension base="Metadata">
     <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="target" minOccurs="0" maxOccurs="unbounded" type="Bot">
+     <xsd:element name="bundleType" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Specifies the type or category of the AI authoring bundle, indicating the kind of AI authoring content contained within the bundle. Currently, this value must be AGENT, which represents an Agent Script agent. See Agent Script in the Agentforce Developer Guide for details.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="target" minOccurs="0" maxOccurs="unbounded" type="">
       <xsd:annotation>
        <xsd:documentation>Specifies the context or destination for the AI authoring bundle, defining how the bundle content should be applied or deployed. To commit an agent version, Agentforce agents must specify the developerName for the Bot and BotVersion components, separated by a period: {Bot}.{BotVersion}. For example, Agentforce_Service_Agent.v2. These two components tie the AI authoring bundle to a specific agent and a specific agent version. This field is automatically populated when you publish an agent with Agentforce DX. Publishing an agent with this field present is the equivalent to committing the agent in Agentforce Builder with the Commit Version button. If you want to deploy an agent to your org in draft state, omit this field.</xsd:documentation>
-       <xsd:appinfo>Type: Bot</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="versionDescription" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Provides a human-readable description of the bundle version, documenting what changes or features are included in this version of the AI authoring bundle.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="versionTag" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Defines a version identifier or tag for the AI authoring bundle. This value can be used for version tracking and management of different bundle iterations.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -5176,6 +5204,12 @@ Total metadata types: 1482
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>The description for the visualization.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="fields" minOccurs="0" maxOccurs="unbounded" type="AnalyticsVizField">
       <xsd:annotation>
        <xsd:documentation>A list of data fields for the visualization. A visualization has 0 or more fields.</xsd:documentation>
@@ -5921,26 +5955,6 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ApexTestSuite">
-  <xsd:annotation>
-   <xsd:documentation>Represents a suite of Apex test classes to include in a test run.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apextestsuite.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="testClassName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A list of Apex test classes, specified by name, to include in this test suite.</xsd:documentation>
-       <xsd:appinfo>Type: string[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="ApexTrigger">
   <xsd:annotation>
    <xsd:documentation>Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.</xsd:documentation>
@@ -6103,6 +6117,145 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Indicates whether to override the global theme for the org. When true, the color scheme and logo that the user has set are used. When false, the global theme for the org is used, even if the user has set a color scheme and logo.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="fqn" type="xsd:string"/>
+   </xsd:extension>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="AppCanvasConfig">
+  <xsd:annotation>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_connectedapp.htm</xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexContent>
+   <xsd:extension base="Metadata">
+    <xsd:choice maxOccurs="unbounded">
+     <xsd:element name="assetTokenConfig" minOccurs="0" maxOccurs="unbounded" type="connectedAppOauthAssetToken">
+      <xsd:annotation>
+       <xsd:documentation>The OAuth asset token configuration for the connected app OAuth settings. Available in API version 49.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: connectedAppOauthAssetToken</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="callbackUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>Required. The endpoint that Salesforce calls back to your connected app during OAuth. It’s the OAuth redirect_uri.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="certificate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>The PEM-encoded certificate string, if the app uses a certificate.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="consumerKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>A value used by the consumer for identification to Salesforce. Referred to as client_id in OAuth 2.0.In API version 32.0 and later, you can set this field’s value only during creation. After you define and save the value, it can’t be edited. The value must be alphanumeric, can’t contain special characters or spaces, and must be between 8–256 characters. Consumer keys must be globally unique.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="consumerSecret" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>A value that is combined with the consumerKey and used by the consumer for identification to Salesforce. Referred to as client_secret in OAuth 2.0. Typically, Salesforce generates this value when you create the connected app. However, you can customize the shared secret value during creation. After you save the value, it can’t be edited. When set, the value isn’t returned in Metadata API requests.The value must be alphanumeric (no special characters and no spaces) and a minimum of 8 characters (maximum of 256 characters). If you specify a secret already in use for another connected app in the organization, an error occurs. Available in API version 32.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="idTokenConfig" minOccurs="0" maxOccurs="unbounded" type="ConnectedAppOauthIdToken">
+      <xsd:annotation>
+       <xsd:documentation>Specifies the ID token configuration for the connected app OAuth settings. Available in API version 43.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: ConnectedAppOauthIdToken</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isAdminApproved" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to false (default), anyone in the org can authorize the app. Users must approve the app the first time they access it.If set to true, only users with the appropriate profile or permission set can access the app. These users don’t have to approve the app before they can access it. Manage profiles for the app by editing each profile’s Connected App Access list. Manage permission sets for the app by editing each permission set’s Assigned Connected App list. This setting isn’t available in Group Edition. Available in API version 46.0 and later. Connected app consumers can edit this setting when deploying a connected app in their org.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isClientCredentialEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, the connected app can use the OAuth 2.0 client credentials flow. To use the client credentials flow, you must also specify a user for oauthClientCredentialUser.If set to false (default), the connected app can’t use the client credentials flow. Available in API version 56.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isCodeCredentialEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>Determines whether the app can use the Authorization Code and Credentials Flow to provide identity services to headless, off-platform apps. The Authorization Code and Credentials Flow is the foundation of headless login, headless registration, headless passwordless login, and headless guest identity. If set to true, the connected app can use the Authorization Code and Credentials Flow and all associated Headless Identity features. The default value is false. This field is available in API version 57.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isCodeCredentialPostOnly" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>For the Authorization Code and Credentials Flow, determines whether the user’s credentials must be sent in the body of the initial HTTPS POST request to the Salesforce authorization endpoint. Requiring the credentials in the POST body instead of in the header improves security.If set to true, the user’s credentials must be included in the POST body. The default value is false. This field is available in API version 57.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isConsumerSecretOptional" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to false (default), the connected app’s client secret is required in exchange for an access token in the OAuth 2.0 web server flow.If the client app can’t keep the client secret confidential and it must use the web server flow, set to true. A client secret is still generated for the connected app, but this setting instructs the web server flow not to require the client_secret parameter in the access token request. We recommend the user agent flow as a more secure option than web server flow without the secret. Available in API version 49.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isIntrospectAllTokens" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, authorizes the connected app to introspect all access and refresh tokens within the entire org.If set to false (default), the connected app can introspect its own tokens. In addition, an OAuth client that directly registers OAuth 2.0 connected apps through the dynamic client registration endpoint can check the tokens for itself and its registered apps. Available in API version 49.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isNamedUserJwtEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, the connected app is enabled to issue JSON Web Token (JWT)-based access tokens.This field is generally available in API version 59.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isPkceRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>Determines whether the Proof Key for Code Exchange (PKCE) extension is required for variations of the OAuth 2.0 authorization code flow configured for the connected app, including the web server flow and Authorization Code and Credentials Flow. For public client apps that can’t keep the consumer secret confidential, such as mobile apps, the PKCE extension helps ensure that the client that initiates an authorization flow is the same client that completes it. For this reason, we always recommend implementing PKCE for public clients. We also strongly recommend that you implement PKCE for private clients.If set to true, the PKCE extension is required and any authorization code flow variations that don’t implement it fail. If set to false, you can still implement PKCE but it isn’t required. The default value is false. This field is available in API version 59.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isRefreshTokenRotationEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, the connected app issues a new refresh token each time the OAuth refresh token flow is invoked. The old refresh token is automatically invalidated. If a user tries to use a previous refresh token that’s been invalidated, the current refresh token and its associated access tokens get deleted. If set to false, the refresh token can be used to obtain multiple access tokens.This field is available in API version 60.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isSecretRequiredForRefreshToken" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true (default), the app’s client secret is required in the authorization request of a refresh token and hybrid refresh token flow. If set to false and an app sends the client secret in the authorization request, Salesforce still validates it. Select this option for web-server based apps that can protect client secrets. For apps that can’t protect client secrets, such as mobile apps or apps installed on a user’s computer, we recommend against selecting this option. Available in API version 51.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isSecretRequiredForTokenExchange" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, the connected app must include its consumer secret (client_secret) in the token request during the OAuth 2.0 token exchange flow. For security, set this field to true only if your app has a private client backend where it can keep the secret safe. For public client apps, such as single-page apps and mobile apps, set this field to false and don’t include the consumer secret.This field is available in API version 60.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isTokenExchangeEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:documentation>If set to true, the connected app can use the OAuth 2.0 token exchange flow to exchange tokens from an external identity provider for Salesforce tokens.This field is available in API version 60.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="oauthClientCredentialUser" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>The execution user for the OAuth 2.0 client credentials flow. Salesforce returns access tokens on behalf of this user. This user must have the API Only permission.To use this field, set isClientCredentialEnabled to true and specify a consumerKey. Available in API version 56.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="scopes" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>The permissions given by the user running the connected app. When deploying metadata, valid values are: Basic—Allows access to your identity URL service (the same behavior as deploying Address, Email, Phone, and Profile). Api—Allows access to the logged-in user&apos;s account over the APIs. Web—Allows use of the access_token on the web. This usage also includes visualforce, allowing access to Visualforce pages. Full—Allows access to all data accessible by the logged-in user. Chatter—Allows access to only the Connect REST API resources. CustomApplications—Provides access to custom applications, such as those using Visualforce. RefreshToken—Allows a refresh token to be returned if you’re eligible to receive one (the same behavior as deploying OfflineAccess). OpenID—Allows access to the logged-in user&apos;s unique identifier for OpenID Connect apps. Profile—Allows access to the logged-in user&apos;s profile (the same behavior as deploying Basic). Email—Allows access to the logged-in user&apos;s email address (the same behavior as deploying Basic). Address—Allows access to the logged-in user&apos;s street address (the same behavior as deploying Basic). Phone—Allows access to the logged-in user&apos;s phone number value (the same behavior as deploying Basic). OfflineAccess—Allows the app to interact with the user&apos;s data while the user is offline and get a refresh token (the same behavior as deploying RefreshToken). CustomPermissions—Allows access to the custom permissions in an organization associated with the connected app and shows whether the current user has each permission enabled. Wave—Allows access to the Analytics REST API resources. Available in API version 35.0 and later. Eclair—Allows access to the Analytics REST API Charts Geodata resource. Available in API version 35.0 and later. Pardot—Allows access to Pardot API services on behalf of the user. The full extent of accessible services is managed by the Pardot account. Available in API version 49.0 and later. Lightning—Allows hybrid apps to directly obtain Lightning child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. Content—Allows hybrid apps to directly obtain content child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. CDPIngest—Allows access to Data Cloud ingest API services. Customers use these API services to upload and maintain external datasets in the Data 360. Available in API version 52.0 and later. Chatbot—Allows access to Einstein Bot API services. Available in API version 54.0 and later. ForgotPassword—Allows access to Headless Forgot Password API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 57.0 and later. UserRegistration—Allows access to Headless Registration API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 58.0 and later. PwdlessLogin—Allows access to Headless Passwordless Login API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 59.0 and later. When retrieving metadata, valid values are: Api—Allows access to the logged-in user’s account over the APIs. Basic—Allows access to the user’s identity URL service, and includes Address, Email, Phone, and Profile. Chatter—Allows access to only the Connect REST API resources. CustomApplications—Allows access to custom applications, such as those using Visualforce. Full—Allows access to all data accessible by the logged-in user. OpenID—Allows access to the logged-in user&apos;s unique identifier for OpenID Connect apps. CDPIngest—Allows access to Data Cloud ingest API services. Customers use these API services to upload and maintain external datasets in the Data 360. Available in API version 52.0 and later. Pardot—Allows access to Pardot API services on behalf of the user. The full extent of accessible services is managed by the Pardot account. Available in API version 49.0 and later. Lightning—Allows hybrid apps to directly obtain Lightning child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. Content—Allows hybrid apps to directly obtain content child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. RefreshToken—Allows a refresh token to be returned if you’re eligible to receive one and is synonymous with allowing OfflineAccess. Wave—Allows access to the Analytics REST API resources. Available in API version 35.0 and later. Eclair—Allows access to the Analytics REST API Charts Geodata resource. Available in API version 35.0 and later. Web—Allows usage of the access_token on the web. This usage also includes visualforce, allowing access to Visualforce pages. Chatbot—Allows access to Einstein Bot API services. Available in API version 54.0 and later. ForgotPassword—Allows access to Headless Forgot Password API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 57.0 and later. UserRegistration—Allows access to Headless Registration API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 58.0 and later. PwdlessLogin—Allows access to Headless Passwordless Login API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 59.0 and later.</xsd:documentation>
+       <xsd:appinfo>Type: ConnectedAppOauthAccessScope (enumeration of type string)[]</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="singleLogoutUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
+       <xsd:documentation>The single logout endpoint. This URL is the endpoint where Salesforce sends a logout request when users log out of Salesforce.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -11393,6 +11546,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="enableOpportunityInfluence" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Indicates whether Opportunity Influence campaign attribution is enabled (true) or not (false). When enabled, Opportunity Influence connects opportunity revenue to specific campaigns. The default value is false. Available with Marketing Cloud Growth and Advanced editions in API version 63.0 and higher.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="enableSuppressNoValueCI2" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>This read-only field is reserved for system use.</xsd:documentation>
@@ -12806,76 +12964,6 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Indicates whether to allow the creation of unlisted groups (true) or to prevent their creation (false). When the value is set to true, users can create unlisted groups. Unlisted groups don’t appear on the Groups list page. Membership in unlisted groups is by invitation only.In Setup, unlistedGroupsEnabled equates to the Chatter setting Enable Unlisted Groups.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ChoiceList">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Choicelist dropdown field that’s used for pre-chat.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="choiceListValue" minOccurs="0" maxOccurs="unbounded" type="ChoiceListValue">
-      <xsd:annotation>
-       <xsd:documentation>A list of choices to display in the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: ChoiceListValue[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description of the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ChoiceListValue">
-  <xsd:annotation>
-   <xsd:documentation>Represents a choice list value in the pre-chat dropdown. ChoiceListValue is available in API version 62 or later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="embeddedServiceCustomLabels" minOccurs="0" maxOccurs="unbounded" type="EmbeddedServiceCustomLabel">
-      <xsd:annotation>
-       <xsd:documentation>Custom labels for the choicelist value.</xsd:documentation>
-       <xsd:appinfo>Type: EmbeddedServiceCustomLabel[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isDefaultValue" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether the choicelist value should be selected by default.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="order" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The order of the choicelist value in the choicelist dropdown field.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The value of the choicelist.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -14354,134 +14442,27 @@ Total metadata types: 1482
  </xsd:complexType>
  <xsd:complexType name="ConnectedAppOauthPolicy">
   <xsd:annotation>
+   <xsd:documentation>Specifies OAuth access policies for the connected app. Available in API version 49.0 and later.</xsd:documentation>
    <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_connectedapp.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
     <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="assetTokenConfig" minOccurs="0" maxOccurs="unbounded" type="connectedAppOauthAssetToken">
+     <xsd:element name="ipRelaxation" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>The OAuth asset token configuration for the connected app OAuth settings. Available in API version 49.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: connectedAppOauthAssetToken</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="callbackUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The endpoint that Salesforce calls back to your connected app during OAuth. It’s the OAuth redirect_uri.</xsd:documentation>
+       <xsd:documentation>Required. Specifies whether a user’s access to the connected app is restricted by IP ranges. Valid options are: ENFORCE (default)—Enforces the IP restrictions configured for the org, such as the IP ranges assigned to a user profile. BYPASS_2FACTOR—Allows a user running the app to bypass the org’s IP restrictions when either of these conditions is true. The app has a list of allowed IP ranges and is using the web server OAuth authorization flow. Requests coming from only these IPs are allowed. The app doesn’t have a list of allowed IP ranges, but it uses the web server authentication flow. And the user successfully completes identity verification if accessing Salesforce from a new browser or device. BYPASS—Allows a user to run this app without org IP restrictions. ENFORCE_RELAXREFRESH—Enforces the IP restrictions configured for the org, such as the IP ranges assigned to a user profile. However, this option bypasses these restrictions when the connected app uses refresh tokens to get access tokens.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
-     <xsd:element name="certificate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+     <xsd:element name="refreshTokenPolicy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>The PEM-encoded certificate string, if the app uses a certificate.</xsd:documentation>
+       <xsd:documentation>Required. Specifies how long a refresh token is valid for. If refresh tokens are provided, users can continue to access the OAuth-enabled connected app without having to reauthorize when the access token expires, as defined by the session timeout value. The connected app exchanges the refresh token with an access token to start a new session. The Refresh Token policy is evaluated only during usage of the issued refresh token and doesn’t affect a user’s current session. Refresh tokens are required only when a user’s session has expired or isn’t available. For example, you set a refresh token policy to expire the token after 1 hour. If a user uses the app for 2 hours, the user isn’t forced to reauthenticate after 1 hour. However, the user is required to authenticate again when the session expires and the client attempts to exchange its refresh token for a new session. Valid options are: zero—The refresh token is invalid immediately. The user can use the current session (access token) already issued, but can’t obtain a new session when the access token expires. infinite—The refresh token is used indefinitely, unless revoked by the user or Salesforce admin. Default setting. specific_lifetime:number:HOURS, DAYS, MONTHS—The refresh token is valid for a fixed amount of time. For example, if the policy states specific_lifetime:1:DAYS, the user can obtain new sessions for only 24 hours. specific_inactivity:number:HOURS, DAYS, MONTHS—The refresh token is valid as long as it’s been used within the specified amount of time. For example, if set to specific_inactivity:7:DAYS, and the refresh token isn’t exchanged for a new session within seven days, the next attempt to use the token fails. The expired token can’t generate new sessions. If the refresh token is exchanged within seven days, the token is valid for another seven days. The monitoring period of inactivity also resets.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="consumerKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A value used by the consumer for identification to Salesforce. Referred to as client_id in OAuth 2.0.In API version 32.0 and later, you can set this field’s value only during creation. After you define and save the value, it can’t be edited. The value must be alphanumeric, can’t contain special characters or spaces, and must be between 8–256 characters. Consumer keys must be globally unique.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="consumerSecret" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A value that is combined with the consumerKey and used by the consumer for identification to Salesforce. Referred to as client_secret in OAuth 2.0. Typically, Salesforce generates this value when you create the connected app. However, you can customize the shared secret value during creation. After you save the value, it can’t be edited. When set, the value isn’t returned in Metadata API requests.The value must be alphanumeric (no special characters and no spaces) and a minimum of 8 characters (maximum of 256 characters). If you specify a secret already in use for another connected app in the organization, an error occurs. Available in API version 32.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="idTokenConfig" minOccurs="0" maxOccurs="unbounded" type="ConnectedAppOauthIdToken">
-      <xsd:annotation>
-       <xsd:documentation>Specifies the ID token configuration for the connected app OAuth settings. Available in API version 43.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ConnectedAppOauthIdToken</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isAdminApproved" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to false (default), anyone in the org can authorize the app. Users must approve the app the first time they access it.If set to true, only users with the appropriate profile or permission set can access the app. These users don’t have to approve the app before they can access it. Manage profiles for the app by editing each profile’s Connected App Access list. Manage permission sets for the app by editing each permission set’s Assigned Connected App list. This setting isn’t available in Group Edition. Available in API version 46.0 and later. Connected app consumers can edit this setting when deploying a connected app in their org.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isClientCredentialEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, the connected app can use the OAuth 2.0 client credentials flow. To use the client credentials flow, you must also specify a user for oauthClientCredentialUser.If set to false (default), the connected app can’t use the client credentials flow. Available in API version 56.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isCodeCredentialEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Determines whether the app can use the Authorization Code and Credentials Flow to provide identity services to headless, off-platform apps. The Authorization Code and Credentials Flow is the foundation of headless login, headless registration, headless passwordless login, and headless guest identity. If set to true, the connected app can use the Authorization Code and Credentials Flow and all associated Headless Identity features. The default value is false. This field is available in API version 57.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isCodeCredentialPostOnly" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>For the Authorization Code and Credentials Flow, determines whether the user’s credentials must be sent in the body of the initial HTTPS POST request to the Salesforce authorization endpoint. Requiring the credentials in the POST body instead of in the header improves security.If set to true, the user’s credentials must be included in the POST body. The default value is false. This field is available in API version 57.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isConsumerSecretOptional" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to false (default), the connected app’s client secret is required in exchange for an access token in the OAuth 2.0 web server flow.If the client app can’t keep the client secret confidential and it must use the web server flow, set to true. A client secret is still generated for the connected app, but this setting instructs the web server flow not to require the client_secret parameter in the access token request. We recommend the user agent flow as a more secure option than web server flow without the secret. Available in API version 49.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isIntrospectAllTokens" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, authorizes the connected app to introspect all access and refresh tokens within the entire org.If set to false (default), the connected app can introspect its own tokens. In addition, an OAuth client that directly registers OAuth 2.0 connected apps through the dynamic client registration endpoint can check the tokens for itself and its registered apps. Available in API version 49.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isNamedUserJwtEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, the connected app is enabled to issue JSON Web Token (JWT)-based access tokens.This field is generally available in API version 59.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isPkceRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Determines whether the Proof Key for Code Exchange (PKCE) extension is required for variations of the OAuth 2.0 authorization code flow configured for the connected app, including the web server flow and Authorization Code and Credentials Flow. For public client apps that can’t keep the consumer secret confidential, such as mobile apps, the PKCE extension helps ensure that the client that initiates an authorization flow is the same client that completes it. For this reason, we always recommend implementing PKCE for public clients. We also strongly recommend that you implement PKCE for private clients.If set to true, the PKCE extension is required and any authorization code flow variations that don’t implement it fail. If set to false, you can still implement PKCE but it isn’t required. The default value is false. This field is available in API version 59.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isRefreshTokenRotationEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, the connected app issues a new refresh token each time the OAuth refresh token flow is invoked. The old refresh token is automatically invalidated. If a user tries to use a previous refresh token that’s been invalidated, the current refresh token and its associated access tokens get deleted. If set to false, the refresh token can be used to obtain multiple access tokens.This field is available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSecretRequiredForRefreshToken" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true (default), the app’s client secret is required in the authorization request of a refresh token and hybrid refresh token flow. If set to false and an app sends the client secret in the authorization request, Salesforce still validates it. Select this option for web-server based apps that can protect client secrets. For apps that can’t protect client secrets, such as mobile apps or apps installed on a user’s computer, we recommend against selecting this option. Available in API version 51.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSecretRequiredForTokenExchange" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, the connected app must include its consumer secret (client_secret) in the token request during the OAuth 2.0 token exchange flow. For security, set this field to true only if your app has a private client backend where it can keep the secret safe. For public client apps, such as single-page apps and mobile apps, set this field to false and don’t include the consumer secret.This field is available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isTokenExchangeEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>If set to true, the connected app can use the OAuth 2.0 token exchange flow to exchange tokens from an external identity provider for Salesforce tokens.This field is available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="oauthClientCredentialUser" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The execution user for the OAuth 2.0 client credentials flow. Salesforce returns access tokens on behalf of this user. This user must have the API Only permission.To use this field, set isClientCredentialEnabled to true and specify a consumerKey. Available in API version 56.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="scopes" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The permissions given by the user running the connected app. When deploying metadata, valid values are: Basic—Allows access to your identity URL service (the same behavior as deploying Address, Email, Phone, and Profile). Api—Allows access to the logged-in user&apos;s account over the APIs. Web—Allows use of the access_token on the web. This usage also includes visualforce, allowing access to Visualforce pages. Full—Allows access to all data accessible by the logged-in user. Chatter—Allows access to only the Connect REST API resources. CustomApplications—Provides access to custom applications, such as those using Visualforce. RefreshToken—Allows a refresh token to be returned if you’re eligible to receive one (the same behavior as deploying OfflineAccess). OpenID—Allows access to the logged-in user&apos;s unique identifier for OpenID Connect apps. Profile—Allows access to the logged-in user&apos;s profile (the same behavior as deploying Basic). Email—Allows access to the logged-in user&apos;s email address (the same behavior as deploying Basic). Address—Allows access to the logged-in user&apos;s street address (the same behavior as deploying Basic). Phone—Allows access to the logged-in user&apos;s phone number value (the same behavior as deploying Basic). OfflineAccess—Allows the app to interact with the user&apos;s data while the user is offline and get a refresh token (the same behavior as deploying RefreshToken). CustomPermissions—Allows access to the custom permissions in an organization associated with the connected app and shows whether the current user has each permission enabled. Wave—Allows access to the Analytics REST API resources. Available in API version 35.0 and later. Eclair—Allows access to the Analytics REST API Charts Geodata resource. Available in API version 35.0 and later. Pardot—Allows access to Pardot API services on behalf of the user. The full extent of accessible services is managed by the Pardot account. Available in API version 49.0 and later. Lightning—Allows hybrid apps to directly obtain Lightning child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. Content—Allows hybrid apps to directly obtain content child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. CDPIngest—Allows access to Data Cloud ingest API services. Customers use these API services to upload and maintain external datasets in the Data 360. Available in API version 52.0 and later. Chatbot—Allows access to Einstein Bot API services. Available in API version 54.0 and later. ForgotPassword—Allows access to Headless Forgot Password API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 57.0 and later. UserRegistration—Allows access to Headless Registration API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 58.0 and later. PwdlessLogin—Allows access to Headless Passwordless Login API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 59.0 and later. When retrieving metadata, valid values are: Api—Allows access to the logged-in user’s account over the APIs. Basic—Allows access to the user’s identity URL service, and includes Address, Email, Phone, and Profile. Chatter—Allows access to only the Connect REST API resources. CustomApplications—Allows access to custom applications, such as those using Visualforce. Full—Allows access to all data accessible by the logged-in user. OpenID—Allows access to the logged-in user&apos;s unique identifier for OpenID Connect apps. CDPIngest—Allows access to Data Cloud ingest API services. Customers use these API services to upload and maintain external datasets in the Data 360. Available in API version 52.0 and later. Pardot—Allows access to Pardot API services on behalf of the user. The full extent of accessible services is managed by the Pardot account. Available in API version 49.0 and later. Lightning—Allows hybrid apps to directly obtain Lightning child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. Content—Allows hybrid apps to directly obtain content child sessions through the OAuth 2.0 hybrid app token flow and hybrid app refresh token flow. Available in API version 51.0 and later. RefreshToken—Allows a refresh token to be returned if you’re eligible to receive one and is synonymous with allowing OfflineAccess. Wave—Allows access to the Analytics REST API resources. Available in API version 35.0 and later. Eclair—Allows access to the Analytics REST API Charts Geodata resource. Available in API version 35.0 and later. Web—Allows usage of the access_token on the web. This usage also includes visualforce, allowing access to Visualforce pages. Chatbot—Allows access to Einstein Bot API services. Available in API version 54.0 and later. ForgotPassword—Allows access to Headless Forgot Password API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 57.0 and later. UserRegistration—Allows access to Headless Registration API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 58.0 and later. PwdlessLogin—Allows access to Headless Passwordless Login API. Assign to an internal integration user to get an access token for authenticated requests to this API. Available in API version 59.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ConnectedAppOauthAccessScope (enumeration of type string)[]</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="singleLogoutUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>The single logout endpoint. This URL is the endpoint where Salesforce sends a logout request when users log out of Salesforce.</xsd:documentation>
+       <xsd:documentation>If single logout is enabled, specify the single logout URL. Salesforce sends logout requests to this URL when users log out of Salesforce. The single logout URL must be an absolute URL starting with https://.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -21525,88 +21506,6 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="DataCategory">
-  <xsd:annotation>
-   <xsd:documentation>Represents an item (or data category) in the data category group. A data category can recursively contain a list of other data categories.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="dataCategory" minOccurs="0" maxOccurs="unbounded" type="DataCategory">
-      <xsd:annotation>
-       <xsd:documentation>A recursive list of sub data categories. For example, a list of countries within a continent. You can create up to 100 categories in a data category group and have up to 5 levels in a data category group hierarchy.</xsd:documentation>
-       <xsd:appinfo>Type: DataCategory[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Label for the data category throughout the Salesforce user interface.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The developer name of the data category used as a unique identifier for API access. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and cannot end with an underscore or contain two consecutive underscore characters.The value for this field is defined once and cannot be changed later. If you deploy a category group that already exists in an organization, any category that is not defined in the XML file is permanently removed from your organization. For more information see Usage.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="DataCategoryGroup">
-  <xsd:annotation>
-   <xsd:documentation>Represents a data category group.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="active" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of the category group. Indicates whether this category group is active, (true), or not active (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="dataCategory" minOccurs="0" maxOccurs="unbounded" type="DataCategory">
-      <xsd:annotation>
-       <xsd:documentation>Required. The top-level category within the data category group.</xsd:documentation>
-       <xsd:appinfo>Type: DataCategory</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The description of the data category group.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fullName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The unique name of the data category group. When creating a data category group, the fullName field and the file name (without its suffix) must match.The fullName can contain only underscores and alphanumeric characters. It must be unique, begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. This field is inherited from the Metadata component.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Label that represents the object in Salesforce.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectUsage" minOccurs="0" maxOccurs="unbounded" type="ObjectUsage">
-      <xsd:annotation>
-       <xsd:documentation>The objects that are associated with the data category group.</xsd:documentation>
-       <xsd:appinfo>Type: ObjectUsage</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="DataConnector">
   <xsd:annotation>
    <xsd:documentation>Represents the white-labeled metadata configuration for an external connector in Data 360.</xsd:documentation>
@@ -23888,6 +23787,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="omniScriptCnfgApiName" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>The API name of the Omniscript configuration that&apos;s associated with the disclosure definition version. This field is required only when authoringModeisn’t Microsoft 365 Word.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="omniScriptConfiguration" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>The ID of the Omniscript configuration record.The value of this field is automatically populated using the API name of the OmniScript configuration specified in the omniScriptCnfgApiName field.</xsd:documentation>
@@ -25903,6 +25807,26 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Indicates whether AI feedback integration with Data 360 is enabled (true) or not (false). Available in API version 60.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enableAITrustInputToxicityDetection" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Reserved for internal use.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enableAITrustPromptInjectionDetection" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Reserved for internal use.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enablePBHideScopedNotif" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Reserved for internal use.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enablePBPromptPerformanceMetrics" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Reserved for internal use.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="enableTrustPIIMasking" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
@@ -30891,6 +30815,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: int</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Optional. Field label.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="mktDataTranField" minOccurs="0" maxOccurs="unbounded" type="mktDataTranFieldType">
       <xsd:annotation>
        <xsd:documentation>Optional.</xsd:documentation>
@@ -34239,6 +34168,11 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Indicates whether the care plan feature is enabled for your org. The care plan feature lets you create and edit care plans. The default is false. Available in editions where Public Sector Solutions is enabled.This field is available in API version 58.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enableEnhancedUIForISPref" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Indicates whether the enhanced interaction note interface feature is enabled for your org. The enhanced interaction note interface is a single guided flow that enables you to seamlessly create meeting notes; add interaction details, attendees, and interest tags; and share the notes with other users. The default is false. Available in editions where Public Sector Solutions is enabled.This field is available in API version 61.0 and later.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -37739,6 +37673,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="rules" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Reserved for future use.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="showFooter" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>Indicates whether to show (true) or hide (false) the screen’s footer at Lightning runtime. Classic runtime isn’t supported. The default value is true. The footer includes navigation actions for the screen. If showFooter is hidden, use Lightning components on the screen to show navigation actions. This field is available in API version 42.0 and later.</xsd:documentation>
@@ -37942,6 +37881,11 @@ Total metadata types: 1482
      <xsd:element name="isRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>Indicates whether the user must select a choice or provide input. Not supported for DisplayText or boolean inputField.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isVisible" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -43611,6 +43555,20 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
+ <xsd:complexType name="IndustriesSettings">
+  <xsd:annotation>
+   <xsd:documentation>In the package manifest, all organization settings metadata types are accessed using the Settings name. See Settings for more details.</xsd:documentation>
+   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_industriessettings.htm</xsd:appinfo>
+  </xsd:annotation>
+  <xsd:complexContent>
+   <xsd:extension base="Metadata">
+    <xsd:choice>
+     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    </xsd:choice>
+    <xsd:attribute name="fqn" type="xsd:string"/>
+   </xsd:extension>
+  </xsd:complexContent>
+ </xsd:complexType>
  <xsd:complexType name="IndustriesUnifiedInventorySettings">
   <xsd:annotation>
    <xsd:documentation>Represents the settings for Industries Unified Inventory.</xsd:documentation>
@@ -45144,6 +45102,11 @@ Total metadata types: 1482
      <xsd:element name="layout" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>Required. The layout name.</xsd:documentation>
+       <xsd:appinfo>Type: string</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="layoutType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+      <xsd:annotation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -48523,6 +48486,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="marketingAppExtension" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>Required. The Marketing App Extension associated with the action.</xsd:documentation>
@@ -48561,6 +48529,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="marketingAppExtension" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>Required. The Marketing App Extension associated with the activity.</xsd:documentation>
@@ -48596,6 +48569,11 @@ Total metadata types: 1482
      <xsd:element name="isActive" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>This field makes data for a Marketing App Extension available to use in Account Engagement automations. Label is Active in Automations. The default value is false. Appears in the UI.</xsd:documentation>
+       <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="isProtected" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
+      <xsd:annotation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -49060,50 +49038,6 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="Metadata_Field_Types">
-  <xsd:annotation>
-   <xsd:documentation>These field types extend the field types described in the Salesforce Object Reference.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_field_types.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="controllingField" minOccurs="0" maxOccurs="unbounded" type="controllingField">
-      <xsd:annotation>
-       <xsd:documentation>The fullname of the controlling field if this is a dependent picklist. A controlling field can be a checkbox or picklist field, but in this case it’s a picklist. The controlling picklist filters the available values in the dependent picklist.</xsd:documentation>
-       <xsd:appinfo>Type: controllingField</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="restricted" minOccurs="0" maxOccurs="unbounded" type="restricted">
-      <xsd:annotation>
-       <xsd:documentation>Whether the picklist’s values are limited to only the values defined by a Salesforce admin. Values are true or false.</xsd:documentation>
-       <xsd:appinfo>Type: restricted</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueSetDefinition" minOccurs="0" maxOccurs="unbounded" type="valueSetDefinition">
-      <xsd:annotation>
-       <xsd:documentation>Defines value-specific settings for a custom dependent picklist. Indicates whether the value set of the custom picklist field is sorted alphabetically.</xsd:documentation>
-       <xsd:appinfo>Type: valueSetDefinition</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueSetName" minOccurs="0" maxOccurs="unbounded" type="valueSetName">
-      <xsd:annotation>
-       <xsd:documentation>The masterLabel of the global value set to be used for this picklist field.</xsd:documentation>
-       <xsd:appinfo>Type: valueSetName</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueSettings" minOccurs="0" maxOccurs="unbounded" type="valueSettings">
-      <xsd:annotation>
-       <xsd:documentation>Used for the settings that describe a value in a custom picklist field. The picklist can have its own unique value set, or inherit the values from a global value set. You can add field dependency values via Metadata API but not remove them.</xsd:documentation>
-       <xsd:appinfo>Type: valueSettings</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="MfgProgramTemplate">
   <xsd:annotation>
    <xsd:documentation>Represents a definition of a program to create a program-based business. A program-based business, also known as a Manufacturing Program, enables manufacturers to drive their business models with forecasting tools and manage the end-to-end sales process efficiently.</xsd:documentation>
@@ -49560,6 +49494,11 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Optional. Length of a string column.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Optional. Field label.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="precision" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
@@ -52701,26 +52640,6 @@ Total metadata types: 1482
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ObjectUsage">
-  <xsd:annotation>
-   <xsd:documentation>Represents the objects that can be associated with the data category group. This association allows the object to be classified and filtered using the data categories.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datacategorygroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="object" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A list of the object names that can be associated with the data category group. Valid values are: KnowledgeArticleVersion—to associate articles. See &quot;Modify Default Category Group Assignments for Articles&quot; in the Salesforce online help for more information on data category groups association to articles. Question—to associate questions. You can associate the Question object with at most one category group. If you deploy a category group that already exists in an organization, any object association that is not defined in the XML file is permanently removed from your organization. Ensure that your XML file specifies all the records associated with your category group in the organization. For more information see Usage.</xsd:documentation>
-       <xsd:appinfo>Type: string[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="OcrSampleDocument">
   <xsd:annotation>
    <xsd:documentation>Represents the details of a sample document or a document type that&apos;s used as a reference while extracting and mapping information from a customer form. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
@@ -53291,6 +53210,11 @@ Total metadata types: 1482
       <xsd:annotation>
        <xsd:documentation>Enforces standard validation and triggers for opportunity products and opportunity product schedules. Default value is true. Can&apos;t be set to false. Available in API version 47.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="enableExpandedPipelineInspectionSetup" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Displays a Pipeline Inspection setup page to Salesforce admins with all setup steps for enabling and configuring the feature. The set up also includes historical trending. The default value is false.Available in API version 52.0 and later.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:element name="enableFindSimilarOpportunities" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
@@ -63780,6 +63704,11 @@ Total metadata types: 1482
        <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
+     <xsd:element name="enableSCVBYOT" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Indicates whether to enable Service Cloud Voice with Partner Telephony. The default value is false. This field is optional. For API version 52.0 and later, we recommend using enableSCVExternalTelephony instead.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:element name="enableSCVExternalTelephony" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
       <xsd:annotation>
        <xsd:documentation>Indicates whether to enable a third-party telephony service to work with Service Cloud Voice with Partner Telephony. The default value is false. This field is optional.</xsd:documentation>
@@ -65405,7 +65334,17 @@ Total metadata types: 1482
   </xsd:annotation>
   <xsd:complexContent>
    <xsd:extension base="Metadata">
-    <xsd:choice>
+    <xsd:choice maxOccurs="unbounded">
+     <xsd:element name="Asc" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Sorts data in ascending alphabetical and numerical order.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
+     <xsd:element name="Desc" minOccurs="0" maxOccurs="unbounded" type="">
+      <xsd:annotation>
+       <xsd:documentation>Sorts data in descending alphabetical and numerical order.</xsd:documentation>
+      </xsd:annotation>
+     </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
     </xsd:choice>
     <xsd:attribute name="fqn" type="xsd:string"/>
@@ -66336,7 +66275,7 @@ Total metadata types: 1482
      </xsd:element>
      <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
-       <xsd:documentation>Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data 360 identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer&apos;s email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data 360 market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sales record during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses</xsd:documentation>
+       <xsd:documentation>Required. The action type. Valid values are: activateSessionPermSet—Activates a session-based permission set for the running user. activationSchema— Gets the activation schema for the specified activation. This value is available in API version 64.0 and later. addMessageToChat—Adds a message to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addMessageToQuipChat—Adds a Quip message to an existing chat room. This value is available in API version 46.0 and later. addMessageToQuipDocument—Adds a Quip message to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addQuipDocumentToFolder—Adds an existing Quip document, spreadsheet, or slide to an existing folder. This value is available in API version 46.0 and later. addUsersToChat—Adds users to an existing Salesforce Anywhere chat. This value is available in API version 49.0 and later. addUsersToQuipDocument—Adds users, identified by their email addresses, to an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. addUsersToQuipChat—Adds users, identified by their email addresses, to an existing Quip chat room. This value is available in API version 46.0 and later. answerQuestionsWithSalesforceDocumentation—Searches Salesforce documentation to provide answer to questions, as well as links to relevant articles. attachQuipDocumentToRecord—Attaches a Quip document, spreadsheet, or slide to a Salesforce record. This value is available in API version 46.0 and later. apex—Invokes an Apex method that has the @invocableMethod annotation. archiveKnowledgeArticles—Archives a list of published Knowledge articles. This value is available in API version 45.0 and later. assignKnowledgeArticles—Mass assigns knowledge articles from article list views. This value is available in API version 44.0 and later. cdpRunIdentityResolution—Runs a Data 360 identity resolution process. This value is available in API version 57.0 and later. chat—Creates a Salesforce Anywhere chat. This value is available in API version 49.0 and later. chatterPost—Posts to Chatter. choosePricebook—Selects a price book. contactRequestAction—Creates a contact request record. This value is available in API version 45.0 and later. component—Invokes the Lightning component that implements the lightning:availableForFlowActions interface and that is referenced by actionName. This value is available in API version 43.0 and later. contentWorkspaceEnableFolders—Enables folders in a library. convertAttributesToJson—Converts the given attributes into a JSON string format. This value is available in API version 64.0 and later. copyQuipDocument—Creates a copy of an existing Quip document, spreadsheet, or slide, and gives it a new title. This value is available in API version 46.0 and later. createDraftFromOnlineKnowledgeArticle—Creates a draft from a published knowledge article. This value is available in API version 45.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice from a purchase order. Available to B2B Commerce. This value is available in API version 49.0 and later. createQuipChat—Creates a Quip chat room. This value is available in API version 46.0 and later. createQuipDocument—Creates a Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. createQuipFolder—Creates a Quip folder. This value is available in API version 46.0 and later. customNotificationAction—Sends a custom notification. This value is available in API version 46.0 and later. deactivateSessionPermSet—Deactivates a session-based permission set for the running user. deleteKnowledgeArticle—Deletes a draft version (translation or master-language) or an entire archived knowledge article. This value is available in API version 46.0 and later. dynamicSendSurveyInvitation—Sends customized notifications to users about important events or updates to the records that they’re working on. This value is available in API version 51.0 and later. editQuipDocument—Modifies the contents of an existing Quip document, spreadsheet, or slide. This value is available in API version 46.0 and later. emailAlert—Sends an email by referencing a workflow email alert emailSimple—Sends an email by using flow resources exploreConversation—Retrieves insights from a conversation. This value is available in API version 61.0 and later. externalService—Invokes an External Service operation that makes an HTTP request to an external system made available by an External Service schema registered through Setup. This value is available in API version 46.0 and later. findMatchingIndividuals—Finds contact, lead, or employee records that match a search term. flow—Invokes an autolaunched flow. This action type isn’t available for flows with a processType of Flow or AutolaunchedFlow. To invoke an autolaunched flow from one of those types, use FlowSubflow. This value is available in API version 32.0 and later. generateAiAgentResponse—Generates a response from the AI agent based on input and instructions to support intelligent, conversational experiences. This value is available in API version 63.0 and later. generateVerificationCode—Sends a verification code to the customer&apos;s email to verify their identity. This value is available in API version 63.0 and later. getAgentConvTscp—Retrieves the transcript of conversations between the agent and the customer. This value is available in API version 50.0 and later. getArticleSmartLinkUrl—Gets the Smart Link URL of the Salesforce Knowledge article. Smart links go to the right article and version, even when a new version is published or the URL name changes. This value is available in API version 54.0 and later. getPoliciesByObject—Gets Policy Center policies that contain a given object and returns a list of matching policy names. getPoliciesByPolicyType—Gets Policy Center policies of the type specified in the user input, such as Data Backup or Data Archive. getPolicyDetails—Gets details about a policy in Policy Center, such as the policy type and the objects the policy targets. internalTestAction—Reserved for internal use. internalTestConnectApiAction—Reserved for internal use. limitRepetitions—Limit the number of times the same recommendation or offer appears on the same record or for the same user during a time period in a recommendation strategy flow. This value is available in API version 55.0 and later. massUpdateAccountForecast—Bulk updates forecasts asynchronously. This value is available in API version 48.0 and later. massUpdateSalesAgreement—Bulk updates sales agreements asynchronously. This value is available in API version 48.0 and later. quickAction—Invokes a QuickAction. parseConvoAnalysis—Parses conversation data to analyze sentiment or extract actionable insights. This value is available in API version 51.0 and later. publishActionableOrchSrcEvent—Publishes events triggered by an external system. This value is available in API version 62.0 and later. publishKnowledgeArticles—Mass publishes knowledge articles from article list views. This value is available in API version 44.0 and later. restoreKnowledgeArticleVersion—Restores an archived version of a knowledge article. This value is available in API version 45.0 and later. sendAlert—Sends Salesforce Anywhere alerts to users. This value is available in API version 49.0 and later. sendNotification—Sends an available notification type. This value is available in API version 54.0 and later. sendSurveyInvitation—Sends email survey invitations to leads, contacts, and users in your org based on an action, such as when a customer support case closes. This value is available in API version 47.0 and later. performSurveySentimentAnalysis—Perform survey sentiment analysis to create or update the AI Sentiment Result records. This value is available in API version 55.0 and later. skillsBasedRouting—Creates a PendingServiceRouting record used for Omni-Channel skills-based routing. This value is available in version 44.0 and later. slackArchiveChannel—Archives a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackCheckUsersAreConnectedToSlack—Indicates whether a collection of Salesforce users is connected to a given Slack app. This value is available in API version 54.0 and later. slackCreateChannel—Creates a Slack channel in a Slack workspace. This value is available in API version 54.0 and later. slackGetConversationInfo—Retrieves the name of a Slack channel or group direct message and finds out whether it’s archived. This value is available in API version 54.0 and later. slackInviteUsersToChannel—Adds users who are connected to a given Slack app to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPinMessage—Pin or unpin a message in a Slack channel or group direct message. This value is available in API version 54.0 and later. slackPostMessage—Send a message to a Slack channel or group direct message. This value is available in API version 54.0 and later. slackSendMessageToLaunchFlow—Send a message to a Slack channel, direct message, or the Messages tab of a Slack app that includes a button that a recipient can use to launch a screen flow. This value is available in API version 55.0 and later. slackUpdateMessage—Edits a message that was previously sent to a Slack channel or group direct message. This value is available in API version 54.0 and later. submitKnowledgeArticleForTranslation—Submits a published or draft knowledge article for translation. This value is available in API version 46.0 and later. submit—Submits a record for approval. triggerJourney— Send an individual to a specified journey. This value is available in API version 64.0 and later. verifyCustomerCode—Verifies the code entered by the customer to complete identity verification. This value is available in API version 63.0 and later. These values are used in Omnichannel Inventory. If no version is specified, the value is available in API version 51.0 and later. ociCreateReservation—Creates one or more inventory reservations at a location or location group. ociFulfillReservation—Fulfills one or more inventory reservations at a location. ociGetAvailability—Gets inventory availability data for one or more products at one or more inventory locations or location groups. ociReleaseReservation—Releases one or more inventory reservations. ociTransferReservation—Transfers one or more inventory reservations between locations or location groups. These values are used in the B2B Commerce Checkout Flow. If no version is specified, the value is available in API version 47.0 and later. updateCheckoutSessionStateAction—Updates the checkout session next state for checkout flows. This value is available in API version 49.0 and later. priceCart—Requests prices for all items in a cart during B2B Commerce checkout. This value is available in API version 47.0 and later. checkoutSessionAction—Initiates or retrieves an existing Checkout Session for Checkout Flows. Available to B2B Commerce. This value is available in API version 49.0 and later. cancelCartAsyncOperation—Cancels a WebCart’s async operation. Available to B2B Commerce. This value is available in API version 49.0 and later. calcCartPromotionsAction—Requests a full cart promotion calculation of all applicable line items in the Web Cart during B2B Commerce checkout. This value is available in API version 52.0 and later. checkCartInventoryAction—Requests an inventory for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. calcCartShipmentAction—Calculates the shipping cost for all items in a Web Cart during B2B Commerce checkout. This value is available in API version 47.0 and later. cartToOrderAction—Creates a Salesforce Standard Order in draft mode. This value is available in API version 47.0 and later. activateOrderAction—Activates a draft order, which creates an order summary. This value is available in API version 47.0 and later. For values used in Business Rules Engine, see Flow for Business Rules Engine. These values are used in Context Service. If no version is specified, the value is available in API version 64.0 and later. deleteContextCache—Deletes the context instance from the context cache using specified context ID. queryContextTags—Queries context instance tags associated with a context definition. updateContextAttributes—Updates attributes on the context instance using context tags. These values are used in the Commerce Checkout Flow. If no version is specified, the value is available in API version 55.0 and later. addCartItem—Adds an item to a cart during Commerce checkout. createCart—Creates a cart during Commerce checkout. deleteCart—Deletes a cart during Commerce checkout. These values are used in Salesforce CMS Workflows and Approvals. If no version is specified, the value is available in API version 58.0 and later. managedContentPublishVariant—Publishes a content variant associated with a flow. This value is available in API version 59.0 and later. managedContentRoleStepInteractive—Assigns a content variant review to a CMS role. managedContentUnpublishVariant—Unpublishes a published content variant associated with a flow. This value is available in API version 59.0 and later. managedContentVariantSetLockStatus—Sets the locked status of a content variant. managedContentVariantSetReadyStatus—Sets the ready for publication status of a content variant. These values are used in Employee Service. If no version is specified, the value is available in API version 64.0 and later. createServiceRequestCase—Creates a case or incident for the requested service. getDirectDepositDetails—Gets the direct deposit details for the specified record ID. getLeaveBalance—Gets the leave balance of a specific employee. These values are used in Insurance. If no version is specified, the value is available in API version 63.0 and later. cancelInsurancePolicy—Cancel an insurance policy by using a set of user inputs that represent policy details. endorseInsurancePolicy—Endorse an insurance policy by using a set of user inputs that represent policy details. getInsurancePolicy—Get the details of an insurance policy. issueInsurancePolicy— Issue an insurance policy by using a set of user inputs that represent policy details. renewInsurancePolicy—Renew an insurance policy by using a set of user inputs that represent policy details. These values are used in Insurance Brokerage. If no version is specified, the value is available in API version 63.0 and later. computeProducerSplits—Compute the producer splits for the producers associated with an Insurance Policy, for a Commission Statement Line Item. createProducerCommissions—Create records for the commissions that producers receive for the insurance policy associated with the specified commission statement line item, and update the commission statement line item record status. findInsurancePolicy—Get the insurance policy associated with a commission statement line item that matches the specified criteria, and update the status of the commission statement line item record. These values are used in Order Management. If no version is specified, the value is available in API version 48.0 and later. addOrderItemSummarySubmit—Adds order item summaries to an order summary. This value is available in API version 54.0 and later. adjustOrderItemSummariesPreview—Previews the expected results of applying a price adjustment to order item summaries from an order summary without actually applying it. This value is available in API version 49.0 and later. adjustOrderItemSummariesSubmit—Applies a price adjustment to order item summaries from an order summary. This value is available in API version 49.0 and later. authorizePayment—Authorizes a card payment. This value is available in API version 55.0 and later. calcPriceProtectPayoutAmt—Calculates the payout after a price protection adjustment or execution is made. This value is available in API version 63.0 and later. cancelFulfillmentOrderItem—Removes items from a fulfillment order. cancelOrderItemSummariesPreview—Previews the expected results of canceling order item summaries from an order summary without actually canceling them. cancelOrderItemSummariesSubmit—Cancels order item summaries from an order summary. confirmHeldFulfillmentOrderCapacity—Confirms held fulfillment order capacity. This value is available in API version 55.0 and later. createCreditMemoOrderSummary—Creates a credit memo for an order summary. createFieldGnrnPromptTmplResp—Creates a field generation prompt template response. This value is available in API version 62.0 and later. createFulfillmentOrder—Creates one or more fulfillment orders and fulfillment order products for an order delivery group summary, which defines a recipient and delivery method. createFulfillmentOrders—Creates fulfillment orders and fulfillment order products for multiple order delivery group summaries, each of which defines a recipient and delivery method. This value is available in API version 51.0 and later. createInvoiceFromChangeOrders—Creates an invoice for one or more change orders. This value is available in API version 56.0 and later. createInvoiceFromFulfillmentOrder—Creates an invoice for a fulfillment order. createOrderPaymentSummary—Creates an order payment summary for an authorization or payments belonging to an order summary. createOrderSummary—Creates an order summary for an order. createReturnOrder—Creates a return order and return order items for an order. ensureFundsOrderSummaryAsync—Triggers an asynchronous background process to ensure funds through a payment provider for an invoice belonging to an order summary. ensureRefundsOrderSummaryAsync—Triggers an asynchronous background process to ensure refunds through a payment provider for an invoice belonging to an order summary. getFulfillmentOrderCapacityValues—Gets fulfillment order capacity information. This value is available in API version 55.0 and later. holdFulfillmentOrderCapacity—Holds fulfillment order capacity. This value is available in API version 55.0 and later. orderRoutingFindRoutesWithFewestSplits—Evaluates ordered product quantities against available inventory to determine the smallest combination of locations that can fulfill the order. This value is available in API version 51.0 and later. orderRoutingFindRoutesWithFewestSplitsUsingOCI—Evaluates ordered product quantities against available inventory at specified location groups and locations to determine the smallest combination of locations that can fulfill the order. This value is available in API version 54.0 and later. orderRoutingRankByAverageDistance—Calculates the average distance from sets of inventory locations to an order recipient, and returns the sets sorted by that average distance. This value is available in API version 51.0 and later. releaseHeldFulfillmentOrderCapacity—Releases held fulfillment order capacity. This value is available in API version 55.0 and later. returnOrderItemSummariesPreview—Previews the expected results of returning order item summaries from an order summary without actually returning them. returnOrderItemSummariesSubmit—Returns order item summaries from an order summary. returnReturnOrderItems—Processes return order line items. These values are used in Financial Services Cloud. createFinancialRecords—Creates person accounts, contacts, financial accounts, properties, assets, and liabilities from a residential loan application. This value is available in API version 49.0 and later. For values used in Fundraising for Nonprofit Cloud, see Flow for Fundraising. For values used in Health Cloud, see Flow for Health Cloud. For values used in Manufacturing Cloud, see Flow for Manufacturing Cloud. This value is used in Omnistudio. executeIntegrationProcedure—Executes an Integration Procedure with Agentforce configured. This value is available in API version 64.0 and later. These values are used in Rebate Management. addRebateMemberList—Adds a list of members to a rebate program. This value is available in API version 51.0 and later. calculateProjectedRebateAmount—Calculates the projected rebate amount for rebate types associated with a specified transaction ID. This value is available in API version 54.0 and later. calculateRebateAmountAndUpsertPayout—Calculates the rebate amount and upserts the rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. getBenefitAndCalculateRebateAmount— Gets benefit details, and optionally calculates the rebate amount for the specified aggregate record. This value is available in API version 51.0 and later. getEligibleProgramRebateTypes—Retrieves the eligible program rebate types for a mapped object. This value is available in API version 52.0 and later. generateRebatePayoutPeriods—Generates payout periods for a rebate program based on the frequency specified in the program. This value is available in API version 51.0 and later. processRebatesBatchCalculationJob—Processes a rebate batch calculation job from the Data Processing Engine. This value is available in API version 51.0 and later. processProgramRebateTypeProducts—Insert or delete records in the Program Rebate Type Product object. This value is available in API version 53.0 and later. rebatesProcessCSV—Processes an uploaded CSV file using Bulk API 2.0 and converts the file’s data into records in the target object. This value is available in API version 51.0 and later. upsertCustomRebatePayout—Upserts the custom calculated rebate payout for the specified aggregate record. This value is available in API version 51.0 and later. These values are used in B2B Referral Management. If no version is specified, the value is available in API version 64.0 and later. enrollAdvocateB2bReferralProm—Enroll an existing or new customer as an advocate for a referral promotion. processB2bReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. These values are used in Referral Marketing. processReferralEvent—Create referral event records when an advocate refers a friend, or when referred friends sign up or make a purchase. This value is available in API version 60.0 and later. These values are used in Loyalty Management. adjustPoints—Adjusts loyalty points for a specified program member or journal transaction. This value is available in API version 51.0 and later. assignTierBenefits— Assigns Member Benefits to a member tier for benefits that are associated with a Benefit Action. This value is available in API version 51.0 and later. cancelAccrual—Cancels a specific set of accrual transactions. creditPoints—Credits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. cancelRedemption—Reverts a specific set of redemption transactions. This value is available in API version 51.0 and later. changeTier—Changes the tier for a specified program member. This value is available in API version 51.0 and later. changeTierWhenNoErrors—Changes tier for a specified loyalty program member only when all the input parameters meet the criteria. This value is available in API version 51.0 and later. debitPoints—Debits loyalty points to a specified program member’s balance. This value is available in API version 51.0 and later. executeMemberBenefit—Processes the benefit action associated with the benefit, which is assigned to a loyalty program member. This value is available in API version 51.0 and later. generateMemberReferralCode—Generates a unique 8-character referral code for a loyalty program member. This value is available in API version 57.0 and later. getMemberActiveSegments—Retrieve active Data 360 market segments that a loyalty program member is a part of. getTier—Gets the current tier for a specified program member. This value is available in API version 51.0 and later. getPointsBalance—Gets the loyalty points balance for a specified program member. This value is available in API version 51.0 and later. getLoyaltyPromotion—Gets active loyalty promotions based on a transaction journal. This value is available in API version 53.0 and later. getLoyaltyPromotionBasedOnSalesforceCDP—Gets promotions for a member based on the market segment the member belongs to. This value is available in API version 53.0 and later. issueVoucher—Issues a voucher for a member or contract. This value is available in API version 51.0 and later. mergeLoyaltyProgramMembership—Merges two active loyalty program member records that both belong to the same loyalty program. This value is available in API version 56.0 and later. transferMemberPointsToGroups—Transfers points from an individual member or a corporate member to the member’s associated group. This value is available in API version 53.0 and later. transferPoints—Transfers points from a source loyalty program member to a target loyalty program member, or to a group that the member is a part of. This value is available in API version 64.0 and later. updateProgressForCumulativePromotionUsage—Updates the progress a member has made towards attaining a cumulative type promotion. This value is available in API version 53.0 and later. unmergeLoyaltyProgramMembership—Unmerges loyalty program member records that have a Merged status. The action unmerges memberships in the Merged status from the previously merged membership. This value is available in API version 56.0 and later. runProgramProcess—Triggers an active loyalty program process. This value is available in API version 56.0 and later. runProgramProcessForTransactionJournal—Triggers an active loyalty program process whose process type is TransactionJournal. This value is available in API version 54.0 and later. These values are for Decision Table. decisionTableAction—Runs an active decision table definition. This value is available in API version 51.0 and later. refreshDecisionTable—Refreshes the decision table cache. This value is available in API version 51.0 and later. These values are for the Batch Management jobs. batchJobAction—Runs the batch management jobs definitions. This value is available in API version 51.0 and later. submitFailedRecordsBatchJob—Resubmits an existing batch job with failed records for processing. This value is available in API version 52.0 and later. This value is for Data Processing Engine. dataProcessingEngineAction—Runs the data processing engine definitions. This value is available in API version 51.0 and later. This value is used for Einstein Visit Recommendation. saveRecommendationDecision—Save visit and task recommendation decisions. This value is available in API version 51.0 and later. These values are used in Field Service. If no version is specified, the value is available in API version 52.0 and later. addWorkPlans—Creates work plan and work step objects from the work plan library. addWorkSteps—Creates work step objects from the work plan library. deleteWorkPlans—Deletes all the work plans and work steps associated with a work order or work order line item. generateWorkPlans—Generates work plans based off rules defined in the work plan library. For values used in Intelligent Form Reader, see Flow for Intelligent Form Reader. For values used in Intelligent Document Reader, see Flow for Intelligent Document Reader. This value is used in Public Sector Solutions. createBenefitDisbursement—Creates a benefit disbursement for an eligible benefit assignment. This value is available in API version 57.0 and later. runRecordAggrBatchProcDef—Runs a Data Processing Engine definition to process an asynchronous batch job that creates or updates record aggregation results. This value is available in API version 59.0 and later. These values are used in Unified Catalog. If no version is specified, the value is available in API version 64.0 and later. checkProductEligibility—Determines whether a user is eligible for a list of products, which represent service processes, based on predefined criteria. checkSvcPrcActionEligibility—Determines whether an AI agent is eligible for a list of products, which represent service processes, and if the list is linked to a service process. This value is used in the Get Opportunity Grounding Data flow. getOpportunityContentNote— Gets the content note data for a specified opportunity record. This value is available in API version 64.0 and later. This value is used in the Process Field Update Suggestions flow. getOrExecFieldUpdtSuggestion— Enqueues requests to get a field update suggestion from a field generation prompt template. Also enqueues requests to update a field based on the generated suggestion. This value is available in API version 64.0 and later. This value is used in Einstein Conversation Insights. getConversationTranscript—Gets the conversation transcript for the specified voice or video call record. This value is available in API version 63.0 and later. These values are used in Channel Revenue Management. Available in API version 64.0 and later. adjustPartnerInvShipAndDebit— Adjusts the point of sales record during ship and debit claim processing to a different partner unsold inventory. Available in API version 64.0 and later. adjustPartnerUnsoldInventory— Adjusts the partner unsold inventory quantities and prices. Available in API version 64.0 and later. These values are reserved for future use. thanks metricRefresh exportSurveyResponses</xsd:documentation>
        <xsd:appinfo>Type: InvocableActionType (enumeration of type string)</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -69746,6 +69685,7 @@ Total metadata types: 1482
  </xsd:complexType>
  <xsd:complexType name="ValueSetValuesDefinition">
   <xsd:annotation>
+   <xsd:documentation>These field types extend the field types described in the Salesforce Object Reference.</xsd:documentation>
    <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_field_types.htm</xsd:appinfo>
   </xsd:annotation>
   <xsd:complexContent>
@@ -72863,6 +72803,7 @@ Total metadata types: 1482
  <xsd:element name="ActvPfrmDataConnectorS3" type="ActvPfrmDataConnectorS3"/>
  <xsd:element name="ActvPlatformAdncIdentifier" type="ActvPlatformAdncIdentifier"/>
  <xsd:element name="ActvPlatformFieldValue" type="ActvPlatformFieldValue"/>
+ <xsd:element name="AddressSettings" type="AddressSettings"/>
  <xsd:element name="AdjustmentsSettings" type="AdjustmentsSettings"/>
  <xsd:element name="AdvAccountForecastFormula" type="AdvAccountForecastFormula"/>
  <xsd:element name="AdvAccountForecastSet" type="AdvAccountForecastSet"/>
@@ -72912,11 +72853,11 @@ Total metadata types: 1482
  <xsd:element name="ApexEmailNotifications" type="ApexEmailNotifications"/>
  <xsd:element name="ApexPage" type="ApexPage"/>
  <xsd:element name="ApexSettings" type="ApexSettings"/>
- <xsd:element name="ApexTestSuite" type="ApexTestSuite"/>
  <xsd:element name="ApexTrigger" type="ApexTrigger"/>
  <xsd:element name="AppActionOverride" type="AppActionOverride"/>
  <xsd:element name="AppAnalyticsSettings" type="AppAnalyticsSettings"/>
  <xsd:element name="AppBrand" type="AppBrand"/>
+ <xsd:element name="AppCanvasConfig" type="AppCanvasConfig"/>
  <xsd:element name="AppComponentList" type="AppComponentList"/>
  <xsd:element name="AppExperienceSettings" type="AppExperienceSettings"/>
  <xsd:element name="AppFrameworkTemplateBundle" type="AppFrameworkTemplateBundle"/>
@@ -73053,8 +72994,6 @@ Total metadata types: 1482
  <xsd:element name="ChatterExtension" type="ChatterExtension"/>
  <xsd:element name="ChatterMobileSettings" type="ChatterMobileSettings"/>
  <xsd:element name="ChatterSettings" type="ChatterSettings"/>
- <xsd:element name="ChoiceList" type="ChoiceList"/>
- <xsd:element name="ChoiceListValue" type="ChoiceListValue"/>
  <xsd:element name="ClaimFinancialSettings" type="ClaimFinancialSettings"/>
  <xsd:element name="ClauseCatgConfiguration" type="ClauseCatgConfiguration"/>
  <xsd:element name="CleanDataService" type="CleanDataService"/>
@@ -73214,8 +73153,6 @@ Total metadata types: 1482
  <xsd:element name="DashboardGridLayout" type="DashboardGridLayout"/>
  <xsd:element name="DashboardMobileSettings" type="DashboardMobileSettings"/>
  <xsd:element name="DashboardTableColumn" type="DashboardTableColumn"/>
- <xsd:element name="DataCategory" type="DataCategory"/>
- <xsd:element name="DataCategoryGroup" type="DataCategoryGroup"/>
  <xsd:element name="DataConnector" type="DataConnector"/>
  <xsd:element name="DataConnectorAttribute" type="DataConnectorAttribute"/>
  <xsd:element name="DataConnectorAttributeOpt" type="DataConnectorAttributeOpt"/>
@@ -73652,6 +73589,7 @@ Total metadata types: 1482
  <xsd:element name="IndustriesLoyaltySettings" type="IndustriesLoyaltySettings"/>
  <xsd:element name="IndustriesPricingSettings" type="IndustriesPricingSettings"/>
  <xsd:element name="IndustriesRatingSettings" type="IndustriesRatingSettings"/>
+ <xsd:element name="IndustriesSettings" type="IndustriesSettings"/>
  <xsd:element name="IndustriesUnifiedInventorySettings" type="IndustriesUnifiedInventorySettings"/>
  <xsd:element name="Input_Folder" type="Input_Folder"/>
  <xsd:element name="InstalledPackage" type="InstalledPackage"/>
@@ -73768,7 +73706,6 @@ Total metadata types: 1482
  <xsd:element name="MessagingChannelStandardParameter" type="MessagingChannelStandardParameter"/>
  <xsd:element name="MessagingChannelUsage" type="MessagingChannelUsage"/>
  <xsd:element name="MessagingKeyword" type="MessagingKeyword"/>
- <xsd:element name="Metadata_Field_Types" type="Metadata_Field_Types"/>
  <xsd:element name="MfgProgramTemplate" type="MfgProgramTemplate"/>
  <xsd:element name="MfgProgramTemplateItem" type="MfgProgramTemplateItem"/>
  <xsd:element name="MfgServiceConsoleSettings" type="MfgServiceConsoleSettings"/>
@@ -73833,7 +73770,6 @@ Total metadata types: 1482
  <xsd:element name="ObjectRelationship" type="ObjectRelationship"/>
  <xsd:element name="ObjectSearchSetting" type="ObjectSearchSetting"/>
  <xsd:element name="ObjectSourceTargetMap" type="ObjectSourceTargetMap"/>
- <xsd:element name="ObjectUsage" type="ObjectUsage"/>
  <xsd:element name="OcrSampleDocument" type="OcrSampleDocument"/>
  <xsd:element name="OcrSampleDocumentField" type="OcrSampleDocumentField"/>
  <xsd:element name="OcrSampleDocumentPage" type="OcrSampleDocumentPage"/>
