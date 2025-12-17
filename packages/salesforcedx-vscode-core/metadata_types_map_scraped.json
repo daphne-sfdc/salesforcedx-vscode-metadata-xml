@@ -118,28 +118,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_activationplatformfield.htm",
     "parent": "Metadata"
   },
-  "ActvPfrmDataConnectorS3": {
-    "fields": [
-      {
-        "Description": "Required. The Amazon S3 bucket name.",
-        "Field Name": "bucketName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "This is an optional field that is reserved for internal use.",
-        "Field Name": "exportDirectory",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The display name of ActvPfrmDataConnectorS3.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Amazon S3 bucket name and export directory.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actvpfrmdataconnectors3.htm",
-    "parent": "Metadata"
-  },
   "ActvPlatformAdncIdentifier": {
     "fields": [
       {
@@ -899,113 +877,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datasrcdatamodelfieldmap.htm",
     "parent": "Metadata"
   },
-  "DataStreamDefinition": {
-    "fields": [
-      {
-        "Description": "If true, headers are included in the file if this is a single file stream.",
-        "Field Name": "areHeadersIncludedInFile",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "If true, files are aggregated before data is ingested if the file names contain a wildcard. For example, profiles*.csv.",
-        "Field Name": "bulkIngest",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Enum tracks the source of an object or field creation. Valid values are: Custom Standard Valid values available in API version 62.0 and later are: ADG Calculated_Insight CG_Audience Chunk Directory_Table External Semantic Transform Vector_Embedding",
-        "Field Name": "definitionCreationType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Describe whether this data stream definition was created by a customer or by an internal system.",
-        "Field Name": "dataConnector",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The ingestion data source. Valid values are: ACCOUNTENGAGEMENT AwsS3 AzureBlob BIG_QUERY CuratedEntity DataCloud ExternalPlatform GoogleCloudStorage IngestApi REDSHIFT SalesforceCommerceCloud SalesforceDotCom SalesforceInteractionStudio SalesforceMarketingCloud SFTP Snowflake StreamingApp UPLOAD",
-        "Field Name": "dataConnectorType",
-        "Field Type": "DataConnectorType (enumeration of type string)"
-      },
-      {
-        "Description": "For a Marketing Cloud data extension, the unique identifier.",
-        "Field Name": "dataExtensionIdentifier",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Name of the transport field that’s used when the extract method is CDC.",
-        "Field Name": "dataExtractField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Describes how to identify the data to be extracted. Valid values include: DATETIME_CDC FULL_REFRESH NUMERIC_CDC BINARY_CDC (reserved for future use)",
-        "Field Name": "dataExtractMethods",
-        "Field Type": "DataImportDataExtractMethods (enumeration of type string)"
-      },
-      {
-        "Description": "Identifies which data set bundle this definition was created from. Useful in cases where the same item can be configured across data connections.",
-        "Field Name": "dataPlatDataSetBundle",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The description is provided by the developer.",
-        "Field Name": "dataPlatformDataSet",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Name of the Data Platform Set Item.",
-        "Field Name": "dataPlatformDataSetItemName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A reference to the data source from which the data originated. This is usually the API name or a unique system identifier, such as the enterprise ID (EID) of the customer in the format MC_<EID>. Example: MCEnterprise or MC_12345.",
-        "Field Name": "dataSource",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A description of the data stream definition.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "File or wildcard (*) used when finding files.",
-        "Field Name": "fileNameWildcard",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the internal organization.",
-        "Field Name": "internalOrganization",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If true, file retrieval is limited to new files.",
-        "Field Name": "isLimitedToNewFiles",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "If true, treat the case of missing files as a failure.",
-        "Field Name": "isMissingFileFailure",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. UI label for this data stream definition.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Reference to the landing entity (target) where data will be stored.",
-        "Field Name": "mktDataLakeObject",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Reference to the object that’s used to transport information from the source to a landing entity (target).",
-        "Field Name": "mktDataTranObject",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Contains data ingestion information such as connection, API, and file retrieval settings.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datastreamdefinition.htm",
-    "parent": "Metadata"
-  },
   "DataStreamTemplate": {
     "fields": [
       {
@@ -1091,43 +962,6 @@
     ],
     "short_description": "Represents the data stream that a user adds to a data kit.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datastreamtemplate.htm",
-    "parent": "Metadata"
-  },
-  "ExternalDataConnector": {
-    "fields": [
-      {
-        "Description": "Indicates whether you’re connected to a data source. Valid values are: Connected Disconnected Failed",
-        "Field Name": "dataConnectionStatus",
-        "Field Type": "DataConnectionStatus (enumeration of type string)"
-      },
-      {
-        "Description": "Reference to the Data Connector Configuration that is used to retrieve or receive data such as DataConnectorS3.",
-        "Field Name": "dataConnectorConfiguration",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Type of connection such as AmazonS3. Valid values are: ACCOUNTENGAGEMENT AmazonS3 CuratedEntity DataCloud ExternalPlatform GoogleCloudStorage IngestApi SalesforceCommerceCloud SalesforceDotCom SalesforceInteractionStudio SalesforceMarketingCloud SFTP StreamingApp UPLOAD",
-        "Field Name": "dataConnectorType",
-        "Field Type": "DataConnectorType (enumeration of type string)"
-      },
-      {
-        "Description": "Reference to the Data Platform that provides or uses this data, such as Amazon_S3.",
-        "Field Name": "dataPlatform",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Stores the schema objects related to the data connector. Available in API version 56.0 and later.",
-        "Field Name": "externalDataTranObjects",
-        "Field Type": "ExternalDataTranObject"
-      },
-      {
-        "Description": "Required. The UI name for the ExternalDataConnector.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Used to represent the object where the data was sourced.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_externaldataconnector.htm",
     "parent": "Metadata"
   },
   "ExternalDataSource": {
@@ -2394,362 +2228,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionablelistdefinition.htm",
     "parent": "Metadata"
   },
-  "AdvAccountForecastSet": {
-    "fields": [
-      {
-        "Description": "The field name for the account in the advanced account forecast fact record.",
-        "Field Name": "accountFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The frequency at which the forecast set is recalculated automatically.Possible values are: Monthly Quarterly Weekly Yearly The default value is Monthly.",
-        "Field Name": "calculationFrequency",
-        "Field Type": "AdvAcctFcstCalcFrequency (enumeration of type string)"
-      },
-      {
-        "Description": "The description of the advanced account forecast set record.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The dimensions selected for an advanced account forecast set to categorize the forecast data.",
-        "Field Name": "dimensions",
-        "Field Type": "AdvAcctForecastDimension[]"
-      },
-      {
-        "Description": "The information about the groups for the advanced account forecast set measures or dimensions.",
-        "Field Name": "displayGroups",
-        "Field Type": "AdvAcctFrcstDisplayGroup[]"
-      },
-      {
-        "Description": "The details about the adjustment period of the advanced account forecast values.",
-        "Field Name": "forecastAdjPeriods",
-        "Field Type": "AdvAcctForecastAdjPeriod[]"
-      },
-      {
-        "Description": "Required. The API name of the object that contains the advanced forecast fact records.",
-        "Field Name": "forecastFactObjectName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The formulas based on which forecast values are calculated.",
-        "Field Name": "forecastFormulas",
-        "Field Type": "AdvAccountForecastFormula[]"
-      },
-      {
-        "Description": "Required. The name of the advanced account forecast period group record.",
-        "Field Name": "forecastPeriodGroupName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The field name for the forecast quantity in the advanced account forecast fact record.",
-        "Field Name": "forecastQuantityFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The field name for the forecast revenue in the advanced account forecast record.",
-        "Field Name": "forecastRevenueFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The field name for the Forecast Set ID in the advanced account forecast fact record.",
-        "Field Name": "forecastSetFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the advanced account forecast set record.",
-        "Field Name": "forecastSetName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The field name for the status in the advanced account forecast fact record.",
-        "Field Name": "forecastStatusFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the data processing engine (DPE) definition that’s used to generate advanced account forecast fact records.",
-        "Field Name": "generationDpeDefName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The measures to display in the advanced account forecasts grid for the forecast set.",
-        "Field Name": "measureDefinitions",
-        "Field Type": "AdvAcctForecastMeasureDef[]"
-      },
-      {
-        "Description": "The field name for the period in the advanced account forecast fact record.",
-        "Field Name": "periodFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the data processing engine definition that’s used to recalculate the advanced account forecast fact records.",
-        "Field Name": "recalculateDpeDefName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the data processing engine definition that’s used to regenerate the advanced account forecast fact records.",
-        "Field Name": "regenerationDpeDefName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The data processing engine definition that’s used to generate the rollover advanced account forecast fact records.",
-        "Field Name": "rolloverDpeDefName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The frequency of rollover of the advanced account forecast records.Possible values are: Monthly Quarterly Weekly Yearly The default value is Monthly.",
-        "Field Name": "rolloverFrequency",
-        "Field Type": "AdvAcctFcstCalcFrequency (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The status of the advanced account forecast set.Possible values are: Active Inactive",
-        "Field Name": "status",
-        "Field Type": "AdvAccForecastSetStatus (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents the forecast sets that define the forecast configurations for each business unit or different groups of accounts. With separate forecast sets at account or business unit level, you can focus on account-specific data and manage configuration updates for one business unit without impacting any other business unit’s data.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAccountForecastFormula": {
-    "fields": [
-      {
-        "Description": "Required. The period until when the forecast formula is applicable.",
-        "Field Name": "endPeriod",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. The formula based on which forecast values are calculated.",
-        "Field Name": "formulaExpression",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the calculation type for the formula.Possible values are: QUANTITY REVENUE The default value is QUANTITY.",
-        "Field Name": "formulaType",
-        "Field Type": "AdvAcctFcstFormulaType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The period from when the forecast formula is applicable.",
-        "Field Name": "startPeriod",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents the formulas that are used to calculate forecast values in real time after applying the DPE calculations. For example, processing forecast rollover for all accounts at the start of a month.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAcctForecastAdjPeriod": {
-    "fields": [
-      {
-        "Description": "Required. The number of days during which you can make forecast adjustments.",
-        "Field Name": "adjustmentDayCount",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. The frequency that’s applicable to make any forecast adjustments.Possible values are: Month Quarter Week Year The default value is Month.",
-        "Field Name": "frequency",
-        "Field Type": "PeriodTypes (enumeration of type string)"
-      },
-      {
-        "Description": "The name of the profile with which you can adjust the forecast set.",
-        "Field Name": "profileName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The start date for forecast adjustments.",
-        "Field Name": "startDay",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents details about the adjustment period of the advanced account forecast values.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAcctForecastDimension": {
-    "fields": [
-      {
-        "Description": "Required. The name of the advanced account forecast dimension.",
-        "Field Name": "advAcctForecastDimName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The API name of the field for the dimension in the custom object that contains the generated advanced account forecast records.",
-        "Field Name": "dimensionFieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The name of the dimension source associated with the advanced account forecast set dimension record.",
-        "Field Name": "dimensionSourceName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The sequence number of the dimension source associated with the forecast set.",
-        "Field Name": "hierarchySequenceNumber",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents the dimensions selected for an advanced account forecast set to categorize the data. For example, a business unit requires forecast data for each account aggregated by product and ship-from location.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAcctForecastMeasureDef": {
-    "fields": [
-      {
-        "Description": "Required. The name of the definition for the advanced account forecast measure.",
-        "Field Name": "advAcctForecastMeasureDefName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The type of aggregation that’s used for calculating the advanced account forecast values.Possible values are: AVERAGE MAXIMUM MINIMUM SUM The default value is SUM.",
-        "Field Name": "aggregationType",
-        "Field Type": "AdvAcctFcstAggregationType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The method that’s used for calculating the advanced account forecast values.Values are: CUSTOM DATA_PROCESSING_ENGINE_DEFINITION FORMULA The default value is DATA_PROCESSING_ENGINE_DEFINITION.",
-        "Field Name": "computationMethod",
-        "Field Type": "AdvAcctFcstComputationMethod (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The field of the facts object used for the advanced account forecast measure.",
-        "Field Name": "forecastDataMeasureName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name for the advanced account forecast measure to show on UI.",
-        "Field Name": "forecastMeasureName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The measure type that’s used for the generated advanced forecast values.Possible values are: QUANTITY REVENUE The default value is QUANTITY.",
-        "Field Name": "forecastMeasureType",
-        "Field Type": "AdvAcctFcstMeasureType (enumeration of type string)"
-      },
-      {
-        "Description": "Indicates whether the adjustments made to the advanced account forecast values for this metric are tracked (true) or not (false).",
-        "Field Name": "isAdjustmentTracked",
-        "Field Type": "boolean"
-      }
-    ],
-    "short_description": "Represents information about the measures to display in the advanced account forecasts grid for the forecast set.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAcctFrcstDisplayGroup": {
-    "fields": [
-      {
-        "Description": "Required. The name of the advanced account forecast display group.",
-        "Field Name": "advAcctFrcstDisplayGroupName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The items associated with a display group for an advanced account forecast set.",
-        "Field Name": "displayGroupItems",
-        "Field Type": "AdvAcctFrcstDplyGroupItem[]"
-      },
-      {
-        "Description": "The category of the display group.Possible value is: MEASURE",
-        "Field Name": "displayGroupType",
-        "Field Type": "AdvAcctFrcstDisplayGroupType (enumeration of type string)"
-      },
-      {
-        "Description": "Indicates whether the display group is the default group (true) or not (false).",
-        "Field Name": "isDefault",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The name of the profile for which the display group is applicable.",
-        "Field Name": "userProfileName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents information about the groups for the advanced account forecast set measures or dimensions.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AdvAcctFrcstDplyGroupItem": {
-    "fields": [
-      {
-        "Description": "Required. The name of the advanced account forecast display group that’s associated with the group item.",
-        "Field Name": "advAcctFrcstDplyGroupItemName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The display order of the display group item.",
-        "Field Name": "displayOrder",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The ID of the measure associated with the display group item.",
-        "Field Name": "measureReferenceName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents information about the items associated with a display group for an advanced account forecast set.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_advaccountforecastset.htm",
-    "parent": "Metadata"
-  },
-  "AffinityScoreDefinition": {
-    "fields": [
-      {
-        "Description": "Description of the affinity score definition.",
-        "Field Name": "affinityScoreDefinitionDesc",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Name of the affinity score definition.",
-        "Field Name": "affinityScoreDefinitionName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Type of the affinity score that’s defined.Valid values are: CAP—Capacity, Ability, Propensity (CAP) RFM—Recency, Frequency, Monetary (RFM) The default value is RFM.",
-        "Field Name": "affinityScoreType",
-        "Field Type": "AffinityScoreType (enumeration of type string)"
-      },
-      {
-        "Description": "Label for this affinity score definition value. This display value is the internal label that doesn't get translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Number of months to analyze the records for calculating the affinity score.",
-        "Field Name": "numberOfMonths",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. Number of ranges to use in the calculation, ranging from 0 to 9. Provide the corresponding range list values in the scoreRangeList field.",
-        "Field Name": "numberOfRanges",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. Ranges that are referenced in the affinity score calculation. This field is used with scoreRangeList. For example, to calculate RFM with numberOfRanges value as 3, provide the values for the scoreRangeList field in this format.",
-        "Field Name": "scoreRangeList",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. API names of the source fields that are referenced in the score calculation.",
-        "Field Name": "sourceFieldApiNameList",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API names of the source objects that are referenced in the score calculation.",
-        "Field Name": "sourceObjectApiNameList",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. API names of the target fields where the calculated scores are added.",
-        "Field Name": "targetFieldApiNameList",
-        "Field Type": "string"
-      },
-      {
-        "Description": "API name of the target object where the calculated scores are added.",
-        "Field Name": "targetObjectApiName",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the affinity information used in calculations to analyze and categorize contacts for marketing purposes.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/fundraising_affinityscoredefinition_metadata_api.htm",
-    "parent": "Metadata"
-  },
   "AIApplication": {
     "fields": [
       {
@@ -2775,48 +2253,6 @@
     ],
     "short_description": "Represents an instance of an AI application. For example, Einstein Prediction Builder. This type extends the Metadata metadata type and inherits its fullName field.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiapplication.htm",
-    "parent": "Metadata"
-  },
-  "AIApplicationConfig": {
-    "fields": [
-      {
-        "Description": "Required. Represents the AIApplication to which AIApplicationConfig belongs. Can contain only underscores and alphanumeric characters and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. Available in API version 51.0 and later.",
-        "Field Name": "aiApplicationDeveloperName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The ID of the parent AI application.",
-        "Field Name": "applicationId",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Represents the name of the application config. Can contain only underscores and alphanumeric characters and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. When true, generates the predictors, or field values, that were used to generate the prediction value.",
-        "Field Name": "insightReasonEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Label that identifies the AI application configuration throughout the Salesforce user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Reserved for future use.",
-        "Field Name": "rank",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. Frequency with which the prediction scores are written back. Valid values are: Batch OnDemand Streaming",
-        "Field Name": "scoringMode",
-        "Field Type": "AIScoringMode (enumeration of type string)"
-      }
-    ],
-    "short_description": "Additional prediction information related to an AI application. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiapplicationconfig.htm",
     "parent": "Metadata"
   },
   "AiAuthoringBundle": {
@@ -7407,127 +6843,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_brandingset.htm",
     "parent": "Metadata"
   },
-  "BriefcaseDefinition": {
-    "fields": [
-      {
-        "Description": "A list of rules that specify which records are included in the briefcase.",
-        "Field Name": "briefcaseRules",
-        "Field Type": "BriefcaseRule[]"
-      },
-      {
-        "Description": "Description of the briefcase.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates whether the briefcase is active by default (true) or inactive (false). Activate a briefcase to make the selected records available to assignees.",
-        "Field Name": "isActive",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. Label for the briefcase name that appears in the Salesforce user interface.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Applies if multiple briefcase types are available in your org. Enum values include: Standard: Standard briefcase that can be used with priming APIs. HighVolume: Increased capacity briefcase that’s used with performance priming in the Salesforce Field Service mobile app. MobileAppSync: Automatically generated briefcase that’s used for performance priming in the Salesforce Field Service mobile app.",
-        "Field Name": "type",
-        "Field Type": "BriefcaseType"
-      }
-    ],
-    "short_description": "Represents a briefcase definition. A briefcase makes selected records available for specific users and groups to view when they’re offline in the Salesforce Field Service mobile app for iOS and Android. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
-  "BriefcaseRule": {
-    "fields": [
-      {
-        "Description": "A list of filters on a rule.",
-        "Field Name": "briefcaseRuleFilters",
-        "Field Type": "BriefcaseRuleFilter[]"
-      },
-      {
-        "Description": "The filter logic for record selection, for example, 1 AND 2 where 1 and 2 correspond to filter 1 and filter 2. Filter logic operators include AND and OR.",
-        "Field Name": "filterLogic",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Indicates whether the records should be sorted in ascending order (true) or descending order (false).",
-        "Field Name": "isAscendingOrder",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Indicates whether the briefcase rule is part of a hierarchical set of rules that configure the offline priming of file attachments. Available only for the Offline App (Salesforce Mobile App Plus).To configure the offline priming of file attachments, create a set of four hierarchical briefcase rules: A rule with targetEntity set to the object with the file attachments at the first level A rule with targetEntity set to ContentDocumentLink at the second level A rule with targetEntity set to ContentDocument at the third level A rule with targetEntity set to ContentVersion at the fourth level See the Declarative Metadata Sample Definition section for an example briefcase definition that configures the offline priming of file attachments. The ContentDocumentLink, ContentDocument, and ContentVersion rules must all have isRelatedFilesRule set to true. To delete a briefcase configuration for file attachments, you must delete the ContentDocumentLink rule and all of its nested rules. You can’t delete a single rule within the hierarchy of ContentDocumentLink, ContentDocument, and ContentVersion rules. When isRelatedFilesRule is set to true, you must use the recordLimit field to limit the number of file attachments returned by a briefcase rule. Apply the same recordLimit value across the ContentDocumentLink, ContentDocument, and ContentVersion rules. You can optionally filter file attachments by file size and file type through Briefcase Builder in Setup. After you set a value for isRelatedFilesRule, you can no longer modify the field. The value that you set persists for the life of the rule.",
-        "Field Name": "isRelatedFilesRule",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The field to order the records by, which determines how the records can be sorted. For example, Account Name or Created By.",
-        "Field Name": "orderBy",
-        "Field Type": "string"
-      },
-      {
-        "Description": "A group of records to restrict the scope of this rule. Valid values include: Everything AssignedToMe Mine The AssignedToMe scope is supported for the ServiceAppointment object only.",
-        "Field Name": "queryScope",
-        "Field Type": "FilterScope (enumeration of type string)"
-      },
-      {
-        "Description": "The maximum number of records for an object on the briefcase rule. The maximum is 50,000 records that meet the criteria. However, the records returned by one briefcase rule must fit within the maximum limit of 50,000 records across active briefcases. If there are more records that match the criteria than the record limit allows, the orderBy field determines which records are returned.",
-        "Field Name": "recordLimit",
-        "Field Type": "int"
-      },
-      {
-        "Description": "A list of rules that are related to the current rule.",
-        "Field Name": "relatedRules",
-        "Field Type": "BriefcaseRule[]"
-      },
-      {
-        "Description": "Required for relatedRules. Defines the Salesforce object field that relates the relatedRules field to another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it's nested in. For example, an Account object rule can be related to a Contact object rule using the Account ID object field. In this example, the value for the related rule's relationshipField is AccountID.",
-        "Field Name": "relationshipField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required for relatedRules. Defines the relationship between the relatedRules field and another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it's nested in. Valid values include: ParentToChild ChildToParent",
-        "Field Name": "relationshipType",
-        "Field Type": "BriefcaseRuleRelationshipType (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The API name of the standard object, custom object, or custom metadata type that the briefcase rule selects records from.If the targetEntity is a custom metadata type, the briefcase rule can’t include any other fields. You can add only one briefcase rule for the same custom metadata type in a briefcase. Custom metadata types are supported as the targetEntity for top-level rules only–you can’t create a related rule with targetEntity as a custom metadata type.",
-        "Field Name": "targetEntity",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a rule that specifies records to be included in the BriefcaseDefinition.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
-  "BriefcaseRuleFilter": {
-    "fields": [
-      {
-        "Description": "Required. The comparison operator for this rule filter. Capitalization matters with date filter operators. Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. Valid values include: d—Ends with e—Equals g—Greater than h—Greater than or equal l—Less than m—Less than or equal n—Not equals. This value is applicable only when filterValue is empty. s—Starts with",
-        "Field Name": "filterOperator",
-        "Field Type": "BriefcaseFilterOperator (enumeration of type string)"
-      },
-      {
-        "Description": "Required. The filter number. When you apply multiple filters, the filters are numbered sequentially, 1, 2, 3, and so on.",
-        "Field Name": "filterSeqNumber",
-        "Field Type": "int"
-      },
-      {
-        "Description": "The value that the field and criteria evaluate. For example, true or false for a boolean field whose criteria or filter operator is Equals.Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. For targetEntityField values that accept a user ID, such as OwnerId or CreatedById, enter $User.Id to pass the ID of the user making the request. To evaluate targetEntityField by whether the field is empty or not empty, leave filterValue blank and set filterOperator to e (equals) or n (not equals).",
-        "Field Name": "filterValue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The API name of the field to filter by. This field is from the targetEntity on BriefcaseRule. Compound fields aren't supported. Fields encrypted with deterministic encryption can be used in filters with equals and not equals operators.",
-        "Field Name": "targetEntityField",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Specifies filter criteria for a BriefcaseRule.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
   "BusinessProcessGroup": {
     "fields": [
       {
@@ -7607,119 +6922,6 @@
     ],
     "short_description": "",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm",
-    "parent": "Metadata"
-  },
-  "CallCenter": {
-    "fields": [
-      {
-        "Description": "Optional field. A URL that points to an adapter.",
-        "Field Name": "adapterUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.",
-        "Field Name": "contactCenterChannels",
-        "Field Type": "ContactCenterChannel[]"
-      },
-      {
-        "Description": "Required. The display name of this call center.",
-        "Field Name": "displayName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the displayName field in Call Center setup page.",
-        "Field Name": "displayNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the internalName field in Call Center setup page.",
-        "Field Name": "internalNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Custom setup items defined for this call center.",
-        "Field Name": "sections",
-        "Field Type": "CallCenterSection[]"
-      },
-      {
-        "Description": "The version of this call center.",
-        "Field Name": "version",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterSection": {
-    "fields": [
-      {
-        "Description": "Contains the label, name, and value that describe the sections.",
-        "Field Name": "items",
-        "Field Type": "CallCenterItem[]"
-      },
-      {
-        "Description": "Required. The label of the section.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the section.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterItem": {
-    "fields": [
-      {
-        "Description": "Required. The label of the custom setup item.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom setup item.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the custom setup item.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "ContactCenterChannel": {
-    "fields": [
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.",
-        "Field Name": "channel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.",
-        "Field Name": "contactCenter",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailFallbackQueue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailHandler",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
     "parent": "Metadata"
   },
   "CallCenterRoutingMap": {
@@ -8247,171 +7449,6 @@
     ],
     "short_description": "Represents the configuration about the clause category that can be used to categorize your disclosure and compliance reports from standardized disclosure templates in a response document.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_clausecatgconfiguration.htm",
-    "parent": "Metadata"
-  },
-  "CleanDataService": {
-    "fields": [
-      {
-        "Description": "Required. A list of data integration rules",
-        "Field Name": "cleanRules",
-        "Field Type": "CleanRule[]"
-      },
-      {
-        "Description": "Required. A description of the data service",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Label for this data service. Although this value is displayed, it’s an internal label for the data service and isn’t translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A key that maps to the internal data service identifier.",
-        "Field Name": "matchEngine",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a data service that adds and updates data in standard objects.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_cleandataservice.htm",
-    "parent": "Metadata"
-  },
-  "CleanRule": {
-    "fields": [
-      {
-        "Description": "Required. If this field is set to true, Salesforce applies the data integration rule to existing records whenever the rule is updated or saved.",
-        "Field Name": "bulkEnabled",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If this field is set to true, Salesforce bypasses triggers when it applies the rule; otherwise, it applies triggers after it applies the rule.",
-        "Field Name": "bypassTriggers",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. If this field is set to true, Salesforce bypasses workflow rules when it applies the data integration rule; otherwise, it applies workflow rules after it applies the rule.",
-        "Field Name": "bypassWorkflow",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. User-friendly text that describes the data integration rule.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. This unique name prevents conflicts with rules from other packages that have the same masterLabel.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A list of FieldMapping entries for the rule.",
-        "Field Name": "fieldMappings",
-        "Field Type": "FieldMapping[]"
-      },
-      {
-        "Description": "Required. Label for this object. This display value is the internal label that is not translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. An internal label for a matching rule in the data service that’s associated with the CleanRule.",
-        "Field Name": "matchRule",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A virtual object in the data service that is associated with the CleanRule. Specifying a non-existent object causes an error.",
-        "Field Name": "sourceSobjectType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Status of the data integration rule. Valid values are Active and Inactive.",
-        "Field Name": "status",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A standard object that’s the target of additions and updates specified by this CleanRule. Specifying an object that the data service does not support causes an error.",
-        "Field Name": "targetSobjectType",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents information that controls how the data service adds and updates data in an org.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_cleandataservice.htm",
-    "parent": "Metadata"
-  },
-  "FieldMapping": {
-    "fields": [
-      {
-        "Description": "Required. This name can contain only underscores and alphanumeric characters, and must be unique in your org. It must begin with a letter, not include spaces, not end with an underscore, and not contain two consecutive underscores. This unique name prevents conflicts with field mappings from other packages that have the same masterLabel.Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A list of FieldMappingRow entries. Each entry represents a field in a standard object that maps to a field in the data service.",
-        "Field Name": "fieldMappingRows",
-        "Field Type": "FieldMappingRow[]"
-      },
-      {
-        "Description": "Required. Label for this object. This display value is the internal label that is not translated.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The standard object associated with this FieldMapping. Specifying an object that the data service does not support causes an error.",
-        "Field Name": "SObjectType",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a mapping between fields in the data service and fields in an object in the org.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_cleandataservice.htm",
-    "parent": "Metadata"
-  },
-  "FieldMappingRow": {
-    "fields": [
-      {
-        "Description": "The display name for the field represented by the FieldMappingRow.",
-        "Field Name": "fieldName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. A list of FieldMappingField entries. Each entry is a field in a standard object that maps to a field in the data service.",
-        "Field Name": "fieldMappingFields",
-        "Field Type": "FieldMappingField[]"
-      },
-      {
-        "Description": "The comparison operation the data service applies when it compares the value of this FieldMappingRow to the mapped field in the object specified in SObjectType. The value of this field is AutoFill, which indicates that the data service only adds data if the object field is blank.",
-        "Field Name": "mappingOperation",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The standard object for the field mapped to the FieldMappingRow. Specifying an object that the data service does not support causes an error.",
-        "Field Name": "SObjectType",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the status of a CleanRule.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_cleandataservice.htm",
-    "parent": "Metadata"
-  },
-  "FieldMappingField": {
-    "fields": [
-      {
-        "Description": "Required. A field in the data service that is mapped to this field.",
-        "Field Name": "dataServiceField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. An object in the data service that contains the FieldMappingRow associated with this FieldMappingField. Specifying a non-existent object causes an error.",
-        "Field Name": "dataServiceObjectName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Represents the priority that the data service uses when it updates the field, relative to other update rules for the same field. Valid values are 1-100.",
-        "Field Name": "priority",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Represents a field in a standard object. A FieldMappingField maps to a FieldMappingRow entry in a data service.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_cleandataservice.htm",
     "parent": "Metadata"
   },
   "CMSConnectSource": {
@@ -8945,156 +7982,6 @@
     ],
     "short_description": "This field is available in API version 39.0 and later.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeDefinition": {
-    "fields": [
-      {
-        "Description": "If specified, at least one preview image and one highlight are required. Up to 3 preview images and 4 highlights are supported. Available in API version 44.0 and later",
-        "Field Name": "bundlesInfo",
-        "Field Type": "CommunityThemeBundleInfo[]"
-      },
-      {
-        "Description": "The list of custom theme layout types available to the theme layout.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "CommunityCustomThemeLayoutType[]"
-      },
-      {
-        "Description": "The set of branding properties associated with this CommunityThemeDefinition, as defined in the Theme panel in Experience Builder. Available in API version 44.0 and later.",
-        "Field Name": "defaultBrandingSet",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The optional description text of this CommunityThemeDefinition.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "False by default. Determines if deleting this CommunityThemeDefinition attempts to delete other directly or indirectly referenced objects automatically, for example, FlexiPage. Values are true or false.",
-        "Field Name": "enableExtendedCleanUp​OnDelete",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The label for this CommunityThemeDefinition, which displays in Setup.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Defines the name of the publisher as seen in the wizard for creating Experience Builder sites. If no name is provided, the name of the org from which the package was originally exported is used.This field is available in API version 45.0 and later.",
-        "Field Name": "publisher",
-        "Field Type": "string"
-      },
-      {
-        "Description": "List of theme layout type overrides for flexipages (currently only for home). Available in API version 44.0 and later.",
-        "Field Name": "themeRouteOverride",
-        "Field Type": "CommunityThemeRouteOverride[]"
-      },
-      {
-        "Description": "Required. The list of settings for this CommunityThemeDefinition.",
-        "Field Name": "themeSetting",
-        "Field Type": "CommunityTheme Setting []"
-      }
-    ],
-    "short_description": "Represents the definition of a theme for an Experience Builder site. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeBundleInfo": {
-    "fields": [
-      {
-        "Description": "The optional description text of its CommunityThemeBundleInfo.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required only when the type is PreviewImage, otherwise this field is optional. A preview image for this CommunityThemeDefinition.",
-        "Field Name": "image",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. An integer specifying the position of this CommunityThemeBundleInfo relative to others of the same type within its CommunityThemeDefinition. 1 is the first position, 3 is the maximum position for PreviewImage type, and 4 is the maximum position for the Highlight type.",
-        "Field Name": "order",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Required. The title of this CommunityThemeBundleInfo to use in code.",
-        "Field Name": "title",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Stores descriptive information about the theme that is included in the export. Valid values are: Highlight—This CommunityThemeBundleInfo is used as a highlighted feature. Up to 4 are supported. PreviewImage—This CommunityThemeBundleInfo is used as a preview image. Up to 3 are supported.",
-        "Field Name": "type",
-        "Field Type": "CommunityTemplate​BundleInfoType (enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityCustomThemeLayoutType": {
-    "fields": [
-      {
-        "Description": "The description of the custom theme layout type.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom theme layout type. The values Inner, Home, and Login are reserved.",
-        "Field Name": "label",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityThemeRouteOverride": {
-    "fields": [
-      {
-        "Description": "Required when themeLayoutType isn’t specified. Provides the custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the attributes of the site page for which the default theme layout type is overridden. The only valid value is {\"PageName\":\"Home\"}.",
-        "Field Name": "pageAttributes",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.",
-        "Field Name": "pageType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required if customThemeLayoutType isn’t specified. Provides the default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "themeLayoutType",
-        "Field Type": "CommunityTheme​LayoutType (enumeration of type string)"
-      }
-    ],
-    "short_description": "Required. Specifies the type of the site page for which the default theme layout type is overridden. The only valid value is comm__standardPage.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
-    "parent": "Metadata"
-  },
-  "CommunityTheme Setting": {
-    "fields": [
-      {
-        "Description": "Required when themeLayoutType isn’t specified. The custom theme layout type associated with the theme layout. This field and themeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "customThemeLayoutType",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The configuration and layout for this theme.",
-        "Field Name": "themeLayout",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required when customThemeLayoutType isn’t specified. The default theme layout type associated with the theme layout. Valid values are Inner, Home, or Login. This field and customThemeLayoutType are mutually exclusive; you can’t specify both.",
-        "Field Name": "themeLayoutType",
-        "Field Type": "CommunityTheme​LayoutType (enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitythemedefinition.htm",
     "parent": "Metadata"
   },
   "ConnectedApp": {
@@ -46550,6 +45437,102 @@
       }
     ],
     "short_description": "Represents settings that control the display of agreement terms metrics in sales agreements and the calculation of the actual quantity of products in sales agreements. These settings also control the approval of sales agreements. In the package manifest, all organization settings metadata types are accessed using the Settings name. See Settings for more details.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/mfg_salesagreementsettings_metadata_api.htm",
+    "parent": "Metadata"
+  },
+  "AdvAcctFrcstDisplayGroup": {
+    "fields": [
+      {
+        "Description": "Required. Name of the advanced account forecast display group.",
+        "Field Name": "advAcctFrcstDisplayGroupName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Represents information about the items associated with a display group for an advanced account forecast set.",
+        "Field Name": "displayGroupItems",
+        "Field Type": "AdvAcctFrcstDplyGroupItem"
+      },
+      {
+        "Description": "Category for the display group.Possible values are: MEASURE",
+        "Field Name": "displayGroupType",
+        "Field Type": "AdvAcctFrcstDisplayGroupType(enumeration of type string)"
+      },
+      {
+        "Description": "Indicates whether the display group is the default group (true) or not (false). The default value is false.",
+        "Field Name": "isDefault",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Profile for which the display group is applicable.",
+        "Field Name": "userProfileName",
+        "Field Type": "string"
+      }
+    ],
+    "short_description": "Represents information about the groups for the advanced account forecast set measures or dimensions. Available in API version 56.0 and later.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/mfg_salesagreementsettings_metadata_api.htm",
+    "parent": "Metadata"
+  },
+  "AdvAcctFrcstDplyGroupItem": {
+    "fields": [
+      {
+        "Description": "Required. Name of the advanced account forecast display group item.",
+        "Field Name": "advAcctFrcstDplyGroupItemName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Required. Display order of the display group item.",
+        "Field Name": "displayOrder",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Name of the measure associated with the display group item.",
+        "Field Name": "measureReferenceName",
+        "Field Type": "string"
+      }
+    ],
+    "short_description": "Represents information about the items associated with a display group for an advanced account forecast set. Available in API version 56.0 and later.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/mfg_salesagreementsettings_metadata_api.htm",
+    "parent": "Metadata"
+  },
+  "AdvAcctForecastMeasureDef": {
+    "fields": [
+      {
+        "Description": "Required. Name for the measure.",
+        "Field Name": "advAcctForecastMeasureDefName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Required. Type of aggregation used for calculating advanced account forecast values.Possible values are: AVERAGE MAXIMUM MINIMUM SUM",
+        "Field Name": "aggregationType",
+        "Field Type": "AdvAcctFcstAggregationType(enumeration of type string)"
+      },
+      {
+        "Description": "Required. Method used for calculating advanced account forecast values.Possible values are: CUSTOM DATA_PROCESSING_ENGINE_DEFINITION FORMULA",
+        "Field Name": "computationMethod",
+        "Field Type": "AdvAcctFcstComputationMethodenumeration of type string)"
+      },
+      {
+        "Description": "Required. Field of the facts object used for this measure.",
+        "Field Name": "forecastDataMeasureName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Required. Name for the measure to show on UI.",
+        "Field Name": "forecastMeasureName",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Required. Measure type used for the generated advanced forecast values.Possible values are: QUANTITY REVENUE",
+        "Field Name": "forecastMeasureType",
+        "Field Type": "AdvAcctFcstMeasureType(enumeration of type string)"
+      },
+      {
+        "Description": "Indicates whether the adjustments made to the advanced account forecast values for this metric are tracked (true) or not (false). The default value is false.",
+        "Field Name": "isAdjustmentTracked",
+        "Field Type": "boolean"
+      }
+    ],
+    "short_description": "Represents information about the measures to be displayed in the advanced account forecasts grid for the forecast set. Available in API version 56.0 and later.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/mfg_salesagreementsettings_metadata_api.htm",
     "parent": "Metadata"
   },
