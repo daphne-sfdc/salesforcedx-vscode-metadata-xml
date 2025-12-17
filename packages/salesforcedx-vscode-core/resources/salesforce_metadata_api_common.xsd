@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-17T23:07:05.926Z
-Total metadata types: 1481
+Generated on: 2025-12-17T23:17:49.710Z
+Total metadata types: 1474
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -10365,168 +10365,6 @@ Total metadata types: 1481
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="BriefcaseDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Represents a briefcase definition. A briefcase makes selected records available for specific users and groups to view when they’re offline in the Salesforce Field Service mobile app for iOS and Android. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="briefcaseRules" minOccurs="0" maxOccurs="unbounded" type="BriefcaseRule">
-      <xsd:annotation>
-       <xsd:documentation>A list of rules that specify which records are included in the briefcase.</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseRule[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Description of the briefcase.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isActive" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether the briefcase is active by default (true) or inactive (false). Activate a briefcase to make the selected records available to assignees.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Label for the briefcase name that appears in the Salesforce user interface.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="BriefcaseType">
-      <xsd:annotation>
-       <xsd:documentation>Applies if multiple briefcase types are available in your org. Enum values include: Standard: Standard briefcase that can be used with priming APIs. HighVolume: Increased capacity briefcase that’s used with performance priming in the Salesforce Field Service mobile app. MobileAppSync: Automatically generated briefcase that’s used for performance priming in the Salesforce Field Service mobile app.</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseType</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="BriefcaseRule">
-  <xsd:annotation>
-   <xsd:documentation>Represents a rule that specifies records to be included in the BriefcaseDefinition.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="briefcaseRuleFilters" minOccurs="0" maxOccurs="unbounded" type="BriefcaseRuleFilter">
-      <xsd:annotation>
-       <xsd:documentation>A list of filters on a rule.</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseRuleFilter[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="filterLogic" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The filter logic for record selection, for example, 1 AND 2 where 1 and 2 correspond to filter 1 and filter 2. Filter logic operators include AND and OR.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isAscendingOrder" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the records should be sorted in ascending order (true) or descending order (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isRelatedFilesRule" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the briefcase rule is part of a hierarchical set of rules that configure the offline priming of file attachments. Available only for the Offline App (Salesforce Mobile App Plus).To configure the offline priming of file attachments, create a set of four hierarchical briefcase rules: A rule with targetEntity set to the object with the file attachments at the first level A rule with targetEntity set to ContentDocumentLink at the second level A rule with targetEntity set to ContentDocument at the third level A rule with targetEntity set to ContentVersion at the fourth level See the Declarative Metadata Sample Definition section for an example briefcase definition that configures the offline priming of file attachments. The ContentDocumentLink, ContentDocument, and ContentVersion rules must all have isRelatedFilesRule set to true. To delete a briefcase configuration for file attachments, you must delete the ContentDocumentLink rule and all of its nested rules. You can’t delete a single rule within the hierarchy of ContentDocumentLink, ContentDocument, and ContentVersion rules. When isRelatedFilesRule is set to true, you must use the recordLimit field to limit the number of file attachments returned by a briefcase rule. Apply the same recordLimit value across the ContentDocumentLink, ContentDocument, and ContentVersion rules. You can optionally filter file attachments by file size and file type through Briefcase Builder in Setup. After you set a value for isRelatedFilesRule, you can no longer modify the field. The value that you set persists for the life of the rule.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="orderBy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The field to order the records by, which determines how the records can be sorted. For example, Account Name or Created By.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="queryScope" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A group of records to restrict the scope of this rule. Valid values include: Everything AssignedToMe Mine The AssignedToMe scope is supported for the ServiceAppointment object only.</xsd:documentation>
-       <xsd:appinfo>Type: FilterScope (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="recordLimit" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The maximum number of records for an object on the briefcase rule. The maximum is 50,000 records that meet the criteria. However, the records returned by one briefcase rule must fit within the maximum limit of 50,000 records across active briefcases. If there are more records that match the criteria than the record limit allows, the orderBy field determines which records are returned.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="relatedRules" minOccurs="0" maxOccurs="unbounded" type="BriefcaseRule">
-      <xsd:annotation>
-       <xsd:documentation>A list of rules that are related to the current rule.</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseRule[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="relationshipField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required for relatedRules. Defines the Salesforce object field that relates the relatedRules field to another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it&apos;s nested in. For example, an Account object rule can be related to a Contact object rule using the Account ID object field. In this example, the value for the related rule&apos;s relationshipField is AccountID.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="relationshipType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required for relatedRules. Defines the relationship between the relatedRules field and another relatedRules field or the briefcaseRules field on the BriefcaseDefinition metadata type that it&apos;s nested in. Valid values include: ParentToChild ChildToParent</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseRuleRelationshipType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetEntity" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name of the standard object, custom object, or custom metadata type that the briefcase rule selects records from.If the targetEntity is a custom metadata type, the briefcase rule can’t include any other fields. You can add only one briefcase rule for the same custom metadata type in a briefcase. Custom metadata types are supported as the targetEntity for top-level rules only–you can’t create a related rule with targetEntity as a custom metadata type.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="BriefcaseRuleFilter">
-  <xsd:annotation>
-   <xsd:documentation>Specifies filter criteria for a BriefcaseRule.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="filterOperator" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The comparison operator for this rule filter. Capitalization matters with date filter operators. Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. Valid values include: d—Ends with e—Equals g—Greater than h—Greater than or equal l—Less than m—Less than or equal n—Not equals. This value is applicable only when filterValue is empty. s—Starts with</xsd:documentation>
-       <xsd:appinfo>Type: BriefcaseFilterOperator (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="filterSeqNumber" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The filter number. When you apply multiple filters, the filters are numbered sequentially, 1, 2, 3, and so on.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="filterValue" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The value that the field and criteria evaluate. For example, true or false for a boolean field whose criteria or filter operator is Equals.Be sure to specify date literals in uppercase. Some valid date literals include TODAY, YESTERDAY and TOMORROW. For targetEntityField values that accept a user ID, such as OwnerId or CreatedById, enter $User.Id to pass the ID of the user making the request. To evaluate targetEntityField by whether the field is empty or not empty, leave filterValue blank and set filterOperator to e (equals) or n (not equals).</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetEntityField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name of the field to filter by. This field is from the targetEntity on BriefcaseRule. Compound fields aren&apos;t supported. Fields encrypted with deterministic encryption can be used in filters with equals and not equals operators.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="BtchCalcJobFrcstAggrFld">
   <xsd:annotation>
    <xsd:documentation>Represents a list of fields to forecast in a forecast node.</xsd:documentation>
@@ -11158,94 +10996,6 @@ Total metadata types: 1481
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="CallCenter">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="adapterUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Optional field. A URL that points to an adapter.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="contactCenterChannels" minOccurs="0" maxOccurs="unbounded" type="ContactCenterChannel">
-      <xsd:annotation>
-       <xsd:documentation>Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.</xsd:documentation>
-       <xsd:appinfo>Type: ContactCenterChannel[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The display name of this call center.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayNameLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the displayName field in Call Center setup page.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="internalNameLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the internalName field in Call Center setup page.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sections" minOccurs="0" maxOccurs="unbounded" type="CallCenterSection">
-      <xsd:annotation>
-       <xsd:documentation>Custom setup items defined for this call center.</xsd:documentation>
-       <xsd:appinfo>Type: CallCenterSection[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="version" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The version of this call center.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CallCenterItem">
-  <xsd:annotation>
-   <xsd:documentation>Required.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="value" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The value of the custom setup item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="CallCenterRoutingMap">
   <xsd:annotation>
    <xsd:documentation>Represents the mapping between a user or queue in a Salesforce org to a user or queue in an external system’s call center.</xsd:documentation>
@@ -11287,38 +11037,6 @@ Total metadata types: 1481
      <xsd:element name="referenceRecord" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>Required. Lookup field to a Salesforce user or queue.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CallCenterSection">
-  <xsd:annotation>
-   <xsd:documentation>Required.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="items" minOccurs="0" maxOccurs="unbounded" type="CallCenterItem">
-      <xsd:annotation>
-       <xsd:documentation>Contains the label, name, and value that describe the sections.</xsd:documentation>
-       <xsd:appinfo>Type: CallCenterItem[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label of the section.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the section.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -14718,44 +14436,6 @@ Total metadata types: 1481
       <xsd:annotation>
        <xsd:documentation>Required for components with a location of left or right. The width of the custom console component. The value must be specified in pixels and be greater than 0 but less than 999.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ContactCenterChannel">
-  <xsd:annotation>
-   <xsd:documentation>Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="channel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="contactCenter" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="voiceMailFallbackQueue" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don&apos;t change the value in this field. Instead, configure voicemail routing in Lightning Experience.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="voiceMailHandler" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don&apos;t change the value in this field. Instead, configure voicemail routing in Lightning Experience.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -73097,9 +72777,6 @@ Total metadata types: 1481
  <xsd:element name="Branding" type="Branding"/>
  <xsd:element name="BrandingSet" type="BrandingSet"/>
  <xsd:element name="BrandingSetProperty" type="BrandingSetProperty"/>
- <xsd:element name="BriefcaseDefinition" type="BriefcaseDefinition"/>
- <xsd:element name="BriefcaseRule" type="BriefcaseRule"/>
- <xsd:element name="BriefcaseRuleFilter" type="BriefcaseRuleFilter"/>
  <xsd:element name="BtchCalcJobFrcstAggrFld" type="BtchCalcJobFrcstAggrFld"/>
  <xsd:element name="BusinessHoursEntry" type="BusinessHoursEntry"/>
  <xsd:element name="BusinessHoursSettings" type="BusinessHoursSettings"/>
@@ -73113,10 +72790,7 @@ Total metadata types: 1481
  <xsd:element name="CMSConnectResourceDefinition" type="CMSConnectResourceDefinition"/>
  <xsd:element name="CMSConnectResourceType" type="CMSConnectResourceType"/>
  <xsd:element name="CMSConnectSource" type="CMSConnectSource"/>
- <xsd:element name="CallCenter" type="CallCenter"/>
- <xsd:element name="CallCenterItem" type="CallCenterItem"/>
  <xsd:element name="CallCenterRoutingMap" type="CallCenterRoutingMap"/>
- <xsd:element name="CallCenterSection" type="CallCenterSection"/>
  <xsd:element name="CallCoachingMediaProvider" type="CallCoachingMediaProvider"/>
  <xsd:element name="CampaignCriteriaBasedSharingRule" type="CampaignCriteriaBasedSharingRule"/>
  <xsd:element name="CampaignInfluenceModel" type="CampaignInfluenceModel"/>
@@ -73187,7 +72861,6 @@ Total metadata types: 1481
  <xsd:element name="ConnectedAppSessionPolicy" type="ConnectedAppSessionPolicy"/>
  <xsd:element name="ConnectedAppSettings" type="ConnectedAppSettings"/>
  <xsd:element name="ConsoleComponent" type="ConsoleComponent"/>
- <xsd:element name="ContactCenterChannel" type="ContactCenterChannel"/>
  <xsd:element name="ContactCriteriaBasedSharingRule" type="ContactCriteriaBasedSharingRule"/>
  <xsd:element name="ContactOwnerSharingRule" type="ContactOwnerSharingRule"/>
  <xsd:element name="ContactSharingRules" type="ContactSharingRules"/>
