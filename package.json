@@ -104,7 +104,7 @@
     "util": "0.12.5",
     "wireit": "^0.14.12",
     "vscode-extension-tester": "^8.16.0",
-    "yaml": "2.6.0"
+    "yaml": "2.8.2"
   },
   "scripts": {
     "build": "npm run compile",
