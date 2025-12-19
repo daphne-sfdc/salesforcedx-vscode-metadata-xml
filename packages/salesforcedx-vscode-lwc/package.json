@@ -26,7 +26,7 @@
   "dependencies": {
     "@salesforce/core": "^8.23.3",
     "@salesforce/lightning-lsp-common": "4.12.7",
-    "@salesforce/lwc-language-server": "4.12.7",
+    "@salesforce/lwc-language-server": "4.12.13",
     "@salesforce/salesforcedx-utils": "*",
     "@salesforce/salesforcedx-utils-vscode": "*",
     "@salesforce/vscode-i18n": "*",
@@ -156,7 +156,7 @@
       ],
       "dependencies": {
         "@salesforce/lightning-lsp-common": "4.12.7",
-        "@salesforce/lwc-language-server": "4.12.7",
+        "@salesforce/lwc-language-server": "4.12.13",
         "applicationinsights": "1.0.7",
         "jest-editor-support": "31.1.2"
       },
