@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-17T23:07:05.926Z
-Total metadata types: 1481
+Generated on: 2025-12-21T13:38:42.809Z
+Total metadata types: 1475
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -6528,148 +6528,6 @@ Total metadata types: 1481
       <xsd:annotation>
        <xsd:documentation>Represents how records for a specific tab open in a Salesforce console app. Required for each tab specified in the CustomApplication. In API version 42.0, this field was renamed from workspaceMapping to mappings.</xsd:documentation>
        <xsd:appinfo>Type: WorkspaceMappingSingle[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AppointmentAssignmentPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents the information about a resource assignment rule. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentassignmentpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the appointment assignment policy.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyApplicableDuration" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The frequency at which the utilization of service resources is calculated. Valid values are: Monthly ParameterBased Weekly</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The type of appointment assignment policy. Valid value is: loadBalancing</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="utilizationFactor" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the count type for the resource utilization. Valid values are: NumberOfAppointments TotalAppointmentDuration</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AppointmentSchedulingPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents a set of rules for scheduling appointments using Lightning Scheduler. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentschedulingpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="appointmentAssignmentPolicy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The name of the appointment assignment policy. This field is available in API version 53.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="appointmentStartTimeInterval" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The proposed time interval in minutes between appointment start times. For example, if you set the interval to 15, appointments can then begin at the top of the hour and at 15-minute intervals thereafter (10:00 AM, 10:15 AM, 10:30 AM, and so on). Valid values are: 5 10 15 20 30 45 60 90 120 150 180 240 300 360 420 480</xsd:documentation>
-       <xsd:appinfo>Type: picklist</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="extCalEventHandler" minOccurs="0" maxOccurs="unbounded" type="lookup">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name of the custom Apex class that checks service resources’ external calendar events and returns the time slots where service resources are already booked. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: lookup</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSvcTerritoryMemberShiftUsed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider shifts of service territory members when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSvcTerrOpHoursWithShiftsUsed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider the intersection of shifts and service territory operating hours when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the appointment scheduling policy.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldCheckExternalCalendar" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to check the external calendar for resource availability (true) or not (false). This field is available in API version 53.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldConsiderCalendarEvents" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider events on the Salesforce calendar to determine the availability of service resources to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldEnforceExcludedResource" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy prevents excluded service resources from being assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldEnforceRequiredResource" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldMatchSkill" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldMatchSkillLevel" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills and skill levels to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldRespectVisitingHours" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy prevents users from scheduling appointments outside of an account’s visiting hours (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldUsePrimaryMembers" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only service resources who are primary members of a service territory to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldUseSecondaryMembers" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows service resources who are secondary members of a service territory to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -13272,98 +13130,6 @@ Total metadata types: 1481
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="CommerceSettings">
-  <xsd:annotation>
-   <xsd:documentation>Represents settings for various Commerce features.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_commercesettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="buyerGroupExtensibility" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Buyer Group Extensibility is enabled (true) or not (false). Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceAnalyticsEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce Analytics is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceAppEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce App is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceConciergeEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce Concierge bots are enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceCopilotEcomEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce Copilot is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceDCSegmentEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the Data 360 segment integration is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceDiscoveryExpansion" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the Commerce Discovery Expansion service is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceNGPEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether NGP (“Salesforce”) Pricing is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="commerceRLMSubs" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Commerce Revenue Lifecycle Management Subscriptions is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="generateInvPerSubscription" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether a separate invoice is generated per subscription (true) or not (false). Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="lowestUnitPriceTracking" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether lowest unit price tracking (for EU customers) is enabled (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="messagingEngagementDataKit" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Message Engagement data kit is enabled (true) or not (false). Message Engagement data kit is a Data 360 data model object (DMO) for a user’s engagement with a marketing message.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="CommunitiesSettings">
   <xsd:annotation>
    <xsd:documentation>Represents community settings for an org. Enable digital experiences and workspaces. Manage moderation, guest user and partner settings, and more. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
@@ -13662,155 +13428,6 @@ Total metadata types: 1481
      <xsd:element name="partnerUserRole" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>The label for the Partner user role.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplateBundleInfo">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of its CommunityTemplateBundleInfo.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="image" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required only when the type is PreviewImage, otherwise this field is optional. A preview image for this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="order" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. An integer specifying the position of this CommunityTemplateBundleInfo relative to others of the same type within its CommunityTemplateDefinition. 1 is the first position, 3 is the maximum position for PreviewImage type, and 4 is the maximum position for the Highlight type.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="title" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The title of this CommunityTemplateBundleInfo to use in code.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Stores descriptive information about the template that’s included in the export. The template powers the interface of the Experience Creation Wizard. Valid values are: Highlight—This CommunityTemplateBundleInfo is used as a highlighted feature. Up to 4 are supported. PreviewImage—This CommunityTemplateBundleInfo is used as a preview image. Up to 3 are supported.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateBundleInfoType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplateDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of an Experience Builder site template. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="baseTemplate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Denotes that this CommunityTemplateDefinition was created in API version 41.0 or later. The only valid value is c. This field is available in API 41.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityBaseTemplate (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="bundlesInfo" minOccurs="0" maxOccurs="unbounded" type="CommunityTemplateBundleInfo">
-      <xsd:annotation>
-       <xsd:documentation>The list of preview images and feature highlights of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateBundleInfo[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="category" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The optimized use case of this CommunityTemplateDefinition. Valid values are: Commerce IT Marketing Sales Service</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateCategory (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="defaultBrandingSet" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The set of branding properties associated with this CommunityTemplateDefinition, as defined in the Theme panel in Experience Builder. Available in API version 40.0 and later.In API version 44.0 and later, this field is read-only and can be implemented in CommunityThemeDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="defaultThemeDefinition" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The assigned theme definition for this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableExtendedCleanUpOnDelete" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>False by default. Determines if deleting this CommunityTemplateDefinition attempts to delete other directly or indirectly referenced objects automatically, for example, CommunityThemeDefinition, Flexipage, or StaticResource. Values are true or false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for this CommunityTemplateDefinition, which displays in Setup.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="navigationLinkSet" minOccurs="0" maxOccurs="unbounded" type="NavigationLinkSet">
-      <xsd:annotation>
-       <xsd:documentation>The navigation menu associated with this CommunityTemplateDefinition. A navigation menu consists of items that users can click to go to other parts of the site. Available in API versions 37.0 to 46.0. In API versions 47.0 and later, use NavigationMenu.</xsd:documentation>
-       <xsd:appinfo>Type: NavigationLinkSet</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="pageSetting" minOccurs="0" maxOccurs="unbounded" type="CommunityTemplatePageSetting">
-      <xsd:annotation>
-       <xsd:documentation>The list of FlexiPage of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplatePageSetting[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="publisher" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Defines the name of the publisher as seen in the Change Theme wizard. If no name is provided, the name of the org from which the package was originally exported is used.This field is available in API version 45.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplatePageSetting">
-  <xsd:annotation>
-   <xsd:documentation>This field is available in API version 39.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="page" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The list of FlexiPage of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeLayout" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the FlexiPage for the theme layout.This field is available in API version 39.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -73020,8 +72637,6 @@ Total metadata types: 1481
  <xsd:element name="AppProfileActionOverride" type="AppProfileActionOverride"/>
  <xsd:element name="AppSettings" type="AppSettings"/>
  <xsd:element name="AppWorkspaceConfig" type="AppWorkspaceConfig"/>
- <xsd:element name="AppointmentAssignmentPolicy" type="AppointmentAssignmentPolicy"/>
- <xsd:element name="AppointmentSchedulingPolicy" type="AppointmentSchedulingPolicy"/>
  <xsd:element name="ApprovalAction" type="ApprovalAction"/>
  <xsd:element name="ApprovalEntryCriteria" type="ApprovalEntryCriteria"/>
  <xsd:element name="ApprovalPageField" type="ApprovalPageField"/>
@@ -73157,14 +72772,10 @@ Total metadata types: 1481
  <xsd:element name="CleanRule" type="CleanRule"/>
  <xsd:element name="CodeBuilderSettings" type="CodeBuilderSettings"/>
  <xsd:element name="CollectionsDashboardSettings" type="CollectionsDashboardSettings"/>
- <xsd:element name="CommerceSettings" type="CommerceSettings"/>
  <xsd:element name="CommunitiesSettings" type="CommunitiesSettings"/>
  <xsd:element name="Community_Zone" type="Community_Zone"/>
  <xsd:element name="CommunityCustomThemeLayoutType" type="CommunityCustomThemeLayoutType"/>
  <xsd:element name="CommunityRoles" type="CommunityRoles"/>
- <xsd:element name="CommunityTemplateBundleInfo" type="CommunityTemplateBundleInfo"/>
- <xsd:element name="CommunityTemplateDefinition" type="CommunityTemplateDefinition"/>
- <xsd:element name="CommunityTemplatePageSetting" type="CommunityTemplatePageSetting"/>
  <xsd:element name="CommunityTheme_Setting" type="CommunityTheme_Setting"/>
  <xsd:element name="CommunityThemeBundleInfo" type="CommunityThemeBundleInfo"/>
  <xsd:element name="CommunityThemeDefinition" type="CommunityThemeDefinition"/>
