@@ -118,28 +118,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_activationplatformfield.htm",
     "parent": "Metadata"
   },
-  "ActvPfrmDataConnectorS3": {
-    "fields": [
-      {
-        "Description": "Required. The Amazon S3 bucket name.",
-        "Field Name": "bucketName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "This is an optional field that is reserved for internal use.",
-        "Field Name": "exportDirectory",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The display name of ActvPfrmDataConnectorS3.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Amazon S3 bucket name and export directory.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actvpfrmdataconnectors3.htm",
-    "parent": "Metadata"
-  },
   "ActvPlatformAdncIdentifier": {
     "fields": [
       {
@@ -870,33 +848,6 @@
     ],
     "short_description": "Represents the object from where the data was sourced.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datasourceobject.htm",
-    "parent": "Metadata"
-  },
-  "DataSrcDataModelFieldMap": {
-    "fields": [
-      {
-        "Description": "Required. Indicates the name of the entity.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates the developer name of data source fields.",
-        "Field Name": "sourceField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates the developer name of data mapping object fields.",
-        "Field Name": "targetField",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. Indicates the version number of the entity.",
-        "Field Name": "versionNumber",
-        "Field Type": "double"
-      }
-    ],
-    "short_description": "Represents the entity that is used for storing the design time bundle level mappings for the data source fields and data model fields.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datasrcdatamodelfieldmap.htm",
     "parent": "Metadata"
   },
   "DataStreamDefinition": {

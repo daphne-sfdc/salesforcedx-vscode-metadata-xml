@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-17T23:07:05.926Z
-Total metadata types: 1481
+Generated on: 2025-12-22T20:29:41.030Z
+Total metadata types: 1479
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -2882,38 +2882,6 @@ Total metadata types: 1481
       <xsd:annotation>
        <xsd:documentation>In the My Tasks section of the Home tab and on the calendar day view: When a user hovers over the subject of a task, a hover link displays an overlay with selected task details. When a user clicks the subject of a task, displays the task detail page. Admins use a mini page layout to configure the fields shown in the overlay. Admins control this field on the User Interface settings page.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActvPfrmDataConnectorS3">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Amazon S3 bucket name and export directory.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actvpfrmdataconnectors3.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="bucketName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The Amazon S3 bucket name.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="exportDirectory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>This is an optional field that is reserved for internal use.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The display name of ActvPfrmDataConnectorS3.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -22612,44 +22580,6 @@ Total metadata types: 1481
       <xsd:annotation>
        <xsd:documentation>The version number of the data source object.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="DataSrcDataModelFieldMap">
-  <xsd:annotation>
-   <xsd:documentation>Represents the entity that is used for storing the design time bundle level mappings for the data source fields and data model fields.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datasrcdatamodelfieldmap.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates the name of the entity.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates the developer name of data source fields.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetField" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates the developer name of data mapping object fields.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="versionNumber" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates the version number of the entity.</xsd:documentation>
-       <xsd:appinfo>Type: double</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -72954,7 +72884,6 @@ Total metadata types: 1481
  <xsd:element name="ActivationPlatform" type="ActivationPlatform"/>
  <xsd:element name="ActivationPlatformField" type="ActivationPlatformField"/>
  <xsd:element name="ActivitiesSettings" type="ActivitiesSettings"/>
- <xsd:element name="ActvPfrmDataConnectorS3" type="ActvPfrmDataConnectorS3"/>
  <xsd:element name="ActvPlatformAdncIdentifier" type="ActvPlatformAdncIdentifier"/>
  <xsd:element name="ActvPlatformFieldValue" type="ActvPlatformFieldValue"/>
  <xsd:element name="AddressSettings" type="AddressSettings"/>
@@ -73327,7 +73256,6 @@ Total metadata types: 1481
  <xsd:element name="DataSourceBundleDefinition" type="DataSourceBundleDefinition"/>
  <xsd:element name="DataSourceField" type="DataSourceField"/>
  <xsd:element name="DataSourceObject" type="DataSourceObject"/>
- <xsd:element name="DataSrcDataModelFieldMap" type="DataSrcDataModelFieldMap"/>
  <xsd:element name="DataStreamDefinition" type="DataStreamDefinition"/>
  <xsd:element name="DataStreamTemplate" type="DataStreamTemplate"/>
  <xsd:element name="DataWeaveResource" type="DataWeaveResource"/>
