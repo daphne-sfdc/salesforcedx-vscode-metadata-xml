@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-29T17:03:31.317Z
-Total metadata types: 1498
+Generated on: 2025-12-29T22:59:18.806Z
+Total metadata types: 1484
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -2168,230 +2168,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ActionPlanTemplate">
-  <xsd:annotation>
-   <xsd:documentation>Represents the instance of an action plan template.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionplantemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actionPlanTemplateItem" minOccurs="0" maxOccurs="unbounded" type="ActionPlanTemplateItem">
-      <xsd:annotation>
-       <xsd:documentation>The instance of an item on an action plan template version.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateItem</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="actionPlanTemplateItemDependencies" minOccurs="0" maxOccurs="unbounded" type="ActionPlanTemplateItemDependency">
-      <xsd:annotation>
-       <xsd:documentation>Defines the dependencies between action plan template items. Available in API version 59.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateItemDependency[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="actionPlanType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Type of the action plan template. Valid values are: Industries Retail ITSM—Available in API version 65.0 and later. PrvdEngmtCompliance KAM Available in API version 63.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="category" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Category for this action plan template. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The description of the action plan template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="estimatedCompletionDays" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Estimated number of days required to complete the action plan. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fileBasedTemplatePath" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>File path for a file-based action plan template. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isAdHocItemCreationEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether ad hoc item creation is enabled for this action plan template (true) or not (false). Available in API version 59.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the action plan template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Source type of the action plan template. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="status" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Status of the action plan template. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="subcategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Subcategory for this action plan template. Available in API version 64.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetEntityType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The parent object this action plan template relates to. Supported parent objects are Account, BusinessMilestone, Campaign, Case, Claim, Contact, Contract, InsurancePolicy, InsurancePolicyCoverage, Lead, Opportunity, PersonLifeEvent, and Visit and custom objects with activities enabled.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="uniqueName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The unique identifier for this action plan template record.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActionPlanTemplateItem">
-  <xsd:annotation>
-   <xsd:documentation>Represents the instance of an item on an action plan template version.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionplantemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actionPlanTemplateItemValue" minOccurs="0" maxOccurs="unbounded" type="ActionPlanTemplateItemValue">
-      <xsd:annotation>
-       <xsd:documentation>The value associated with the action plan template item.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateItemValue</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayOrder" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The order in which this item is displayed within the action plan template version.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether the task created from this template item is required.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="itemEntityType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the field on the action plan template item that this value is for. Available in API version 48.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the action plan template item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="uniqueName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The unique identifier for this action plan template item record.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActionPlanTemplateItemDependency">
-  <xsd:annotation>
-   <xsd:documentation>Represents a dependency between action plan template items, defining the sequential relationship and creation timing of items. Available in API version 59.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionplantemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="creationType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Defines how the dependent item is created in the action plan.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Name of the dependency relationship.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="previousTemplateItem" minOccurs="0" maxOccurs="unbounded" type="ActionPlanTemplateItem">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the prerequisite template item that must be completed before the dependent item begins.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateItem</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="templateItem" minOccurs="0" maxOccurs="unbounded" type="ActionPlanTemplateItem">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the dependent template item that relies on the completion of the previous item.</xsd:documentation>
-       <xsd:appinfo>Type: ActionPlanTemplateItem</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ActionPlanTemplateItemValue">
-  <xsd:annotation>
-   <xsd:documentation>Represents the value associated with an action plan template item.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_actionplantemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="itemEntityType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the field on the action plan template item that this value is for. Available in API version 48.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="name" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the action plan template item value.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueFormula" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The formula for this action plan template item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueLiteral" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The value for this action plan template item.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="ActionableListDatasetColumn">
   <xsd:annotation>
    <xsd:documentation>Represents the information about the columns in a dataset associated with an actionable list.</xsd:documentation>
@@ -3462,86 +3238,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="AffinityScoreDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Represents the affinity information used in calculations to analyze and categorize contacts for marketing purposes.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/fundraising_affinityscoredefinition_metadata_api.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="affinityScoreDefinitionDesc" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Description of the affinity score definition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="affinityScoreDefinitionName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Name of the affinity score definition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="affinityScoreType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Type of the affinity score that’s defined.Valid values are: CAP—Capacity, Ability, Propensity (CAP) RFM—Recency, Frequency, Monetary (RFM) The default value is RFM.</xsd:documentation>
-       <xsd:appinfo>Type: AffinityScoreType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Label for this affinity score definition value. This display value is the internal label that doesn&apos;t get translated.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="numberOfMonths" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Number of months to analyze the records for calculating the affinity score.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="numberOfRanges" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. Number of ranges to use in the calculation, ranging from 0 to 9. Provide the corresponding range list values in the scoreRangeList field.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="scoreRangeList" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Ranges that are referenced in the affinity score calculation. This field is used with scoreRangeList. For example, to calculate RFM with numberOfRanges value as 3, provide the values for the scoreRangeList field in this format.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceFieldApiNameList" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. API names of the source fields that are referenced in the score calculation.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceObjectApiNameList" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>API names of the source objects that are referenced in the score calculation.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetFieldApiNameList" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. API names of the target fields where the calculated scores are added.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="targetObjectApiName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>API name of the target object where the calculated scores are added.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="AgentConfigAssignments">
   <xsd:annotation>
    <xsd:documentation>Represents the assignments of an organization’s profiles and users to a Chat configuration.</xsd:documentation>
@@ -3680,40 +3376,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Indicates whether Agentforce for Developers is enabled: true or false. If true, Agentforce for Developers isn&apos;t enabled in your org, which means that you&apos;ve opted out of using it. If false, Agentforce for Developers is enabled. The default value is false.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AiAuthoringBundle">
-  <xsd:annotation>
-   <xsd:documentation>Represents an AI authoring bundle, which is a container for AI-related authoring content. For example, an AI authoring bundle for an Agentforce agent contains an Agent Script file and the associated metadata content. AiAuthoringBundle packages and manages AI authoring artifacts with version control features. This metadata type provides a structured way to organize, version, and target AI-related content within your Salesforce org.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="bundleType" minOccurs="0" maxOccurs="unbounded" type="">
-      <xsd:annotation>
-       <xsd:documentation>Specifies the type or category of the AI authoring bundle, indicating the kind of AI authoring content contained within the bundle. Currently, this value must be AGENT, which represents an Agent Script agent. See Agent Script in the Agentforce Developer Guide for details.</xsd:documentation>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="target" minOccurs="0" maxOccurs="unbounded" type="">
-      <xsd:annotation>
-       <xsd:documentation>Specifies the context or destination for the AI authoring bundle, defining how the bundle content should be applied or deployed. To commit an agent version, Agentforce agents must specify the developerName for the Bot and BotVersion components, separated by a period: {Bot}.{BotVersion}. For example, Agentforce_Service_Agent.v2. These two components tie the AI authoring bundle to a specific agent and a specific agent version. This field is automatically populated when you publish an agent with Agentforce DX. Publishing an agent with this field present is the equivalent to committing the agent in Agentforce Builder with the Commit Version button. If you want to deploy an agent to your org in draft state, omit this field.</xsd:documentation>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="versionDescription" minOccurs="0" maxOccurs="unbounded" type="">
-      <xsd:annotation>
-       <xsd:documentation>Provides a human-readable description of the bundle version, documenting what changes or features are included in this version of the AI authoring bundle.</xsd:documentation>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="versionTag" minOccurs="0" maxOccurs="unbounded" type="">
-      <xsd:annotation>
-       <xsd:documentation>Defines a version identifier or tag for the AI authoring bundle. This value can be used for version tracking and management of different bundle iterations.</xsd:documentation>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -5978,50 +5640,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ApexTrigger">
-  <xsd:annotation>
-   <xsd:documentation>Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_triggers.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="MetadataWithContent">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="apiVersion" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API version for this trigger. Every trigger has an API version specified at creation.</xsd:documentation>
-       <xsd:appinfo>Type: double</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="content" minOccurs="0" maxOccurs="unbounded" type="xsd:base64Binary">
-      <xsd:annotation>
-       <xsd:documentation>The Apex trigger definition. This field is inherited from the MetadataWithContent component.</xsd:documentation>
-       <xsd:appinfo>Type: base64</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fullName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The Apex trigger name. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and can’t end with an underscore or contain two consecutive underscore characters. This field is inherited from the Metadata component.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="packageVersions" minOccurs="0" maxOccurs="unbounded" type="PackageVersion">
-      <xsd:annotation>
-       <xsd:documentation>The list of installed managed package versions that are referenced by this Apex trigger.For more information about managed packages, see the Second-Generation Managed Packaging Developer Guide. This field is available in API version 16.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: PackageVersion[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="status" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The status of the Apex trigger. The following string values are valid: Active - The trigger is active. Inactive - The trigger is inactive, but not deleted. Deleted - The trigger is marked for deletion. Useful for managed packages, because it allows a trigger to be deleted when a managed package is updated.</xsd:documentation>
-       <xsd:appinfo>Type: ApexCodeUnitStatus (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="AppActionOverride">
   <xsd:annotation>
    <xsd:documentation>Represents an action override for an application. Use it to create, update, edit, or delete action overrides. AppActionOverride inherits from ActionOverride and extends it by one field, pageOrSobjectType. Available for Lightning Experience in API version 38.0 and later.</xsd:documentation>
@@ -6418,148 +6036,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Represents how records for a specific tab open in a Salesforce console app. Required for each tab specified in the CustomApplication. In API version 42.0, this field was renamed from workspaceMapping to mappings.</xsd:documentation>
        <xsd:appinfo>Type: WorkspaceMappingSingle[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AppointmentAssignmentPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents the information about a resource assignment rule. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentassignmentpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the appointment assignment policy.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyApplicableDuration" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The frequency at which the utilization of service resources is calculated. Valid values are: Monthly ParameterBased Weekly</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The type of appointment assignment policy. Valid value is: loadBalancing</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="utilizationFactor" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the count type for the resource utilization. Valid values are: NumberOfAppointments TotalAppointmentDuration</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AppointmentSchedulingPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents a set of rules for scheduling appointments using Lightning Scheduler. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentschedulingpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="appointmentAssignmentPolicy" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The name of the appointment assignment policy. This field is available in API version 53.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="appointmentStartTimeInterval" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The proposed time interval in minutes between appointment start times. For example, if you set the interval to 15, appointments can then begin at the top of the hour and at 15-minute intervals thereafter (10:00 AM, 10:15 AM, 10:30 AM, and so on). Valid values are: 5 10 15 20 30 45 60 90 120 150 180 240 300 360 420 480</xsd:documentation>
-       <xsd:appinfo>Type: picklist</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="extCalEventHandler" minOccurs="0" maxOccurs="unbounded" type="lookup">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name of the custom Apex class that checks service resources’ external calendar events and returns the time slots where service resources are already booked. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: lookup</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSvcTerritoryMemberShiftUsed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider shifts of service territory members when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isSvcTerrOpHoursWithShiftsUsed" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider the intersection of shifts and service territory operating hours when determining the availability of service resources for appointments (true) or not (false). This field is available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the appointment scheduling policy.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldCheckExternalCalendar" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to check the external calendar for resource availability (true) or not (false). This field is available in API version 53.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldConsiderCalendarEvents" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether to consider events on the Salesforce calendar to determine the availability of service resources to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldEnforceExcludedResource" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy prevents excluded service resources from being assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldEnforceRequiredResource" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldMatchSkill" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldMatchSkillLevel" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only required service resources who have certain skills and skill levels to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldRespectVisitingHours" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy prevents users from scheduling appointments outside of an account’s visiting hours (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldUsePrimaryMembers" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows only service resources who are primary members of a service territory to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="shouldUseSecondaryMembers" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this appointment scheduling policy allows service resources who are secondary members of a service territory to be assigned to appointments (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -10840,119 +10316,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="BusinessProcessDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="businessProcessFeedbacks" minOccurs="0" maxOccurs="unbounded" type="BusinessProcessFeedback">
-      <xsd:annotation>
-       <xsd:documentation>A list of stages in a customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: BusinessProcessFeedback[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description of a stage in the customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="developerName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The API name of a stage in the customer lifecycle map. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of a stage in the customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sequenceNumber" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The position of a stage in the customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="BusinessProcessFeedback">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actionName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the survey used to collect feedback</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="actionParam" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the survey question used to collect feedback.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="actionType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The mode of feedback collection. Valid values are: PHONE_CALL SURVEY</xsd:documentation>
-       <xsd:appinfo>Type: ExpFeedbackCollType(enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="BusinessProcessGroup">
-  <xsd:annotation>
-   <xsd:documentation>Represents the surveys used to track customers’ experiences across different stages in their lifecycle. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="businessProcessDefinitions" minOccurs="0" maxOccurs="unbounded" type="BusinessProcessDefinition">
-      <xsd:annotation>
-       <xsd:documentation>A list that defines stages in a customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: BusinessProcessDefinition[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="customerSatisfactionMetric" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Types of questions that can be associated with stages in a customer lifecycle map. Valid values are: Attachment Boolean CSAT Currency Date DateTime FreeText Image NPS Matrix MultiChoice MultiSelectPicklist NPS Number Picklist Rating ShortText Slider StackRank Toggle</xsd:documentation>
-       <xsd:appinfo>Type: SurveyQuestionType(enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description of the customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the customer lifecycle map.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="CMSConnectAsset">
   <xsd:annotation>
    <xsd:documentation>CMSConnectAsset defines the location, types, and order of assets necessary to support the incoming content, such as JavaScript and CSS files.</xsd:documentation>
@@ -13049,76 +12412,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Indicates whether to allow the creation of unlisted groups (true) or to prevent their creation (false). When the value is set to true, users can create unlisted groups. Unlisted groups don’t appear on the Groups list page. Membership in unlisted groups is by invitation only.In Setup, unlistedGroupsEnabled equates to the Chatter setting Enable Unlisted Groups.</xsd:documentation>
        <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ChoiceList">
-  <xsd:annotation>
-   <xsd:documentation>Represents the Choicelist dropdown field that’s used for pre-chat.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="choiceListValue" minOccurs="0" maxOccurs="unbounded" type="ChoiceListValue">
-      <xsd:annotation>
-       <xsd:documentation>A list of choices to display in the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: ChoiceListValue[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>A description of the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the choice list.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ChoiceListValue">
-  <xsd:annotation>
-   <xsd:documentation>Represents a choice list value in the pre-chat dropdown. ChoiceListValue is available in API version 62 or later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_choicelist.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="embeddedServiceCustomLabels" minOccurs="0" maxOccurs="unbounded" type="EmbeddedServiceCustomLabel">
-      <xsd:annotation>
-       <xsd:documentation>Custom labels for the choicelist value.</xsd:documentation>
-       <xsd:appinfo>Type: EmbeddedServiceCustomLabel[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isDefaultValue" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether the choicelist value should be selected by default.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="order" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. The order of the choicelist value in the choicelist dropdown field.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="valueName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The value of the choicelist.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -73296,10 +72589,6 @@ Total metadata types: 1498
  <xsd:element name="ActionLinkTemplate" type="ActionLinkTemplate"/>
  <xsd:element name="ActionOverride" type="ActionOverride"/>
  <xsd:element name="ActionOverrideType" type="ActionOverrideType"/>
- <xsd:element name="ActionPlanTemplate" type="ActionPlanTemplate"/>
- <xsd:element name="ActionPlanTemplateItem" type="ActionPlanTemplateItem"/>
- <xsd:element name="ActionPlanTemplateItemDependency" type="ActionPlanTemplateItemDependency"/>
- <xsd:element name="ActionPlanTemplateItemValue" type="ActionPlanTemplateItemValue"/>
  <xsd:element name="ActionableListDatasetColumn" type="ActionableListDatasetColumn"/>
  <xsd:element name="ActionableListDefinition" type="ActionableListDefinition"/>
  <xsd:element name="ActionableListMemberStatus" type="ActionableListMemberStatus"/>
@@ -73319,7 +72608,6 @@ Total metadata types: 1498
  <xsd:element name="AdvAcctForecastMeasureDef" type="AdvAcctForecastMeasureDef"/>
  <xsd:element name="AdvAcctFrcstDisplayGroup" type="AdvAcctFrcstDisplayGroup"/>
  <xsd:element name="AdvAcctFrcstDplyGroupItem" type="AdvAcctFrcstDplyGroupItem"/>
- <xsd:element name="AffinityScoreDefinition" type="AffinityScoreDefinition"/>
  <xsd:element name="AgentConfigAssignments" type="AgentConfigAssignments"/>
  <xsd:element name="AgentConfigButtons" type="AgentConfigButtons"/>
  <xsd:element name="AgentConfigProfileAssignments" type="AgentConfigProfileAssignments"/>
@@ -73327,7 +72615,6 @@ Total metadata types: 1498
  <xsd:element name="AgentConfigUserAssignments" type="AgentConfigUserAssignments"/>
  <xsd:element name="AgentPlatformSettings" type="AgentPlatformSettings"/>
  <xsd:element name="AgentforceForDevelopersSettings" type="AgentforceForDevelopersSettings"/>
- <xsd:element name="AiAuthoringBundle" type="AiAuthoringBundle"/>
  <xsd:element name="AiCoachAgentScnrDefTranslation" type="AiCoachAgentScnrDefTranslation"/>
  <xsd:element name="AiPluginUtteranceDef" type="AiPluginUtteranceDef"/>
  <xsd:element name="AnalyticSnapshot" type="AnalyticSnapshot"/>
@@ -73361,7 +72648,6 @@ Total metadata types: 1498
  <xsd:element name="ApexPage" type="ApexPage"/>
  <xsd:element name="ApexSettings" type="ApexSettings"/>
  <xsd:element name="ApexTestSuite" type="ApexTestSuite"/>
- <xsd:element name="ApexTrigger" type="ApexTrigger"/>
  <xsd:element name="AppActionOverride" type="AppActionOverride"/>
  <xsd:element name="AppAnalyticsSettings" type="AppAnalyticsSettings"/>
  <xsd:element name="AppBrand" type="AppBrand"/>
@@ -73372,8 +72658,6 @@ Total metadata types: 1498
  <xsd:element name="AppProfileActionOverride" type="AppProfileActionOverride"/>
  <xsd:element name="AppSettings" type="AppSettings"/>
  <xsd:element name="AppWorkspaceConfig" type="AppWorkspaceConfig"/>
- <xsd:element name="AppointmentAssignmentPolicy" type="AppointmentAssignmentPolicy"/>
- <xsd:element name="AppointmentSchedulingPolicy" type="AppointmentSchedulingPolicy"/>
  <xsd:element name="ApprovalAction" type="ApprovalAction"/>
  <xsd:element name="ApprovalEntryCriteria" type="ApprovalEntryCriteria"/>
  <xsd:element name="ApprovalPageField" type="ApprovalPageField"/>
@@ -73470,9 +72754,6 @@ Total metadata types: 1498
  <xsd:element name="BusinessHoursEntry" type="BusinessHoursEntry"/>
  <xsd:element name="BusinessHoursSettings" type="BusinessHoursSettings"/>
  <xsd:element name="BusinessProcess" type="BusinessProcess"/>
- <xsd:element name="BusinessProcessDefinition" type="BusinessProcessDefinition"/>
- <xsd:element name="BusinessProcessFeedback" type="BusinessProcessFeedback"/>
- <xsd:element name="BusinessProcessGroup" type="BusinessProcessGroup"/>
  <xsd:element name="CMSConnectAsset" type="CMSConnectAsset"/>
  <xsd:element name="CMSConnectLanguage" type="CMSConnectLanguage"/>
  <xsd:element name="CMSConnectPersonalization" type="CMSConnectPersonalization"/>
@@ -73515,8 +72796,6 @@ Total metadata types: 1498
  <xsd:element name="ChatterExtension" type="ChatterExtension"/>
  <xsd:element name="ChatterMobileSettings" type="ChatterMobileSettings"/>
  <xsd:element name="ChatterSettings" type="ChatterSettings"/>
- <xsd:element name="ChoiceList" type="ChoiceList"/>
- <xsd:element name="ChoiceListValue" type="ChoiceListValue"/>
  <xsd:element name="ClaimFinancialSettings" type="ClaimFinancialSettings"/>
  <xsd:element name="ClauseCatgConfiguration" type="ClauseCatgConfiguration"/>
  <xsd:element name="CleanDataService" type="CleanDataService"/>
