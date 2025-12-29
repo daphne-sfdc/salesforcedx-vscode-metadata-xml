@@ -4097,69 +4097,6 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype.htm",
     "parent": "Metadata"
   },
-  "ArticleType Layout": {
-    "fields": [
-      {
-        "Description": "The main sections of the layout containing the article fields. The order here determines the layout order.",
-        "Field Name": "layoutSections",
-        "Field Type": "LayoutSection[]"
-      }
-    ],
-    "short_description": "Represents the metadata associated with an article type page layout. Article type layouts determine which fields users can view and edit when entering data for an article. Article type layouts also determine which sections appear when users view articles. The format of the article, for example whether layout sections display as subtabs or as a single page with links, is defined by the article-type template. Each article type has only one layout, but you can choose a different template for each of the article type's four channels. See Knowledge in SOAP API Developer Guide.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_layout.htm",
-    "parent": "Metadata"
-  },
-  "LayoutSection": {
-    "fields": [
-      {
-        "Description": "Indicates if this section's label is custom or standard (built-in). Custom labels can be any text, but must be translated. Standard labels have a predefined set of valid values, for example 'System Information', which are automatically translated.",
-        "Field Name": "customLabel",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "The label; either standard or custom, based on the customLabel flag.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The columns of the layout, depending on the style. Salesforce Knowledge only supports one column in article type layouts.",
-        "Field Name": "layoutColumns",
-        "Field Type": "LayoutColumn[]"
-      },
-      {
-        "Description": "The style of the layout. Salesforce Knowledge only supports the value OneColumn, which displays a one-column page.",
-        "Field Name": "style",
-        "Field Type": "LayoutSectionStyle (enumeration of type string)"
-      }
-    ],
-    "short_description": "LayoutSection represents a section of an ArticleType layout.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_layout.htm",
-    "parent": "Metadata"
-  },
-  "LayoutColumn": {
-    "fields": [
-      {
-        "Description": "The individual items within a column (ordered from top to bottom).",
-        "Field Name": "layoutItems",
-        "Field Type": "LayoutItem[]"
-      }
-    ],
-    "short_description": "LayoutColumn represents the items in a column within a layout section.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_layout.htm",
-    "parent": "Metadata"
-  },
-  "LayoutItem": {
-    "fields": [
-      {
-        "Description": "The field name reference, for example MyField__c.",
-        "Field Name": "field",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "LayoutItem represents the valid values that define a layout item.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_articletype_layout.htm",
-    "parent": "Metadata"
-  },
   "ChannelLayout": {
     "fields": [
       {
@@ -4474,38 +4411,6 @@
     "short_description": "Represents a suite of Apex test classes to include in a test run.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_apextestsuite.htm",
     "parent": "Metadata"
-  },
-  "ApexTrigger": {
-    "fields": [
-      {
-        "Description": "Required. The API version for this trigger. Every trigger has an API version specified at creation.",
-        "Field Name": "apiVersion",
-        "Field Type": "double"
-      },
-      {
-        "Description": "The Apex trigger definition. This field is inherited from the MetadataWithContent component.",
-        "Field Name": "content",
-        "Field Type": "base64"
-      },
-      {
-        "Description": "The Apex trigger name. The name can only contain characters, letters, and the underscore (_) character, must start with a letter, and can’t end with an underscore or contain two consecutive underscore characters. This field is inherited from the Metadata component.",
-        "Field Name": "fullName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The list of installed managed package versions that are referenced by this Apex trigger.For more information about managed packages, see the Second-Generation Managed Packaging Developer Guide. This field is available in API version 16.0 and later.",
-        "Field Name": "packageVersions",
-        "Field Type": "PackageVersion[]"
-      },
-      {
-        "Description": "Required. The status of the Apex trigger. The following string values are valid: Active - The trigger is active. Inactive - The trigger is inactive, but not deleted. Deleted - The trigger is marked for deletion. Useful for managed packages, because it allows a trigger to be deleted when a managed package is updated.",
-        "Field Name": "status",
-        "Field Type": "ApexCodeUnitStatus (enumeration of type string)"
-      }
-    ],
-    "short_description": "Represents an Apex trigger. A trigger is Apex code that executes before or after specific data manipulation language (DML) events occur, such as before object records are inserted into the database, or after records have been deleted. For more information, see “Manage Apex Triggers” in Salesforce Help. This type extends the MetadataWithContent metadata type and inherits its content and fullName fields.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_triggers.htm",
-    "parent": "MetadataWithContent"
   },
   "AppointmentAssignmentPolicy": {
     "fields": [
@@ -7610,200 +7515,6 @@
     ],
     "short_description": "Specifies filter criteria for a BriefcaseRule.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_briefcasedefinition.htm",
-    "parent": "Metadata"
-  },
-  "BusinessProcessGroup": {
-    "fields": [
-      {
-        "Description": "A list that defines stages in a customer lifecycle map.",
-        "Field Name": "businessProcessDefinitions",
-        "Field Type": "BusinessProcessDefinition[]"
-      },
-      {
-        "Description": "Required. Types of questions that can be associated with stages in a customer lifecycle map. Valid values are: Attachment Boolean CSAT Currency Date DateTime FreeText Image NPS Matrix MultiChoice MultiSelectPicklist NPS Number Picklist Rating ShortText Slider StackRank Toggle",
-        "Field Name": "customerSatisfactionMetric",
-        "Field Type": "SurveyQuestionType(enumeration of type string)"
-      },
-      {
-        "Description": "A description of the customer lifecycle map.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the customer lifecycle map.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the surveys used to track customers’ experiences across different stages in their lifecycle. This type extends the Metadata metadata type and inherits its fullName field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm",
-    "parent": "Metadata"
-  },
-  "BusinessProcessDefinition": {
-    "fields": [
-      {
-        "Description": "A list of stages in a customer lifecycle map.",
-        "Field Name": "businessProcessFeedbacks",
-        "Field Type": "BusinessProcessFeedback[]"
-      },
-      {
-        "Description": "A description of a stage in the customer lifecycle map.",
-        "Field Name": "description",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The API name of a stage in the customer lifecycle map. Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-        "Field Name": "developerName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of a stage in the customer lifecycle map.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The position of a stage in the customer lifecycle map.",
-        "Field Name": "sequenceNumber",
-        "Field Type": "int"
-      }
-    ],
-    "short_description": "Only users with View DeveloperName OR View Setup and Configuration permission can view, group, sort, and filter this field.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm",
-    "parent": "Metadata"
-  },
-  "BusinessProcessFeedback": {
-    "fields": [
-      {
-        "Description": "Required. The name of the survey used to collect feedback",
-        "Field Name": "actionName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the survey question used to collect feedback.",
-        "Field Name": "actionParam",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The mode of feedback collection. Valid values are: PHONE_CALL SURVEY",
-        "Field Name": "actionType",
-        "Field Type": "ExpFeedbackCollType(enumeration of type string)"
-      }
-    ],
-    "short_description": "",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_businessprocessgroup.htm",
-    "parent": "Metadata"
-  },
-  "CallCenter": {
-    "fields": [
-      {
-        "Description": "Optional field. A URL that points to an adapter.",
-        "Field Name": "adapterUrl",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Relates Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channels to a CallCenter and represents the routing details for a voicemail configuration.",
-        "Field Name": "contactCenterChannels",
-        "Field Type": "ContactCenterChannel[]"
-      },
-      {
-        "Description": "Required. The display name of this call center.",
-        "Field Name": "displayName",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the displayName field in Call Center setup page.",
-        "Field Name": "displayNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The label of the internalName field in Call Center setup page.",
-        "Field Name": "internalNameLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Custom setup items defined for this call center.",
-        "Field Name": "sections",
-        "Field Type": "CallCenterSection[]"
-      },
-      {
-        "Description": "The version of this call center.",
-        "Field Name": "version",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system, a partner telephony system, or partner Contact Center as a Service (CCaaS) system.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterSection": {
-    "fields": [
-      {
-        "Description": "Contains the label, name, and value that describe the sections.",
-        "Field Name": "items",
-        "Field Type": "CallCenterItem[]"
-      },
-      {
-        "Description": "Required. The label of the section.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the section.",
-        "Field Name": "name",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Required.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "CallCenterItem": {
-    "fields": [
-      {
-        "Description": "Required. The label of the custom setup item.",
-        "Field Name": "label",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The name of the custom setup item.",
-        "Field Name": "name",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The value of the custom setup item.",
-        "Field Name": "value",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Required.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
-    "parent": "Metadata"
-  },
-  "ContactCenterChannel": {
-    "fields": [
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the Bring Your Own Channel messaging channel (MessagingChannel) that’s associated with the contact center (CallCenterId). Available in API version 60.0 and later.",
-        "Field Name": "channel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. For Bring Your Own Channel for CCaaS, this field represents the unique ID of the contact center (CallCenterId) that’s associated with the Bring Your Own Channel messaging channel (MessagingChannel). Available in API version 60.0 and later.",
-        "Field Name": "contactCenter",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the fallback queue to use if voicemail routing fails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailFallbackQueue",
-        "Field Type": "string"
-      },
-      {
-        "Description": "If voicemail routing is configured for the contact center, this field represents the unique ID of the flow used to route voicemails. Don't change the value in this field. Instead, configure voicemail routing in Lightning Experience.",
-        "Field Name": "voiceMailHandler",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents a junction subtype that relates a Bring Your Own Channel for Contact Center as a Service (CCaaS) messaging channel to a CallCenter type for Bring Your Own Channel for CCaaS. This subtype also represents the routing details for a voicemail configuration. This subtype is available in API version 56.0 and later.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_callcenter.htm",
     "parent": "Metadata"
   },
   "CallCenterRoutingMap": {
@@ -27841,6 +27552,137 @@
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm",
     "parent": "Metadata"
   },
+  "LayoutSection": {
+    "fields": [
+      {
+        "Description": "Indicates if this section’s label is custom or standard (built-in). Custom labels can be any text, but must be translated. Standard labels have a predefined set of valid values, for example System Information, which are automatically translated.",
+        "Field Name": "customLabel",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Controls if this section appears in the detail page. In the UI, this setting corresponds to the checkbox in the section details dialog.",
+        "Field Name": "detailHeading",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "Controls if this section appears in the edit page.",
+        "Field Name": "editHeading",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "The label; either standard or custom, based on the customLabel flag.",
+        "Field Name": "label",
+        "Field Type": "string"
+      },
+      {
+        "Description": "The columns of the layout, depending on the style. 1, 2, or 3 columns, ordered left to right, are possible.",
+        "Field Name": "layoutColumns",
+        "Field Type": "LayoutColumn[]"
+      },
+      {
+        "Description": "The style of the layout: TwoColumnsTopToBottom - Two columns, tab goes top to bottom TwoColumnsLeftToRight - Two columns, tab goes left to right OneColumn - One column CustomLinks - Contains custom links only",
+        "Field Name": "style",
+        "Field Type": "LayoutSectionStyle (enumeration of type string)"
+      }
+    ],
+    "short_description": "LayoutSection represents a section of a page layout, such as the Custom Links section.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm",
+    "parent": "Metadata"
+  },
+  "LayoutColumn": {
+    "fields": [
+      {
+        "Description": "The individual items within a column (ordered from top to bottom).",
+        "Field Name": "layoutItems",
+        "Field Type": "LayoutItem[]"
+      },
+      {
+        "Description": "This field is reserved for Salesforce. The field resolves an issue with some SOAP libraries. Any value entered in the field is ignored.",
+        "Field Name": "reserved",
+        "Field Type": "string"
+      }
+    ],
+    "short_description": "LayoutColumn represents the items in a column within a layout section.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm",
+    "parent": "Metadata"
+  },
+  "LayoutItem": {
+    "fields": [
+      {
+        "Description": "Determines the field behavior. Valid string values: Edit—The layout field can be edited but isn’t required. Required—The layout field can be edited and is required. Readonly—The layout field is read-only. Explicitly specifying UiBehavior for Knowledge articles results in an exception.",
+        "Field Name": "behavior",
+        "Field Type": "UiBehavior (enumeration of type string)"
+      },
+      {
+        "Description": "Reference to a canvas app.This field is available in API version 31.0 and later.",
+        "Field Name": "canvas",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Reference to a component. Value must be sfa:socialCard.This field is available in API version 30.0 and later. This field is allowed only inside a RelatedContentItem. sfa:socialCard is supported only on page layouts for contacts, accounts, and leads.",
+        "Field Name": "component",
+        "Field Type": "string"
+      },
+      {
+        "Description": "The customLink reference. This field is allowed only inside a CustomLink layoutSection.",
+        "Field Name": "customLink",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Controls if this layout item is a blank space.",
+        "Field Name": "emptySpace",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "The field name reference, relative to the layout object, for example Description or MyField__c.",
+        "Field Name": "field",
+        "Field Type": "string"
+      },
+      {
+        "Description": "For s-control and pages only, the height in pixels.",
+        "Field Name": "height",
+        "Field Type": "int"
+      },
+      {
+        "Description": "Reference to a Visualforce page.",
+        "Field Name": "page",
+        "Field Type": "string"
+      },
+      {
+        "Description": "Refers to a CRM Analytics dashboard that you can add to a standard or custom object page.This field is available in API version 34.0 and later.",
+        "Field Name": "analyticsCloudComponent",
+        "Field Type": "AnalyticsCloudComponentLayoutItem"
+      },
+      {
+        "Description": "Refers to a report chart that you can add to a standard or custom object page.",
+        "Field Name": "reportChartComponent",
+        "Field Type": "ReportChartComponentLayoutItem"
+      },
+      {
+        "Description": "Reference to an s-control.",
+        "Field Name": "scontrol",
+        "Field Type": "string"
+      },
+      {
+        "Description": "For s-control and pages only, whether to show the label.",
+        "Field Name": "showLabel",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "For s-control and pages only, whether to show scrollbars.",
+        "Field Name": "showScrollbars",
+        "Field Type": "boolean"
+      },
+      {
+        "Description": "For s-control and pages only, the width in pixels or percent. Pixel values are simply the number of pixels, for example, 500. Percentage values must include the percent sign, for example, 20%.",
+        "Field Name": "width",
+        "Field Type": "string"
+      }
+    ],
+    "short_description": "LayoutItem represents the valid values that define a layout item. An item must have only one of the following values set: component, customLink, field, s-control, page, analyticsCloudComponent, or reportChartComponent.",
+    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_layouts.htm",
+    "parent": "Metadata"
+  },
   "AnalyticsCloudComponentLayoutItem": {
     "fields": [
       {
@@ -33754,48 +33596,6 @@
     ],
     "short_description": "A field selected on PlatformEventChannelMember for Change Data Capture Enrichment. A non-empty enriched field is added to an update or delete change event even when not changed.",
     "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_platformeventchannelmember.htm",
-    "parent": "Metadata"
-  },
-  "PlatformEventSubscriberConfig": {
-    "fields": [
-      {
-        "Description": "A custom batch size, from 1 through 2,000, for the platform event Apex trigger. The batch size corresponds to the maximum number of event messages that can be sent to a trigger in one execution. The default batch size is 2,000 for platform event triggers. We don't recommend setting the batch size to 1 to process one event at a time. Small batch sizes can slow down the processing of event messages.",
-        "Field Name": "batchSize",
-        "Field Type": "int"
-      },
-      {
-        "Description": "(Inherited field.) Indicates whether this component is protected (true) or not (false). Protected components can’t be linked to or referenced by components created in a subscriber org. A developer can delete a protected component in a future release without worrying about failing installations. However, once a component is marked as unprotected and is released globally, the developer can’t delete it.",
-        "Field Name": "isProtected",
-        "Field Type": "boolean"
-      },
-      {
-        "Description": "Required. The label for the PlatformEventSubscriberConfig component.",
-        "Field Name": "masterLabel",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Specifies the number of parallel subscriptions, or partitions, that are created internally for an Apex trigger. Use this field to set up parallel subscriptions for the platform event Apex trigger. It can be an integer from 1 through 10. See Platform Event Processing at Scale with Parallel Subscriptions for Apex Triggers in the Platform Events Developer Guide.The default value is 1. This field is available in API version 62.0 and later.",
-        "Field Name": "numPartitions",
-        "Field Type": "int"
-      },
-      {
-        "Description": "Can be the standard EventUuid field or a required custom field of the custom platform event that the Apex trigger subscribes to. For the standard EventUuid field, the partition key format is the field name without the event name: EventUuid. For a custom field, the partition key includes the event name as a prefix in this format: EventName__e.FieldName__c. Based on the field’s generated hash value, the system determines which partition to send the event to. Use this field to specify the platform event field that is used as a partition key for parallel subscriptions. See Platform Event Processing at Scale with Parallel Subscriptions for Apex Triggers in the Platform Events Developer Guide.The default value is EventUuid. This field is available in API version 62.0 and later.",
-        "Field Name": "partitionKey",
-        "Field Type": "string"
-      },
-      {
-        "Description": "Required. The full name of the platform event Apex trigger to configure.",
-        "Field Name": "platformEventConsumer",
-        "Field Type": "string"
-      },
-      {
-        "Description": "The username of the user that the platform event Apex trigger runs as. By default, the platform event trigger runs as the Automated Process entity. Setting the running user to a specific user has these benefits: Records are created or modified as this user. Records with OwnerId fields have their OwnerId fields populated to this user when created or modified. Debug logs for the trigger execution are created by this user. You can send email from the trigger, which isn’t supported with the default Automated Process user.",
-        "Field Name": "user",
-        "Field Type": "string"
-      }
-    ],
-    "short_description": "Represents configuration settings for a platform event Apex trigger, including the batch size and the trigger’s running user.",
-    "url": "https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_platformeventsubscriberconfig.htm",
     "parent": "Metadata"
   },
   "Portal": {
