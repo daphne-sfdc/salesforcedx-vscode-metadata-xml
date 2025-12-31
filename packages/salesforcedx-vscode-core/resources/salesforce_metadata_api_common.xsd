@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-31T17:40:00.342Z
-Total metadata types: 1498
+Generated on: 2025-12-31T20:16:09.262Z
+Total metadata types: 1493
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -2690,56 +2690,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="ActivationPlatformField">
-  <xsd:annotation>
-   <xsd:documentation>Represents the information about the fields used in ActivationPlatform.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_activationplatformfield.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="activationPlatform" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the ActivationPlatform metadata type.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="helpText" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Information about ActivationPlatformField.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isHidden" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether ActivationPlatformField can be overridden by marketer (false) or not (true). The default is false. Field can’t be overridden by marketer when set to true.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isRequired" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether this ActivationPlatformField is required (true) or not (false). The default is false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the ActivationPlaformField.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Represents the datatype of the field.Valid value is: Text</xsd:documentation>
-       <xsd:appinfo>Type: ActivationPlatformFieldDataType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="ActivitiesSettings">
   <xsd:annotation>
    <xsd:documentation>Represents an org&apos;s activity settings, and its user interface settings for the calendar. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
@@ -5180,240 +5130,6 @@ Total metadata types: 1498
    </xsd:extension>
   </xsd:complexContent>
  </xsd:complexType>
- <xsd:complexType name="AnalyticsVisualization">
-  <xsd:annotation>
-   <xsd:documentation>Represents a Tableau Next visualization.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_analyticsvisualization.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="actions" minOccurs="0" maxOccurs="unbounded" type="AnalyticsAssetAction">
-      <xsd:annotation>
-       <xsd:documentation>The actions for the visualization. A visualization has 0 or more actions.</xsd:documentation>
-       <xsd:appinfo>Type: AnalyticsAssetAction[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="analyticsWorkspace" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The Tableau Next workspace the visualization belongs to.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="dataSource" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The data source for the visualization.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The description for the visualization.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fields" minOccurs="0" maxOccurs="unbounded" type="AnalyticsVizField">
-      <xsd:annotation>
-       <xsd:documentation>A list of data fields for the visualization. A visualization has 0 or more fields.</xsd:documentation>
-       <xsd:appinfo>Type: AnalyticsVizField[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="lastDraftModifiedDate" minOccurs="0" maxOccurs="unbounded" type="xsd:dateTime">
-      <xsd:annotation>
-       <xsd:documentation>The date and time the workspace draft was last modified.</xsd:documentation>
-       <xsd:appinfo>Type: dateTime</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="lastPublishedDate" minOccurs="0" maxOccurs="unbounded" type="xsd:dateTime">
-      <xsd:annotation>
-       <xsd:documentation>The date and time the workspace was last published.</xsd:documentation>
-       <xsd:appinfo>Type: dateTime</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the visualization.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="templateAssetSourceName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If the visualization was created from a template, the name of the source visualization in the template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="templateSource" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>If the visualization was created from a template, the name of the source template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="version" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
-      <xsd:annotation>
-       <xsd:documentation>The API version of the visualization.</xsd:documentation>
-       <xsd:appinfo>Type: double</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="views" minOccurs="0" maxOccurs="unbounded" type="AnalyticsVizViewDef">
-      <xsd:annotation>
-       <xsd:documentation>A list of views for the visualization. A visualization has 0 or more views.</xsd:documentation>
-       <xsd:appinfo>Type: AnalyticsVizViewDef[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="visualSpecification" minOccurs="0" maxOccurs="unbounded" type="xsd:base64Binary">
-      <xsd:annotation>
-       <xsd:documentation>Required. The visual specification for the visualization.</xsd:documentation>
-       <xsd:appinfo>Type: base64Binary</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="workspaceAssetRelationships" minOccurs="0" maxOccurs="unbounded" type="AnalyticsWorkspaceAsset">
-      <xsd:annotation>
-       <xsd:documentation>A list of analytics assets in the workspace this visualization is associated with. A visualization has 0 or more workspace asset relationships.</xsd:documentation>
-       <xsd:appinfo>Type: AnalyticsWorkspaceAsset[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AnalyticsVizField">
-  <xsd:annotation>
-   <xsd:documentation>Represents a data field in a visualization.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_analyticsvisualization.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="adHoCalc" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The expression to do an ad-hoc calculation with.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="analyticsVizVersion" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The version of the visualization the field is associated with.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="computeUsing" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The expression to compute the field value with.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="displayCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The display category type for the visualization field. Values are: Continuous Discrete</xsd:documentation>
-       <xsd:appinfo>Type: VisualizationFieldDisplayCategoryType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fieldKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The key for the field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fieldName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The name of the field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="function" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The function type of the visualization field. Values are: Avg Count CountD DatePartDay DatePartMonth DatePartQuarter DatePartWeek DatePartWeekDay DatePartYear DateTruncDay DateTruncMonth DateTruncQuarter DateTruncWeek DateTruncYear FiscalDatePartMonth FiscalDatePartQuarter FiscalDatePartWeek FiscalDatePartYear FiscalDateTruncMonth FiscalDateTruncQuarter FiscalDateTruncWeek FiscalDateTruncYear Max Mdy Median Min My Stdev Stdevp Sum UserAgg Var Varp</xsd:documentation>
-       <xsd:appinfo>Type: VisualizationFieldFunctionType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="label" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The label for the field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The name of the data source object for the field.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="quickTableCalc" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The expression to do a quick table calculation with.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="role" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The role type of the visualization field. Values are: Dimension Measure</xsd:documentation>
-       <xsd:appinfo>Type: VisualizationFieldRoleType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The type of the visualization field. Values are: Field MeasureNames MeasureValues</xsd:documentation>
-       <xsd:appinfo>Type: VisualizationFieldType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AnalyticsVizViewDef">
-  <xsd:annotation>
-   <xsd:documentation>Represents a view definition for a Tableau Next visualization.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_analyticsvisualization.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="analyticsVizVersion" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The version of the visualization the view is associated with.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fullName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The full name of the view definition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isOriginal" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Required. Indicates whether the view is original (true) or not (false).</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the view definition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="version" minOccurs="0" maxOccurs="unbounded" type="xsd:double">
-      <xsd:annotation>
-       <xsd:documentation>The API version of the visualization view.</xsd:documentation>
-       <xsd:appinfo>Type: double</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="viewSpecification" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The specification for the view definition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
  <xsd:complexType name="AnalyticsVizWidgetDef">
   <xsd:annotation>
    <xsd:documentation>Represents a visualization widget definition for a Tableau Next dashboard.</xsd:documentation>
@@ -6418,44 +6134,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Represents how records for a specific tab open in a Salesforce console app. Required for each tab specified in the CustomApplication. In API version 42.0, this field was renamed from workspaceMapping to mappings.</xsd:documentation>
        <xsd:appinfo>Type: WorkspaceMappingSingle[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="AppointmentAssignmentPolicy">
-  <xsd:annotation>
-   <xsd:documentation>Represents the information about a resource assignment rule. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_appointmentassignmentpolicy.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for the appointment assignment policy.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyApplicableDuration" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The frequency at which the utilization of service resources is calculated. Valid values are: Monthly ParameterBased Weekly</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="policyType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The type of appointment assignment policy. Valid value is: loadBalancing</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="utilizationFactor" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Specifies the count type for the resource utilization. Valid values are: NumberOfAppointments TotalAppointmentDuration</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -73305,7 +72983,6 @@ Total metadata types: 1498
  <xsd:element name="ActionableListMemberStatus" type="ActionableListMemberStatus"/>
  <xsd:element name="ActionsSettings" type="ActionsSettings"/>
  <xsd:element name="ActivationPlatform" type="ActivationPlatform"/>
- <xsd:element name="ActivationPlatformField" type="ActivationPlatformField"/>
  <xsd:element name="ActivitiesSettings" type="ActivitiesSettings"/>
  <xsd:element name="ActvPfrmDataConnectorS3" type="ActvPfrmDataConnectorS3"/>
  <xsd:element name="ActvPlatformAdncIdentifier" type="ActvPlatformAdncIdentifier"/>
@@ -73346,9 +73023,6 @@ Total metadata types: 1498
  <xsd:element name="AnalyticsParamWidgetDef" type="AnalyticsParamWidgetDef"/>
  <xsd:element name="AnalyticsSettings" type="AnalyticsSettings"/>
  <xsd:element name="AnalyticsTextWidgetDef" type="AnalyticsTextWidgetDef"/>
- <xsd:element name="AnalyticsVisualization" type="AnalyticsVisualization"/>
- <xsd:element name="AnalyticsVizField" type="AnalyticsVizField"/>
- <xsd:element name="AnalyticsVizViewDef" type="AnalyticsVizViewDef"/>
  <xsd:element name="AnalyticsVizWidgetDef" type="AnalyticsVizWidgetDef"/>
  <xsd:element name="AnalyticsWorkspace" type="AnalyticsWorkspace"/>
  <xsd:element name="AnalyticsWorkspaceAsset" type="AnalyticsWorkspaceAsset"/>
@@ -73372,7 +73046,6 @@ Total metadata types: 1498
  <xsd:element name="AppProfileActionOverride" type="AppProfileActionOverride"/>
  <xsd:element name="AppSettings" type="AppSettings"/>
  <xsd:element name="AppWorkspaceConfig" type="AppWorkspaceConfig"/>
- <xsd:element name="AppointmentAssignmentPolicy" type="AppointmentAssignmentPolicy"/>
  <xsd:element name="AppointmentSchedulingPolicy" type="AppointmentSchedulingPolicy"/>
  <xsd:element name="ApprovalAction" type="ApprovalAction"/>
  <xsd:element name="ApprovalEntryCriteria" type="ApprovalEntryCriteria"/>
