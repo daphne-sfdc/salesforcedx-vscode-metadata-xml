@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-31T17:40:00.342Z
-Total metadata types: 1498
+Generated on: 2025-12-31T20:27:54.966Z
+Total metadata types: 1493
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -13751,155 +13751,6 @@ Total metadata types: 1498
      <xsd:element name="partnerUserRole" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
       <xsd:annotation>
        <xsd:documentation>The label for the Partner user role.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplateBundleInfo">
-  <xsd:annotation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of its CommunityTemplateBundleInfo.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="image" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required only when the type is PreviewImage, otherwise this field is optional. A preview image for this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="order" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Required. An integer specifying the position of this CommunityTemplateBundleInfo relative to others of the same type within its CommunityTemplateDefinition. 1 is the first position, 3 is the maximum position for PreviewImage type, and 4 is the maximum position for the Highlight type.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="title" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The title of this CommunityTemplateBundleInfo to use in code.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="type" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Stores descriptive information about the template that’s included in the export. The template powers the interface of the Experience Creation Wizard. Valid values are: Highlight—This CommunityTemplateBundleInfo is used as a highlighted feature. Up to 4 are supported. PreviewImage—This CommunityTemplateBundleInfo is used as a preview image. Up to 3 are supported.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateBundleInfoType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplateDefinition">
-  <xsd:annotation>
-   <xsd:documentation>Represents the definition of an Experience Builder site template. This type extends the Metadata metadata type and inherits its fullName field.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="baseTemplate" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Denotes that this CommunityTemplateDefinition was created in API version 41.0 or later. The only valid value is c. This field is available in API 41.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityBaseTemplate (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="bundlesInfo" minOccurs="0" maxOccurs="unbounded" type="CommunityTemplateBundleInfo">
-      <xsd:annotation>
-       <xsd:documentation>The list of preview images and feature highlights of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateBundleInfo[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="category" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The optimized use case of this CommunityTemplateDefinition. Valid values are: Commerce IT Marketing Sales Service</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplateCategory (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="defaultBrandingSet" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The set of branding properties associated with this CommunityTemplateDefinition, as defined in the Theme panel in Experience Builder. Available in API version 40.0 and later.In API version 44.0 and later, this field is read-only and can be implemented in CommunityThemeDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="defaultThemeDefinition" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The assigned theme definition for this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="description" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The optional description text of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableExtendedCleanUpOnDelete" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>False by default. Determines if deleting this CommunityTemplateDefinition attempts to delete other directly or indirectly referenced objects automatically, for example, CommunityThemeDefinition, Flexipage, or StaticResource. Values are true or false.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The label for this CommunityTemplateDefinition, which displays in Setup.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="navigationLinkSet" minOccurs="0" maxOccurs="unbounded" type="NavigationLinkSet">
-      <xsd:annotation>
-       <xsd:documentation>The navigation menu associated with this CommunityTemplateDefinition. A navigation menu consists of items that users can click to go to other parts of the site. Available in API versions 37.0 to 46.0. In API versions 47.0 and later, use NavigationMenu.</xsd:documentation>
-       <xsd:appinfo>Type: NavigationLinkSet</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="pageSetting" minOccurs="0" maxOccurs="unbounded" type="CommunityTemplatePageSetting">
-      <xsd:annotation>
-       <xsd:documentation>The list of FlexiPage of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: CommunityTemplatePageSetting[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="publisher" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Defines the name of the publisher as seen in the Change Theme wizard. If no name is provided, the name of the org from which the package was originally exported is used.This field is available in API version 45.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="CommunityTemplatePageSetting">
-  <xsd:annotation>
-   <xsd:documentation>This field is available in API version 39.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_communitytemplatedefinition.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="page" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The list of FlexiPage of this CommunityTemplateDefinition.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="themeLayout" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. The name of the FlexiPage for the theme layout.This field is available in API version 39.0 and later.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
@@ -33043,200 +32894,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Required. The rule&apos;s version number.</xsd:documentation>
        <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="FieldServiceSettings">
-  <xsd:annotation>
-   <xsd:documentation>Represents an organization’s Field Service settings. To learn more about Field Service settings, see Enable Field Service in Salesforce Help.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldservicesettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="apptAssistantExpiration" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The expiration time of apptAssistantInfoUrl after which the customer stops seeing the mobile worker&apos;s location and estimated time of arrival. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="apptAssistantInfoUrl" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The tracking URL that helps a customer see the mobile worker&apos;s estimated time of arrival and tracking information. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="apptAssistantRadiusUnitValue" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The units for specifying the geofence radius. When the mobile worker enters this area, a Last Mile notification is automatically sent. Valid values are: Kilometer Meter Mile Yard Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ApptAssistantRadiusUnit (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="apptAssistantRadiusValue" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The geofence radius from the service appointment&apos;s address used for sending a notification to the customer when the mobile worker approaches the address. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="apptAssistantStatus" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The status on the service appointment used to trigger En Route notification. The value has to match one of the service appointment&apos;s Status field options. When the mobile worker selects this status on a service appointment, the customer receives the En Route notification with tracking details. Available in API version 50.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="canPopulateGoogleAddress" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows desktop and mobile to send geolocation and map data to Google and Apple. Available in API version 57.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="canSendAppCenterCrashReports" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows Salesforce to send crash reports to Microsoft App Center. Available in API version 57.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="canStoreMobileAnalytics" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows third parties to store mobile analytics. Available in API version 57.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="deepLinkPublicSecurityKey" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Provides a public security key for users accessing a deep link action in the Field Service mobile app. Hide the redirection warning by configuring the deep link URL with a security key. The deep link URL then processes the security check. Available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="doesAllowEditSaForCrew" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Lets service crew members edit their service appointments.This setting applies only if doesShareSaWithAr is selected. For assigned resources of type Crew, crew members get Read-Write access to their service appointment and, if doesShareSaParentWoWithAr is selected, to their service appointments’ parent work orders.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="doesShareSaParentWoWithAr" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Shares service appointments’ parent work orders with their assigned resources.This setting applies only if doesShareSaWithAr is selected and sharing access for work orders is set to Private or Public Read Only. Technician assigned resources get Read-Write access to their work orders. For assigned resources of type Crew, the crew leader gets Read-Write access and crew members get Read access. If the service appointment’s parent is a work order line item, assigned resources get access to the associated work order.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="doesShareSaWithAr" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Shares dispatched service appointments with their assigned resources.This setting applies only if sharing access for service appointments is set to Private or Public Read Only. Technician assigned resources get Read-Write access to their service appointments. For assigned resources of type Crew, the crew leader gets Read-Write access and crew members get Read access.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableDocumentBuilder" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enables access to Document Builder feature.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableFloatingWorkOrder" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enables floating work orders for the org.Allows users to create work orders with a floating recurrence cadence based on the previous work order&apos;s completion.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enablePopulateWorkOrderAddress" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enables address to be populated when work orders are generated from Maintenance Plan.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableWorkOrders" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enables Work Orders for the org.This setting allows users to use the Work Order object, whether or not Field Service is enabled. When Field Service is enabled, you can’t turn off Work Orders.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableWorkPlansAutoGeneration" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows work plans and their work steps to be generated automatically when a work order or a work order line item is newly created. The specific work plans and work steps to be generated depends on matching criteria specified in Work Plan Selection Rules. Available in API version 52.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="enableWorkStepManualStatusUpdate" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows a work step status to be updated manually. A prompt suggests a status update that users can accept or defer.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fieldServiceNotificationsOrgPref" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Turns on in-app notifications for the Salesforce mobile app and Lightning Experience users. Notifications are sent when any of the following actions occurs on a work order or work order line item that they own or follow: A text or file post is added A tracked field is updated The record owner changes The resource assignments change on a related service appointment If the option to track all related objects is selected in the feed tracking settings for work orders, users are also notified when child records of work orders—such as service appointments—are created or deleted.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="fieldServiceOrgPref" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Indicates whether Field Service is enabled.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isGeoCodeSyncEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Syncs the location of a Service Resource to an Inventory object.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="isLocationHistoryEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Tracks the location history of a Service Resource.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="mobileFeedbackEmails" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Stores an email address to which a feedback email is sent when users leave feedback from the Field Service mobile app. Available in API version 54.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="o2EngineEnabled" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Enables Field Service Enhanced Scheduling and Optimization. The default value is false. Available in API version 55.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectMappingItem" minOccurs="0" maxOccurs="unbounded" type="ObjectMappingItem">
-      <xsd:annotation>
-       <xsd:documentation>Represents an organization&apos;s custom field mapping for Work Plan or Work Step generation. Custom Fields can be mapped from WorkPlanTemplate to WorkPlan, WorkStepTemplate to WorkStep, or WorkPlanTemplateEntry to WorkStep. Available in API version 52.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: ObjectMappingItem</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="optimizationServiceAccess" minOccurs="0" maxOccurs="unbounded" type="xsd:boolean">
-      <xsd:annotation>
-       <xsd:documentation>Allows the optimization service to access data in your Salesforce org.</xsd:documentation>
-       <xsd:appinfo>Type: boolean</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="serviceAppointmentsDueDateOffsetOrgValue" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>Indicates the number of days past the Created Date that the Due Date on auto-created service appointments should fall. Work types include an option to automatically add a service appointment to new work orders or work order line items using the work type.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="workOrderDurationSource" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The source for the work order duration value. Possible values are: WorkType TotalFromWorkPlan Custom Available in API version 55.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: WorkOrderDurationSource (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="workOrderLineItemSearchFields" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The work order line item fields that the search engine should scan to suggest knowledge articles on work order line items.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="workOrderSearchFields" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The work order fields that the search engine should scan to suggest knowledge articles on work orders.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -52865,32 +52522,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Required. Field in the object specified by the outputObject field in ObjectMapping. The field is mapped to the field name in inputField, which is assumed to be a field in the object specified by the inputObject in ObjectMapping.</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-    <xsd:attribute name="fqn" type="xsd:string"/>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="ObjectMappingItem">
-  <xsd:annotation>
-   <xsd:documentation>Represents an organization&apos;s custom field mapping for Work Plan or Work Step generation. Custom Fields can be mapped from WorkPlanTemplate to WorkPlan, WorkStepTemplate to WorkStep, or WorkPlanTemplateEntry to WorkStep. Available in API version 52.0 and later.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_fieldservicesettings.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="mappingType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The type of object mapping. Valid values are: WorkPlans_WorkPlanTemplate_WorkPlan — Maps a WorkPlanTemplate to a WorkPlan WorkPlans_WorkStepTemplate_WorkStep — Maps a WorkStepTemplate to a WorkStep WorkPlans_WorkPlanTemplateEntry_WorkStep — Maps a WorkPlanTemplateEntry to a WorkStep</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectMapping" minOccurs="0" maxOccurs="unbounded" type="ObjectMapping">
-      <xsd:annotation>
-       <xsd:documentation>The object mapping details.</xsd:documentation>
-       <xsd:appinfo>Type: ObjectMapping</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -73528,9 +73159,6 @@ Total metadata types: 1498
  <xsd:element name="Community_Zone" type="Community_Zone"/>
  <xsd:element name="CommunityCustomThemeLayoutType" type="CommunityCustomThemeLayoutType"/>
  <xsd:element name="CommunityRoles" type="CommunityRoles"/>
- <xsd:element name="CommunityTemplateBundleInfo" type="CommunityTemplateBundleInfo"/>
- <xsd:element name="CommunityTemplateDefinition" type="CommunityTemplateDefinition"/>
- <xsd:element name="CommunityTemplatePageSetting" type="CommunityTemplatePageSetting"/>
  <xsd:element name="CommunityTheme_Setting" type="CommunityTheme_Setting"/>
  <xsd:element name="CommunityThemeBundleInfo" type="CommunityThemeBundleInfo"/>
  <xsd:element name="CommunityThemeDefinition" type="CommunityThemeDefinition"/>
@@ -73897,7 +73525,6 @@ Total metadata types: 1498
  <xsd:element name="FieldMappingRow" type="FieldMappingRow"/>
  <xsd:element name="FieldOverride" type="FieldOverride"/>
  <xsd:element name="FieldRestrictionRule" type="FieldRestrictionRule"/>
- <xsd:element name="FieldServiceSettings" type="FieldServiceSettings"/>
  <xsd:element name="FieldSet" type="FieldSet"/>
  <xsd:element name="FieldSetItem" type="FieldSetItem"/>
  <xsd:element name="FieldSetTranslation" type="FieldSetTranslation"/>
@@ -74291,7 +73918,6 @@ Total metadata types: 1498
  <xsd:element name="ObjectLinkingSettings_Beta" type="ObjectLinkingSettings_Beta"/>
  <xsd:element name="ObjectMapping" type="ObjectMapping"/>
  <xsd:element name="ObjectMappingField" type="ObjectMappingField"/>
- <xsd:element name="ObjectMappingItem" type="ObjectMappingItem"/>
  <xsd:element name="ObjectNameCaseValue" type="ObjectNameCaseValue"/>
  <xsd:element name="ObjectRelationship" type="ObjectRelationship"/>
  <xsd:element name="ObjectSearchSetting" type="ObjectSearchSetting"/>
