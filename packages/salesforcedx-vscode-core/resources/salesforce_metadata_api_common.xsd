@@ -3,8 +3,8 @@
 Salesforce Metadata Types XSD - Generated from metadata documentation
 This file contains all metadata type definitions for hover documentation and IDE support.
 
-Generated on: 2025-12-31T21:17:36.067Z
-Total metadata types: 1498
+Generated on: 2025-12-31T21:33:03.891Z
+Total metadata types: 1497
 -->
 <xsd:schema
  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -22554,115 +22554,6 @@ Total metadata types: 1498
       <xsd:annotation>
        <xsd:documentation>Reference to the object that’s used to transport information from the source to a landing entity (target).</xsd:documentation>
        <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-    </xsd:choice>
-   </xsd:extension>
-  </xsd:complexContent>
- </xsd:complexType>
- <xsd:complexType name="DataStreamTemplate">
-  <xsd:annotation>
-   <xsd:documentation>Represents the data stream that a user adds to a data kit.</xsd:documentation>
-   <xsd:appinfo>Documentation: https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_datastreamtemplate.htm</xsd:appinfo>
-  </xsd:annotation>
-  <xsd:complexContent>
-   <xsd:extension base="Metadata">
-    <xsd:choice maxOccurs="unbounded">
-     <xsd:element name="dataConnectionSourceParameters" minOccurs="0" maxOccurs="unbounded" type="xsd:anyType">
-      <xsd:annotation>
-       <xsd:documentation>Input representation for the data connection source parameters.</xsd:documentation>
-       <xsd:appinfo>Type: DataConnectionParamTmpl[]</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="dataSourceBundleDefinition" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the bundle to which this template belongs.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="dataSourceObject" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Reference to the Data Source Objects (DSOs). A DSO represents the object from where the data was sourced.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="filterCriteria" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Filter applied to the data stream before the information is sent to Data Cloud.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="masterLabel" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Name assigned to the data stream template.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="objectCategory" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>Required. Category of the Data Model Object (DMO).</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshDayOfMonth" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The duration of the day of the month after which the data stream must be refreshed.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshDayOfWeek" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The duration of the day of the week after which the data stream must be refreshed.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshFrequency" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The frequency with which the datastream must be refreshed. Possible values are: Batch NONE MINUTES_15 MINUTES_30 MINUTES_5 HOURLY DAILY WEEKLY MONTHLY NOT_APPLICABLE STREAMING Possible values available in API version 64.0 and later are: EVERY_12_HOURS EVERY_4_HOURS</xsd:documentation>
-       <xsd:appinfo>Type: DataImportRefreshFrequency (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshHours" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The duration after which the datastream must be refreshed.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshMode" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The mode of refresh. Possible values are: FULL_REFRESH UPSERT INCREMENTAL REPLACE NEAR_REAL_TIME_INCREMENTAL NOT_APPLICABLE PARTIAL_UPDATE STREAMING</xsd:documentation>
-       <xsd:appinfo>Type: DataImportRefreshMode (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="refreshStartDate" minOccurs="0" maxOccurs="unbounded" type="xsd:date">
-      <xsd:annotation>
-       <xsd:documentation>The date to retrieve data based on the refresh frequency data. Available in API version 62.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: date</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="sourceObjectName" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The name of the source object from which data is streamed. Available in API version 62.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: string</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="streamType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The type of data stream. Available in API version 62.0 and later. Possible values are: DIRECT_ACCESS DIRECT_ACCESS_ACCELERATED INGEST</xsd:documentation>
-       <xsd:appinfo>Type: StreamType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="streamingAppDataConnectorType" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
-      <xsd:annotation>
-       <xsd:documentation>The connector app for data streaming. Available in API version 63.0 and later. Possible values are: MobileApp WebApp</xsd:documentation>
-       <xsd:appinfo>Type: streamingAppDataConnectorType (enumeration of type string)</xsd:appinfo>
-      </xsd:annotation>
-     </xsd:element>
-     <xsd:element name="templateVersion" minOccurs="0" maxOccurs="unbounded" type="xsd:int">
-      <xsd:annotation>
-       <xsd:documentation>The version number of the template. Available in API version 62.0 and later.</xsd:documentation>
-       <xsd:appinfo>Type: int</xsd:appinfo>
       </xsd:annotation>
      </xsd:element>
      <xsd:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
@@ -72199,7 +72090,6 @@ Total metadata types: 1498
  <xsd:element name="DataSourceObject" type="DataSourceObject"/>
  <xsd:element name="DataSrcDataModelFieldMap" type="DataSrcDataModelFieldMap"/>
  <xsd:element name="DataStreamDefinition" type="DataStreamDefinition"/>
- <xsd:element name="DataStreamTemplate" type="DataStreamTemplate"/>
  <xsd:element name="DataWeaveResource" type="DataWeaveResource"/>
  <xsd:element name="DecisionMatrixDefinition" type="DecisionMatrixDefinition"/>
  <xsd:element name="DecisionMatrixDefinitionVersion" type="DecisionMatrixDefinitionVersion"/>
